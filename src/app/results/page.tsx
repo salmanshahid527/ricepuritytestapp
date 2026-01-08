@@ -1,13 +1,13 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { ResultsTemplate } from '@/components/templates/ResultsTemplate';
 import { useScore } from '@/hooks/useScore';
 import { getScoreInterpretation } from '@/lib/utils';
 import { STORAGE_KEYS } from '@/lib/constants';
 
-export default function ResultsPage() {
+function ResultsContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [score, setScore] = useState<number | null>(null);
@@ -69,5 +69,17 @@ export default function ResultsPage() {
       interpretation={interpretation}
       onRetakeTest={handleRetakeTest}
     />
+  );
+}
+
+export default function ResultsPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-white flex items-center justify-center">
+        <div className="animate-pulse text-gray-500">Loading...</div>
+      </div>
+    }>
+      <ResultsContent />
+    </Suspense>
   );
 }
