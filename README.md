@@ -98,6 +98,7 @@ Score = 100 - (number of checked boxes)
 - **Mobile First**: Responsive design starting from mobile breakpoints
 - **Accessibility**: Focus states, keyboard navigation, ARIA labels
 
+
 ## License
 
 © 2025 ricepuritytestapp.com | The Rice Purity Test originated at Rice University
