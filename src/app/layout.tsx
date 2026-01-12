@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   title: 'Rice Purity Test | Official 100 Question Innocence Test',
   description: 'Take the original Rice Purity Test - 100 questions to assess your life experiences and innocence level. Anonymous, free, and instant results.',
   keywords: 'rice purity test, purity test, innocence test, rice university test',
+  icons: {
+    icon: '/icon.svg',
+    apple: '/icon.svg',
+  },
   openGraph: {
     title: 'Rice Purity Test',
     description: 'Take the original 100-question Rice Purity Test',

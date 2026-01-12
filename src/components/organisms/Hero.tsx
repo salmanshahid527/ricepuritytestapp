@@ -2,11 +2,15 @@ import React from 'react';
 import { Heading } from '../atoms/Heading';
 import { Text } from '../atoms/Text';
 import { Button } from '../atoms/Button';
+import { Logo } from '../atoms/Logo';
 import Link from 'next/link';
 
 export const Hero: React.FC = () => {
   return (
     <section className="text-center py-16 md:py-24 animate-fade-in">
+      <div className="flex justify-center mb-8">
+        <Logo size="lg" showText={true} showTagline={true} />
+      </div>
       <Heading size="4xl" className="mb-6">
         Rice Purity Test
       </Heading>

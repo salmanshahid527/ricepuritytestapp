@@ -1,0 +1,128 @@
+import React from 'react';
+import Link from 'next/link';
+
+interface LogoProps {
+  size?: 'sm' | 'md' | 'lg';
+  showText?: boolean;
+  showTagline?: boolean;
+  className?: string;
+  href?: string;
+}
+
+export const Logo: React.FC<LogoProps> = ({
+  size = 'md',
+  showText = true,
+  showTagline = false,
+  className = '',
+  href,
+}) => {
+  const sizeClasses = {
+    sm: { icon: 'w-8 h-8', text: 'text-lg', tagline: 'text-xs' },
+    md: { icon: 'w-12 h-12', text: 'text-xl', tagline: 'text-sm' },
+    lg: { icon: 'w-16 h-16', text: 'text-2xl', tagline: 'text-base' },
+  };
+
+  const currentSize = sizeClasses[size];
+
+  const logoContent = (
+    <div className={`flex items-center space-x-3 ${className}`}>
+      {/* SVG Logo */}
+      <div className={`${currentSize.icon} flex-shrink-0`}>
+        <svg
+          viewBox="0 0 120 120"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-full h-full"
+        >
+          {/* Head Silhouette */}
+          <path
+            d="M30 60 C30 40, 35 25, 50 20 C65 15, 80 18, 90 30 C100 42, 105 55, 100 70 C95 85, 85 95, 70 100 C55 105, 40 100, 30 85 C20 70, 20 55, 30 60 Z"
+            fill="#1e3a8a"
+            className="transition-colors"
+          />
+          
+          {/* Hexagon with Checkmark */}
+          <g transform="translate(65, 35)">
+            {/* Hexagon */}
+            <path
+              d="M15 -26 L30 0 L15 26 L-15 26 L-30 0 L-15 -26 Z"
+              fill="#10b981"
+            />
+            {/* Checkmark */}
+            <path
+              d="M-8 0 L-2 6 L8 -4"
+              stroke="white"
+              strokeWidth="3"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              fill="none"
+            />
+          </g>
+          
+          {/* Data Points / Pins */}
+          <g>
+            {/* Pin 1 */}
+            <line
+              x1="100"
+              y1="50"
+              x2="110"
+              y2="45"
+              stroke="#9ca3af"
+              strokeWidth="2"
+              strokeLinecap="round"
+            />
+            <circle cx="110" cy="45" r="3" fill="#9ca3af" />
+            
+            {/* Pin 2 */}
+            <line
+              x1="100"
+              y1="70"
+              x2="110"
+              y2="70"
+              stroke="#9ca3af"
+              strokeWidth="2"
+              strokeLinecap="round"
+            />
+            <circle cx="110" cy="70" r="3" fill="#9ca3af" />
+            
+            {/* Pin 3 */}
+            <line
+              x1="100"
+              y1="90"
+              x2="110"
+              y2="95"
+              stroke="#9ca3af"
+              strokeWidth="2"
+              strokeLinecap="round"
+            />
+            <circle cx="110" cy="95" r="3" fill="#9ca3af" />
+          </g>
+        </svg>
+      </div>
+
+      {/* Text */}
+      {showText && (
+        <div className="flex flex-col">
+          <span className={`font-bold text-blue-900 ${currentSize.text}`}>
+            Rice Purity Test
+          </span>
+          {showTagline && (
+            <span className={`text-gray-500 ${currentSize.tagline} -mt-1`}>
+              Mind. Unfiltered. Data.
+            </span>
+          )}
+        </div>
+      )}
+    </div>
+  );
+
+  if (href) {
+    return (
+      <Link href={href} className="hover:opacity-80 transition-opacity">
+        {logoContent}
+      </Link>
+    );
+  }
+
+  return logoContent;
+};

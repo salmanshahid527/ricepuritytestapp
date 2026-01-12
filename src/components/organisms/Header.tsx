@@ -1,6 +1,5 @@
 import React from 'react';
-import Link from 'next/link';
-import { Heading } from '../atoms/Heading';
+import { Logo } from '../atoms/Logo';
 
 interface HeaderProps {
   showProgress?: boolean;
@@ -19,17 +18,7 @@ export const Header: React.FC<HeaderProps> = ({
     <header className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-md">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <Link href="/" className="flex items-center space-x-2 group">
-            <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center shadow-sm group-hover:shadow-md transition-shadow">
-              <span className="text-white font-bold text-lg">R</span>
-            </div>
-            <div>
-              <Heading size="xl" className="hover:text-green-500 transition-colors text-gray-800 font-bold">
-                Rice Purity Test
-              </Heading>
-              <p className="text-xs text-gray-500 -mt-1">Discover Your Score</p>
-            </div>
-          </Link>
+          <Logo size="md" showText={true} showTagline={false} href="/" />
           {showProgress && (
             <div className="flex items-center space-x-4">
               <div className="text-right hidden sm:block">
