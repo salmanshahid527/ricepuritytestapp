@@ -12,10 +12,10 @@ export const Hero: React.FC = () => {
         <Logo size="lg" showText={true} showTagline={true} />
       </div>
       <Heading size="4xl" className="mb-6">
-        Rice Purity Test
+        Rice Purity Test - Take the Official 100 Question Innocence Test
       </Heading>
       <Heading size="xl" className="mb-4 text-green-500">
-        How innocent are you? Take the original 100-question purity test.
+        How innocent are you? Discover your purity score with the original Rice University test.
       </Heading>
       <Text variant="large" color="muted" className="max-w-3xl mx-auto mb-8">
         The Rice Purity Test is a self-graded survey that assesses participants' supposed degree of innocence in worldly matters, generally on a percentage scale with 100% being the most innocent. It includes 100 questions about life experiences.
