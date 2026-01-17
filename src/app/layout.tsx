@@ -1,11 +1,11 @@
 import type { Metadata, Viewport } from 'next';
-import { Lato } from 'next/font/google';
+import { Manrope } from 'next/font/google';
 import './globals.css';
 
-const lato = Lato({ 
+const manrope = Manrope({ 
   subsets: ['latin'],
-  weight: ['300', '400', '700', '900'],
-  style: ['normal', 'italic'],
+  weight: ['300', '400', '500', '600', '700', '800'],
+  variable: '--font-manrope',
 });
 
 export const metadata: Metadata = {
@@ -155,7 +155,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={lato.className}>{children}</body>
+      <body className={manrope.className}>{children}</body>
     </html>
   );
 }
