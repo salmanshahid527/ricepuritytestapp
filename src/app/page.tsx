@@ -15,9 +15,9 @@ export default function HomePage() {
         <Hero />
         
         {/* Info Cards */}
-        <section className="py-16">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            <div className="bg-white border border-gray-200 rounded-xl p-6 hover:border-green-400 hover:shadow-lg transition-all duration-300 animate-fade-in shadow-sm">
+        <section className="py-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
+            <div className="bg-white border border-gray-200 rounded-xl p-4 hover:border-green-400 hover:shadow-lg hover:scale-105 transition-all duration-300 animate-fade-in shadow-sm cursor-pointer">
               <Heading size="xl" className="mb-2 text-green-500">
                 100 Questions
               </Heading>
@@ -25,7 +25,7 @@ export default function HomePage() {
                 Answer honestly about your life experiences
               </Text>
             </div>
-            <div className="bg-white border border-gray-200 rounded-xl p-6 hover:border-green-400 hover:shadow-lg transition-all duration-300 animate-fade-in-delay-1 shadow-sm">
+            <div className="bg-white border border-gray-200 rounded-xl p-4 hover:border-green-400 hover:shadow-lg hover:scale-105 transition-all duration-300 animate-fade-in-delay-1 shadow-sm cursor-pointer">
               <Heading size="xl" className="mb-2 text-green-500">
                 Anonymous
               </Heading>
@@ -33,7 +33,7 @@ export default function HomePage() {
                 Your answers are private and not stored
               </Text>
             </div>
-            <div className="bg-white border border-gray-200 rounded-xl p-6 hover:border-green-400 hover:shadow-lg transition-all duration-300 animate-fade-in-delay-2 shadow-sm">
+            <div className="bg-white border border-gray-200 rounded-xl p-4 hover:border-green-400 hover:shadow-lg hover:scale-105 transition-all duration-300 animate-fade-in-delay-2 shadow-sm cursor-pointer">
               <Heading size="xl" className="mb-2 text-green-500">
                 Share Results
               </Heading>
@@ -45,13 +45,13 @@ export default function HomePage() {
         </section>
 
         {/* How It Works */}
-        <section className="py-16">
+        <section className="py-8">
           <div className="max-w-3xl mx-auto">
-            <Heading size="3xl" className="mb-8 text-center">
+            <Heading size="3xl" className="mb-6 text-center animate-fade-in">
               How It Works
             </Heading>
-            <div className="space-y-6">
-              <div className="bg-white border border-gray-200 rounded-xl p-6 hover:border-green-400 hover:shadow-lg transition-all duration-300 animate-slide-up shadow-sm">
+            <div className="space-y-4">
+              <div className="bg-white border border-gray-200 rounded-xl p-4 hover:border-green-400 hover:shadow-lg hover:scale-[1.02] transition-all duration-300 animate-slide-up shadow-sm cursor-pointer">
                 <Heading size="lg" className="mb-2 text-green-500">
                   Step 1: Answer all 100 questions honestly
                 </Heading>
@@ -59,7 +59,7 @@ export default function HomePage() {
                   Click on any question to mark it. Be honest with yourself!
                 </Text>
               </div>
-              <div className="bg-white border border-gray-200 rounded-xl p-6 hover:border-green-400 hover:shadow-lg transition-all duration-300 animate-slide-up-delay-1 shadow-sm">
+              <div className="bg-white border border-gray-200 rounded-xl p-4 hover:border-green-400 hover:shadow-lg hover:scale-[1.02] transition-all duration-300 animate-slide-up-delay-1 shadow-sm cursor-pointer">
                 <Heading size="lg" className="mb-2 text-green-500">
                   Step 2: Click on each experience you've had
                 </Heading>
@@ -67,7 +67,7 @@ export default function HomePage() {
                   Your progress is automatically saved as you go.
                 </Text>
               </div>
-              <div className="bg-white border border-gray-200 rounded-xl p-6 hover:border-green-400 hover:shadow-lg transition-all duration-300 animate-slide-up-delay-2 shadow-sm">
+              <div className="bg-white border border-gray-200 rounded-xl p-4 hover:border-green-400 hover:shadow-lg hover:scale-[1.02] transition-all duration-300 animate-slide-up-delay-2 shadow-sm cursor-pointer">
                 <Heading size="lg" className="mb-2 text-green-500">
                   Step 3: Get your purity score (0-100)
                 </Heading>
@@ -75,7 +75,7 @@ export default function HomePage() {
                   Your score is calculated based on how many experiences you've had.
                 </Text>
               </div>
-              <div className="bg-white border border-gray-200 rounded-xl p-6 hover:border-green-400 hover:shadow-lg transition-all duration-300 animate-slide-up-delay-3 shadow-sm">
+              <div className="bg-white border border-gray-200 rounded-xl p-4 hover:border-green-400 hover:shadow-lg hover:scale-[1.02] transition-all duration-300 animate-slide-up-delay-3 shadow-sm cursor-pointer">
                 <Heading size="lg" className="mb-2 text-green-500">
                   Step 4: Share your results (optional)
                 </Heading>
@@ -88,18 +88,18 @@ export default function HomePage() {
         </section>
 
         {/* Trust Badges */}
-        <section className="py-12 bg-gray-50">
+        <section className="py-6 bg-gray-50">
           <div className="max-w-4xl mx-auto">
-            <div className="flex flex-wrap justify-center items-center gap-8 text-center">
-              <div className="flex items-center gap-2">
+            <div className="flex flex-wrap justify-center items-center gap-6 text-center">
+              <div className="flex items-center gap-2 animate-pulse hover:animate-none hover:scale-110 transition-transform">
                 <span className="text-green-500 text-2xl">✅</span>
                 <Text variant="body" className="font-semibold">100% Anonymous</Text>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 animate-pulse hover:animate-none hover:scale-110 transition-transform delay-75">
                 <span className="text-green-500 text-2xl">✅</span>
                 <Text variant="body" className="font-semibold">No Sign-Up Required</Text>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 animate-pulse hover:animate-none hover:scale-110 transition-transform delay-150">
                 <span className="text-green-500 text-2xl">✅</span>
                 <Text variant="body" className="font-semibold">Instant Results</Text>
               </div>
@@ -108,27 +108,27 @@ export default function HomePage() {
         </section>
 
         {/* Social Proof */}
-        <section className="py-8">
+        <section className="py-6">
           <div className="max-w-4xl mx-auto text-center">
-            <Text variant="large" className="text-gray-700">
+            <Text variant="large" className="text-gray-700 animate-bounce">
               🔥 <strong>10,000+</strong> people took the test this week
             </Text>
           </div>
         </section>
 
         {/* About Section */}
-        <section id="about" className="py-16 bg-white">
+        <section id="about" className="py-8 bg-white">
           <div className="max-w-4xl mx-auto">
-            <Heading size="3xl" className="mb-8 text-center">
+            <Heading size="3xl" className="mb-6 text-center animate-fade-in">
               About the Rice Purity Test
             </Heading>
-            <div className="space-y-6 text-gray-700">
-              <Text variant="body" className="leading-relaxed">
+            <div className="space-y-4 text-gray-700">
+              <Text variant="body" className="leading-relaxed animate-fade-in-delay-1">
                 The Rice Purity Test has been a tradition at Rice University for decades. Originally created to foster bonding among students, it has become a popular online quiz taken by millions worldwide.
               </Text>
               
-              <div>
-                <Heading size="xl" className="mb-4 text-green-500">
+              <div className="animate-slide-up-delay-2">
+                <Heading size="xl" className="mb-3 text-green-500">
                   Origins and History
                 </Heading>
                 <Text variant="body" className="leading-relaxed">
@@ -136,17 +136,17 @@ export default function HomePage() {
                 </Text>
               </div>
               
-              <div>
-                <Heading size="xl" className="mb-4 text-green-500">
+              <div className="animate-slide-up-delay-3">
+                <Heading size="xl" className="mb-3 text-green-500">
                   How to Interpret Your Score
                 </Heading>
-                <ul className="space-y-3 list-disc list-inside text-gray-700">
-                  <li><strong>100-98:</strong> Extremely Pure - You've had very few experiences</li>
-                  <li><strong>97-94:</strong> Very Pure - You're quite innocent</li>
-                  <li><strong>93-77:</strong> Relatively Pure - Some experiences but still innocent</li>
-                  <li><strong>76-45:</strong> Moderate - Average range of experiences</li>
-                  <li><strong>44-9:</strong> Experienced - You've had many experiences</li>
-                  <li><strong>8-0:</strong> Highly Experienced - You've done most things on the list</li>
+                <ul className="space-y-2 list-disc list-inside text-gray-700">
+                  <li className="hover:text-green-600 transition-colors"><strong>100-98:</strong> Extremely Pure - You've had very few experiences</li>
+                  <li className="hover:text-green-600 transition-colors"><strong>97-94:</strong> Very Pure - You're quite innocent</li>
+                  <li className="hover:text-green-600 transition-colors"><strong>93-77:</strong> Relatively Pure - Some experiences but still innocent</li>
+                  <li className="hover:text-green-600 transition-colors"><strong>76-45:</strong> Moderate - Average range of experiences</li>
+                  <li className="hover:text-green-600 transition-colors"><strong>44-9:</strong> Experienced - You've had many experiences</li>
+                  <li className="hover:text-green-600 transition-colors"><strong>8-0:</strong> Highly Experienced - You've done most things on the list</li>
                 </ul>
               </div>
             </div>
@@ -154,14 +154,14 @@ export default function HomePage() {
         </section>
 
         {/* FAQ Section */}
-        <section id="faq" className="py-16 bg-gray-50">
+        <section id="faq" className="py-8 bg-gray-50">
           <div className="max-w-4xl mx-auto">
-            <Heading size="3xl" className="mb-8 text-center">
+            <Heading size="3xl" className="mb-6 text-center animate-fade-in">
               Frequently Asked Questions
             </Heading>
-            <div className="space-y-8">
-              <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
-                <Heading size="lg" className="mb-3 text-green-500">
+            <div className="space-y-4">
+              <div className="bg-white border border-gray-200 rounded-xl p-4 shadow-sm hover:border-green-400 hover:shadow-lg hover:scale-[1.02] transition-all duration-300 animate-slide-up cursor-pointer">
+                <Heading size="lg" className="mb-2 text-green-500">
                   Is the Rice Purity Test anonymous?
                 </Heading>
                 <Text color="default" className="text-gray-700">
@@ -169,8 +169,8 @@ export default function HomePage() {
                 </Text>
               </div>
               
-              <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
-                <Heading size="lg" className="mb-3 text-green-500">
+              <div className="bg-white border border-gray-200 rounded-xl p-4 shadow-sm hover:border-green-400 hover:shadow-lg hover:scale-[1.02] transition-all duration-300 animate-slide-up-delay-1 cursor-pointer">
+                <Heading size="lg" className="mb-2 text-green-500">
                   How is my score calculated?
                 </Heading>
                 <Text color="default" className="text-gray-700">
@@ -178,8 +178,8 @@ export default function HomePage() {
                 </Text>
               </div>
               
-              <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
-                <Heading size="lg" className="mb-3 text-green-500">
+              <div className="bg-white border border-gray-200 rounded-xl p-4 shadow-sm hover:border-green-400 hover:shadow-lg hover:scale-[1.02] transition-all duration-300 animate-slide-up-delay-2 cursor-pointer">
+                <Heading size="lg" className="mb-2 text-green-500">
                   Can I retake the test?
                 </Heading>
                 <Text color="default" className="text-gray-700">
@@ -187,8 +187,8 @@ export default function HomePage() {
                 </Text>
               </div>
               
-              <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
-                <Heading size="lg" className="mb-3 text-green-500">
+              <div className="bg-white border border-gray-200 rounded-xl p-4 shadow-sm hover:border-green-400 hover:shadow-lg hover:scale-[1.02] transition-all duration-300 animate-slide-up-delay-3 cursor-pointer">
+                <Heading size="lg" className="mb-2 text-green-500">
                   What does my Rice Purity score mean?
                 </Heading>
                 <Text color="default" className="text-gray-700">
@@ -196,8 +196,8 @@ export default function HomePage() {
                 </Text>
               </div>
               
-              <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
-                <Heading size="lg" className="mb-3 text-green-500">
+              <div className="bg-white border border-gray-200 rounded-xl p-4 shadow-sm hover:border-green-400 hover:shadow-lg hover:scale-[1.02] transition-all duration-300 animate-fade-in cursor-pointer">
+                <Heading size="lg" className="mb-2 text-green-500">
                   Is this the official Rice Purity Test?
                 </Heading>
                 <Text color="default" className="text-gray-700">
@@ -205,8 +205,8 @@ export default function HomePage() {
                 </Text>
               </div>
               
-              <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
-                <Heading size="lg" className="mb-3 text-green-500">
+              <div className="bg-white border border-gray-200 rounded-xl p-4 shadow-sm hover:border-green-400 hover:shadow-lg hover:scale-[1.02] transition-all duration-300 animate-fade-in-delay-1 cursor-pointer">
+                <Heading size="lg" className="mb-2 text-green-500">
                   Why should I take the Rice Purity Test?
                 </Heading>
                 <Text color="default" className="text-gray-700">

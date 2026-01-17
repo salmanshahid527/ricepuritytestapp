@@ -18,7 +18,7 @@ export const ScoreCard: React.FC<ScoreCardProps> = ({
   interpretation,
 }) => {
   return (
-    <div className="bg-white border border-gray-200 rounded-2xl p-8 md:p-12 animate-scale-in shadow-lg">
+    <div className="bg-white border border-gray-200 rounded-2xl p-6 md:p-8 animate-scale-in shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300">
       <ScoreDisplay
         score={score}
         displayScore={displayScore}
