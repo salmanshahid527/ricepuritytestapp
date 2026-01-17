@@ -101,4 +101,4 @@ Score = 100 - (number of checked boxes)
 
 ## License
 
-© 2025 ricepuritytestapp.com | The Rice Purity Test originated at Rice University
+© 2026 ricepuritytestapp.com | The Rice Purity Test originated at Rice University

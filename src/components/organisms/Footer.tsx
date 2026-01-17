@@ -41,7 +41,7 @@ export const Footer: React.FC = () => {
             </Link>
           </nav>
           <Text variant="small" color="muted" className="text-gray-500 text-center">
-            © 2025 ricepuritytestapp.com | The Rice Purity Test originated at Rice University
+            © 2026 ricepuritytestapp.com | The Rice Purity Test originated at Rice University
           </Text>
         </div>
       </div>
