@@ -24,7 +24,7 @@ export default function PrivacyPage() {
           { label: 'Home', href: '/' },
           { label: 'Privacy Policy' }
         ]} />
-        <Heading size="3xl" className="mb-6">
+        <Heading as="h1" size="3xl" className="mb-6">
           Privacy Policy
         </Heading>
         <Text variant="small" color="muted" className="mb-8">

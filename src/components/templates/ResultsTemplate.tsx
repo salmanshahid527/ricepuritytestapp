@@ -29,6 +29,7 @@ export const ResultsTemplate: React.FC<ResultsTemplateProps> = ({
       <Header />
       <main className="container mx-auto px-4 py-12">
         <div className="max-w-4xl mx-auto space-y-8">
+          <h1 className="sr-only">Rice Purity Test Results</h1>
           <ScoreCard
             score={score}
             displayScore={displayScore}

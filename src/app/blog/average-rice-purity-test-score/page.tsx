@@ -28,8 +28,8 @@ export default function AverageScorePage() {
           { label: 'Blog', href: '/blog' },
           { label: 'Average Score Statistics' }
         ]} />
-        <Heading size="3xl" className="mb-6">
-          Average Rice Purity Test Score: Statistics & Trends
+        <Heading as="h1" size="3xl" className="mb-6">
+          Rice Purity Test Statistics & Average Scores
         </Heading>
         <div className="text-sm text-gray-500 mb-8">
           Published: January 13, 2026 • 5 min read

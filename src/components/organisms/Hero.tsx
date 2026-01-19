@@ -11,10 +11,10 @@ export const Hero: React.FC = () => {
       <div className="flex justify-center mb-4 hover:scale-110 transition-transform duration-300">
         <Logo size="lg" showText={true} showTagline={true} />
       </div>
-      <Heading size="4xl" className="mb-4 animate-slide-up">
+      <Heading as="h1" size="4xl" className="mb-4 animate-slide-up">
         Rice Purity Test
       </Heading>
-      <Heading size="xl" className="mb-3 text-green-500 animate-slide-up-delay-1">
+      <Heading as="h2" size="xl" className="mb-3 text-green-500 animate-slide-up-delay-1">
         How Innocent Are You? Take the Official 100-Question Test
       </Heading>
       <Text variant="large" color="muted" className="max-w-3xl mx-auto mb-6 animate-fade-in-delay-2">

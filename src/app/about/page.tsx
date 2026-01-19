@@ -26,8 +26,8 @@ export default function AboutPage() {
           { label: 'Home', href: '/' },
           { label: 'About' }
         ]} />
-        <Heading size="3xl" className="mb-6">
-          About the Rice Purity Test
+        <Heading as="h1" size="3xl" className="mb-6">
+          Learn About the Rice Purity Test
         </Heading>
 
         <div className="space-y-8 text-gray-700">

@@ -10,8 +10,8 @@ const manrope = Manrope({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.ricepuritytestapp.com'),
-  title: 'Rice Purity Test - Official 100 Question Innocence Test (2026)',
-  description: 'Take the official Rice Purity Test - 100 questions to measure your innocence and life experiences. Free, anonymous, instant results. Over 10,000+ students take this test daily!',
+  title: 'Rice Purity Test – Free Online 100 Questions Quiz',
+  description: 'Take the free Rice Purity Test online. Answer 100 fun questions, get your purity score instantly, and compare results with friends.',
   keywords: 'rice purity test, purity test, innocence test, rice university test, 100 question test, purity score',
   authors: [{ name: 'Rice Purity Test App' }],
   creator: 'Rice Purity Test App',

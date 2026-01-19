@@ -63,8 +63,8 @@ export default function BlogPage() {
           { label: 'Home', href: '/' },
           { label: 'Blog' }
         ]} />
-        <Heading size="3xl" className="mb-6">
-          Rice Purity Test Blog
+        <Heading as="h1" size="3xl" className="mb-6">
+          Rice Purity Test Guides & Articles
         </Heading>
         <Text variant="large" className="mb-8 text-gray-700">
           Learn everything about the Rice Purity Test - guides, tips, score meanings, history, and insights from millions of test takers.

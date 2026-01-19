@@ -27,8 +27,8 @@ export default function MeaningPage() {
           { label: 'Home', href: '/' },
           { label: 'Rice Purity Test Meaning' }
         ]} />
-        <Heading size="3xl" className="mb-6">
-          Rice Purity Test Meaning: What Does It Mean?
+        <Heading as="h1" size="3xl" className="mb-6">
+          What the Rice Purity Test Means
         </Heading>
 
         <article className="space-y-6 text-gray-700">
@@ -37,7 +37,7 @@ export default function MeaningPage() {
           </Text>
 
           <section>
-            <Heading size="xl" className="mb-4 text-green-500">
+            <Heading as="h2" size="xl" className="mb-4 text-green-500">
               What "Purity" Means
             </Heading>
             <Text variant="body" className="leading-relaxed mb-4">

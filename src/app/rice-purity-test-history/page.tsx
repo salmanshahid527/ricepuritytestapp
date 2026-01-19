@@ -27,8 +27,8 @@ export default function HistoryPage() {
           { label: 'Home', href: '/' },
           { label: 'Rice Purity Test History' }
         ]} />
-        <Heading size="3xl" className="mb-6">
-          Rice Purity Test History: From Campus to Internet
+        <Heading as="h1" size="3xl" className="mb-6">
+          The History of the Rice Purity Test
         </Heading>
 
         <article className="space-y-6 text-gray-700">

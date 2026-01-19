@@ -24,7 +24,7 @@ export default function TermsPage() {
           { label: 'Home', href: '/' },
           { label: 'Terms of Service' }
         ]} />
-        <Heading size="3xl" className="mb-6">
+        <Heading as="h1" size="3xl" className="mb-6">
           Terms of Service
         </Heading>
         <Text variant="small" color="muted" className="mb-8">

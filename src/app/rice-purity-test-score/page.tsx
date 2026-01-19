@@ -27,8 +27,8 @@ export default function ScorePage() {
           { label: 'Home', href: '/' },
           { label: 'Rice Purity Test Score' }
         ]} />
-        <Heading size="3xl" className="mb-6">
-          Understanding Your Rice Purity Test Score
+        <Heading as="h1" size="3xl" className="mb-6">
+          Rice Purity Test Score Guide
         </Heading>
 
         <article className="space-y-6 text-gray-700">

@@ -36,6 +36,7 @@ export const TestTemplate: React.FC<TestTemplateProps> = ({
       <Header showProgress progress={progress} current={answeredCount} total={totalQuestions} />
       <main className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
+          <h1 className="sr-only">Take the Rice Purity Test Online</h1>
           <div className="flex items-center justify-between mb-6">
             <ProgressBar
               progress={progress}

@@ -24,7 +24,7 @@ export default function ContactPage() {
           { label: 'Home', href: '/' },
           { label: 'Contact' }
         ]} />
-        <Heading size="3xl" className="mb-6">
+        <Heading as="h1" size="3xl" className="mb-6">
           Contact Us
         </Heading>
 

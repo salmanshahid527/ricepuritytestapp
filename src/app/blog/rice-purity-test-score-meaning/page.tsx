@@ -28,8 +28,8 @@ export default function ScoreMeaningPage() {
           { label: 'Blog', href: '/blog' },
           { label: 'Score Meaning' }
         ]} />
-        <Heading size="3xl" className="mb-6">
-          Rice Purity Test Score Meaning: Understanding Your Results
+        <Heading as="h1" size="3xl" className="mb-6">
+          Understanding Your Rice Purity Test Results
         </Heading>
         <div className="text-sm text-gray-500 mb-8">
           Published: January 14, 2026 • 6 min read

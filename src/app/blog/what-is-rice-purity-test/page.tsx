@@ -28,8 +28,8 @@ export default function WhatIsRicePurityTestPage() {
           { label: 'Blog', href: '/blog' },
           { label: 'What is the Rice Purity Test?' }
         ]} />
-        <Heading size="3xl" className="mb-6">
-          What is the Rice Purity Test? Complete Guide for 2026
+        <Heading as="h1" size="3xl" className="mb-6">
+          Complete Guide to the Rice Purity Test (2026)
         </Heading>
         <div className="text-sm text-gray-500 mb-8">
           Published: January 15, 2026 • 8 min read
