@@ -3,6 +3,7 @@ import { Header } from '@/components/organisms/Header';
 import { Footer } from '@/components/organisms/Footer';
 import { Heading } from '@/components/atoms/Heading';
 import { Text } from '@/components/atoms/Text';
+import { Breadcrumbs } from '@/components/molecules/Breadcrumbs';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -18,8 +19,12 @@ export default function PrivacyPage() {
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      <main className="container mx-auto px-4 py-16 max-w-4xl">
-        <Heading size="3xl" className="mb-8">
+      <main className="container mx-auto px-4 py-8 max-w-4xl">
+        <Breadcrumbs items={[
+          { label: 'Home', href: '/' },
+          { label: 'Privacy Policy' }
+        ]} />
+        <Heading size="3xl" className="mb-6">
           Privacy Policy
         </Heading>
         <Text variant="small" color="muted" className="mb-8">

@@ -40,9 +40,16 @@ export const Footer: React.FC = () => {
               Contact
             </Link>
           </nav>
-          <Text variant="small" color="muted" className="text-gray-500 text-center">
-            © 2026 ricepuritytestapp.com | The Rice Purity Test originated at Rice University
-          </Text>
+          <div className="text-center space-y-2">
+            <Text variant="small" color="muted" className="text-gray-500">
+              © 2026 ricepuritytestapp.com | The Rice Purity Test originated at Rice University
+            </Text>
+            <div className="flex flex-wrap justify-center items-center gap-4 text-xs text-gray-500">
+              <span>Email: <a href="mailto:contact@ricepuritytestapp.com" className="text-green-500 hover:underline">contact@ricepuritytestapp.com</a></span>
+              <span>•</span>
+              <span>For press inquiries: <a href="mailto:press@ricepuritytestapp.com" className="text-green-500 hover:underline">press@ricepuritytestapp.com</a></span>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

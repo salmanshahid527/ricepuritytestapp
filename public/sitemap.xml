@@ -6,43 +6,91 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.ricepuritytestapp.com/</loc>
-    <lastmod>2026-01-16</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ricepuritytestapp.com/test</loc>
-    <lastmod>2026-01-16</lastmod>
+    <lastmod>2026-01-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.ricepuritytestapp.com/results</loc>
-    <lastmod>2026-01-16</lastmod>
+    <lastmod>2026-01-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.ricepuritytestapp.com/about</loc>
-    <lastmod>2026-01-16</lastmod>
+    <lastmod>2026-01-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.ricepuritytestapp.com/rice-purity-test-score</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.ricepuritytestapp.com/rice-purity-test-questions</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.ricepuritytestapp.com/rice-purity-test-meaning</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.ricepuritytestapp.com/rice-purity-test-history</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.ricepuritytestapp.com/blog</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.ricepuritytestapp.com/blog/what-is-rice-purity-test</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.ricepuritytestapp.com/blog/rice-purity-test-score-meaning</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.ricepuritytestapp.com/blog/average-rice-purity-test-score</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.ricepuritytestapp.com/privacy</loc>
-    <lastmod>2026-01-16</lastmod>
+    <lastmod>2026-01-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://www.ricepuritytestapp.com/terms</loc>
-    <lastmod>2026-01-16</lastmod>
+    <lastmod>2026-01-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://www.ricepuritytestapp.com/contact</loc>
-    <lastmod>2026-01-16</lastmod>
+    <lastmod>2026-01-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>

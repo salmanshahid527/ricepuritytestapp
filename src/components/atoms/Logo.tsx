@@ -33,7 +33,11 @@ export const Logo: React.FC<LogoProps> = ({
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           className="w-full h-full"
+          role="img"
+          aria-label="Rice Purity Test Logo"
         >
+          <title>Rice Purity Test - Official Innocence Test Logo</title>
+          <desc>Logo featuring a head silhouette with a green hexagon checkmark and data points, representing the Rice Purity Test</desc>
           {/* Head Silhouette */}
           <path
             d="M30 60 C30 40, 35 25, 50 20 C65 15, 80 18, 90 30 C100 42, 105 55, 100 70 C95 85, 85 95, 70 100 C55 105, 40 100, 30 85 C20 70, 20 55, 30 60 Z"
