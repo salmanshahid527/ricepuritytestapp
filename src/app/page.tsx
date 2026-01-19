@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { Hero } from '@/components/organisms/Hero';
 import { Header } from '@/components/organisms/Header';
 import { Footer } from '@/components/organisms/Footer';
