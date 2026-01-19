@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import { Text } from '../atoms/Text';
 
 interface BreadcrumbItem {
   label: string;
@@ -36,9 +35,9 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items }) => {
                 <span itemProp="name">{item.label}</span>
               </Link>
             ) : (
-              <Text variant="small" color="muted" itemProp="name">
+              <span itemProp="name" className="text-sm text-gray-500">
                 {item.label}
-              </Text>
+              </span>
             )}
             <meta itemProp="position" content={(index + 1).toString()} />
             {index < items.length - 1 && (
