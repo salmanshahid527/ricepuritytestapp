@@ -45,7 +45,7 @@ export const QuestionItem: React.FC<QuestionItemProps> = ({
     >
       <div className="flex items-start gap-3">
         <div className="flex-shrink-0 flex items-center gap-3">
-          <div className={`w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold transition-all duration-300 ${
+          <div className={`w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold transition-all duration-300 flex-shrink-0 ${
             checked 
               ? 'bg-green-500 text-white scale-110 animate-bounce' 
               : 'bg-gray-200 text-gray-600 hover:scale-110'
@@ -58,10 +58,10 @@ export const QuestionItem: React.FC<QuestionItemProps> = ({
             onChange={(e) => onChange(e.target.checked)}
             onClick={(e) => e.stopPropagation()}
             aria-label={`Question ${id}: ${text}`}
-            className="w-5 h-5 rounded border-gray-300 bg-white text-green-500 focus:ring-2 focus:ring-green-500 focus:ring-offset-2 cursor-pointer transition-all duration-200 hover:scale-110"
+            className="w-5 h-5 rounded border-gray-300 bg-white text-green-500 focus:ring-2 focus:ring-green-500 focus:ring-offset-2 cursor-pointer transition-all duration-200 hover:scale-110 flex-shrink-0"
           />
         </div>
-        <Text className={`flex-1 transition-colors duration-300 ${checked ? 'text-gray-800 font-medium' : 'text-gray-700'}`}>{text}</Text>
+        <Text className={`flex-1 min-w-0 transition-colors duration-300 break-words ${checked ? 'text-gray-800 font-medium' : 'text-gray-700'}`}>{text}</Text>
       </div>
     </div>
   );
