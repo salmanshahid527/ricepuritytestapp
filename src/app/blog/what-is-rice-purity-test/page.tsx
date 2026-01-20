@@ -9,8 +9,8 @@ import { Button } from '@/components/atoms/Button';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'What is the Rice Purity Test? Complete Guide for 2026',
-  description: 'Everything you need to know about the Rice Purity Test - its origins at Rice University, how it works, what questions it asks, and how to interpret your score.',
+  title: 'What is the Rice Purity Test? Complete Guide for 2026 | Rice Purity Test Guide & Tips',
+  description: 'Read this guide on what the Rice Purity Test is — learn key tips, explanations, and actionable insights about the Rice Purity Test and scores.',
   keywords: 'what is rice purity test, rice purity test guide, rice purity test explained',
   robots: {
     index: true,

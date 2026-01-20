@@ -10,8 +10,8 @@ const manrope = Manrope({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.ricepuritytestapp.com'),
-  title: 'Rice Purity Test – Free Online 100 Questions Quiz',
-  description: 'Take the free Rice Purity Test online. Answer 100 fun questions, get your purity score instantly, and compare results with friends.',
+  title: 'Rice Purity Test Guides & Articles | RicePurityTestApp',
+  description: 'Learn everything about the Rice Purity Test: guides, tips, score meanings, history, and insights from millions of test takers. Read now!',
   keywords: 'rice purity test, purity test, innocence test, rice university test, 100 question test, purity score',
   authors: [{ name: 'Rice Purity Test App' }],
   creator: 'Rice Purity Test App',
@@ -33,10 +33,10 @@ export const metadata: Metadata = {
   },
   manifest: '/site.webmanifest',
   openGraph: {
-    title: 'Rice Purity Test - How Innocent Are You?',
-    description: 'Take the original 100-question Rice Purity Test. Anonymous and free!',
+    title: 'Rice Purity Test Guides & Articles | RicePurityTestApp',
+    description: 'Learn everything about the Rice Purity Test: guides, tips, score meanings, history, and insights from millions of test takers. Read now!',
     url: 'https://www.ricepuritytestapp.com',
-    siteName: 'Rice Purity Test',
+    siteName: 'RicePurityTestApp',
     type: 'website',
     locale: 'en_US',
     images: [
@@ -44,14 +44,14 @@ export const metadata: Metadata = {
         url: 'https://www.ricepuritytestapp.com/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Rice Purity Test - How Innocent Are You?',
+        alt: 'Rice Purity Test Guides & Articles | RicePurityTestApp',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Rice Purity Test - How Innocent Are You?',
-    description: 'Take the original 100-question Rice Purity Test. Anonymous and free!',
+    title: 'Rice Purity Test Guides & Articles | RicePurityTestApp',
+    description: 'Learn everything about the Rice Purity Test: guides, tips, score meanings, history, and insights from millions of test takers. Read now!',
     images: ['https://www.ricepuritytestapp.com/twitter-image.jpg'],
   },
   alternates: {

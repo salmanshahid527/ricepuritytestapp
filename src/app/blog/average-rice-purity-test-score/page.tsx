@@ -9,8 +9,8 @@ import { Button } from '@/components/atoms/Button';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Average Rice Purity Test Score: Statistics & Trends',
-  description: 'Discover average Rice Purity Test scores by age, gender, and demographics. See how your score compares to others.',
+  title: 'Average Rice Purity Test Score: Statistics & Trends | Rice Purity Test Guide & Tips',
+  description: 'Read this guide on average Rice Purity Test scores — learn key tips, explanations, and actionable insights about the Rice Purity Test and scores.',
   keywords: 'average rice purity test score, rice purity test statistics, rice purity score by age',
   robots: {
     index: true,

@@ -9,8 +9,8 @@ import { Button } from '@/components/atoms/Button';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'The History of the Rice Purity Test: From Campus to Internet',
-  description: 'Explore the fascinating history of the Rice Purity Test, from its origins at Rice University to becoming a viral internet phenomenon.',
+  title: 'The History of the Rice Purity Test: From Campus to Internet | Rice Purity Test Guide & Tips',
+  description: 'Read this guide on the history of the Rice Purity Test — learn key tips, explanations, and actionable insights about the Rice Purity Test and scores.',
   keywords: 'rice purity test history, rice purity test origins, rice university purity test history',
   robots: {
     index: true,

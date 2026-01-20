@@ -9,8 +9,8 @@ import { Button } from '@/components/atoms/Button';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Rice Purity Test Score Meaning: Understanding Your Results',
-  description: 'Learn how to interpret your Rice Purity Test score. Understand what different score ranges mean and how to make sense of your results.',
+  title: 'Rice Purity Test Score Meaning: Understanding Your Results | Rice Purity Test Guide & Tips',
+  description: 'Read this guide on Rice Purity Test score meaning — learn key tips, explanations, and actionable insights about the Rice Purity Test and scores.',
   keywords: 'rice purity test score meaning, rice purity score interpretation, what does my rice purity score mean',
   robots: {
     index: true,

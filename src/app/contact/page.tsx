@@ -7,8 +7,8 @@ import { Breadcrumbs } from '@/components/molecules/Breadcrumbs';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Contact Us | Rice Purity Test',
-  description: 'Contact the Rice Purity Test team with questions, feedback, or support requests.',
+  title: 'Contact Us | RicePurityTestApp Support & Feedback',
+  description: 'Get in touch with RicePurityTestApp — contact us for support, feedback, or questions about the Rice Purity Test quiz and blog content.',
   robots: {
     index: true,
     follow: true,

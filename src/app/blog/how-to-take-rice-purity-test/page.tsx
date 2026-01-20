@@ -9,8 +9,8 @@ import { Button } from '@/components/atoms/Button';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'How to Take the Rice Purity Test: Tips for Accurate Results',
-  description: 'Get the most accurate Rice Purity Test results with these expert tips on answering questions honestly and understanding your score.',
+  title: 'How to Take the Rice Purity Test: Tips for Accurate Results | Rice Purity Test Guide & Tips',
+  description: 'Read this guide on how to take the Rice Purity Test — learn key tips, explanations, and actionable insights about the Rice Purity Test and scores.',
   keywords: 'how to take rice purity test, rice purity test tips, rice purity test guide',
   robots: {
     index: true,

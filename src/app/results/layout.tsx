@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Rice Purity Test Results – Your Score & Interpretation',
-  description: 'View your Rice Purity Test results and score interpretation. Understand what your purity score means and share with friends.',
+  title: 'Rice Purity Test Results – Your Score & What It Means',
+  description: 'See your Rice Purity Test score explained — understand what your result means and compare with average scores. Fun, fast, and instant!',
   robots: {
     index: true,
     follow: true,

@@ -9,8 +9,8 @@ import { Button } from '@/components/atoms/Button';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'About the Rice Purity Test | History & Origins',
-  description: 'Learn about the history and origins of the Rice Purity Test, a tradition at Rice University.',
+  title: 'About RicePurityTestApp – Mission, Team & What We Do',
+  description: 'Learn about RicePurityTestApp — our mission to make the Rice Purity Test fun, informative, and easy to use. Discover why millions take the quiz!',
   robots: {
     index: true,
     follow: true,

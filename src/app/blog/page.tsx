@@ -8,8 +8,8 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Rice Purity Test Blog | Guides, Tips & Insights',
-  description: 'Learn everything about the Rice Purity Test - guides, tips, score meanings, history, and more.',
+  title: 'Rice Purity Test Guides & Articles | Tips, Meaning & Insights',
+  description: 'Explore Rice Purity Test guides and articles — learn tips, score meanings, history, and insights from millions of people who took the test.',
   robots: {
     index: true,
     follow: true,
