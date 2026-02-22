@@ -98,6 +98,11 @@ Score = 100 - (number of checked boxes)
 - **Mobile First**: Responsive design starting from mobile breakpoints
 - **Accessibility**: Focus states, keyboard navigation, ARIA labels
 
+## Environment Variables
+
+| Variable | Description |
+|----------|-------------|
+| `NEXT_PUBLIC_GA_MEASUREMENT_ID` | Google Analytics 4 Measurement ID (e.g. `G-XXXXXXXXXX`). Optional; when set, page views and client-side route changes are tracked. |
 
 ## License
 
