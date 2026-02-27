@@ -9,7 +9,7 @@ interface HeadingProps {
 }
 
 export const Heading: React.FC<HeadingProps> = ({
-  as: Component = 'h1',
+  as: Component = 'h2',
   size = 'lg',
   color = 'default',
   className = '',
