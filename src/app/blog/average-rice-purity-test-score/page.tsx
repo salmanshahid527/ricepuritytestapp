@@ -9,9 +9,9 @@ import { Button } from '@/components/atoms/Button';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Average Rice Purity Test Score: Statistics & Trends | Rice Purity Test Guide & Tips',
-  description: 'Read this guide on average Rice Purity Test scores — learn key tips, explanations, and actionable insights about the Rice Purity Test and scores.',
-  keywords: 'average rice purity test score, rice purity test statistics, rice purity score by age',
+  title: 'Average Rice Purity Test Score (2026): Stats & Trends',
+  description: 'See the average Rice Purity Test score, score distribution, and trend insights to compare your result with common ranges.',
+  keywords: 'average rice purity test score, average rice purity test, rice purity test average, rice purity test average score, rice purity test average score by age',
   robots: {
     index: true,
     follow: true,
@@ -29,7 +29,7 @@ export default function AverageScorePage() {
           { label: 'Average Score Statistics' }
         ]} />
         <Heading as="h1" size="3xl" className="mb-6">
-          Rice Purity Test Statistics & Average Scores
+          Average Rice Purity Test Score: Statistics and Trends
         </Heading>
         <div className="text-sm text-gray-500 mb-8">
           Published: January 13, 2026 • 5 min read
@@ -75,7 +75,7 @@ export default function AverageScorePage() {
 
           <section>
             <Heading size="xl" className="mb-4 text-green-500">
-              Scores by Age Group
+              Rice Purity Test Average Score by Age
             </Heading>
             <Text variant="body" className="leading-relaxed mb-4">
               Age is one of the strongest predictors of Rice Purity Test scores:
@@ -128,6 +128,14 @@ export default function AverageScorePage() {
             </Heading>
             <Text variant="body" className="mb-6 text-gray-700">
               Take the Rice Purity Test to see how your score compares to these averages.
+            </Text>
+            <Text variant="body" className="mb-4 text-gray-700">
+              Want a deeper age breakdown? Read our
+              {' '}
+              <Link href="/rice-purity-test-average-score-by-age" className="text-green-600 hover:text-green-700 font-semibold underline">
+                Rice Purity Test average score by age guide
+              </Link>
+              .
             </Text>
             <Link href="/test">
               <Button size="lg">Take the Test Now</Button>

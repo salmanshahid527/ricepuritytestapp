@@ -9,9 +9,9 @@ import { Button } from '@/components/atoms/Button';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Rice Purity Test Score | Understanding Your Results',
-  description: 'Learn how to understand and interpret your Rice Purity Test score. Complete guide to score ranges, meanings, and what your number represents.',
-  keywords: 'rice purity test score, rice purity score meaning, rice purity test results',
+  title: 'Rice Purity Test Score: Meaning, Ranges & Calculator',
+  description: 'Check what your Rice Purity Test score means with clear 0-100 score ranges, interpretation tips, and quick examples.',
+  keywords: 'rice purity test score, rice purity test scores, rice purity score meaning, rice purity test results',
   robots: {
     index: true,
     follow: true,
@@ -28,7 +28,7 @@ export default function ScorePage() {
           { label: 'Rice Purity Test Score' }
         ]} />
         <Heading as="h1" size="3xl" className="mb-6">
-          Rice Purity Test Score Guide
+          Rice Purity Test Score: What Your Score Means
         </Heading>
 
         <article className="space-y-6 text-gray-700">
@@ -53,7 +53,7 @@ export default function ScorePage() {
 
           <section>
             <Heading size="xl" className="mb-4 text-green-500">
-              Score Range Guide
+              Rice Purity Test Scores and Score Meaning
             </Heading>
             <div className="space-y-4">
               <div className="border-l-4 border-green-500 pl-4">

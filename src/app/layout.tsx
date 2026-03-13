@@ -14,8 +14,8 @@ const manrope = Manrope({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.ricepuritytestapp.com'),
-  title: 'Rice Purity Test Guides & Articles | RicePurityTestApp',
-  description: 'Learn everything about the Rice Purity Test: guides, tips, score meanings, history, and insights from millions of test takers. Read now!',
+  title: 'Rice Purity Test - Free 100 Questions, Instant Score',
+  description: 'Take the free Rice Purity Test online, get your score instantly, and explore score meaning plus average score ranges by age.',
   keywords: 'rice purity test, purity test, innocence test, rice university test, 100 question test, purity score',
   authors: [{ name: 'Rice Purity Test App' }],
   creator: 'Rice Purity Test App',
@@ -37,8 +37,8 @@ export const metadata: Metadata = {
   },
   manifest: '/site.webmanifest',
   openGraph: {
-    title: 'Rice Purity Test Guides & Articles | RicePurityTestApp',
-    description: 'Learn everything about the Rice Purity Test: guides, tips, score meanings, history, and insights from millions of test takers. Read now!',
+    title: 'Rice Purity Test - Free 100 Questions, Instant Score',
+    description: 'Take the free Rice Purity Test online, get your score instantly, and explore score meaning plus average score ranges by age.',
     url: 'https://www.ricepuritytestapp.com',
     siteName: 'RicePurityTestApp',
     type: 'website',
@@ -48,14 +48,14 @@ export const metadata: Metadata = {
         url: 'https://www.ricepuritytestapp.com/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Rice Purity Test Guides & Articles | RicePurityTestApp',
+        alt: 'Rice Purity Test - Free 100 Questions, Instant Score',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Rice Purity Test Guides & Articles | RicePurityTestApp',
-    description: 'Learn everything about the Rice Purity Test: guides, tips, score meanings, history, and insights from millions of test takers. Read now!',
+    title: 'Rice Purity Test - Free 100 Questions, Instant Score',
+    description: 'Take the free Rice Purity Test online, get your score instantly, and explore score meaning plus average score ranges by age.',
     images: ['https://www.ricepuritytestapp.com/twitter-image.jpg'],
   },
   alternates: {

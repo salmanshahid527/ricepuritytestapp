@@ -163,6 +163,14 @@ export default function HomePage() {
                   Complete guide on how to interpret your Rice Purity Test score
                 </Text>
               </Link>
+              <Link href="/rice-purity-test-average-score-by-age" className="bg-white border border-gray-200 rounded-xl p-6 hover:border-green-400 hover:shadow-lg hover:scale-105 transition-all duration-300 animate-slide-up-delay-1">
+                <Heading size="lg" className="mb-2 text-green-500">
+                  Average Score by Age
+                </Heading>
+                <Text color="default" className="text-gray-700">
+                  See Rice Purity Test average score ranges by age group and compare your result
+                </Text>
+              </Link>
               <Link href="/rice-purity-test-questions" className="bg-white border border-gray-200 rounded-xl p-6 hover:border-green-400 hover:shadow-lg hover:scale-105 transition-all duration-300 animate-slide-up-delay-2">
                 <Heading size="lg" className="mb-2 text-green-500">
                   All 100 Questions
