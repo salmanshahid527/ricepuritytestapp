@@ -6,21 +6,35 @@ import { Text } from '@/components/atoms/Text';
 import { Breadcrumbs } from '@/components/molecules/Breadcrumbs';
 import Link from 'next/link';
 import { Button } from '@/components/atoms/Button';
+import { ArticleSchema } from '@/components/ArticleSchema';
 import type { Metadata } from 'next';
+
+const BASE_URL = 'https://www.ricepuritytestapp.com';
 
 export const metadata: Metadata = {
   title: 'Rice Purity Test Score Meaning: 0-100 Explained',
   description: 'Understand Rice Purity Test score meaning for every range from 0 to 100, with simple explanations for low, average, and high scores.',
   keywords: 'rice purity test score meaning, rice purity test score, rice purity test scores, rice purity score interpretation, what does my rice purity score mean',
-  robots: {
-    index: true,
-    follow: true,
+  alternates: { canonical: `${BASE_URL}/blog/rice-purity-test-score-meaning` },
+  openGraph: {
+    title: 'Rice Purity Test Score Meaning: 0-100 Explained',
+    description: 'Learn what your Rice Purity Test score means with clear explanations for every range from 0 to 100.',
+    url: `${BASE_URL}/blog/rice-purity-test-score-meaning`,
+    type: 'article',
   },
+  twitter: { card: 'summary_large_image', title: 'Rice Purity Test Score Meaning: 0-100 Explained', description: 'Learn what your score means.' },
+  robots: { index: true, follow: true },
 };
 
 export default function ScoreMeaningPage() {
   return (
     <div className="min-h-screen bg-white">
+      <ArticleSchema
+        headline="Rice Purity Test Score Meaning: Understanding Your Results"
+        datePublished="2026-01-14"
+        url={`${BASE_URL}/blog/rice-purity-test-score-meaning`}
+        description="Learn what your Rice Purity Test score means with clear explanations for every range from 0 to 100."
+      />
       <Header />
       <main className="container mx-auto px-4 py-8 max-w-4xl">
         <Breadcrumbs items={[

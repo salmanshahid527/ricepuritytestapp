@@ -16,6 +16,9 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  alternates: {
+    canonical: 'https://www.ricepuritytestapp.com/rice-purity-test-history',
+  },
 };
 
 export default function HistoryBlogPage() {

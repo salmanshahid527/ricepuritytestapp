@@ -7,12 +7,23 @@ import { Breadcrumbs } from '@/components/molecules/Breadcrumbs';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
+const BASE_URL = 'https://www.ricepuritytestapp.com';
+
 export const metadata: Metadata = {
   title: 'Rice Purity Test Guides & Articles | Tips, Meaning & Insights',
   description: 'Explore Rice Purity Test guides and articles — learn tips, score meanings, history, and insights from millions of people who took the test.',
-  robots: {
-    index: true,
-    follow: true,
+  robots: { index: true, follow: true },
+  alternates: { canonical: `${BASE_URL}/blog` },
+  openGraph: {
+    title: 'Rice Purity Test Guides & Articles | Tips, Meaning & Insights',
+    description: 'Explore Rice Purity Test guides and articles — tips, score meanings, history, and insights.',
+    url: `${BASE_URL}/blog`,
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Rice Purity Test Guides & Articles | Tips, Meaning & Insights',
+    description: 'Rice Purity Test guides and articles — tips, score meanings, history.',
   },
 };
 
@@ -64,7 +75,7 @@ export default function BlogPage() {
           { label: 'Blog' }
         ]} />
         <Heading as="h1" size="3xl" className="mb-6">
-          Rice Purity Test Guides & Articles | RicePurityTestApp
+          Rice Purity Test Guides & Articles
         </Heading>
         <Text variant="large" className="mb-8 text-gray-700">
           Learn everything about the Rice Purity Test - guides, tips, score meanings, history, and insights from millions of test takers.

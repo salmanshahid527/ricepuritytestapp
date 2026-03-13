@@ -6,21 +6,35 @@ import { Text } from '@/components/atoms/Text';
 import { Breadcrumbs } from '@/components/molecules/Breadcrumbs';
 import Link from 'next/link';
 import { Button } from '@/components/atoms/Button';
+import { ArticleSchema } from '@/components/ArticleSchema';
 import type { Metadata } from 'next';
+
+const BASE_URL = 'https://www.ricepuritytestapp.com';
 
 export const metadata: Metadata = {
   title: 'How to Take the Rice Purity Test: Tips for Accurate Results | Rice Purity Test Guide & Tips',
   description: 'Read this guide on how to take the Rice Purity Test — learn key tips, explanations, and actionable insights about the Rice Purity Test and scores.',
   keywords: 'how to take rice purity test, rice purity test tips, rice purity test guide',
-  robots: {
-    index: true,
-    follow: true,
+  alternates: { canonical: `${BASE_URL}/blog/how-to-take-rice-purity-test` },
+  openGraph: {
+    title: 'How to Take the Rice Purity Test: Tips for Accurate Results',
+    description: 'Expert tips for getting the most accurate Rice Purity Test results. Step-by-step guide.',
+    url: `${BASE_URL}/blog/how-to-take-rice-purity-test`,
+    type: 'article',
   },
+  twitter: { card: 'summary_large_image', title: 'How to Take the Rice Purity Test', description: 'Expert tips for accurate results.' },
+  robots: { index: true, follow: true },
 };
 
 export default function HowToTakeTestPage() {
   return (
     <div className="min-h-screen bg-white">
+      <ArticleSchema
+        headline="How to Take the Rice Purity Test: Tips for Accurate Results"
+        datePublished="2026-01-11"
+        url={`${BASE_URL}/blog/how-to-take-rice-purity-test`}
+        description="Expert tips for getting the most accurate Rice Purity Test results."
+      />
       <Header />
       <main className="container mx-auto px-4 py-8 max-w-4xl">
         <Breadcrumbs items={[

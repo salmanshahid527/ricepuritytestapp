@@ -6,21 +6,35 @@ import { Text } from '@/components/atoms/Text';
 import { Breadcrumbs } from '@/components/molecules/Breadcrumbs';
 import Link from 'next/link';
 import { Button } from '@/components/atoms/Button';
+import { ArticleSchema } from '@/components/ArticleSchema';
 import type { Metadata } from 'next';
+
+const BASE_URL = 'https://www.ricepuritytestapp.com';
 
 export const metadata: Metadata = {
   title: 'What is the Rice Purity Test? Complete Guide for 2026 | Rice Purity Test Guide & Tips',
   description: 'Read this guide on what the Rice Purity Test is — learn key tips, explanations, and actionable insights about the Rice Purity Test and scores.',
   keywords: 'what is rice purity test, rice purity test guide, rice purity test explained',
-  robots: {
-    index: true,
-    follow: true,
+  alternates: { canonical: `${BASE_URL}/blog/what-is-rice-purity-test` },
+  openGraph: {
+    title: 'What is the Rice Purity Test? Complete Guide for 2026',
+    description: 'Everything you need to know about the Rice Purity Test - origins, how it works, and what your score means.',
+    url: `${BASE_URL}/blog/what-is-rice-purity-test`,
+    type: 'article',
   },
+  twitter: { card: 'summary_large_image', title: 'What is the Rice Purity Test? Complete Guide for 2026', description: 'Everything you need to know about the Rice Purity Test.' },
+  robots: { index: true, follow: true },
 };
 
 export default function WhatIsRicePurityTestPage() {
   return (
     <div className="min-h-screen bg-white">
+      <ArticleSchema
+        headline="What is the Rice Purity Test? Complete Guide for 2026"
+        datePublished="2026-01-15"
+        url={`${BASE_URL}/blog/what-is-rice-purity-test`}
+        description="Everything you need to know about the Rice Purity Test - origins, how it works, and what your score means."
+      />
       <Header />
       <main className="container mx-auto px-4 py-8 max-w-4xl">
         <Breadcrumbs items={[

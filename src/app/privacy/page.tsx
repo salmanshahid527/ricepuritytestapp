@@ -6,13 +6,13 @@ import { Text } from '@/components/atoms/Text';
 import { Breadcrumbs } from '@/components/molecules/Breadcrumbs';
 import type { Metadata } from 'next';
 
+const BASE_URL = 'https://www.ricepuritytestapp.com';
+
 export const metadata: Metadata = {
   title: 'Privacy Policy | Rice Purity Test',
-  description: 'Privacy Policy for Rice Purity Test - Learn how we protect your privacy and data.',
-  robots: {
-    index: true,
-    follow: true,
-  },
+  description: 'Rice Purity Test privacy policy — 100% anonymous, no data collection, no tracking. Your answers stay on your device.',
+  robots: { index: true, follow: true },
+  alternates: { canonical: `${BASE_URL}/privacy` },
 };
 
 export default function PrivacyPage() {

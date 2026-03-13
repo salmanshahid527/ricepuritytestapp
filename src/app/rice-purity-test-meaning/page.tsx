@@ -8,14 +8,20 @@ import Link from 'next/link';
 import { Button } from '@/components/atoms/Button';
 import type { Metadata } from 'next';
 
+const BASE_URL = 'https://www.ricepuritytestapp.com';
+
 export const metadata: Metadata = {
   title: 'Rice Purity Test Meaning | What Does It Mean?',
   description: 'Learn what the Rice Purity Test means, its purpose, and how to interpret the results. Complete guide to understanding the test.',
   keywords: 'rice purity test meaning, what does rice purity test mean, rice purity test purpose',
-  robots: {
-    index: true,
-    follow: true,
+  robots: { index: true, follow: true },
+  alternates: { canonical: `${BASE_URL}/rice-purity-test-meaning` },
+  openGraph: {
+    title: 'Rice Purity Test Meaning | What Does It Mean?',
+    description: 'Learn what the Rice Purity Test means and how to interpret your results.',
+    url: `${BASE_URL}/rice-purity-test-meaning`,
   },
+  twitter: { card: 'summary_large_image' },
 };
 
 export default function MeaningPage() {

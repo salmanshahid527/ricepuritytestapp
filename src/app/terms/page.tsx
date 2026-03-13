@@ -6,13 +6,13 @@ import { Text } from '@/components/atoms/Text';
 import { Breadcrumbs } from '@/components/molecules/Breadcrumbs';
 import type { Metadata } from 'next';
 
+const BASE_URL = 'https://www.ricepuritytestapp.com';
+
 export const metadata: Metadata = {
   title: 'Terms of Service | Rice Purity Test',
-  description: 'Terms of Service for Rice Purity Test - Read our terms and conditions.',
-  robots: {
-    index: true,
-    follow: true,
-  },
+  description: 'Terms of Service for Rice Purity Test — use the test responsibly for entertainment. Free, anonymous, no account required.',
+  robots: { index: true, follow: true },
+  alternates: { canonical: `${BASE_URL}/terms` },
 };
 
 export default function TermsPage() {

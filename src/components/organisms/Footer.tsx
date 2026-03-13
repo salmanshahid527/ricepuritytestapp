@@ -11,7 +11,28 @@ export const Footer: React.FC = () => {
           <Link href="/" className="hover:scale-110 transition-transform duration-300">
             <Logo size="sm" showText={true} showTagline={false} />
           </Link>
-          <nav className="flex flex-wrap justify-center items-center gap-4 text-sm">
+          <nav className="flex flex-wrap justify-center items-center gap-x-2 gap-y-2 text-sm">
+            <Link 
+              href="/test" 
+              className="text-gray-600 hover:text-green-500 hover:scale-110 transition-all duration-300"
+            >
+              Take the Test
+            </Link>
+            <span className="text-gray-300">|</span>
+            <Link 
+              href="/rice-purity-test-score" 
+              className="text-gray-600 hover:text-green-500 hover:scale-110 transition-all duration-300"
+            >
+              Score Guide
+            </Link>
+            <span className="text-gray-300">|</span>
+            <Link 
+              href="/blog" 
+              className="text-gray-600 hover:text-green-500 hover:scale-110 transition-all duration-300"
+            >
+              Blog
+            </Link>
+            <span className="text-gray-300">|</span>
             <Link 
               href="/about" 
               className="text-gray-600 hover:text-green-500 hover:scale-110 transition-all duration-300"

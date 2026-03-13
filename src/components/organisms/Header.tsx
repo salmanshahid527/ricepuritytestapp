@@ -21,6 +21,17 @@ export const Header: React.FC<HeaderProps> = ({
       <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
           <Logo size="md" showText={true} showTagline={false} href="/" />
+          <nav className="hidden sm:flex items-center gap-6">
+            <Link href="/blog" className="text-sm font-medium text-gray-600 hover:text-green-500 transition-colors">
+              Blog
+            </Link>
+            <Link href="/rice-purity-test-score" className="text-sm font-medium text-gray-600 hover:text-green-500 transition-colors">
+              Score Guide
+            </Link>
+            <Link href="/about" className="text-sm font-medium text-gray-600 hover:text-green-500 transition-colors">
+              About
+            </Link>
+          </nav>
           <div className="flex items-center gap-4">
             {showProgress && (
               <div className="flex items-center space-x-4 animate-fade-in">

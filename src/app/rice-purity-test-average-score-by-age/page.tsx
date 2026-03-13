@@ -8,14 +8,21 @@ import { Text } from '@/components/atoms/Text';
 import { Breadcrumbs } from '@/components/molecules/Breadcrumbs';
 import { Button } from '@/components/atoms/Button';
 
+const BASE_URL = 'https://www.ricepuritytestapp.com';
+
 export const metadata: Metadata = {
   title: 'Rice Purity Test Average Score by Age (2026)',
   description: 'Find the Rice Purity Test average score by age for 18-22, 23-25, 26-30, and 31+, then compare your score with typical ranges.',
   keywords: 'rice purity test average score by age, average rice purity test score, rice purity test average score, average rice purity score',
-  robots: {
-    index: true,
-    follow: true,
+  robots: { index: true, follow: true },
+  alternates: { canonical: `${BASE_URL}/rice-purity-test-average-score-by-age` },
+  openGraph: {
+    title: 'Rice Purity Test Average Score by Age (2026)',
+    description: 'Find the Rice Purity Test average score by age for 18-22, 23-25, 26-30, and 31+. Compare your score with typical ranges.',
+    url: `${BASE_URL}/rice-purity-test-average-score-by-age`,
+    type: 'article',
   },
+  twitter: { card: 'summary_large_image', title: 'Rice Purity Test Average Score by Age (2026)', description: 'Find average Rice Purity Test scores by age group and compare your result.' },
 };
 
 export default function AverageScoreByAgePage() {

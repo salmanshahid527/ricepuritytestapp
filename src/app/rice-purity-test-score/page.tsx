@@ -8,13 +8,24 @@ import Link from 'next/link';
 import { Button } from '@/components/atoms/Button';
 import type { Metadata } from 'next';
 
+const BASE_URL = 'https://www.ricepuritytestapp.com';
+
 export const metadata: Metadata = {
   title: 'Rice Purity Test Score: Meaning, Ranges & Calculator',
   description: 'Check what your Rice Purity Test score means with clear 0-100 score ranges, interpretation tips, and quick examples.',
   keywords: 'rice purity test score, rice purity test scores, rice purity score meaning, rice purity test results',
-  robots: {
-    index: true,
-    follow: true,
+  robots: { index: true, follow: true },
+  alternates: { canonical: `${BASE_URL}/rice-purity-test-score` },
+  openGraph: {
+    title: 'Rice Purity Test Score: Meaning, Ranges & Calculator',
+    description: 'Check what your Rice Purity Test score means with clear 0-100 score ranges and interpretation tips.',
+    url: `${BASE_URL}/rice-purity-test-score`,
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Rice Purity Test Score: Meaning, Ranges & Calculator',
+    description: 'Check what your Rice Purity Test score means with clear 0-100 score ranges.',
   },
 };
 

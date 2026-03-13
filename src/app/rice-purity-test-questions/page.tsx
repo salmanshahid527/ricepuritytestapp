@@ -8,14 +8,20 @@ import Link from 'next/link';
 import { Button } from '@/components/atoms/Button';
 import type { Metadata } from 'next';
 
+const BASE_URL = 'https://www.ricepuritytestapp.com';
+
 export const metadata: Metadata = {
   title: 'Rice Purity Test Questions | All 100 Questions Explained',
   description: 'View all 100 Rice Purity Test questions. Learn about the question categories and what the test covers.',
   keywords: 'rice purity test questions, all rice purity test questions, rice purity test 100 questions',
-  robots: {
-    index: true,
-    follow: true,
+  robots: { index: true, follow: true },
+  alternates: { canonical: `${BASE_URL}/rice-purity-test-questions` },
+  openGraph: {
+    title: 'Rice Purity Test Questions | All 100 Questions Explained',
+    description: 'View all 100 Rice Purity Test questions and learn what the test covers.',
+    url: `${BASE_URL}/rice-purity-test-questions`,
   },
+  twitter: { card: 'summary_large_image' },
 };
 
 export default function QuestionsPage() {

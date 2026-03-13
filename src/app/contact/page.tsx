@@ -6,12 +6,23 @@ import { Text } from '@/components/atoms/Text';
 import { Breadcrumbs } from '@/components/molecules/Breadcrumbs';
 import type { Metadata } from 'next';
 
+const BASE_URL = 'https://www.ricepuritytestapp.com';
+
 export const metadata: Metadata = {
   title: 'Contact Us | RicePurityTestApp Support & Feedback',
   description: 'Get in touch with RicePurityTestApp — contact us for support, feedback, or questions about the Rice Purity Test quiz and blog content.',
-  robots: {
-    index: true,
-    follow: true,
+  robots: { index: true, follow: true },
+  alternates: { canonical: `${BASE_URL}/contact` },
+  openGraph: {
+    title: 'Contact Us | RicePurityTestApp Support & Feedback',
+    description: 'Contact RicePurityTestApp for support, feedback, or questions about the Rice Purity Test.',
+    url: `${BASE_URL}/contact`,
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contact Us | RicePurityTestApp Support & Feedback',
+    description: 'Contact RicePurityTestApp for support and feedback.',
   },
 };
 

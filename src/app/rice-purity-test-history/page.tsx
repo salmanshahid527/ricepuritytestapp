@@ -8,14 +8,20 @@ import Link from 'next/link';
 import { Button } from '@/components/atoms/Button';
 import type { Metadata } from 'next';
 
+const BASE_URL = 'https://www.ricepuritytestapp.com';
+
 export const metadata: Metadata = {
   title: 'Rice Purity Test History | Origins & Evolution',
   description: 'Learn about the history of the Rice Purity Test, from its origins at Rice University to becoming a viral internet phenomenon.',
   keywords: 'rice purity test history, rice purity test origins, rice university purity test',
-  robots: {
-    index: true,
-    follow: true,
+  robots: { index: true, follow: true },
+  alternates: { canonical: `${BASE_URL}/rice-purity-test-history` },
+  openGraph: {
+    title: 'Rice Purity Test History | Origins & Evolution',
+    description: 'The history of the Rice Purity Test, from Rice University to the internet.',
+    url: `${BASE_URL}/rice-purity-test-history`,
   },
+  twitter: { card: 'summary_large_image' },
 };
 
 export default function HistoryPage() {

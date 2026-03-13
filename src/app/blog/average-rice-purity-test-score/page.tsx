@@ -6,21 +6,35 @@ import { Text } from '@/components/atoms/Text';
 import { Breadcrumbs } from '@/components/molecules/Breadcrumbs';
 import Link from 'next/link';
 import { Button } from '@/components/atoms/Button';
+import { ArticleSchema } from '@/components/ArticleSchema';
 import type { Metadata } from 'next';
+
+const BASE_URL = 'https://www.ricepuritytestapp.com';
 
 export const metadata: Metadata = {
   title: 'Average Rice Purity Test Score (2026): Stats & Trends',
   description: 'See the average Rice Purity Test score, score distribution, and trend insights to compare your result with common ranges.',
   keywords: 'average rice purity test score, average rice purity test, rice purity test average, rice purity test average score, rice purity test average score by age',
-  robots: {
-    index: true,
-    follow: true,
+  alternates: { canonical: `${BASE_URL}/blog/average-rice-purity-test-score` },
+  openGraph: {
+    title: 'Average Rice Purity Test Score (2026): Stats & Trends',
+    description: 'See the average Rice Purity Test score, score distribution, and trends to compare your result.',
+    url: `${BASE_URL}/blog/average-rice-purity-test-score`,
+    type: 'article',
   },
+  twitter: { card: 'summary_large_image', title: 'Average Rice Purity Test Score (2026)', description: 'See average scores and trends to compare your result.' },
+  robots: { index: true, follow: true },
 };
 
 export default function AverageScorePage() {
   return (
     <div className="min-h-screen bg-white">
+      <ArticleSchema
+        headline="Average Rice Purity Test Score (2026): Stats & Trends"
+        datePublished="2026-01-13"
+        url={`${BASE_URL}/blog/average-rice-purity-test-score`}
+        description="See the average Rice Purity Test score, score distribution, and trends to compare your result."
+      />
       <Header />
       <main className="container mx-auto px-4 py-8 max-w-4xl">
         <Breadcrumbs items={[

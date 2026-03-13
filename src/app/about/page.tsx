@@ -8,12 +8,23 @@ import Link from 'next/link';
 import { Button } from '@/components/atoms/Button';
 import type { Metadata } from 'next';
 
+const BASE_URL = 'https://www.ricepuritytestapp.com';
+
 export const metadata: Metadata = {
   title: 'About RicePurityTestApp – Mission, Team & What We Do',
   description: 'Learn about RicePurityTestApp — our mission to make the Rice Purity Test fun, informative, and easy to use. Discover why millions take the quiz!',
-  robots: {
-    index: true,
-    follow: true,
+  robots: { index: true, follow: true },
+  alternates: { canonical: `${BASE_URL}/about` },
+  openGraph: {
+    title: 'About RicePurityTestApp – Mission, Team & What We Do',
+    description: 'Learn about RicePurityTestApp and our mission to make the Rice Purity Test fun and easy to use.',
+    url: `${BASE_URL}/about`,
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About RicePurityTestApp – Mission, Team & What We Do',
+    description: 'Learn about RicePurityTestApp and the Rice Purity Test.',
   },
 };
 
