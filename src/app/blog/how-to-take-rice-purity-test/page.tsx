@@ -51,46 +51,51 @@ export default function HowToTakeTestPage() {
 
         <article className="prose prose-lg max-w-none space-y-6 text-gray-700">
           <Text variant="large" className="leading-relaxed">
-            Taking the Rice Purity Test can be a fun and introspective experience. To get the most accurate and meaningful results, follow these expert tips and best practices.
+            The Rice Purity Test doesn't require preparation — it's a checkbox list, not an exam. But there are a few things that genuinely affect whether your score ends up meaningful or just a number you typed out too quickly. Here's how to take it in a way that's actually worth doing.
           </Text>
 
           <section>
             <Heading as="h2" size="xl" className="mb-4 text-green-500">
-              Step-by-Step Guide
+              Before You Start
+            </Heading>
+            <Text variant="body" className="leading-relaxed mb-4">
+              You'll need about 10-15 minutes and some privacy. Not because the test requires concentration exactly, but because answering honestly is easier when you're not doing it with someone reading over your shoulder. Your results are processed entirely in your browser — nothing is sent anywhere, nothing stored — so the only audience that matters is you.
+            </Text>
+            <Text variant="body" className="leading-relaxed mb-4">
+              One thing worth settling before you start: are you going to answer for your whole life, or just recently? The test asks "have you ever" — not "do you currently" or "in the past year." If something happened five years ago and hasn't happened since, it still counts. People who answer with their present-day self in mind typically undercount significantly. Decide upfront that you're answering for everything, ever.
+            </Text>
+          </section>
+
+          <section>
+            <Heading as="h2" size="xl" className="mb-4 text-green-500">
+              Going Through the Questions
             </Heading>
             <div className="space-y-4">
               <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded">
-                <Heading as="h3" size="lg" className="mb-2 text-gray-800">Step 1: Prepare Yourself</Heading>
+                <Heading as="h3" size="lg" className="mb-2 text-gray-800">Read each question once, then decide</Heading>
                 <Text variant="body" className="leading-relaxed">
-                  Before starting, find a quiet place where you can focus. Make sure you have 10-20 minutes of uninterrupted time. The test works best when you can think clearly about each question without distractions.
+                  Don't rush, but don't linger either. Read the question, let your gut react, then move on. Your first instinct after a clear read is almost always your honest answer. The longer you sit with an ambiguous question, the more likely you are to rationalize your way to the wrong answer — usually in the direction of "well, technically no, because..."
                 </Text>
               </div>
 
               <div className="bg-green-50 border-l-4 border-green-500 p-4 rounded">
-                <Heading as="h3" size="lg" className="mb-2 text-gray-800">Step 2: Read Each Question Carefully</Heading>
+                <Heading as="h3" size="lg" className="mb-2 text-gray-800">When a question is ambiguous, lean toward yes</Heading>
                 <Text variant="body" className="leading-relaxed">
-                  Take your time reading each of the 100 questions. Some questions might be worded in ways that require interpretation. Think about what each question means to you personally before answering.
+                  Some questions are deliberately broad. If your honest reaction is "yes, kind of" or "yes, once" or "yes, in a loose sense" — check it. The test is designed to count experiences, not to make fine distinctions. Holding out for a perfectly literal "yes" will give you a score that's artificially high. If it applies even loosely, it probably belongs checked.
                 </Text>
               </div>
 
               <div className="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded">
-                <Heading as="h3" size="lg" className="mb-2 text-gray-800">Step 3: Answer Honestly</Heading>
+                <Heading as="h3" size="lg" className="mb-2 text-gray-800">Don't answer for who you want to be</Heading>
                 <Text variant="body" className="leading-relaxed">
-                  The most important tip is to answer honestly. Since the test is completely anonymous, there's no reason to be dishonest. Your score will only be meaningful if you're truthful about your experiences.
+                  This is the subtle version of dishonesty — not outright lying, but quietly skipping things that feel inconsistent with how you see yourself. If something happened but you've moved on from it, it still counts. The test is a historical record, not a character statement. Check what actually happened, not what represents the current you.
                 </Text>
               </div>
 
               <div className="bg-purple-50 border-l-4 border-purple-500 p-4 rounded">
-                <Heading as="h3" size="lg" className="mb-2 text-gray-800">Step 4: Consider Your Entire Life</Heading>
+                <Heading as="h3" size="lg" className="mb-2 text-gray-800">Your progress saves automatically</Heading>
                 <Text variant="body" className="leading-relaxed">
-                  The test asks about experiences you've had at any point in your life, not just recently. Make sure you're considering your entire life history when answering, from childhood through your current age.
-                </Text>
-              </div>
-
-              <div className="bg-orange-50 border-l-4 border-orange-500 p-4 rounded">
-                <Heading as="h3" size="lg" className="mb-2 text-gray-800">Step 5: Calculate Your Score</Heading>
-                <Text variant="body" className="leading-relaxed">
-                  Once you've answered all questions, click "Calculate My Score" to see your result. Your score is automatically calculated: 100 minus the number of experiences you've checked.
+                  If you need to pause, close the tab, and come back later — that works. Your answers are preserved locally in your browser session. No account needed, nothing synced anywhere. Just reopen the page and you'll be where you left off.
                 </Text>
               </div>
             </div>
@@ -98,81 +103,37 @@ export default function HowToTakeTestPage() {
 
           <section>
             <Heading as="h2" size="xl" className="mb-4 text-green-500">
-              Tips for Accurate Results
-            </Heading>
-            <div className="space-y-4">
-              <div>
-                <Heading as="h3" size="lg" className="mb-2 text-gray-800">
-                  Be Honest with Yourself
-                </Heading>
-                <Text variant="body" className="leading-relaxed">
-                  The test is anonymous, so there's no judgment. Answer based on your actual experiences, not what you think others expect or what you wish were true. Honesty leads to the most meaningful results.
-                </Text>
-              </div>
-
-              <div>
-                <Heading as="h3" size="lg" className="mb-2 text-gray-800">
-                  Don't Overthink It
-                </Heading>
-                <Text variant="body" className="leading-relaxed">
-                  While you should be thoughtful, don't overthink each question. Your first instinct is often the most honest answer. The test is meant to be fun and reflective, not stressful.
-                </Text>
-              </div>
-
-              <div>
-                <Heading as="h3" size="lg" className="mb-2 text-gray-800">
-                  Understand the Questions
-                </Heading>
-                <Text variant="body" className="leading-relaxed">
-                  Some questions might be ambiguous or open to interpretation. Think about what each question means to you personally and answer based on your understanding. If you're unsure, err on the side of caution.
-                </Text>
-              </div>
-
-              <div>
-                <Heading as="h3" size="lg" className="mb-2 text-gray-800">
-                  Take Your Time
-                </Heading>
-                <Text variant="body" className="leading-relaxed">
-                  There's no time limit. Take as long as you need to answer each question thoughtfully. Your progress is automatically saved, so you can even pause and come back later if needed.
-                </Text>
-              </div>
-            </div>
-          </section>
-
-          <section>
-            <Heading as="h2" size="xl" className="mb-4 text-green-500">
-              Common Mistakes to Avoid
-            </Heading>
-            <ul className="list-disc list-inside space-y-2 ml-4">
-              <li><strong>Rushing through questions:</strong> Take your time to read and understand each question</li>
-              <li><strong>Answering based on others' expectations:</strong> Answer for yourself, not for others</li>
-              <li><strong>Only considering recent experiences:</strong> Remember the test asks about your entire life</li>
-              <li><strong>Being dishonest:</strong> Since it's anonymous, there's no reason to lie</li>
-              <li><strong>Overthinking ambiguous questions:</strong> Go with your first instinct</li>
-            </ul>
-          </section>
-
-          <section>
-            <Heading as="h2" size="xl" className="mb-4 text-green-500">
-              Making the Most of Your Results
+              The One Mistake That Ruins Scores
             </Heading>
             <Text variant="body" className="leading-relaxed mb-4">
-              Once you've completed the test and received your score:
+              The most common way to get a score that doesn't feel accurate: answering only for your recent past. People do this instinctively — you're answering now, so you think about now. But the test covers your whole life. High school, early college, any period where your circumstances were different than they are today — all of that counts.
             </Text>
-            <ul className="list-disc list-inside space-y-2 ml-4">
-              <li><strong>Reflect on your score:</strong> What does it tell you about your life experiences? Are you surprised?</li>
-              <li><strong>Share with friends:</strong> Comparing scores with friends can lead to interesting conversations</li>
-              <li><strong>Remember it's just for fun:</strong> Don't take your score too seriously - it's a lighthearted reflection tool</li>
-              <li><strong>Retake if needed:</strong> If you feel you didn't answer honestly, you can always retake the test</li>
-            </ul>
+            <Text variant="body" className="leading-relaxed mb-4">
+              If you take the test and get a score that seems too high (meaning you feel like you've checked too few boxes), the most likely explanation is that you were unconsciously filtering out older experiences. Go back through and ask yourself: not "do I do this now" but "have I ever done this at any point in my life."
+            </Text>
+          </section>
+
+          <section>
+            <Heading as="h2" size="xl" className="mb-4 text-green-500">
+              After You Get Your Score
+            </Heading>
+            <Text variant="body" className="leading-relaxed mb-4">
+              The number is most useful when you share it with someone you trust and actually talk about the differences. You and a close friend with similar backgrounds often score differently — and the questions where you diverge tell you something more interesting than the total.
+            </Text>
+            <Text variant="body" className="leading-relaxed mb-4">
+              For context on what your score actually means in terms of ranges and averages, the <Link href="/rice-purity-test-score" className="text-green-600 underline hover:text-green-700">score guide</Link> has the breakdown. For how it compares by age group, see the <Link href="/rice-purity-test-average-score-by-age" className="text-green-600 underline hover:text-green-700">average score by age</Link> page.
+            </Text>
+            <Text variant="body" className="leading-relaxed">
+              And if you rushed through and feel like the score doesn't represent your honest history — retake it. There's no limit, nothing stored from the previous attempt.
+            </Text>
           </section>
 
           <section className="bg-green-50 border border-green-200 rounded-xl p-6 mt-8">
             <Heading as="h2" size="lg" className="mb-4 text-green-600">
-              Ready to Take the Test?
+              Ready to go?
             </Heading>
             <Text variant="body" className="mb-6 text-gray-700">
-              Now that you know how to take the Rice Purity Test effectively, why not start the test and apply these tips?
+              Free, anonymous, takes about 10-15 minutes. Your answers stay on your device.
             </Text>
             <Link href="/test">
               <Button size="lg">Start the Rice Purity Test</Button>

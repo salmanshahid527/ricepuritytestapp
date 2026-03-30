@@ -51,129 +51,95 @@ export default function ScoreMeaningPage() {
 
         <article className="prose prose-lg max-w-none space-y-6 text-gray-700">
           <Text variant="large" className="leading-relaxed">
-            After taking the Rice Purity Test, you receive a score from 0 to 100. But what does this number actually mean? This comprehensive guide will help you understand your Rice Purity Test score and what it says about your life experiences.
+            You got your number. Now what? A lot of people experience a surprisingly strong reaction to their Rice Purity Test score — relief, pride, embarrassment, curiosity, or just confusion about why they feel anything at all. Here's a more honest look at what the score means, why it lands the way it does emotionally, and how to actually use it.
           </Text>
 
           <section>
             <Heading size="xl" className="mb-4 text-green-500">
-              How Scores Are Calculated
+              What the Number Is (and Isn't)
             </Heading>
             <Text variant="body" className="leading-relaxed mb-4">
-              Your Rice Purity Test score is calculated using a simple formula: <strong>Score = 100 - (number of checked boxes)</strong>. This means:
+              The mechanics are simple: your score equals 100 minus the number of boxes you checked. A 72 means you checked 28 items. A 48 means you checked 52. The formula never changes.
             </Text>
-            <ul className="list-disc list-inside space-y-2 ml-4">
-              <li>If you check 0 boxes, your score is 100 (most "pure")</li>
-              <li>If you check 50 boxes, your score is 50 (moderate)</li>
-              <li>If you check all 100 boxes, your score is 0 (least "pure")</li>
-            </ul>
-            <Text variant="body" className="leading-relaxed mt-4">
-              The term "purity" refers to innocence or lack of certain life experiences, not moral judgment. A higher score simply means you've had fewer of the experiences listed in the test.
+            <Text variant="body" className="leading-relaxed mb-4">
+              What makes the result feel more significant than that is what the questions touch. They're not asking about abstract preferences — they're asking about things that actually happened in your life. That makes the counting feel personal, even though it's just counting.
+            </Text>
+            <Text variant="body" className="leading-relaxed mb-4">
+              Worth knowing: all 100 questions are weighted equally. Something minor and something major each count as one point. Two people with identical scores can have dramatically different stories behind them. The number flattens context that matters a lot.
             </Text>
           </section>
 
           <section>
             <Heading size="xl" className="mb-4 text-green-500">
-              Rice Purity Test Score Meaning by Range
+              Why Your Score Might Have Surprised You
             </Heading>
-            
-            <div className="space-y-6">
+            <Text variant="body" className="leading-relaxed mb-4">
+              One of the more common reactions is discovering your score is lower than you expected — meaning you've checked more boxes than you anticipated. This usually happens for one of two reasons.
+            </Text>
+            <Text variant="body" className="leading-relaxed mb-4">
+              First, people often answer for their recent self rather than their whole life. The test asks "have you ever" — not "in the past year" or "currently." Things you did years ago, in a different context, with a different crowd, still count. If you're answering with your present-day self in mind, you're going to undercount.
+            </Text>
+            <Text variant="body" className="leading-relaxed mb-4">
+              Second, people have an internal sense of themselves as "not really that experienced" based on comparison to specific people they know — close friends, social media, whatever. The test cuts through that relative self-assessment and just asks about absolute history. The gap between self-perception and what actually happened is often bigger than expected.
+            </Text>
+            <Text variant="body" className="leading-relaxed mb-4">
+              The opposite happens too — some people score higher than expected, which can bring its own complicated feelings. Both reactions are worth sitting with. The surprise itself is information.
+            </Text>
+          </section>
+
+          <section>
+            <Heading size="xl" className="mb-4 text-green-500">
+              Score Ranges — What They Tend to Reflect
+            </Heading>
+            <Text variant="body" className="leading-relaxed mb-4">
+              The full breakdown is in the <Link href="/rice-purity-test-score" className="text-green-600 underline hover:text-green-700">score guide</Link>. But here's the emotional shorthand for each range:
+            </Text>
+            <div className="space-y-4">
               <div className="bg-green-50 border-l-4 border-green-500 p-4 rounded">
-                <Heading size="lg" className="mb-2 text-gray-800">
-                  100-98: Extremely Pure
-                </Heading>
-                <Text variant="body" className="leading-relaxed">
-                  Scores in this range indicate you've had very few of the experiences listed. This typically suggests someone who has led a relatively sheltered life, perhaps focusing heavily on academics, family values, or personal development. People in this range often have strong moral convictions or have prioritized other aspects of life.
-                </Text>
+                <Heading size="lg" className="mb-2 text-gray-800">100-94: High end</Heading>
+                <Text variant="body" className="leading-relaxed">People here are usually young, have had a more sheltered upbringing, or hold values that kept most of the list at bay. The emotional response is often mild pride mixed with curiosity about what they'll experience later. A score this high is less a personality trait and more a time stamp.</Text>
               </div>
-
-              <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded">
-                <Heading size="lg" className="mb-2 text-gray-800">
-                  97-94: Very Pure
-                </Heading>
-                <Text variant="body" className="leading-relaxed">
-                  This range suggests you're quite innocent but have had a few life experiences. You may have experimented slightly or had limited exposure to certain activities, but overall maintain a high level of "purity" according to the test's standards.
-                </Text>
-              </div>
-
               <div className="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded">
-                <Heading size="lg" className="mb-2 text-gray-800">
-                  93-77: Relatively Pure
-                </Heading>
-                <Text variant="body" className="leading-relaxed">
-                  This is a moderate range indicating you've had some experiences but are still relatively innocent. You've likely explored certain aspects of life while maintaining boundaries in other areas. Common among college students and young adults.
-                </Text>
+                <Heading size="lg" className="mb-2 text-gray-800">93-55: Middle range</Heading>
+                <Text variant="body" className="leading-relaxed">This is most people. The emotional range here is wide — some feel relieved to be "average," some feel unexpectedly low, some feel higher than their friend group and wonder why. The middle is also where the most interesting conversations happen, because nobody's at an extreme that explains everything.</Text>
               </div>
-
               <div className="bg-orange-50 border-l-4 border-orange-500 p-4 rounded">
-                <Heading size="lg" className="mb-2 text-gray-800">
-                  76-45: Moderate Experience
-                </Heading>
-                <Text variant="body" className="leading-relaxed">
-                  Scores in this range represent an average level of life experiences. You've likely had a balanced approach to life, experiencing various activities while maintaining some boundaries. Typical for adults who have lived diverse lives.
-                </Text>
-              </div>
-
-              <div className="bg-red-50 border-l-4 border-red-500 p-4 rounded">
-                <Heading size="lg" className="mb-2 text-gray-800">
-                  44-9: Experienced
-                </Heading>
-                <Text variant="body" className="leading-relaxed">
-                  This range indicates you've had many life experiences. You've likely explored various aspects of life extensively and have a broad range of experiences. People in this range often have adventurous personalities.
-                </Text>
-              </div>
-
-              <div className="bg-gray-50 border-l-4 border-gray-600 p-4 rounded">
-                <Heading size="lg" className="mb-2 text-gray-800">
-                  8-0: Highly Experienced
-                </Heading>
-                <Text variant="body" className="leading-relaxed">
-                  Scores in this lowest range mean you've checked off most or all of the experiences. This indicates an extremely diverse and extensive range of life experiences. Remember, a low score isn't necessarily negative—it simply reflects the breadth of experiences you've had.
-                </Text>
+                <Heading size="lg" className="mb-2 text-gray-800">54-0: Lower end</Heading>
+                <Text variant="body" className="leading-relaxed">Low scores can trigger shame responses that are worth examining. The test was designed with no moral hierarchy — a low score isn't a verdict. It usually reflects age and experience, a particular social context, or a period of life that's now over. Feeling bad about it is a reaction to a cultural assumption, not something built into the number itself.</Text>
               </div>
             </div>
           </section>
 
           <section>
             <Heading size="xl" className="mb-4 text-green-500">
-              Factors That Influence Your Score
+              The Score and Social Comparison
             </Heading>
             <Text variant="body" className="leading-relaxed mb-4">
-              Several factors can influence your Rice Purity Test score:
+              The test works best when it generates conversation — comparing your score with a friend and noticing where you're similar and where you diverge. Those divergences are usually more interesting than the scores themselves. Why did one person check something the other didn't, even though their friendship suggests similar life paths? That question is worth more than the number.
             </Text>
-            <ul className="list-disc list-inside space-y-2 ml-4">
-              <li><strong>Age:</strong> Older individuals typically have lower scores due to more life experiences</li>
-              <li><strong>Cultural background:</strong> Different cultures have varying norms and experiences</li>
-              <li><strong>Personal values:</strong> Your beliefs and priorities affect which experiences you've pursued</li>
-              <li><strong>Social environment:</strong> The people and communities you've been part of</li>
-              <li><strong>Life circumstances:</strong> Opportunities and situations you've encountered</li>
-            </ul>
+            <Text variant="body" className="leading-relaxed mb-4">
+              What doesn't work well: using the score as a status marker. People who treat a high score as a badge of virtue (or a low score as a badge of coolness) are both missing the point. The test was created to start conversation, not rank people. Treating it like a ranking tends to make people answer dishonestly, which makes the score less meaningful, which defeats the whole purpose.
+            </Text>
           </section>
 
           <section>
             <Heading size="xl" className="mb-4 text-green-500">
-              What Your Score Doesn't Mean
+              What To Do With It
             </Heading>
             <Text variant="body" className="leading-relaxed mb-4">
-              It's important to remember what your Rice Purity Test score does NOT indicate:
+              The most useful thing you can do with your score is compare it with someone you're close to and actually talk about the differences. Not to judge each other — but to understand each other a little better. The test is a surprisingly good tool for that because it covers ground that usually takes years of friendship to reach.
             </Text>
-            <ul className="list-disc list-inside space-y-2 ml-4">
-              <li>It's not a measure of your character or morality</li>
-              <li>It's not a judgment of your worth as a person</li>
-              <li>It's not a predictor of future behavior</li>
-              <li>It's not scientifically validated</li>
-              <li>It's not a definitive assessment of your life</li>
-            </ul>
-            <Text variant="body" className="leading-relaxed mt-4">
-              The test is meant to be fun, introspective, and a conversation starter—not a serious psychological evaluation.
+            <Text variant="body" className="leading-relaxed">
+              Beyond that, let it be what it is: a casual number from a quiz created by 1980s college students. It's a snapshot of one dimension of your history, not a summary of who you are.
             </Text>
           </section>
 
           <section className="bg-green-50 border border-green-200 rounded-xl p-6 mt-8">
             <Heading size="lg" className="mb-4 text-green-600">
-              Take the Test to Get Your Score
+              Haven't taken it yet?
             </Heading>
             <Text variant="body" className="mb-6 text-gray-700">
-              Ready to discover your Rice Purity Test score? Take the test now and see where you fall on the spectrum.
+              Get your score in 10-15 minutes. Everything stays private.
             </Text>
             <Link href="/test">
               <Button size="lg">Take the Rice Purity Test</Button>

@@ -51,105 +51,114 @@ export default function AverageScorePage() {
 
         <article className="prose prose-lg max-w-none space-y-6 text-gray-700">
           <Text variant="large" className="leading-relaxed">
-            Understanding average Rice Purity Test scores can help you see how your results compare to others. Based on data from millions of test takers, here's what we know about typical scores and trends.
+            The average Rice Purity Test score is somewhere around 62-68. But a raw average tells you less than you might think. Here's what the distribution actually looks like, why it's skewed the way it is, and how to make sense of where your number lands.
           </Text>
 
           <section>
             <Heading size="xl" className="mb-4 text-green-500">
-              Overall Average Score
+              The Average — and Why It Might Be Misleading
             </Heading>
             <Text variant="body" className="leading-relaxed mb-4">
-              The average Rice Purity Test score typically falls between <strong>62 and 68</strong>. This means most people have checked off approximately 32-38 of the 100 experiences listed in the test. This moderate range reflects that most test takers have had a balanced mix of life experiences.
+              The commonly cited average falls between <strong>62 and 68</strong>. That means most people check off roughly 32-38 items out of 100 — about a third of the list.
             </Text>
             <div className="bg-green-50 border border-green-200 rounded-xl p-6 my-6">
               <Text variant="large" className="font-bold text-green-700 text-center mb-2">
                 Average Score: 62-68
               </Text>
-              <Text variant="body" className="text-center text-gray-700">
-                Based on data from 500,000+ test takers
+              <Text variant="body" className="text-center text-gray-600">
+                Based on self-reported data from online test takers
               </Text>
             </div>
+            <Text variant="body" className="leading-relaxed mb-4">
+              Here's the catch: this average comes from the population of people who take the test online and share their results — which skews heavily toward college students and people in their early 20s. The "true" average for the general adult population would probably be different, possibly lower, since older adults have had more time to accumulate experiences.
+            </Text>
+            <Text variant="body" className="leading-relaxed">
+              So when you read "the average is 65," that's the average for a population that's already self-selected in a particular direction. Your score relative to that average is useful context — just not a universal benchmark.
+            </Text>
           </section>
 
           <section>
             <Heading size="xl" className="mb-4 text-green-500">
-              Score Distribution
+              Score Distribution — How Scores Actually Spread Out
             </Heading>
             <Text variant="body" className="leading-relaxed mb-4">
-              The majority of test takers (approximately 60%) score between <strong>55 and 75</strong>, representing a moderate level of life experiences. Here's the breakdown:
+              The distribution isn't a neat bell curve. It's more of a peak in the middle with long tails at both ends. Here's approximately how it breaks down:
             </Text>
             <ul className="list-disc list-inside space-y-2 ml-4">
-              <li><strong>90-100:</strong> ~5% of test takers</li>
-              <li><strong>75-89:</strong> ~20% of test takers</li>
-              <li><strong>55-74:</strong> ~60% of test takers (most common)</li>
-              <li><strong>30-54:</strong> ~12% of test takers</li>
-              <li><strong>0-29:</strong> ~3% of test takers</li>
+              <li><strong>90-100:</strong> ~5% of test takers — genuinely uncommon, usually younger or more sheltered</li>
+              <li><strong>75-89:</strong> ~20% of test takers — above average, typically early 20s</li>
+              <li><strong>55-74:</strong> ~60% of test takers — the core of the distribution, most common range</li>
+              <li><strong>30-54:</strong> ~12% of test takers — below average, usually older or with wider social exposure</li>
+              <li><strong>0-29:</strong> ~3% of test takers — rare, usually reflects a very specific life context</li>
             </ul>
+            <Text variant="body" className="leading-relaxed mt-4">
+              The 55-74 band is where the real action is — 60% of people score here. If you're in this range, you're not remarkable in either direction. You've lived a life that's fairly typical for someone who's been socially active and out in the world for a few years.
+            </Text>
           </section>
 
           <section>
             <Heading size="xl" className="mb-4 text-green-500">
-              Rice Purity Test Average Score by Age
+              Why the Average Changes Over Time
             </Heading>
             <Text variant="body" className="leading-relaxed mb-4">
-              Age is one of the strongest predictors of Rice Purity Test scores:
+              The test has been taken by each new college cohort since the 1980s. That means there's effectively a rolling population of 18-22 year olds cycling through the test each year, keeping the average higher than it would be if the test were taken evenly across all age groups.
+            </Text>
+            <Text variant="body" className="leading-relaxed mb-4">
+              There's also a social context effect: the test is more likely to be shared in certain environments — college dormitories, friend groups who are already comfortable being open about experiences, online communities with a particular demographic. People who find the test in those contexts aren't a random sample of the population.
+            </Text>
+            <Text variant="body" className="leading-relaxed mb-4">
+              This is why trends in the average are hard to interpret. If the average appears to be changing over time, it might reflect genuinely different behavior patterns — or it might just reflect which age group happened to share results most in a given year.
+            </Text>
+          </section>
+
+          <section>
+            <Heading size="xl" className="mb-4 text-green-500">
+              Age-Group Averages — The More Useful Comparison
+            </Heading>
+            <Text variant="body" className="leading-relaxed mb-4">
+              Rather than comparing yourself to the overall average, comparing within your age group gives you a more meaningful reference:
             </Text>
             <div className="space-y-4">
               <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded">
-                <Heading size="lg" className="mb-2 text-gray-800">18-22 Years Old</Heading>
-                <Text variant="body">Average Score: <strong>70-85</strong></Text>
-                <Text variant="small" className="text-gray-600">Younger test takers typically score higher due to fewer life experiences</Text>
+                <Heading size="lg" className="mb-2 text-gray-800">18-22 years old — Average: 70-85</Heading>
+                <Text variant="small" className="text-gray-600">Higher scores are expected here. Less time to encounter most items on the list.</Text>
               </div>
               <div className="bg-green-50 border-l-4 border-green-500 p-4 rounded">
-                <Heading size="lg" className="mb-2 text-gray-800">23-25 Years Old</Heading>
-                <Text variant="body">Average Score: <strong>60-75</strong></Text>
-                <Text variant="small" className="text-gray-600">College graduates and young professionals</Text>
+                <Heading size="lg" className="mb-2 text-gray-800">23-25 years old — Average: 60-75</Heading>
+                <Text variant="small" className="text-gray-600">Post-college, early careers. Scores dip as independence and social range expand.</Text>
               </div>
               <div className="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded">
-                <Heading size="lg" className="mb-2 text-gray-800">26-30 Years Old</Heading>
-                <Text variant="body">Average Score: <strong>50-65</strong></Text>
-                <Text variant="small" className="text-gray-600">More life experiences accumulated</Text>
+                <Heading size="lg" className="mb-2 text-gray-800">26-30 years old — Average: 50-65</Heading>
+                <Text variant="small" className="text-gray-600">More varied life circumstances start showing up in the numbers.</Text>
               </div>
               <div className="bg-orange-50 border-l-4 border-orange-500 p-4 rounded">
-                <Heading size="lg" className="mb-2 text-gray-800">31+ Years Old</Heading>
-                <Text variant="body">Average Score: <strong>45-60</strong></Text>
-                <Text variant="small" className="text-gray-600">Most diverse range of experiences</Text>
+                <Heading size="lg" className="mb-2 text-gray-800">31+ years old — Average: 45-60</Heading>
+                <Text variant="small" className="text-gray-600">Accumulated history shows. Scores here are less about recent choices and more about the full arc of a life.</Text>
               </div>
             </div>
+            <Text variant="body" className="leading-relaxed mt-4">
+              For a detailed breakdown of why each age group lands where it does — and what to think if your score doesn't match your group — see the <Link href="/rice-purity-test-average-score-by-age" className="text-green-600 hover:text-green-700 underline font-semibold">average score by age guide</Link>.
+            </Text>
           </section>
 
           <section>
             <Heading size="xl" className="mb-4 text-green-500">
-              Important Notes About Statistics
+              What the Statistics Can't Tell You
             </Heading>
             <Text variant="body" className="leading-relaxed mb-4">
-              These statistics are based on self-reported data and should be interpreted with caution:
+              Two people can have the same score and completely different lives. The test doesn't weight experiences — checking "have you ever jaywalked" counts the same as checking something significantly more significant. A score of 60 might reflect someone who's had 40 very minor experiences or someone who's had 40 major ones. The number is the same; the stories are not.
             </Text>
-            <ul className="list-disc list-inside space-y-2 ml-4">
-              <li>Scores can vary significantly based on honesty in answering</li>
-              <li>Cultural and social backgrounds influence results</li>
-              <li>Personal values and beliefs affect which experiences people have</li>
-              <li>Individual variation is significant - there's no "normal" score</li>
-            </ul>
-            <Text variant="body" className="leading-relaxed mt-4">
-              The most important thing is not how your score compares to averages, but what it means to you personally.
+            <Text variant="body" className="leading-relaxed">
+              The most useful thing about the average isn't the number itself — it's the reference point it gives you for starting a conversation. Knowing most people score 62-68 means a 55 and a 75 both feel less like outliers and more like two points in the same normal range. That reframing can take a lot of the pressure off the result.
             </Text>
           </section>
 
           <section className="bg-green-50 border border-green-200 rounded-xl p-6 mt-8">
             <Heading size="lg" className="mb-4 text-green-600">
-              Discover Your Score
+              Find out where you land
             </Heading>
             <Text variant="body" className="mb-6 text-gray-700">
-              Take the Rice Purity Test to see how your score compares to these averages.
-            </Text>
-            <Text variant="body" className="mb-4 text-gray-700">
-              Want a deeper age breakdown? Read our
-              {' '}
-              <Link href="/rice-purity-test-average-score-by-age" className="text-green-600 hover:text-green-700 font-semibold underline">
-                Rice Purity Test average score by age guide
-              </Link>
-              .
+              Take the test and see how your score compares.
             </Text>
             <Link href="/test">
               <Button size="lg">Take the Test Now</Button>

@@ -51,93 +51,84 @@ export default function WhatIsRicePurityTestPage() {
 
         <article className="prose prose-lg max-w-none space-y-6 text-gray-700">
           <Text variant="large" className="leading-relaxed">
-            The Rice Purity Test is a self-graded survey that has become one of the most popular online quizzes, taken by millions of people worldwide. Originally created at Rice University in Houston, Texas, this 100-question test assesses participants' life experiences and calculates a "purity score" from 0 to 100.
+            Someone just sent you a number and called it their "Rice Purity score." Maybe you saw it on TikTok, or your college roommate mentioned it, or a friend texted asking if you've taken it. Here's everything you need to know before you take it yourself — what it actually is, what to expect, and what to do with the result.
           </Text>
 
           <section>
             <Heading size="xl" className="mb-4 text-green-500">
-              Understanding the Rice Purity Test
+              The Short Version
             </Heading>
             <Text variant="body" className="leading-relaxed mb-4">
-              The Rice Purity Test consists of 100 questions covering various life experiences, from innocent activities to more mature encounters. Participants check off each experience they've had, and their score is calculated by subtracting the number of checked items from 100. A score of 100 means you've had none of the experiences (most "pure"), while a score of 0 means you've had all of them.
+              The Rice Purity Test is a list of 100 life experiences. You check off the ones that apply to you. Your score is 100 minus the number you checked. That's it. A 90 means you checked 10 items. A 45 means you checked 55.
             </Text>
             <Text variant="body" className="leading-relaxed mb-4">
-              The test is designed to be fun and introspective, not a judgment of character. It's become particularly popular among college students and young adults as an icebreaker activity and conversation starter.
+              The experiences range from very ordinary (things most people in their 20s have done) to pretty intense (things most people haven't done). There's no judgment built into the test — your score is just a count. The interesting part is comparing your count with other people's counts and having a conversation about the differences.
             </Text>
           </section>
 
           <section>
             <Heading size="xl" className="mb-4 text-green-500">
-              Origins and History
+              Where Did It Come From?
             </Heading>
             <Text variant="body" className="leading-relaxed mb-4">
-              The Rice Purity Test was created at Rice University in the 1980s as a way for incoming students to bond and share experiences during orientation week. Originally a paper-based questionnaire, it served as an icebreaker that helped new students connect with their peers in a lighthearted, non-judgmental environment.
+              Rice University is a small private university in Houston, Texas. In the 1980s, students there started passing around a paper questionnaire during freshman orientation — a checklist of life experiences used as an icebreaker. The name "purity test" was partly ironic; the campus version was self-aware about the loaded connotations of that word.
             </Text>
             <Text variant="body" className="leading-relaxed mb-4">
-              As the internet became widespread in the late 1990s and early 2000s, the test found its way online. Students began sharing digital versions, and it quickly spread beyond the Rice University campus, becoming a viral internet phenomenon.
+              The test stayed on paper for over a decade. Then the internet happened. By the late 1990s, students were posting it online, and it spread university by university. By the 2010s, it was a mainstream internet quiz. By the 2020s, TikTok had turned it into a genuine cultural phenomenon, with millions of people posting reaction videos and debating their numbers publicly.
+            </Text>
+            <Text variant="body" className="leading-relaxed mb-4">
+              The remarkable thing: the questions themselves barely changed. What started as a paper handout at one Texas university in the '80s is essentially the same test people take today.
             </Text>
           </section>
 
           <section>
             <Heading size="xl" className="mb-4 text-green-500">
-              How the Test Works
+              What to Expect When You Take It
             </Heading>
             <Text variant="body" className="leading-relaxed mb-4">
-              Taking the Rice Purity Test is simple:
+              You'll see 100 checkboxes. The questions start relatively tame and get progressively more varied. Some will seem obviously applicable to your life; others will have nothing to do with you. A few might surprise you — either because you realized you've done something you'd forgotten about, or because you hadn't expected the question to be on the list.
             </Text>
-            <ol className="list-decimal list-inside space-y-2 ml-4">
-              <li>Answer all 100 questions honestly by checking off experiences you've had</li>
-              <li>Your progress is automatically saved as you go</li>
-              <li>Calculate your score (100 minus the number of checked items)</li>
-              <li>Share your results with friends if you choose (completely optional)</li>
-            </ol>
-            <Text variant="body" className="leading-relaxed mt-4">
-              The test is completely anonymous - we don't collect, store, or track any of your answers. Everything is processed locally on your device.
+            <Text variant="body" className="leading-relaxed mb-4">
+              The whole thing takes 10-15 minutes if you read each question. Your progress saves automatically, so you can pause and come back. When you're done, you get your number. You can share it or keep it to yourself — that's entirely up to you.
+            </Text>
+            <Text variant="body" className="leading-relaxed mb-4">
+              One thing worth knowing going in: answer for your whole life, not just recently. The questions ask "have you ever" — not "are you currently" or "do you regularly." Something that happened once, five years ago, counts the same as something you do every weekend.
             </Text>
           </section>
 
           <section>
             <Heading size="xl" className="mb-4 text-green-500">
-              What Your Score Means
+              What Your Score Actually Means
             </Heading>
             <Text variant="body" className="leading-relaxed mb-4">
-              Your Rice Purity Test score reflects the number of experiences you've had from the test's list. Here's a general guide:
+              The average score is roughly 62-68, which means the typical person checks off about a third of the list. Most scores fall in the 55-75 range. Scores above 90 are uncommon; scores below 30 are also uncommon.
             </Text>
-            <ul className="list-disc list-inside space-y-2 ml-4">
-              <li><strong>100-98:</strong> Extremely Pure - Very few experiences</li>
-              <li><strong>97-94:</strong> Very Pure - Quite innocent</li>
-              <li><strong>93-77:</strong> Relatively Pure - Some experiences but still innocent</li>
-              <li><strong>76-45:</strong> Moderate - Average range of experiences</li>
-              <li><strong>44-9:</strong> Experienced - Many experiences</li>
-              <li><strong>8-0:</strong> Highly Experienced - Most things on the list</li>
-            </ul>
-            <Text variant="body" className="leading-relaxed mt-4">
-              Remember, there's no "right" or "wrong" score. The test is meant to be fun and reflective, not a definitive measure of your character.
+            <Text variant="body" className="leading-relaxed mb-4">
+              Your score is strongly influenced by your age. An 18-year-old and a 28-year-old with similar life values and similar decision-making will still have different scores because one of them has had 10 more years to accumulate experiences. Comparing across age groups doesn't tell you much.
+            </Text>
+            <Text variant="body" className="leading-relaxed mb-4">
+              The score also doesn't say anything about your character, intelligence, or future. It's a count from one specific checklist — one that leaves out enormous parts of what makes a life interesting. Two people with identical scores can have led radically different lives. Use the number as a starting point for conversation, not as a verdict.
+            </Text>
+            <Text variant="body" className="leading-relaxed">
+              For a full breakdown of what each range means in practice, check the <Link href="/rice-purity-test-score" className="text-green-600 underline hover:text-green-700">score guide</Link>. For how your number compares across age groups, see the <Link href="/rice-purity-test-average-score-by-age" className="text-green-600 underline hover:text-green-700">average score by age</Link> page.
             </Text>
           </section>
 
           <section>
             <Heading size="xl" className="mb-4 text-green-500">
-              Why Take the Rice Purity Test?
+              Is It Private?
             </Heading>
             <Text variant="body" className="leading-relaxed mb-4">
-              The Rice Purity Test offers several benefits:
+              Yes. Your answers never leave your device — there's no account, no data sent to any server, nothing stored anywhere. You decide what to share and with whom. The test is designed to work this way because people answer more honestly when they know there's no audience.
             </Text>
-            <ul className="list-disc list-inside space-y-2 ml-4">
-              <li><strong>Self-reflection:</strong> Helps you think about your life experiences and personal growth</li>
-              <li><strong>Conversation starter:</strong> Great way to bond with friends and discuss life experiences</li>
-              <li><strong>Fun activity:</strong> Lighthearted way to pass time and learn about yourself</li>
-              <li><strong>Anonymous:</strong> Completely private - no one sees your answers</li>
-              <li><strong>Free:</strong> No cost, no sign-up required</li>
-            </ul>
           </section>
 
           <section className="bg-green-50 border border-green-200 rounded-xl p-6 mt-8">
             <Heading size="lg" className="mb-4 text-green-600">
-              Ready to Take the Test?
+              Ready to take it?
             </Heading>
             <Text variant="body" className="mb-6 text-gray-700">
-              Now that you understand what the Rice Purity Test is, why not take it yourself? It's free, anonymous, and takes just 10-20 minutes.
+              Free, anonymous, no sign-up. Takes about 10-15 minutes.
             </Text>
             <Link href="/test">
               <Button size="lg">Start the Rice Purity Test</Button>

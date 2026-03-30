@@ -39,79 +39,96 @@ export default function MeaningPage() {
 
         <article className="space-y-6 text-gray-700">
           <Text variant="large" className="leading-relaxed">
-            The Rice Purity Test is a self-assessment survey that measures your "purity" based on life experiences. But what does "purity" actually mean in this context, and what is the purpose of the test?
+            The Rice Purity Test has a deceptively simple name. "Purity" sounds like a moral verdict, but it never was one — at least not in the way the word usually gets used. Understanding what the test actually means requires separating the word from its baggage.
           </Text>
 
           <section>
             <Heading as="h2" size="xl" className="mb-4 text-green-500">
-              What "Purity" Means
+              The Word "Purity" and What It Doesn't Mean
             </Heading>
             <Text variant="body" className="leading-relaxed mb-4">
-              In the context of the Rice Purity Test, "purity" refers to <strong>innocence</strong> or <strong>lack of certain life experiences</strong>, not moral judgment. A higher "purity" score means you've had fewer of the experiences listed in the test.
+              When the test was created at Rice University in the 1980s, "purity" was used in a deliberately ironic, self-aware way. College students weren't genuinely claiming that less experience made you a better or more virtuous person. The framing was playful — a mock-serious label for something that was never meant to be serious at all.
             </Text>
             <Text variant="body" className="leading-relaxed mb-4">
-              The term is used in a lighthearted, non-judgmental way. It's not meant to suggest that having more experiences is "bad" or that having fewer is "good." It's simply a way to measure and reflect on the breadth of your life experiences.
+              That irony has gotten a little lost over the decades, especially as the test spread to audiences who didn't have the campus context. People sometimes treat a high score as something to be proud of, or a low score as something shameful. Neither reaction makes much sense. A high score usually just means you're young, sheltered, or haven't had the opportunity for certain experiences. A low score usually just means you've been around for a while and said yes to a few things.
+            </Text>
+            <Text variant="body" className="leading-relaxed mb-4">
+              The word "purity" in this context is best read as a placeholder for "innocence by the test's specific definition" — which is just: how many of these 100 items have you checked?
             </Text>
           </section>
 
           <section>
             <Heading size="xl" className="mb-4 text-green-500">
-              Purpose of the Test
+              Why People Actually Take It
             </Heading>
             <Text variant="body" className="leading-relaxed mb-4">
-              The Rice Purity Test serves several purposes:
+              The honest answer: social comparison. People want to know how they measure up against their friends, their partner, their roommate. That's not a flaw in the test — it's the entire point. The original campus version worked because it gave groups of strangers a shared framework for talking about experiences that are usually private.
             </Text>
-            <ul className="list-disc list-inside space-y-2 ml-4">
-              <li><strong>Self-Reflection:</strong> Helps you think about your life experiences and personal growth</li>
-              <li><strong>Conversation Starter:</strong> Great way to bond with friends and discuss life experiences</li>
-              <li><strong>Entertainment:</strong> Fun activity to pass time and learn about yourself</li>
-              <li><strong>Cultural Tradition:</strong> Preserves a long-standing tradition from Rice University</li>
-            </ul>
-          </section>
-
-          <section>
-            <Heading size="xl" className="mb-4 text-green-500">
-              What the Test Measures
-            </Heading>
             <Text variant="body" className="leading-relaxed mb-4">
-              The Rice Purity Test measures the number of specific life experiences you've had from a list of 100 items. It covers:
+              There's something psychologically interesting about a number that summarizes your history in a single figure. It makes the abstract concrete. You can't easily compare life experiences directly — they're too varied, too contextual. But "I got a 62, you got a 74" is a number you can talk around. It opens questions rather than answering them.
             </Text>
-            <ul className="list-disc list-inside space-y-2 ml-4">
-              <li>Social experiences and interactions</li>
-              <li>Romantic and relationship experiences</li>
-              <li>Personal milestones and achievements</li>
-              <li>Various life activities and encounters</li>
-            </ul>
-            <Text variant="body" className="leading-relaxed mt-4">
-              It does NOT measure your character, morality, worth, or future potential.
+            <Text variant="body" className="leading-relaxed mb-4">
+              That's probably why the test has lasted over 40 years despite being, technically, a very simple questionnaire. It's not the questions themselves that keep people coming back. It's the conversation that comes after.
             </Text>
           </section>
 
           <section>
             <Heading size="xl" className="mb-4 text-green-500">
-              Interpreting Your Results
+              What the Test Can and Can't Tell You
             </Heading>
             <Text variant="body" className="leading-relaxed mb-4">
-              When you receive your Rice Purity Test score, remember:
+              The test can tell you one thing reliably: how many of its 100 specific experiences you've had. That's it. The list skews toward certain types of experiences — social, romantic, and risk-related ones. It completely misses others: intellectual experiences, creative milestones, professional growth, loss, grief, financial hardship, acts of care or courage. Someone could score a perfect 100 and have had a richer, more complex life than someone who scored a 30.
             </Text>
-            <ul className="list-disc list-inside space-y-2 ml-4">
-              <li>There's no "right" or "wrong" score</li>
-              <li>Your score reflects your unique life journey</li>
-              <li>Everyone's experiences are different and valid</li>
-              <li>The test is meant for fun and reflection, not judgment</li>
-            </ul>
+            <Text variant="body" className="leading-relaxed mb-4">
+              The test also can't account for the quality or context of experiences. Checking a box because something happened once, briefly, under specific circumstances is treated identically to someone for whom that experience has been a recurring part of their life. Two people with the same score can have lives that look nothing like each other.
+            </Text>
+            <Text variant="body" className="leading-relaxed mb-4">
+              None of that makes the test useless. It just means the score is a starting point for reflection, not a destination. The most useful question isn't "what does my number mean?" — it's "what do I think about the specific things I checked, and the ones I didn't?"
+            </Text>
+          </section>
+
+          <section>
+            <Heading size="xl" className="mb-4 text-green-500">
+              Why Your Score Feels More Significant Than It Is
+            </Heading>
+            <Text variant="body" className="leading-relaxed mb-4">
+              There's a reason people feel a mild jolt when they see their score — even knowing it's just a casual quiz. Numbers carry authority. They feel definitive. And because the questions touch on real, personal parts of your life, the score feels like it's saying something real about you rather than just counting checkboxes.
+            </Text>
+            <Text variant="body" className="leading-relaxed mb-4">
+              That emotional reaction is worth noticing. If your score surprises you — higher or lower than expected — it's worth asking why. What were you assuming about your own history? What were you comparing yourself to? Those questions are often more revealing than the score itself.
+            </Text>
+            <Text variant="body" className="leading-relaxed mb-4">
+              The test is at its best when it sparks that kind of reflection. It's at its worst when people treat a number as a verdict on who they are.
+            </Text>
+          </section>
+
+          <section>
+            <Heading size="xl" className="mb-4 text-green-500">
+              The Cultural Life of the Test
+            </Heading>
+            <Text variant="body" className="leading-relaxed mb-4">
+              The fact that this test has survived from the 1980s to now — from paper handouts to viral TikTok content — says something. Each generation rediscovers it, takes it, shares it, and argues about what different scores mean. The conversation keeps regenerating because the questions touch something that doesn't really change: people's curiosity about where they fit, how their experiences compare, and what those comparisons mean.
+            </Text>
+            <Text variant="body" className="leading-relaxed">
+              The Rice Purity Test doesn't really answer any of that. But it asks the questions in a form that's low-stakes enough that people are willing to engage. And sometimes that's exactly what you need to start talking about the things you'd otherwise avoid.
+            </Text>
           </section>
 
           <section className="bg-green-50 border border-green-200 rounded-xl p-6 mt-8">
             <Heading size="lg" className="mb-4 text-green-600">
-              Discover Your Meaning
+              Want the numbers breakdown?
             </Heading>
-            <Text variant="body" className="mb-6 text-gray-700">
-              Take the Rice Purity Test to discover your score and what it means for you.
+            <Text variant="body" className="mb-4 text-gray-700">
+              If you're looking for what specific scores mean in practice — the ranges, the context, the comparisons — the score guide covers it in detail.
             </Text>
-            <Link href="/test">
-              <Button size="lg">Take the Test</Button>
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <Link href="/rice-purity-test-score">
+                <Button size="lg" variant="secondary">Score Guide</Button>
+              </Link>
+              <Link href="/test">
+                <Button size="lg">Take the Test</Button>
+              </Link>
+            </div>
           </section>
         </article>
       </main>

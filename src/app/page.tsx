@@ -215,23 +215,19 @@ export default function HomePage() {
             </Heading>
             <div className="space-y-4 text-gray-700">
               <Text variant="body" className="leading-relaxed animate-fade-in-delay-1">
-                The Rice Purity Test has been a tradition at Rice University for decades. Originally created to foster bonding among students, it has become a popular online quiz taken by millions worldwide. The test's origins date back to the 1980s when Rice University students in Houston, Texas, developed this self-assessment survey as a way to gauge the maturity level and life experiences of incoming freshmen.
-              </Text>
-              
-              <Text variant="body" className="leading-relaxed">
-                Initially, the Rice Purity Test was a paper-based questionnaire distributed during orientation week. It served as an icebreaker activity that helped new students bond with their peers by sharing experiences in a lighthearted, non-judgmental environment. The questions covered a wide range of topics, from innocent childhood memories to more mature life experiences, creating a spectrum that allowed students to see where they fell on the "purity" scale.
+                Picture 1980s Houston. Rice University freshmen are arriving on campus, nervous, not knowing anyone. Upperclassmen hand out a paper questionnaire — a list of 100 experiences — and ask everyone to check the ones they've had. Then the scores come out, conversations start, and strangers suddenly have something to talk about. That was the original Rice Purity Test: a low-stakes icebreaker, not a judgment.
               </Text>
 
               <Text variant="body" className="leading-relaxed">
-                As the internet age dawned in the late 1990s and early 2000s, the Rice Purity Test found its way online. Students began sharing digital versions of the test, and it quickly spread beyond the Rice University campus. What started as a local tradition became a viral internet phenomenon, with websites dedicated to hosting the test and allowing users to calculate their scores instantly.
+                It stayed a campus-only thing for years. Then the internet happened. In the late 1990s, students started scanning and posting old versions online. What had been a Houston tradition suddenly reached dorm rooms across the country. The questions were the same, but now anyone could take it — and compare their score with people they'd never met.
               </Text>
 
               <Text variant="body" className="leading-relaxed">
-                The test's popularity exploded on social media platforms, particularly among college students and young adults. It became a common topic of conversation, with people sharing their scores and comparing results with friends. The test's appeal lies in its ability to spark conversations about life experiences, maturity, and personal growth in a fun, non-threatening way.
+                Social media turned it into something else entirely. TikTok, Twitter, group chats — people started sharing their scores publicly, debating what different numbers meant, and daring friends to take it. The test became a cultural shorthand for talking about life experience without getting too personal about any single thing. A score is easier to share than a life story.
               </Text>
 
               <Text variant="body" className="leading-relaxed">
-                Today, the Rice Purity Test has evolved into one of the most popular online quizzes, with millions of people taking it annually. While the original version from Rice University has been modified and adapted over the years, the core concept remains the same: a 100-question survey that helps individuals reflect on their life experiences and compare their "purity score" with others.
+                What's remarkable is how little the core test has changed. The questions from the 1980s are largely the same ones people answer today. The format shifted from paper to HTML forms to full web apps, but the 100-question structure and the simple subtraction formula have stayed constant. That consistency is part of why scores are still meaningful to compare across generations.
               </Text>
             </div>
           </div>
@@ -245,7 +241,7 @@ export default function HomePage() {
             </Heading>
             <div className="space-y-4 text-gray-700">
               <Text variant="body" className="leading-relaxed">
-                Your Rice Purity Test score is calculated by subtracting the number of experiences you've checked from 100. This means a score of 100 indicates you've had none of the listed experiences (most "pure"), while a score of 0 means you've had all of them. Understanding what your score means can help you reflect on your life experiences and see where you fall on the spectrum.
+                The formula is simple: start at 100, subtract one point for every experience you check. So if you check 38 boxes, you get a 62. The number itself is less interesting than what it gets you thinking about — and what happens when you compare it with a friend.
               </Text>
 
               <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm animate-slide-up">
@@ -258,7 +254,7 @@ export default function HomePage() {
                       100-98: Extremely Pure
                     </Heading>
                     <Text variant="body" className="leading-relaxed">
-                      If your score falls in this range, you've had very few of the experiences listed in the test. This typically indicates someone who has led a relatively sheltered life, perhaps focusing heavily on academics, family values, or personal development. People in this range often have strong moral convictions or have prioritized other aspects of life over the experiences measured by the test.
+                      You've checked almost nothing. This is genuinely rare — less than 5% of people score here. You've either had a very sheltered upbringing, hold strong personal values that kept you away from most of these experiences, or you're quite young and simply haven't had the opportunity yet. None of those are bad things.
                     </Text>
                   </div>
 
@@ -267,7 +263,7 @@ export default function HomePage() {
                       97-94: Very Pure
                     </Heading>
                     <Text variant="body" className="leading-relaxed">
-                      Scores in this range suggest you're quite innocent but have had a few life experiences. You may have experimented slightly or had limited exposure to certain activities, but overall, you maintain a high level of "purity" according to the test's standards. This range is common among younger individuals or those with conservative backgrounds.
+                      You've dipped your toes in but kept most of the list unchecked. A score here usually means you've had a handful of the more common social experiences — maybe a party or two, maybe some romantic milestones — but the more unusual or intense items are still largely unticked. Pretty typical for high schoolers and early college students.
                     </Text>
                   </div>
 
@@ -276,7 +272,7 @@ export default function HomePage() {
                       93-77: Relatively Pure
                     </Heading>
                     <Text variant="body" className="leading-relaxed">
-                      This is a moderate range indicating you've had some experiences but are still relatively innocent. You've likely explored certain aspects of life while maintaining boundaries in other areas. This range is common among college students and young adults who are beginning to experience more independence and life opportunities.
+                      You've had real experiences — this isn't a sheltered score. But you've also maintained limits in other areas. This range covers a wide slice of people, from cautious college freshmen to adults who've lived full lives in specific directions. Most people who take the test for the first time land somewhere in here and feel surprised it's not lower.
                     </Text>
                   </div>
 
@@ -285,7 +281,7 @@ export default function HomePage() {
                       76-45: Moderate Experience
                     </Heading>
                     <Text variant="body" className="leading-relaxed">
-                      Scores in this range represent an average level of life experiences. You've likely had a balanced approach to life, experiencing various activities while maintaining some boundaries. This range is typical for adults who have lived diverse lives with a mix of conservative and exploratory experiences.
+                      This is where the majority of test takers land — roughly 60% of scores fall in the 55-75 band. You've lived a fairly varied life. You've said yes to things, tried things, maybe regretted a few of them. There's no single story that explains a score in this range; it just means you've been out in the world.
                     </Text>
                   </div>
 
@@ -294,7 +290,7 @@ export default function HomePage() {
                       44-9: Experienced
                     </Heading>
                     <Text variant="body" className="leading-relaxed">
-                      This range indicates you've had many life experiences. You've likely explored various aspects of life extensively and have a broad range of experiences under your belt. People in this range often have adventurous personalities or have been exposed to diverse social environments and opportunities.
+                      You've checked a lot of boxes. This usually comes with age, a particular social environment, or simply a life that leaned toward trying things rather than avoiding them. People here often find the test less surprising and more nostalgic — a reminder of a specific period rather than a revelation.
                     </Text>
                   </div>
 
@@ -303,14 +299,14 @@ export default function HomePage() {
                       8-0: Highly Experienced
                     </Heading>
                     <Text variant="body" className="leading-relaxed">
-                      Scores in this lowest range mean you've checked off most or all of the experiences on the test. This indicates an extremely diverse and extensive range of life experiences. It's important to remember that a low score isn't necessarily negative—it simply reflects the breadth of experiences you've had throughout your life.
+                      Scoring this low is actually quite uncommon. It means you've encountered nearly everything on a list that covers a very wide range of experiences. Whether that reflects a particular time in your life, a specific environment, or just decades of living — it doesn't say anything about who you are now.
                     </Text>
                   </div>
                 </div>
               </div>
 
               <Text variant="body" className="leading-relaxed mt-4">
-                Remember, your Rice Purity Test score is not a judgment of your character or worth as a person. It's simply a reflection of the experiences you've had based on the specific questions in the test. Everyone's life journey is different, and there's no "right" or "wrong" score. The test is meant to be fun, introspective, and a conversation starter—not a definitive measure of who you are.
+                For a deeper breakdown of what each range means — and why your score isn't a verdict on your character — check out the <a href="/rice-purity-test-score" className="text-green-600 underline hover:text-green-700">full score guide</a>.
               </Text>
             </div>
           </div>
@@ -324,7 +320,7 @@ export default function HomePage() {
             </Heading>
             <div className="space-y-4 text-gray-700">
               <Text variant="body" className="leading-relaxed">
-                While individual scores vary widely, understanding average scores and statistics can provide context for your own results. Based on data from millions of test takers, here are some interesting insights about Rice Purity Test scores.
+                These numbers come from patterns observed across many test takers. They're self-reported, so treat them as rough reference points rather than hard data — but they're consistent enough to give you a sense of where most people land.
               </Text>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
@@ -334,7 +330,7 @@ export default function HomePage() {
                   </Heading>
                   <Text variant="large" className="font-bold text-green-700 mb-2">62-68</Text>
                   <Text variant="body" className="leading-relaxed">
-                    The average Rice Purity Test score typically falls between 62 and 68. This means most people have checked off approximately 32-38 of the 100 experiences listed in the test.
+                    Most people score somewhere in the low-to-mid 60s. That means checking off roughly a third of the list — which feels about right for someone who's been in the world a few years but hasn't experienced everything on it.
                   </Text>
                 </div>
 
@@ -344,47 +340,37 @@ export default function HomePage() {
                   </Heading>
                   <Text variant="large" className="font-bold text-blue-700 mb-2">55-75</Text>
                   <Text variant="body" className="leading-relaxed">
-                    The majority of test takers score between 55 and 75, representing a moderate level of life experiences. This range accounts for approximately 60% of all test results.
+                    Around 60% of test takers land in this band. If you score here, you're squarely in the middle — which is less a comment on your character and more a reflection of what a fairly typical adult life looks like.
                   </Text>
                 </div>
 
                 <div className="bg-purple-50 border border-purple-200 rounded-xl p-6 shadow-sm animate-fade-in-delay-2">
                   <Heading size="lg" className="mb-3 text-purple-600">
-                    Age Correlation
+                    Age Matters
                   </Heading>
-                  <Text variant="large" className="font-bold text-purple-700 mb-2">Varies by Age</Text>
+                  <Text variant="large" className="font-bold text-purple-700 mb-2">Younger = Higher</Text>
                   <Text variant="body" className="leading-relaxed">
-                    Younger test takers (18-22) typically score higher (70-85), while older participants (25+) often score lower (45-65) due to having more life experiences over time.
+                    An 18-year-old taking this test will almost always score higher than a 30-year-old — not because they're a better person, but because they've had less time to accumulate experiences. The same person, retaking it a decade later, will likely score lower.
                   </Text>
                 </div>
 
                 <div className="bg-amber-50 border border-amber-200 rounded-xl p-6 shadow-sm animate-fade-in-delay-3">
                   <Heading size="lg" className="mb-3 text-amber-600">
-                    Gender Differences
+                    A Note on Comparisons
                   </Heading>
-                  <Text variant="large" className="font-bold text-amber-700 mb-2">Slight Variation</Text>
+                  <Text variant="large" className="font-bold text-amber-700 mb-2">Compare Fairly</Text>
                   <Text variant="body" className="leading-relaxed">
-                    While individual variation is significant, some studies suggest slight differences in average scores between genders, though these differences are minimal and may reflect social factors rather than inherent differences.
+                    Comparing your score to someone in a different age group or life stage isn't that meaningful. The more interesting comparison is within your own peer group — same rough age, similar background. That's when scores actually tell you something.
                   </Text>
                 </div>
               </div>
 
               <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 mt-6">
                 <Heading size="lg" className="mb-3 text-gray-800">
-                  Important Notes About Statistics
+                  Worth Knowing
                 </Heading>
-                <Text variant="body" className="leading-relaxed mb-3">
-                  It's important to remember that these statistics are based on self-reported data and should be taken with a grain of salt. The Rice Purity Test is not a scientific study, and scores can vary significantly based on:
-                </Text>
-                <ul className="space-y-2 list-disc list-inside text-gray-700">
-                  <li>Honesty in answering questions</li>
-                  <li>Cultural and social background</li>
-                  <li>Personal values and beliefs</li>
-                  <li>Age and life stage</li>
-                  <li>Interpretation of questions</li>
-                </ul>
-                <Text variant="body" className="leading-relaxed mt-4">
-                  The most important thing is not how your score compares to averages, but what it means to you personally. Use the test as a tool for self-reflection and conversation, not as a definitive measure of your character or life experiences.
+                <Text variant="body" className="leading-relaxed">
+                  These figures are based on self-reported responses, which means they're only as reliable as people's honesty. Cultural background, personal values, and how you interpret individual questions all affect your score significantly. Two people with nearly identical life histories can score quite differently depending on how literally they read the questions. The number is a starting point for reflection — not a final verdict.
                 </Text>
               </div>
             </div>
@@ -399,56 +385,38 @@ export default function HomePage() {
             </Heading>
             <div className="space-y-4 text-gray-700">
               <Text variant="body" className="leading-relaxed">
-                Taking the Rice Purity Test can be a fun and introspective experience. Here are some tips to help you get the most accurate and meaningful results.
+                Most people don't need much preparation — it's a checkbox list, not an exam. But a few things genuinely affect how useful your score ends up being.
               </Text>
 
               <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm animate-slide-up">
                 <Heading size="xl" className="mb-4 text-green-500">
-                  How to Get Accurate Results
+                  Three Things That Actually Matter
                 </Heading>
                 <div className="space-y-4">
                   <div>
                     <Heading size="lg" className="mb-2 text-gray-800">
-                      1. Be Honest with Yourself
+                      1. Answer for your whole life, not just recently
                     </Heading>
                     <Text variant="body" className="leading-relaxed">
-                      The most important tip is to answer honestly. The test is anonymous, so there's no reason to be dishonest. Your score will only be meaningful if you're truthful about your experiences. Remember, there's no judgment here—just self-reflection.
+                      The test covers experiences across your entire life — not just the last few months. The question is "have you ever," not "do you currently." People often undercount because they're thinking about their present self rather than their full history. If it happened, check it.
                     </Text>
                   </div>
 
                   <div>
                     <Heading size="lg" className="mb-2 text-gray-800">
-                      2. Take Your Time
+                      2. When a question is ambiguous, go with your gut
                     </Heading>
                     <Text variant="body" className="leading-relaxed">
-                      Don't rush through the questions. Read each one carefully and think about whether it applies to you. Some questions might be ambiguous, so take a moment to consider what they mean to you personally.
+                      Some questions are deliberately broad. If your first instinct is "yes, kind of" — that probably counts. Overthinking them leads to under-reporting. Your gut reaction after a quick read is usually more honest than whatever conclusion you arrive at after analyzing it for 30 seconds.
                     </Text>
                   </div>
 
                   <div>
                     <Heading size="lg" className="mb-2 text-gray-800">
-                      3. Understand the Questions
+                      3. Nobody's watching
                     </Heading>
                     <Text variant="body" className="leading-relaxed">
-                      Some questions might be worded in ways that require interpretation. Think about what each question is really asking and answer based on your understanding. If you're unsure, err on the side of caution and only check items you're certain about.
-                    </Text>
-                  </div>
-
-                  <div>
-                    <Heading size="lg" className="mb-2 text-gray-800">
-                      4. Don't Overthink It
-                    </Heading>
-                    <Text variant="body" className="leading-relaxed">
-                      While you should be thoughtful, don't overthink each question. Your first instinct is often the most honest answer. The test is meant to be fun and reflective, not stressful.
-                    </Text>
-                  </div>
-
-                  <div>
-                    <Heading size="lg" className="mb-2 text-gray-800">
-                      5. Consider Your Entire Life
-                    </Heading>
-                    <Text variant="body" className="leading-relaxed">
-                      The test asks about experiences you've had at any point in your life, not just recently. Make sure you're considering your entire life history when answering, not just your current situation.
+                      Your answers are processed entirely in your browser — nothing is sent to a server, nothing is stored. There's genuinely no audience. The score is only as useful as it is honest, and right now you're the only one who will ever know both the answers and the score.
                     </Text>
                   </div>
                 </div>
@@ -456,17 +424,11 @@ export default function HomePage() {
 
               <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm mt-4 animate-slide-up-delay-1">
                 <Heading size="xl" className="mb-4 text-green-500">
-                  Making the Most of Your Results
+                  What to Do With Your Score
                 </Heading>
-                <Text variant="body" className="leading-relaxed mb-3">
-                  Once you've completed the test and received your score, here's how to make the most of it:
+                <Text variant="body" className="leading-relaxed">
+                  Share it with a friend you trust and compare — that's where the interesting conversations happen. Two people can have very similar scores and completely different stories behind them. Or very different scores and much more overlap than they expected. The number opens the conversation; it doesn't close it.
                 </Text>
-                <ul className="space-y-2 list-disc list-inside text-gray-700">
-                  <li><strong>Reflect on your score:</strong> What does it tell you about your life experiences? Are you surprised by the result?</li>
-                  <li><strong>Share with friends:</strong> Comparing scores with friends can lead to interesting conversations and help you understand different perspectives on life experiences.</li>
-                  <li><strong>Remember it's just for fun:</strong> Don't take your score too seriously. It's a lighthearted way to reflect on your experiences, not a judgment of your character.</li>
-                  <li><strong>Retake if needed:</strong> If you feel you didn't answer honestly the first time, you can always retake the test. There's no limit to how many times you can take it.</li>
-                </ul>
               </div>
             </div>
           </div>
@@ -484,16 +446,16 @@ export default function HomePage() {
                   Is the Rice Purity Test anonymous?
                 </Heading>
                 <Text color="default" className="text-gray-700">
-                  Yes! The Rice Purity Test is completely anonymous. We do not collect, store, or track your answers. Your responses remain private and are only visible to you. All processing happens locally in your browser, and we don't require any personal information or account creation.
+                  Yes — completely. Your answers never leave your device. There's no account, no login, no tracking. Everything runs locally in your browser. We built it this way intentionally because the test only works if people feel safe being honest.
                 </Text>
               </div>
-              
+
               <div className="bg-white border border-gray-200 rounded-xl p-4 shadow-sm hover:border-green-400 hover:shadow-lg hover:scale-[1.02] transition-all duration-300 animate-slide-up-delay-1 cursor-pointer">
                 <Heading as="h3" size="lg" className="mb-2 text-green-500">
                   How is my score calculated?
                 </Heading>
                 <Text color="default" className="text-gray-700">
-                  Your score is calculated by counting the number of experiences you've had and subtracting from 100. The formula is: Score = 100 - (number of checked boxes). A higher score means you're more "pure" or have had fewer experiences. For example, if you check 30 boxes, your score would be 70.
+                  It's just subtraction. Start at 100, subtract one point for each box you check. Check 35 boxes? Your score is 65. Check 70? Your score is 30. The fewer experiences you've had from the list, the higher your score.
                 </Text>
               </div>
               
@@ -502,43 +464,43 @@ export default function HomePage() {
                   Can I retake the test?
                 </Heading>
                 <Text color="default" className="text-gray-700">
-                  Absolutely! You can take the Rice Purity Test as many times as you like. Your previous results are not stored, so each test is independent. This allows you to retake it if you want to answer more honestly, or simply take it again for fun with friends.
+                  Yes, as many times as you want. Since nothing is stored, each attempt starts fresh. Some people retake it after a few years to see how their score has changed — others take it a second time because they rushed through the first time and want a more honest result.
                 </Text>
               </div>
-              
+
               <div className="bg-white border border-gray-200 rounded-xl p-4 shadow-sm hover:border-green-400 hover:shadow-lg hover:scale-[1.02] transition-all duration-300 animate-slide-up-delay-3 cursor-pointer">
                 <Heading as="h3" size="lg" className="mb-2 text-green-500">
                   What does my Rice Purity score mean?
                 </Heading>
                 <Text color="default" className="text-gray-700">
-                  Your score indicates your level of "innocence" based on life experiences. There's no right or wrong score - it's simply a fun way to reflect on your experiences and compare with friends. Higher scores (90-100) indicate fewer experiences, while lower scores (0-20) indicate many experiences. Most people score between 55-75.
+                  It's a count of how many experiences from a specific list you've had. A higher score means fewer experiences checked; a lower score means more. Most people land in the 55-75 range. For what each range actually means, the <a href="/rice-purity-test-score" className="text-green-600 underline hover:text-green-700">score guide</a> goes into real detail.
                 </Text>
               </div>
-              
+
               <div className="bg-white border border-gray-200 rounded-xl p-4 shadow-sm hover:border-green-400 hover:shadow-lg hover:scale-[1.02] transition-all duration-300 animate-fade-in cursor-pointer">
                 <Heading as="h3" size="lg" className="mb-2 text-green-500">
                   Is this the official Rice Purity Test?
                 </Heading>
                 <Text color="default" className="text-gray-700">
-                  While we strive to maintain the authenticity of the original Rice University test, the official version has evolved over the years. This version contains the most commonly recognized 100 questions that have been used in various iterations of the test. The core concept and scoring system remain true to the original.
+                  The original test was created at Rice University in the 1980s as a paper handout. There's no single "official" digital version — it's been adapted many times over the decades. This version uses the most widely recognized set of 100 questions that have been in circulation since the test went online.
                 </Text>
               </div>
-              
+
               <div className="bg-white border border-gray-200 rounded-xl p-4 shadow-sm hover:border-green-400 hover:shadow-lg hover:scale-[1.02] transition-all duration-300 animate-fade-in-delay-1 cursor-pointer">
                 <Heading as="h3" size="lg" className="mb-2 text-green-500">
-                  Why should I take the Rice Purity Test?
+                  Why do people take the Rice Purity Test?
                 </Heading>
                 <Text color="default" className="text-gray-700">
-                  The test is a fun, introspective way to reflect on your life experiences. It's popular among college students and young adults as an icebreaker and conversation starter. It can help you understand yourself better and spark interesting discussions with friends about life experiences and perspectives.
+                  Mostly curiosity and social comparison — people want to know where they stand and how they compare with friends. It also works as an icebreaker. Sharing your score opens conversations that might not happen otherwise, especially early in friendships.
                 </Text>
               </div>
 
               <div className="bg-white border border-gray-200 rounded-xl p-4 shadow-sm hover:border-green-400 hover:shadow-lg hover:scale-[1.02] transition-all duration-300 animate-fade-in-delay-2 cursor-pointer">
                 <Heading as="h3" size="lg" className="mb-2 text-green-500">
-                  How long does it take to complete the test?
+                  How long does it take?
                 </Heading>
                 <Text color="default" className="text-gray-700">
-                  Most people complete the Rice Purity Test in 10-20 minutes, depending on how carefully you read and answer each question. There's no time limit, so you can take as long as you need. The test automatically saves your progress as you go, so you can even pause and come back later.
+                  Usually 10-15 minutes if you read each question. Your progress saves automatically, so if you close the tab halfway through, you can pick up where you left off. There's no time limit — take as long as you need.
                 </Text>
               </div>
 
@@ -547,7 +509,7 @@ export default function HomePage() {
                   Can I share my results?
                 </Heading>
                 <Text color="default" className="text-gray-700">
-                  Yes! After completing the test, you'll receive your score and can share it on social media platforms if you choose. Many people enjoy comparing scores with friends and discussing their results. Sharing is completely optional and up to you.
+                  Yes. After you finish, you get your score and a share option. Most people text or screenshot their result to friends rather than posting publicly — but both work. Sharing is entirely optional.
                 </Text>
               </div>
 
@@ -556,25 +518,25 @@ export default function HomePage() {
                   Is there an age requirement?
                 </Heading>
                 <Text color="default" className="text-gray-700">
-                  The Rice Purity Test is intended for users aged 13 and older. Some questions may reference mature topics, so parental discretion is advised for younger users. The test is most popular among college students and young adults, but people of all ages can take it.
+                  The test covers some mature topics, so it's intended for people 13 and older. Parental guidance is reasonable for younger teens. That said, the test is most commonly taken by college students and people in their 20s.
                 </Text>
               </div>
 
               <div className="bg-white border border-gray-200 rounded-xl p-4 shadow-sm hover:border-green-400 hover:shadow-lg hover:scale-[1.02] transition-all duration-300 animate-slide-up-delay-1 cursor-pointer">
                 <Heading as="h3" size="lg" className="mb-2 text-green-500">
-                  What if I'm not sure how to answer a question?
+                  What if I'm unsure how to answer a question?
                 </Heading>
                 <Text color="default" className="text-gray-700">
-                  If you're unsure about a question, think about what it means to you personally and answer based on your best interpretation. If you're still uncertain, it's better to leave it unchecked rather than guess. Remember, the test is about your honest assessment of your experiences.
+                  Go with your gut read after the first pass. If you immediately thought "yes, technically" — that counts. If you genuinely can't tell, leave it unchecked. The goal is honest self-reflection, not a technically perfect answer.
                 </Text>
               </div>
 
               <div className="bg-white border border-gray-200 rounded-xl p-4 shadow-sm hover:border-green-400 hover:shadow-lg hover:scale-[1.02] transition-all duration-300 animate-slide-up-delay-2 cursor-pointer">
                 <Heading as="h3" size="lg" className="mb-2 text-green-500">
-                  Does my score change over time?
+                  Will my score change if I retake it later?
                 </Heading>
                 <Text color="default" className="text-gray-700">
-                  Your score can change if you retake the test after having new life experiences. Since the test asks about experiences you've had at any point in your life, your score might decrease over time as you accumulate more experiences. This is natural and reflects personal growth and life changes.
+                  Probably, yes — especially if years have passed. The test asks about your whole life, so the longer you've lived, the more experiences you're likely to check. People who retake it after a few years almost always score lower the second time.
                 </Text>
               </div>
 
@@ -583,7 +545,7 @@ export default function HomePage() {
                   Is the Rice Purity Test scientifically valid?
                 </Heading>
                 <Text color="default" className="text-gray-700">
-                  No, the Rice Purity Test is not a scientific or psychological assessment. It's a fun, informal quiz designed for entertainment and self-reflection. The score doesn't measure your character, morality, or worth as a person—it simply reflects the number of specific experiences you've had from the test's list.
+                  No — and it was never meant to be. It's a casual self-survey created by college students, not a psychological instrument. Your score doesn't measure intelligence, character, or anything clinically meaningful. It's a conversation starter, not a diagnosis.
                 </Text>
               </div>
             </div>

@@ -39,84 +39,81 @@ export default function HistoryPage() {
 
         <article className="space-y-6 text-gray-700">
           <Text variant="large" className="leading-relaxed">
-            The Rice Purity Test has a fascinating history that spans decades, from its humble beginnings at Rice University to becoming one of the most popular online quizzes in the world.
+            The Rice Purity Test is one of the oldest surviving internet quizzes — but it predates the internet by at least a decade. Its history moves in three distinct phases: a paper era, an early internet era, and a social media era. Each one changed how people took it and why.
           </Text>
 
           <section>
             <Heading size="xl" className="mb-4 text-green-500">
-              Origins at Rice University (1980s)
+              The Paper Era — Rice University in the 1980s
             </Heading>
             <Text variant="body" className="leading-relaxed mb-4">
-              The Rice Purity Test was created in the 1980s at Rice University in Houston, Texas. Originally, it was a paper-based questionnaire distributed during orientation week to help incoming freshmen bond and share experiences in a lighthearted, non-judgmental environment.
+              Rice University is a small private research university in Houston, Texas — selective, intense, and known for a strong residential college culture where students live and eat together in close-knit communities. In that environment, freshmen arriving in the fall of the 1980s would have had a lot to figure out quickly: who to trust, what the social norms were, how to find their people.
             </Text>
             <Text variant="body" className="leading-relaxed mb-4">
-              The test served as an icebreaker activity that allowed new students to connect with their peers by discussing life experiences. It was never meant to be a serious assessment, but rather a fun way to start conversations and build friendships.
+              Someone — the original author has never been definitively identified — put together a paper questionnaire and started passing it around during orientation week. The concept was borrowed from older "purity tests" that had circulated on campuses since at least the 1930s, but this version found its form at Rice: 100 yes/no questions, a simple subtraction formula, a score between 0 and 100.
+            </Text>
+            <Text variant="body" className="leading-relaxed mb-4">
+              The tone was playful. The framing of "purity" was self-aware — almost a joke about the very concept. Students would fill it out, compare numbers, and use the results as a way into conversations about experiences that can be hard to bring up directly. It worked precisely because it was lighthearted enough to feel safe. Nobody was being judged; everyone was just being counted.
+            </Text>
+            <Text variant="body" className="leading-relaxed mb-4">
+              For years, the test remained local. It circulated at Rice, occasionally spread to neighboring campuses, and existed entirely on paper. The questions stayed relatively consistent because people copied them by hand or on early photocopiers.
             </Text>
           </section>
 
           <section>
             <Heading size="xl" className="mb-4 text-green-500">
-              The Internet Era (1990s-2000s)
+              Going Digital — The Late 1990s and Early 2000s
             </Heading>
             <Text variant="body" className="leading-relaxed mb-4">
-              As the internet became widespread in the late 1990s and early 2000s, students began sharing digital versions of the test. What started as a local campus tradition quickly spread beyond Rice University, becoming accessible to anyone with internet access.
+              The internet changed everything, but not immediately. In the early-to-mid 1990s, as universities began getting networked, students started posting text versions of the Rice Purity Test to Usenet groups, listservs, and personal pages. The test spread university-by-university — first to other Texas schools, then nationally, then internationally.
             </Text>
             <Text variant="body" className="leading-relaxed mb-4">
-              Websites dedicated to hosting the test began appearing, allowing users to take the test online and calculate their scores instantly. This marked the beginning of the test's transformation into a global internet phenomenon.
+              By the late 1990s, dedicated websites appeared that let users answer questions online and have their score calculated automatically. This was a meaningful shift. Paper tests required some social context — you handed it to someone, sat nearby while they answered. Online, the test became private. You could take it alone, honestly, without worrying about what the person sitting next to you thought.
+            </Text>
+            <Text variant="body" className="leading-relaxed mb-4">
+              This change in context changed how people took it. The campus icebreaker became a personal exercise. People started taking it out of pure curiosity rather than as part of an organized social event. The score still felt like something to share — but now you chose who you shared it with.
+            </Text>
+            <Text variant="body" className="leading-relaxed mb-4">
+              During this period, different versions multiplied. Some hosts edited the questions, some added new ones, some removed items that seemed dated. The original Rice University version became one version among many. The questions in widest circulation today largely reflect the consensus that settled out of those early 2000s iterations.
             </Text>
           </section>
 
           <section>
             <Heading size="xl" className="mb-4 text-green-500">
-              Social Media Explosion (2010s-Present)
+              The Social Media Era — 2010s to Now
             </Heading>
             <Text variant="body" className="leading-relaxed mb-4">
-              The test's popularity exploded with the rise of social media platforms. People began sharing their scores on Facebook, Twitter, Instagram, and TikTok, turning it into a viral trend. The hashtag #RicePurityTest became popular, with millions of people taking and sharing their results.
+              The test had been culturally relevant for decades before social media, but TikTok — more than any other platform — turned it into a genuinely mass-media phenomenon. Around 2019-2020, a new wave of teenagers discovered it, started filming reaction videos, and began discussing scores publicly in ways earlier generations never had. #RicePurityTest accumulated millions of views.
             </Text>
             <Text variant="body" className="leading-relaxed mb-4">
-              Today, the Rice Purity Test is one of the most popular online quizzes, with millions of people taking it annually. It has become a cultural touchstone, particularly among college students and young adults.
+              The dynamic that social media added was scale and spectacle. The original campus version worked because it was intimate — you compared scores with people you actually knew. TikTok made scores semi-public, which produced a different kind of conversation: reactions to high scores ("that's so innocent"), reactions to low ones, debates about which questions were "fair," whole comment sections processing what particular numbers meant.
+            </Text>
+            <Text variant="body" className="leading-relaxed mb-4">
+              What's notable is that the test itself barely changed through all of this. The same questions from the 1980s were going viral in the 2020s. A test created on paper handouts at one Texas university became part of how a generation of young people worldwide talked about growing up.
             </Text>
           </section>
 
           <section>
             <Heading size="xl" className="mb-4 text-green-500">
-              Evolution of the Test
+              Why the Test Has Lasted
             </Heading>
             <Text variant="body" className="leading-relaxed mb-4">
-              While the core concept has remained the same, the test has evolved over the years:
+              Most internet quizzes disappear within a few years. The Rice Purity Test has lasted over 40. The explanation probably has less to do with the test itself and more to do with what it enables: an easy, low-stakes way to talk about experiences that are usually private.
             </Text>
-            <ul className="list-disc list-inside space-y-2 ml-4">
-              <li><strong>Original Version:</strong> Paper-based, distributed at Rice University</li>
-              <li><strong>Early Digital:</strong> Simple HTML forms on websites</li>
-              <li><strong>Modern Version:</strong> Interactive web applications with instant scoring</li>
-              <li><strong>Mobile Apps:</strong> Native apps for iOS and Android</li>
-            </ul>
-            <Text variant="body" className="leading-relaxed mt-4">
-              Despite these changes, the original 100 questions and scoring system have remained largely consistent, preserving the authenticity of the original test.
-            </Text>
-          </section>
-
-          <section>
-            <Heading size="xl" className="mb-4 text-green-500">
-              Cultural Impact
-            </Heading>
             <Text variant="body" className="leading-relaxed mb-4">
-              The Rice Purity Test has had a significant cultural impact:
+              Each generation of college students rediscovers it because the social function it serves doesn't go away. New students still need to figure out who they're living with. Friends still want to compare notes on their histories. The test provides a shared language for that — a number that opens conversation without requiring anyone to lead with the most sensitive parts of their story.
             </Text>
-            <ul className="list-disc list-inside space-y-2 ml-4">
-              <li>Became a rite of passage for many college students</li>
-              <li>Inspired countless memes and social media trends</li>
-              <li>Created a shared cultural experience across generations</li>
-              <li>Helped normalize conversations about life experiences</li>
-            </ul>
+            <Text variant="body" className="leading-relaxed">
+              That's a surprisingly resilient design. Not because of the technology, but because of the human need it taps into.
+            </Text>
           </section>
 
           <section className="bg-green-50 border border-green-200 rounded-xl p-6 mt-8">
             <Heading size="lg" className="mb-4 text-green-600">
-              Experience the Tradition
+              Add Yourself to the History
             </Heading>
             <Text variant="body" className="mb-6 text-gray-700">
-              Take the Rice Purity Test and become part of this decades-long tradition.
+              Forty-plus years of people taking this test. Find out where you land.
             </Text>
             <Link href="/test">
               <Button size="lg">Take the Test</Button>
