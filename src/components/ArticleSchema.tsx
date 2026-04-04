@@ -23,11 +23,20 @@ export function ArticleSchema({
     headline,
     datePublished,
     dateModified: dateModified ?? datePublished,
-    author: { '@type': 'Organization', name: 'Rice Purity Test App' },
+    author: {
+      '@type': 'Person',
+      name: 'Rice Purity Test App Editorial Team',
+      url: `${BASE_URL}/about`,
+    },
     publisher: {
       '@type': 'Organization',
       name: 'Rice Purity Test App',
-      logo: { '@type': 'ImageObject', url: `${BASE_URL}/icon.svg` },
+      logo: {
+        '@type': 'ImageObject',
+        url: `${BASE_URL}/og-image.jpg`,
+        width: 1200,
+        height: 630,
+      },
     },
     mainEntityOfPage: { '@type': 'WebPage', '@id': url },
     description,

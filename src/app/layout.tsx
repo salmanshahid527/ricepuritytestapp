@@ -87,7 +87,12 @@ export default function RootLayout({
               '@type': 'Organization',
               name: 'Rice Purity Test App',
               url: 'https://www.ricepuritytestapp.com',
-              logo: 'https://www.ricepuritytestapp.com/icon.svg',
+              logo: {
+                '@type': 'ImageObject',
+                url: 'https://www.ricepuritytestapp.com/og-image.jpg',
+                width: 1200,
+                height: 630,
+              },
               description: 'Official Rice Purity Test - Free, anonymous, instant results',
             }),
           }}
@@ -110,11 +115,6 @@ export default function RootLayout({
                 price: '0',
                 priceCurrency: 'USD',
               },
-              aggregateRating: {
-                '@type': 'AggregateRating',
-                ratingValue: '4.8',
-                ratingCount: '15420',
-              },
               featureList: [
                 '100 questions survey',
                 'Anonymous testing',
@@ -124,63 +124,23 @@ export default function RootLayout({
             }),
           }}
         />
-        {/* Structured Data - FAQPage */}
+        {/* Structured Data - WebSite with SearchAction */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               '@context': 'https://schema.org',
-              '@type': 'FAQPage',
-              mainEntity: [
-                {
-                  '@type': 'Question',
-                  name: 'Is the Rice Purity Test anonymous?',
-                  acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Yes! The Rice Purity Test is completely anonymous. We do not collect, store, or track your answers.',
-                  },
+              '@type': 'WebSite',
+              name: 'Rice Purity Test App',
+              url: 'https://www.ricepuritytestapp.com',
+              potentialAction: {
+                '@type': 'SearchAction',
+                target: {
+                  '@type': 'EntryPoint',
+                  urlTemplate: 'https://www.ricepuritytestapp.com/blog?q={search_term_string}',
                 },
-                {
-                  '@type': 'Question',
-                  name: 'How is my score calculated?',
-                  acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Your score is calculated by counting the number of experiences you\'ve had and subtracting from 100. The formula is: Score = 100 - (number of checked boxes).',
-                  },
-                },
-                {
-                  '@type': 'Question',
-                  name: 'Can I retake the test?',
-                  acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Absolutely! You can take the Rice Purity Test as many times as you like. Your previous results are not stored.',
-                  },
-                },
-                {
-                  '@type': 'Question',
-                  name: 'What is the Rice Purity Test?',
-                  acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'The Rice Purity Test is a self-graded survey that assesses participants\' supposed degree of innocence in worldly matters, with 100% being the most innocent.',
-                  },
-                },
-                {
-                  '@type': 'Question',
-                  name: 'What does my Rice Purity score mean?',
-                  acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Your score indicates your level of "innocence" based on life experiences. There\'s no right or wrong score - it\'s simply a fun way to reflect on your experiences and compare with friends.',
-                  },
-                },
-                {
-                  '@type': 'Question',
-                  name: 'Is this the official Rice Purity Test?',
-                  acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'While we strive to maintain the authenticity of the original Rice University test, the official version has evolved over the years. This version contains the most commonly recognized 100 questions.',
-                  },
-                },
-              ],
+                'query-input': 'required name=search_term_string',
+              },
             }),
           }}
         />

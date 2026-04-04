@@ -12,7 +12,7 @@ import type { Metadata } from 'next';
 const BASE_URL = 'https://www.ricepuritytestapp.com';
 
 export const metadata: Metadata = {
-  title: 'What is the Rice Purity Test? Complete Guide for 2026 | Rice Purity Test Guide & Tips',
+  title: 'What Is the Rice Purity Test? Complete Guide 2026',
   description: 'Read this guide on what the Rice Purity Test is — learn key tips, explanations, and actionable insights about the Rice Purity Test and scores.',
   keywords: 'what is rice purity test, rice purity test guide, rice purity test explained',
   alternates: { canonical: `${BASE_URL}/blog/what-is-rice-purity-test` },
