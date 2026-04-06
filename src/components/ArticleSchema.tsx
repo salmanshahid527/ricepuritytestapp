@@ -8,6 +8,8 @@ interface ArticleSchemaProps {
   dateModified?: string;
   url: string;
   description: string;
+  wordCount?: number;
+  articleSection?: string;
 }
 
 export function ArticleSchema({
@@ -16,16 +18,18 @@ export function ArticleSchema({
   dateModified,
   url,
   description,
+  wordCount,
+  articleSection,
 }: ArticleSchemaProps) {
-  const schema = {
+  const schema: Record<string, unknown> = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
     headline,
     datePublished,
     dateModified: dateModified ?? datePublished,
     author: {
-      '@type': 'Person',
-      name: 'Rice Purity Test App Editorial Team',
+      '@type': 'Organization',
+      name: 'RicePurityTestApp Editorial Team',
       url: `${BASE_URL}/about`,
     },
     publisher: {
@@ -38,9 +42,19 @@ export function ArticleSchema({
         height: 630,
       },
     },
+    image: {
+      '@type': 'ImageObject',
+      url: `${BASE_URL}/og-image.jpg`,
+      width: 1200,
+      height: 630,
+    },
     mainEntityOfPage: { '@type': 'WebPage', '@id': url },
     description,
   };
+
+  if (wordCount) schema.wordCount = wordCount;
+  if (articleSection) schema.articleSection = articleSection;
+
   return (
     <script
       type="application/ld+json"

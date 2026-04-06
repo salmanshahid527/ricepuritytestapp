@@ -9,6 +9,22 @@ import type { Metadata } from 'next';
 
 const BASE_URL = 'https://www.ricepuritytestapp.com';
 
+// Injected via server render below — ItemList + BreadcrumbList for rich results
+const blogIndexSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'Rice Purity Test Guides & Articles',
+  url: `${BASE_URL}/blog`,
+  description: 'Guides, score explainers, history, and tips about the Rice Purity Test.',
+  breadcrumb: {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: BASE_URL },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: `${BASE_URL}/blog` },
+    ],
+  },
+};
+
 export const metadata: Metadata = {
   title: 'Rice Purity Test Guides & Articles | Tips, Meaning & Insights',
   description: 'Explore Rice Purity Test guides and articles — learn tips, score meanings, history, and insights from millions of people who took the test.',
@@ -133,8 +149,22 @@ const categoryColorMap: Record<string, string> = {
 };
 
 export default function BlogPage() {
+  const itemListSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Rice Purity Test Articles',
+    itemListElement: blogPosts.map((post, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      url: `${BASE_URL}/blog/${post.slug}`,
+      name: post.title,
+    })),
+  };
+
   return (
     <div className="min-h-screen bg-white">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(blogIndexSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
       <Header />
       <main className="container mx-auto px-4 py-8 max-w-4xl">
         <Breadcrumbs items={[

@@ -83,9 +83,11 @@ export default function HomePage() {
       <main className="container mx-auto px-4">
         <Hero />
         
-        {/* Ad Unit - After Hero */}
+        {/* Ad Unit - After Hero
+            TODO: Replace "REPLACE_WITH_AD_SLOT_ID" with a real ad slot ID from AdSense dashboard:
+            https://www.google.com/adsense → Ads → By ad unit → Create new ad unit → Copy slot ID */}
         <div className="max-w-4xl mx-auto py-4">
-          <AdUnit adSlot="1234567890" adFormat="horizontal" />
+          <AdUnit adSlot="REPLACE_WITH_AD_SLOT_ID" adFormat="horizontal" />
         </div>
 
         {/* Info Cards */}
@@ -181,33 +183,33 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Enhanced Social Proof & Trust Signals */}
+        {/* Trust Signals */}
         <section className="py-8 bg-white">
           <div className="max-w-4xl mx-auto">
             <Heading as="h2" size="2xl" className="mb-6 text-center animate-fade-in">
-              Why 100,000+ Students Trust Us
+              Why Students Trust RicePurityTestApp
             </Heading>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
               <div className="bg-green-50 border border-green-200 rounded-xl p-4 text-center hover:scale-105 transition-transform animate-fade-in">
-                <div className="text-3xl font-bold text-green-600 mb-2">500,000+</div>
-                <Text variant="small" color="muted">Tests Taken</Text>
+                <div className="text-3xl font-bold text-green-600 mb-2">100</div>
+                <Text variant="small" color="muted">Questions</Text>
               </div>
               <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 text-center hover:scale-105 transition-transform animate-fade-in-delay-1">
-                <div className="text-3xl font-bold text-blue-600 mb-2">4.8/5</div>
-                <Text variant="small" color="muted">User Rating</Text>
+                <div className="text-3xl font-bold text-blue-600 mb-2">0</div>
+                <Text variant="small" color="muted">Data Collected</Text>
               </div>
               <div className="bg-purple-50 border border-purple-200 rounded-xl p-4 text-center hover:scale-105 transition-transform animate-fade-in-delay-2">
                 <div className="text-3xl font-bold text-purple-600 mb-2">100%</div>
                 <Text variant="small" color="muted">Anonymous</Text>
               </div>
               <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 text-center hover:scale-105 transition-transform animate-fade-in-delay-3">
-                <div className="text-3xl font-bold text-amber-600 mb-2">Since 2023</div>
-                <Text variant="small" color="muted">Trusted Platform</Text>
+                <div className="text-3xl font-bold text-amber-600 mb-2">Free</div>
+                <Text variant="small" color="muted">Always Free</Text>
               </div>
             </div>
             <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 text-center">
-              <Text variant="large" className="text-gray-700 animate-bounce">
-                🔥 <strong>10,000+</strong> people took the test this week
+              <Text variant="large" className="text-gray-700">
+                Your answers are processed <strong>entirely in your browser</strong> — nothing is ever sent to a server
               </Text>
             </div>
           </div>
@@ -507,9 +509,10 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Ad Unit - Before FAQ */}
+        {/* Ad Unit - Before FAQ
+            TODO: Replace "REPLACE_WITH_AD_SLOT_ID_2" with a real ad slot ID from AdSense dashboard */}
         <div className="max-w-4xl mx-auto py-4">
-          <AdUnit adSlot="0987654321" adFormat="auto" />
+          <AdUnit adSlot="REPLACE_WITH_AD_SLOT_ID_2" adFormat="auto" />
         </div>
 
         {/* Expanded FAQ Section */}
@@ -630,83 +633,33 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Related Tests and Resources */}
-        <section id="resources" className="py-8 bg-white">
+        {/* Latest Guides */}
+        <section id="guides" className="py-8 bg-white">
           <div className="max-w-4xl mx-auto">
-            <Heading as="h2" size="3xl" className="mb-6 text-center animate-fade-in">
-              Related Tests and Resources
+            <Heading as="h2" size="3xl" className="mb-3 text-center animate-fade-in">
+              Rice Purity Test Guides
             </Heading>
-            <div className="space-y-4 text-gray-700">
-              <Text variant="body" className="leading-relaxed">
-                The Rice Purity Test is part of a larger category of self-assessment quizzes and personality tests. If you enjoyed taking this test, you might be interested in exploring other similar assessments and resources.
-              </Text>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
-                <div className="bg-blue-50 border border-blue-200 rounded-xl p-6 shadow-sm hover:border-blue-400 hover:shadow-lg transition-all duration-300 animate-fade-in">
-                  <Heading size="lg" className="mb-3 text-blue-600">
-                    Similar Purity Tests
-                  </Heading>
-                  <Text variant="body" className="leading-relaxed mb-3">
-                    There are various versions of purity tests available online, each with slightly different questions and focuses. Some focus on specific age groups, while others cover different aspects of life experiences.
-                  </Text>
-                  <ul className="space-y-1 list-disc list-inside text-gray-700 text-sm">
-                    <li>College Purity Tests</li>
-                    <li>High School Purity Tests</li>
-                    <li>Adult Life Experience Tests</li>
-                  </ul>
-                </div>
-
-                <div className="bg-purple-50 border border-purple-200 rounded-xl p-6 shadow-sm hover:border-purple-400 hover:shadow-lg transition-all duration-300 animate-fade-in-delay-1">
-                  <Heading size="lg" className="mb-3 text-purple-600">
-                    Personality Assessments
-                  </Heading>
-                  <Text variant="body" className="leading-relaxed mb-3">
-                    If you're interested in learning more about yourself, consider taking scientifically-backed personality tests like the Myers-Briggs Type Indicator or the Big Five personality test.
-                  </Text>
-                  <ul className="space-y-1 list-disc list-inside text-gray-700 text-sm">
-                    <li>Myers-Briggs Type Indicator</li>
-                    <li>Big Five Personality Test</li>
-                    <li>Enneagram Test</li>
-                  </ul>
-                </div>
-
-                <div className="bg-green-50 border border-green-200 rounded-xl p-6 shadow-sm hover:border-green-400 hover:shadow-lg transition-all duration-300 animate-fade-in-delay-2">
-                  <Heading size="lg" className="mb-3 text-green-600">
-                    Self-Reflection Tools
-                  </Heading>
-                  <Text variant="body" className="leading-relaxed mb-3">
-                    Beyond quizzes, there are many ways to engage in self-reflection and personal growth, including journaling, meditation, and therapy.
-                  </Text>
-                  <ul className="space-y-1 list-disc list-inside text-gray-700 text-sm">
-                    <li>Journaling exercises</li>
-                    <li>Meditation apps</li>
-                    <li>Personal development resources</li>
-                  </ul>
-                </div>
-
-                <div className="bg-amber-50 border border-amber-200 rounded-xl p-6 shadow-sm hover:border-amber-400 hover:shadow-lg transition-all duration-300 animate-fade-in-delay-3">
-                  <Heading size="lg" className="mb-3 text-amber-600">
-                    Educational Resources
-                  </Heading>
-                  <Text variant="body" className="leading-relaxed mb-3">
-                    Learn more about Rice University, where the test originated, or explore resources about self-assessment and personal development.
-                  </Text>
-                  <ul className="space-y-1 list-disc list-inside text-gray-700 text-sm">
-                    <li>Rice University history</li>
-                    <li>Self-assessment guides</li>
-                    <li>Personal growth resources</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 mt-6">
-                <Heading size="lg" className="mb-3 text-gray-800">
-                  Remember
-                </Heading>
-                <Text variant="body" className="leading-relaxed">
-                  While quizzes and tests can be fun and provide insights, they should never replace professional advice or therapy if you're dealing with serious personal issues. Use these tools as starting points for self-reflection and conversation, not as definitive answers about who you are or what you should do.
-                </Text>
-              </div>
+            <Text variant="body" className="text-center text-gray-500 mb-8">
+              Everything you need to know — from what the test is to how your score compares with others your age.
+            </Text>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {[
+                { href: '/blog/what-is-rice-purity-test', title: 'What Is the Rice Purity Test?', desc: 'Origins, how it works, and what your score means — the complete guide.' },
+                { href: '/blog/rice-purity-test-score-meaning', title: 'What Does Your Score Mean?', desc: 'A plain-English breakdown of every score range from 0 to 100.' },
+                { href: '/blog/rice-purity-test-for-college-students', title: 'Guide for College Students', desc: 'Average scores by year, how to take it with your dorm, and more.' },
+                { href: '/blog/rice-purity-test-with-friends', title: 'How to Take It with Friends', desc: 'Making it a social activity without it getting awkward.' },
+                { href: '/blog/what-is-a-good-rice-purity-score', title: 'What\'s a Good Score?', desc: 'The honest answer — why "good" is the wrong framing.' },
+                { href: '/blog', title: 'All Articles →', desc: 'Browse all guides, history, statistics, and more.' },
+              ].map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="bg-white border border-gray-200 rounded-xl p-5 hover:border-green-400 hover:shadow-md transition-all duration-300 group"
+                >
+                  <div className="font-semibold text-gray-800 group-hover:text-green-600 transition-colors mb-1">{item.title}</div>
+                  <Text variant="small" className="text-gray-500">{item.desc}</Text>
+                </Link>
+              ))}
             </div>
           </div>
         </section>

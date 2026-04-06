@@ -6,7 +6,7 @@ import './globals.css';
 
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
-const manrope = Manrope({ 
+const manrope = Manrope({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700', '800'],
   variable: '--font-manrope',
@@ -78,7 +78,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Structured Data - Organization */}
+        {/* Organization schema — logo must be square for Knowledge Panel eligibility.
+            TODO: replace og-image.jpg with a dedicated 512x512 square logo once created. */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -89,15 +90,21 @@ export default function RootLayout({
               url: 'https://www.ricepuritytestapp.com',
               logo: {
                 '@type': 'ImageObject',
-                url: 'https://www.ricepuritytestapp.com/og-image.jpg',
-                width: 1200,
-                height: 630,
+                url: 'https://www.ricepuritytestapp.com/icon.svg',
+                width: 512,
+                height: 512,
               },
-              description: 'Official Rice Purity Test - Free, anonymous, instant results',
+              description: 'Free Rice Purity Test — 100 questions, anonymous, instant results',
+              contactPoint: {
+                '@type': 'ContactPoint',
+                contactType: 'customer support',
+                email: 'contact@ricepuritytestapp.com',
+                url: 'https://www.ricepuritytestapp.com/contact',
+              },
             }),
           }}
         />
-        {/* Structured Data - WebApplication */}
+        {/* WebApplication schema */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -106,7 +113,7 @@ export default function RootLayout({
               '@type': 'WebApplication',
               name: 'Rice Purity Test',
               url: 'https://www.ricepuritytestapp.com',
-              description: 'Take the official Rice Purity Test - 100 questions to measure innocence',
+              description: 'Take the original Rice Purity Test — 100 questions about life experiences, anonymous, instant results',
               applicationCategory: 'Entertainment',
               operatingSystem: 'Any',
               browserRequirements: 'Requires JavaScript',
@@ -124,7 +131,7 @@ export default function RootLayout({
             }),
           }}
         />
-        {/* Structured Data - WebSite with SearchAction */}
+        {/* WebSite schema — SearchAction removed: blog page does not implement q= filtering */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -133,14 +140,6 @@ export default function RootLayout({
               '@type': 'WebSite',
               name: 'Rice Purity Test App',
               url: 'https://www.ricepuritytestapp.com',
-              potentialAction: {
-                '@type': 'SearchAction',
-                target: {
-                  '@type': 'EntryPoint',
-                  urlTemplate: 'https://www.ricepuritytestapp.com/blog?q={search_term_string}',
-                },
-                'query-input': 'required name=search_term_string',
-              },
             }),
           }}
         />

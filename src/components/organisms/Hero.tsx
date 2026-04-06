@@ -15,11 +15,11 @@ export const Hero: React.FC = () => {
 
       {/* Headings */}
       <Heading as="h1" size="4xl" className="mb-3 animate-slide-up">
-        Rice Purity Test
+        Rice Purity Test — Take the Free 100-Question Test Online
       </Heading>
-      <Heading as="h2" size="xl" className="mb-4 text-green-500 animate-slide-up-delay-1 font-medium">
-        How Innocent Are You? Take the Official 100-Question Test
-      </Heading>
+      <p className="text-xl font-medium text-green-500 mb-4 animate-slide-up-delay-1">
+        How Innocent Are You? Find Out Instantly
+      </p>
       <Text variant="large" color="muted" className="max-w-2xl mx-auto mb-8 animate-fade-in-delay-2 leading-relaxed">
         The original Rice Purity Test — 100 questions about life experiences. Completely anonymous, instant results. Taken by over 500,000 people worldwide.
       </Text>
@@ -61,8 +61,8 @@ export const Hero: React.FC = () => {
           <div className="text-xs text-gray-500 mt-0.5">Data Stored</div>
         </div>
         <div className="bg-amber-50 border border-amber-100 rounded-xl p-3.5">
-          <div className="text-xl font-bold text-amber-600">4.8★</div>
-          <div className="text-xs text-gray-500 mt-0.5">User Rating</div>
+          <div className="text-xl font-bold text-amber-600">Free</div>
+          <div className="text-xs text-gray-500 mt-0.5">Always Free</div>
         </div>
       </div>
     </section>

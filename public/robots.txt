@@ -3,7 +3,16 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
-# AI training crawlers – block content scraping
+# Allow Google-Extended (feeds AI Overviews / Gemini citations)
+# Blocking this opts the site out of the most prominent SERP feature for "rice purity test"
+User-agent: Google-Extended
+Allow: /
+
+# Allow PerplexityBot (citation/reference crawls drive real traffic)
+User-agent: PerplexityBot
+Allow: /
+
+# AI training-only crawlers – block pure content scraping
 User-agent: GPTBot
 Disallow: /
 
@@ -17,12 +26,6 @@ User-agent: ClaudeBot
 Disallow: /
 
 User-agent: Claude-Web
-Disallow: /
-
-User-agent: PerplexityBot
-Disallow: /
-
-User-agent: Google-Extended
 Disallow: /
 
 User-agent: CCBot
