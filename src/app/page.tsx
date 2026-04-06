@@ -7,14 +7,87 @@ import { Header } from '@/components/organisms/Header';
 import { Footer } from '@/components/organisms/Footer';
 import { Text } from '@/components/atoms/Text';
 import { Heading } from '@/components/atoms/Heading';
+import { AdUnit } from '@/components/AdUnit';
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Is the Rice Purity Test anonymous?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes — completely. Your answers never leave your device. There\'s no account, no login, no tracking. Everything runs locally in your browser.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How is my Rice Purity Test score calculated?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Start at 100, subtract one point for each box you check. Check 35 boxes? Your score is 65. The fewer experiences you\'ve had from the list, the higher your score.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What does my Rice Purity score mean?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'It\'s a count of how many experiences from a specific list you\'ve had. A higher score means fewer experiences checked. Most people land in the 55-75 range.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I retake the Rice Purity Test?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes, as many times as you want. Since nothing is stored, each attempt starts fresh. People often retake it after a few years to see how their score has changed.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How long does the Rice Purity Test take?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Usually 10-15 minutes if you read each question. Your progress saves automatically, so you can pause and come back. There\'s no time limit.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is this the official Rice Purity Test?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The original test was created at Rice University in the 1980s as a paper handout. This version uses the most widely recognized set of 100 questions that have been in circulation since the test went online.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is the Rice Purity Test scientifically valid?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No — and it was never meant to be. It\'s a casual self-survey created by college students, not a psychological instrument. It\'s a conversation starter, not a diagnosis.',
+      },
+    },
+  ],
+};
 
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <Header />
       <main className="container mx-auto px-4">
         <Hero />
         
+        {/* Ad Unit - After Hero */}
+        <div className="max-w-4xl mx-auto py-4">
+          <AdUnit adSlot="1234567890" adFormat="horizontal" />
+        </div>
+
         {/* Info Cards */}
         <section className="py-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
@@ -433,6 +506,11 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+
+        {/* Ad Unit - Before FAQ */}
+        <div className="max-w-4xl mx-auto py-4">
+          <AdUnit adSlot="0987654321" adFormat="auto" />
+        </div>
 
         {/* Expanded FAQ Section */}
         <section id="faq" className="py-8 bg-gray-50">
