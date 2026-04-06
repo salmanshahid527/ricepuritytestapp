@@ -3,9 +3,10 @@
   "configurations": [
     {
       "name": "Next.js Dev Server",
-      "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev"],
-      "port": 3000
+      "runtimeExecutable": "/bin/sh",
+      "runtimeArgs": ["-c", "export PATH=/Users/salmanshahid/.nvm/versions/node/v20.17.0/bin:$PATH && npm run dev"],
+      "port": 3000,
+      "autoPort": true
     }
   ]
 }
