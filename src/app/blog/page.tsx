@@ -1,6 +1,5 @@
 import React from 'react';
-import { Header } from '@/components/organisms/Header';
-import { Footer } from '@/components/organisms/Footer';
+
 import { Heading } from '@/components/atoms/Heading';
 import { Text } from '@/components/atoms/Text';
 import { Breadcrumbs } from '@/components/molecules/Breadcrumbs';
@@ -68,7 +67,6 @@ const blogPosts = [
 export default function BlogPage() {
   return (
     <div className="min-h-screen bg-white">
-      <Header />
       <main className="container mx-auto px-4 py-8 max-w-4xl">
         <Breadcrumbs items={[
           { label: 'Home', href: '/' },
@@ -104,7 +102,7 @@ export default function BlogPage() {
           ))}
         </div>
       </main>
-      <Footer />
+      
     </div>
   );
 }

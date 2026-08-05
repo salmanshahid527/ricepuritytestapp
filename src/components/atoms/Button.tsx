@@ -13,12 +13,12 @@ export const Button: React.FC<ButtonProps> = ({
   className = '',
   ...props
 }) => {
-  const baseClasses = 'font-medium rounded-lg transition-all duration-300 focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:outline-none active:scale-95';
-  
+  const baseClasses = 'font-display font-semibold rounded-lg transition-all duration-300 focus:ring-2 focus:ring-amber focus:ring-offset-2 focus:outline-none active:scale-95';
+
   const variantClasses = {
-    primary: 'bg-green-500 hover:bg-green-600 text-white shadow-lg shadow-green-500/30',
-    secondary: 'bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-green-400 shadow-sm',
-    outline: 'border-2 border-green-500 text-green-500 hover:bg-green-50',
+    primary: 'bg-amber hover:brightness-105 text-ink shadow-sm',
+    secondary: 'bg-surface border border-line text-ink hover:bg-bone hover:border-plum',
+    outline: 'border-2 border-plum text-plum hover:bg-plum-tint',
   };
 
   const sizeClasses = {

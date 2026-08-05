@@ -1,6 +1,4 @@
 import React from 'react';
-import { Header } from '@/components/organisms/Header';
-import { Footer } from '@/components/organisms/Footer';
 import { Heading } from '@/components/atoms/Heading';
 import { Text } from '@/components/atoms/Text';
 import { Breadcrumbs } from '@/components/molecules/Breadcrumbs';
@@ -17,90 +15,113 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <div className="min-h-screen bg-white">
-      <Header />
+    <div className="min-h-screen bg-surface">
       <main className="container mx-auto px-4 py-8 max-w-4xl">
-        <Breadcrumbs items={[
-          { label: 'Home', href: '/' },
-          { label: 'Terms of Service' }
-        ]} />
-        <Heading as="h1" size="3xl" className="mb-6">
-          Terms of Service
+        <Breadcrumbs
+          items={[
+            { label: 'Home', href: '/' },
+            { label: 'Terms of Service' },
+          ]}
+        />
+
+        <Heading as="h1" size="3xl" className="mb-2 text-ink">
+          Terms of service
         </Heading>
-        <Text variant="small" color="muted" className="mb-8">
-          Last updated: January 16, 2026
+        <Text variant="small" className="text-slate mb-8 font-mono block">
+          
+          Last updated July 31, 2026  
         </Text>
 
-        <div className="space-y-8 text-gray-700">
+        <article className="space-y-8 text-ink max-w-2xl mx-auto">
+
           <section>
-            <Heading size="xl" className="mb-4 text-green-500">
-              Usage
+            <Heading as="h2" size="xl" className="mb-3 text-ink">
+              Using this site
             </Heading>
-            <Text variant="body" className="leading-relaxed mb-4">
-              The Rice Purity Test is provided for entertainment purposes only. By using this service, you agree to use it responsibly and in accordance with these terms.
+            <Text variant="body" className="leading-relaxed text-ink">
+              By using 
+          {' '}
+           <a href="/" className="text-ink hover:underline font-semibold  hover:text-plum">
+                RicePurityTestApp.com
+              </a>  
+               {' '} you agree to these terms. If you do
+              not agree, please do not use the site. You must be 18 or older to
+              take the test.
             </Text>
           </section>
 
           <section>
-            <Heading size="xl" className="mb-4 text-green-500">
-              Content
+            <Heading as="h2" size="xl" className="mb-3 text-ink">
+              What the test is
             </Heading>
-            <Text variant="body" className="leading-relaxed mb-4">
-              All content is provided as-is. The test results are not scientifically validated and should not be used for any serious decision-making purposes. The questions and scoring system are based on the traditional Rice University purity test format.
+            <Text variant="body" className="leading-relaxed text-ink">
+              The test is provided for entertainment and self-reflection. It is
+              not a psychological, medical or diagnostic instrument, it has not
+              been validated, and no result it produces should be used to make a
+              decision about anyone.
             </Text>
           </section>
 
           <section>
-            <Heading size="xl" className="mb-4 text-green-500">
-              Age Restriction
+            <Heading as="h2" size="xl" className="mb-3 text-ink">
+              No affiliation
             </Heading>
-            <Text variant="body" className="leading-relaxed mb-4">
-              Users must be 13 years of age or older to use this service. If you are under 13, please do not use this website.
+            <Text variant="body" className="leading-relaxed text-ink">
+              This site is not affiliated with, endorsed by, or connected to Rice
+              University or any other institution. Names used are for
+              identification only.
             </Text>
           </section>
 
           <section>
-            <Heading size="xl" className="mb-4 text-green-500">
-              Intellectual Property
+            <Heading as="h2" size="xl" className="mb-3 text-ink">
+              Content and ownership
             </Heading>
-            <Text variant="body" className="leading-relaxed mb-4">
-              The Rice Purity Test originated at Rice University. This website is an independent implementation of the test format. All website design, code, and original content are the property of ricepuritytestapp.com.
+            <Text variant="body" className="leading-relaxed text-ink">
+              The hundred-item question set, the written content, the design and
+              the brand marks on this site are original works owned by{' '}
+              <strong>Rice Purity Test App</strong>. You are welcome to link to any
+              page and to quote briefly with attribution. Reproducing the
+              question set or substantial page content elsewhere is not
+              permitted.
             </Text>
           </section>
 
           <section>
-            <Heading size="xl" className="mb-4 text-green-500">
-              Limitation of Liability
+            <Heading as="h2" size="xl" className="mb-3 text-ink">
+              Your submissions
             </Heading>
-            <Text variant="body" className="leading-relaxed mb-4">
-              We are not liable for any consequences resulting from the use of this service. The test is provided for entertainment purposes only, and users take the test at their own discretion.
+            <Text variant="body" className="leading-relaxed text-ink">
+              If you choose to add your score to our statistics, you grant
+              permission for it to be included in aggregate figures published
+              on this site. Submissions are anonymous and cannot be withdrawn
+              individually because they are not linked to you.
             </Text>
           </section>
 
           <section>
-            <Heading size="xl" className="mb-4 text-green-500">
-              Changes to Terms
+            <Heading as="h2" size="xl" className="mb-3 text-ink">
+              Availability and liability
             </Heading>
-            <Text variant="body" className="leading-relaxed mb-4">
-              We reserve the right to modify these terms at any time. Continued use of the service after changes constitutes acceptance of the new terms.
+            <Text variant="body" className="leading-relaxed text-ink">
+              The site is provided as-is. We do not guarantee that it will be
+              available, accurate or uninterrupted. To the fullest extent
+              permitted by law, we are not liable for any loss arising from use
+              of the site.
             </Text>
           </section>
 
           <section>
-            <Heading size="xl" className="mb-4 text-green-500">
-              Contact
+            <Heading as="h2" size="xl" className="mb-3 text-ink">
+              Contact and governing law
             </Heading>
-            <Text variant="body" className="leading-relaxed mb-4">
-              If you have any questions about these Terms of Service, please contact us through our{' '}
-              <a href="/contact" className="text-green-500 hover:underline">
-                contact page
-              </a>
-              .
+            <Text variant="body" className="leading-relaxed text-ink">
+              Questions: <strong>support@ricepuritytestapp.com</strong>. These terms are governed by
+              the laws of <strong> Pakistan</strong>.
             </Text>
           </section>
-        </div>
+        </article>
       </main>
-      <Footer />
     </div>
   );
 }

@@ -1,146 +1,173 @@
 import React from 'react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { Header } from '@/components/organisms/Header';
-import { Footer } from '@/components/organisms/Footer';
 import { Heading } from '@/components/atoms/Heading';
 import { Text } from '@/components/atoms/Text';
 import { Breadcrumbs } from '@/components/molecules/Breadcrumbs';
-import { Button } from '@/components/atoms/Button';
 
 const BASE_URL = 'https://www.ricepuritytestapp.com';
 
 export const metadata: Metadata = {
-  title: 'Rice Purity Test Average Score by Age (2026)',
-  description: 'Find the Rice Purity Test average score by age for 18-22, 23-25, 26-30, and 31+, then compare your score with typical ranges.',
-  keywords: 'rice purity test average score by age, average rice purity test score, rice purity test average score, average rice purity score',
+  title: 'Average Rice Purity Score by Age | What Is Actually Known',
+  description: 'What age genuinely changes about your Rice Purity score, and why we do not publish unsourced average tables.',
   robots: { index: true, follow: true },
   alternates: { canonical: `${BASE_URL}/rice-purity-test-average-score-by-age` },
   openGraph: {
-    title: 'Rice Purity Test Average Score by Age (2026)',
-    description: 'Find the Rice Purity Test average score by age for 18-22, 23-25, 26-30, and 31+. Compare your score with typical ranges.',
+    title: 'Average Rice Purity Score by Age | What Is Actually Known',
+    description: 'What age genuinely changes about your Rice Purity score, and why we do not publish unsourced average tables.',
     url: `${BASE_URL}/rice-purity-test-average-score-by-age`,
-    type: 'article',
   },
-  twitter: { card: 'summary_large_image', title: 'Rice Purity Test Average Score by Age (2026)', description: 'Find average Rice Purity Test scores by age group and compare your result.' },
+  twitter: { card: 'summary_large_image' },
 };
+
+const FOOT_LINKS = [
+  { href: '/rice-purity-test-score', label: 'Score guide' },
+  { href: '/rice-purity-test-questions', label: 'All 100 questions' },
+  { href: '/test', label: 'Take the test' },
+];
 
 export default function AverageScoreByAgePage() {
   return (
-    <div className="min-h-screen bg-white">
-      <Header />
+    <div className="min-h-screen bg-surface">
+      {/* <Header /> */}
       <main className="container mx-auto px-4 py-8 max-w-4xl">
-        <Breadcrumbs items={[
-          { label: 'Home', href: '/' },
-          { label: 'Rice Purity Test Average Score by Age' },
-        ]} />
+        <Breadcrumbs
+          items={[
+            { label: 'Home', href: '/' },
+            { label: 'Averages by age' },
+          ]}
+        />
 
-        <Heading as="h1" size="3xl" className="mb-6">
-          Rice Purity Test Average Score by Age
+        <Heading as="h1" size="3xl" className="mb-3 text-ink">
+          Average Rice Purity scores by age: what is actually known
         </Heading>
 
-        <article className="space-y-6 text-gray-700">
-          <Text variant="large" className="leading-relaxed">
-            Age is the single biggest predictor of Rice Purity Test scores. Not because older people made worse decisions than younger ones — but because the test asks about cumulative life experiences, and more years means more time to accumulate them. If you're comparing your score to someone in a different decade of life, you're not comparing apples to apples.
-          </Text>
+        <Text variant="large" className="leading-relaxed text-slate mb-8">
+          Short version: far less than the internet suggests.
+        </Text>
 
+        <article className="space-y-10">
           <section>
-            <Heading size="xl" className="mb-4 text-green-500">
-              The Overall Average — Where Most People Land
+            <Heading as="h2" size="xl" className="mb-3 text-ink">
+              Why we do not publish a table of averages
             </Heading>
-            <Text variant="body" className="leading-relaxed mb-4">
-              Across all age groups, the average Rice Purity Test score falls somewhere between <strong>62 and 68</strong>. That means most people check off roughly 32-38 items out of 100. The most common range is 55-75, which accounts for about 60% of scores.
+            <Text variant="body" className="leading-relaxed mb-4 text-ink">
+              Search for an average Rice Purity score by age and you will find plenty of
+              tables. Almost none of them cite a source. Where a source is given, it is
+              usually another site with a table of its own. There is no published,
+              methodologically sound dataset for this test — it is an informal
+              questionnaire that has circulated for decades in dozens of variants, and
+              nobody has run a representative survey on it.
             </Text>
-            <Text variant="body" className="leading-relaxed mb-4">
-              These figures are based on self-reported data, so they reflect the population of people who voluntarily take and share their results — which skews younger and toward certain social environments. The real population average, including people who've never heard of the test, would likely be different. Use these numbers as reference points, not ground truth.
-            </Text>
-          </section>
-
-          <section>
-            <Heading size="xl" className="mb-4 text-green-500">
-              Average Score Ranges by Age Group
-            </Heading>
-            <Text variant="body" className="leading-relaxed mb-4">
-              Here's how scores tend to distribute by age, along with why each range makes sense:
-            </Text>
-            <div className="space-y-5">
-              <div className="bg-blue-50 border-l-4 border-blue-500 p-5 rounded">
-                <Heading size="lg" className="mb-2 text-gray-800">18-22 years old — Average: 70-85</Heading>
-                <Text variant="body" className="leading-relaxed mb-2">This is the core demographic for the Rice Purity Test — freshmen, sophomores, early college students taking it during orientation or with a new friend group. Scores here tend to be higher for the obvious reason: you haven't had as many years to accumulate experiences.</Text>
-                <Text variant="body" className="leading-relaxed">Someone who's 18 and scores a 75 isn't particularly sheltered — they're just 18. The same person retaking it at 23 will almost certainly score lower, even without doing anything dramatically different in the intervening years. A handful of ordinary life events add up quickly on a 100-item list.</Text>
-              </div>
-              <div className="bg-green-50 border-l-4 border-green-500 p-5 rounded">
-                <Heading size="lg" className="mb-2 text-gray-800">23-25 years old — Average: 60-75</Heading>
-                <Text variant="body" className="leading-relaxed mb-2">Post-college, early working life. By this point most people have been in relationships, lived independently, navigated some social complexity, and encountered situations that would have been unfamiliar a few years earlier. Scores drop accordingly.</Text>
-                <Text variant="body" className="leading-relaxed">This age group tends to have the most internal variation — some 24-year-olds have lived intensely, others have been focused on graduate school or career and have scores closer to their college freshman self. The range is wide for a reason.</Text>
-              </div>
-              <div className="bg-yellow-50 border-l-4 border-yellow-500 p-5 rounded">
-                <Heading size="lg" className="mb-2 text-gray-800">26-30 years old — Average: 50-65</Heading>
-                <Text variant="body" className="leading-relaxed mb-2">The mid-to-late 20s tend to see scores dip into the 50s for most people. These are the years when a lot of the test's more significant items — longer-term relationships, more varied social environments, a few years of navigating adult life — become applicable.</Text>
-                <Text variant="body" className="leading-relaxed">A score of 55 at 28 isn't anything surprising. If you're in this range and score higher than expected, you may have had a relatively contained social life — which is neither good nor bad, just different.</Text>
-              </div>
-              <div className="bg-orange-50 border-l-4 border-orange-500 p-5 rounded">
-                <Heading size="lg" className="mb-2 text-gray-800">31+ years old — Average: 45-60</Heading>
-                <Text variant="body" className="leading-relaxed mb-2">By the time someone's in their 30s, the test starts feeling less like a discovery and more like a census of things they've already processed. The questions that seemed hypothetical at 20 are now just memories. Scores in this range tend to reflect that accumulated history.</Text>
-                <Text variant="body" className="leading-relaxed">That said, adults in their 30s and 40s who've had quieter or more focused lives do score in the 60s and 70s. Life trajectory matters more than age alone at this point.</Text>
-              </div>
-            </div>
-          </section>
-
-          <section>
-            <Heading size="xl" className="mb-4 text-green-500">
-              Why Age Affects Score — The Simple Explanation
-            </Heading>
-            <Text variant="body" className="leading-relaxed mb-4">
-              The test asks "have you ever" for each item — not "have you recently" or "do you regularly." That means it's a running total that can only go up over time. You can't uncross something you've already crossed.
-            </Text>
-            <Text variant="body" className="leading-relaxed mb-4">
-              Add to that: the items on the list include a lot of things that are simply more likely to happen as you get older and have more social opportunities, more independence, and more years of relationships behind you. Not because older people are reckless — because some experiences just take time to encounter.
-            </Text>
-            <Text variant="body" className="leading-relaxed mb-4">
-              This is why comparing your score to someone ten years older or younger isn't that meaningful. A 19-year-old with a 78 and a 32-year-old with a 58 might have had very similar proportional life experiences for their age — the raw numbers don't tell you that.
+            <Text variant="body" className="leading-relaxed text-ink">
+              Repeating those numbers would be easy and it would be wrong, so this page
+              does not. Instead it explains what age actually does to a score, which is
+              more useful and happens to be true.
             </Text>
           </section>
 
           <section>
-            <Heading size="xl" className="mb-4 text-green-500">
-              What If My Score Doesn't Match My Age Group?
+            <Heading as="h2" size="xl" className="mb-4 text-ink">
+              What age genuinely changes
             </Heading>
-            <Text variant="body" className="leading-relaxed mb-4">
-              It's genuinely common. These are wide ranges, and they reflect central tendencies — not rules. If you're 24 and scored a 90, that doesn't mean something is wrong with you. It might mean you've had a more sheltered or focused upbringing, strong personal values, a particular social environment, or simply that you interpreted some questions conservatively.
+            <ul className="list-disc list-inside space-y-3 ml-1">
+              <li className="text-ink leading-relaxed">
+                <strong>Early adulthood is where the ordinary items fill in.</strong>{' '}
+                First relationships, first drinks, first nights out — the largest and
+                fastest-moving categories.
+              </li>
+              <li className="text-ink leading-relaxed">
+                <strong>The middle years fill in slowly.</strong> Travel, money, work
+                and legal items accumulate steadily but not dramatically.
+              </li>
+              <li className="text-ink leading-relaxed">
+                <strong>The rare items rarely fill in at all.</strong> The final
+                category is uncommon by design.
+              </li>
+              <li className="text-ink leading-relaxed">
+                <strong>Circumstance outweighs age at the edges.</strong> Money,
+                geography and legal environment change which items are even available
+                to a person.
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <Heading as="h2" size="xl" className="mb-3 text-ink">
+              What we are doing instead
+            </Heading>
+            <Text variant="body" className="leading-relaxed mb-6 text-ink">
+              At the end of the test there is an optional prompt to add your score
+              anonymously. It collects three things — the score, an age band and a
+              country — and nothing else. Once enough responses have come in, this page
+              will carry a real table with a real sample size next to it, and it will
+              say plainly how the data was gathered and what its limitations are.
             </Text>
-            <Text variant="body" className="leading-relaxed mb-4">
-              If you're 21 and scored a 45, that doesn't mean you've burned your life down. It might mean you've had a wider social range than most people your age, grew up faster, or moved in environments where more of these experiences were normal.
-            </Text>
-            <Text variant="body" className="leading-relaxed mb-4">
-              The average is a reference point for comparison — not a benchmark you should feel pressure to hit. The more interesting question is usually not "how do I compare to the average?" but "what does my specific number reflect about my actual life?"
+
+            <p className="font-mono text-xs uppercase tracking-widest text-plum mb-3">
+              Placeholder — not published until populated
+            </p>
+
+            <table className="w-full border-collapse text-sm mb-3">
+              <thead>
+                <tr>
+                  <th className="bg-plum-deep text-white font-mono text-[0.72rem] font-semibold tracking-widest uppercase text-left px-3 py-3">
+                    Age band
+                  </th>
+                  <th className="bg-plum-deep text-white font-mono text-[0.72rem] font-semibold tracking-widest uppercase text-left px-3 py-3">
+                    Median score
+                  </th>
+                  <th className="bg-plum-deep text-white font-mono text-[0.72rem] font-semibold tracking-widest uppercase text-left px-3 py-3">
+                    Responses
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  ['18–20', '—', '—'],
+                  ['21–24', '—', '—'],
+                  ['25–29', '—', '—'],
+                  ['30–39', '—', '—'],
+                  ['40+', '—', '—'],
+                ].map(([band, median, responses], i) => (
+                  <tr key={band}>
+                    <td className={`border border-line px-3 py-2.5 ${i % 2 === 1 ? 'bg-bone' : 'bg-surface'}`}>
+                      {band}
+                    </td>
+                    <td className={`border border-line px-3 py-2.5 ${i % 2 === 1 ? 'bg-bone' : 'bg-surface'}`}>
+                      {median}
+                    </td>
+                    <td className={`border border-line px-3 py-2.5 ${i % 2 === 1 ? 'bg-bone' : 'bg-surface'}`}>
+                      {responses}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+
+            <Text variant="body" className="text-sm text-slate">
+              A band appears only once it holds at least a few hundred responses, and
+              the count is shown next to every figure. A table with &quot;n = 412&quot;
+              beside it is credible. A table with no denominator is not.
             </Text>
           </section>
 
-          <section className="bg-green-50 border border-green-200 rounded-xl p-6 mt-8">
-            <Heading size="lg" className="mb-4 text-green-600">
-              Related Guides
-            </Heading>
-            <div className="space-y-3">
-              <Text variant="body">
-                — <Link href="/rice-purity-test-score" className="text-green-600 hover:text-green-700 underline">Rice Purity Test Score — full range breakdown</Link>
-              </Text>
-              <Text variant="body">
-                — <Link href="/blog/rice-purity-test-score-meaning" className="text-green-600 hover:text-green-700 underline">What your score means emotionally and contextually</Link>
-              </Text>
-              <Text variant="body">
-                — <Link href="/blog/average-rice-purity-test-score" className="text-green-600 hover:text-green-700 underline">Average score statistics and distribution</Link>
-              </Text>
-            </div>
-            <div className="mt-6">
-              <Link href="/test">
-                <Button size="lg">Take the Test</Button>
-              </Link>
-            </div>
-          </section>
+          <p className="text-sm pt-4 border-t border-line">
+            <strong className="font-mono text-[0.78rem] tracking-widest text-ink">
+              KEEP READING&nbsp;&nbsp;
+            </strong>
+            {FOOT_LINKS.map((link, i) => (
+              <React.Fragment key={link.href}>
+                {i > 0 && <span className="text-slate">&nbsp;·&nbsp;</span>}
+                <Link href={link.href} className="text-plum hover:underline">
+                  {link.label}
+                </Link>
+              </React.Fragment>
+            ))}
+          </p>
         </article>
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

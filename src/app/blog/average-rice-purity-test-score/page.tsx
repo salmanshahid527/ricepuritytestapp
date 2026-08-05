@@ -56,10 +56,10 @@ export default function AverageScorePage() {
 
           <section>
             <Heading size="xl" className="mb-4 text-green-500">
-              The Average — and Why It Might Be Misleading
+              The Average and Why It Might Be Misleading
             </Heading>
             <Text variant="body" className="leading-relaxed mb-4">
-              The commonly cited average falls between <strong>62 and 68</strong>. That means most people check off roughly 32-38 items out of 100 — about a third of the list.
+              The commonly cited average falls between <strong>62 and 68</strong>. That means most people check off roughly 32-38 items out of 100 about a third of the list.
             </Text>
             <div className="bg-green-50 border border-green-200 rounded-xl p-6 my-6">
               <Text variant="large" className="font-bold text-green-700 text-center mb-2">
@@ -70,16 +70,16 @@ export default function AverageScorePage() {
               </Text>
             </div>
             <Text variant="body" className="leading-relaxed mb-4">
-              Here's the catch: this average comes from the population of people who take the test online and share their results — which skews heavily toward college students and people in their early 20s. The "true" average for the general adult population would probably be different, possibly lower, since older adults have had more time to accumulate experiences.
+              Here's the catch: this average comes from the population of people who take the test online and share their results which skews heavily toward college students and people in their early 20s. The "true" average for the general adult population would probably be different, possibly lower, since older adults have had more time to accumulate experiences.
             </Text>
             <Text variant="body" className="leading-relaxed">
-              So when you read "the average is 65," that's the average for a population that's already self-selected in a particular direction. Your score relative to that average is useful context — just not a universal benchmark.
+              So when you read "the average is 65," that's the average for a population that's already self-selected in a particular direction. Your score relative to that average is useful context just not a universal benchmark.
             </Text>
           </section>
 
           <section>
             <Heading size="xl" className="mb-4 text-green-500">
-              Score Distribution — How Scores Actually Spread Out
+              Score Distribution How Scores Actually Spread Out
             </Heading>
             <Text variant="body" className="leading-relaxed mb-4">
               The distribution isn't a neat bell curve. It's more of a peak in the middle with long tails at both ends. Here's approximately how it breaks down:
@@ -104,40 +104,40 @@ export default function AverageScorePage() {
               The test has been taken by each new college cohort since the 1980s. That means there's effectively a rolling population of 18-22 year olds cycling through the test each year, keeping the average higher than it would be if the test were taken evenly across all age groups.
             </Text>
             <Text variant="body" className="leading-relaxed mb-4">
-              There's also a social context effect: the test is more likely to be shared in certain environments — college dormitories, friend groups who are already comfortable being open about experiences, online communities with a particular demographic. People who find the test in those contexts aren't a random sample of the population.
+              There's also a social context effect: the test is more likely to be shared in certain environments college dormitories, friend groups who are already comfortable being open about experiences, online communities with a particular demographic. People who find the test in those contexts aren't a random sample of the population.
             </Text>
             <Text variant="body" className="leading-relaxed mb-4">
-              This is why trends in the average are hard to interpret. If the average appears to be changing over time, it might reflect genuinely different behavior patterns — or it might just reflect which age group happened to share results most in a given year.
+              This is why trends in the average are hard to interpret. If the average appears to be changing over time, it might reflect genuinely different behavior patterns or it might just reflect which age group happened to share results most in a given year.
             </Text>
           </section>
 
           <section>
             <Heading size="xl" className="mb-4 text-green-500">
-              Age-Group Averages — The More Useful Comparison
+              Age-Group Averages The More Useful Comparison
             </Heading>
             <Text variant="body" className="leading-relaxed mb-4">
               Rather than comparing yourself to the overall average, comparing within your age group gives you a more meaningful reference:
             </Text>
             <div className="space-y-4">
               <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded">
-                <Heading size="lg" className="mb-2 text-gray-800">18-22 years old — Average: 70-85</Heading>
+                <Heading size="lg" className="mb-2 text-gray-800">18-22 years old Average: 70-85</Heading>
                 <Text variant="small" className="text-gray-600">Higher scores are expected here. Less time to encounter most items on the list.</Text>
               </div>
               <div className="bg-green-50 border-l-4 border-green-500 p-4 rounded">
-                <Heading size="lg" className="mb-2 text-gray-800">23-25 years old — Average: 60-75</Heading>
+                <Heading size="lg" className="mb-2 text-gray-800">23-25 years old Average: 60-75</Heading>
                 <Text variant="small" className="text-gray-600">Post-college, early careers. Scores dip as independence and social range expand.</Text>
               </div>
               <div className="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded">
-                <Heading size="lg" className="mb-2 text-gray-800">26-30 years old — Average: 50-65</Heading>
+                <Heading size="lg" className="mb-2 text-gray-800">26-30 years old Average: 50-65</Heading>
                 <Text variant="small" className="text-gray-600">More varied life circumstances start showing up in the numbers.</Text>
               </div>
               <div className="bg-orange-50 border-l-4 border-orange-500 p-4 rounded">
-                <Heading size="lg" className="mb-2 text-gray-800">31+ years old — Average: 45-60</Heading>
+                <Heading size="lg" className="mb-2 text-gray-800">31+ years old Average: 45-60</Heading>
                 <Text variant="small" className="text-gray-600">Accumulated history shows. Scores here are less about recent choices and more about the full arc of a life.</Text>
               </div>
             </div>
             <Text variant="body" className="leading-relaxed mt-4">
-              For a detailed breakdown of why each age group lands where it does — and what to think if your score doesn't match your group — see the <Link href="/rice-purity-test-average-score-by-age" className="text-green-600 hover:text-green-700 underline font-semibold">average score by age guide</Link>.
+              For a detailed breakdown of why each age group lands where it does and what to think if your score doesn't match your group see the <Link href="/rice-purity-test-average-score-by-age" className="text-green-600 hover:text-green-700 underline font-semibold">average score by age guide</Link>.
             </Text>
           </section>
 
@@ -146,10 +146,10 @@ export default function AverageScorePage() {
               What the Statistics Can't Tell You
             </Heading>
             <Text variant="body" className="leading-relaxed mb-4">
-              Two people can have the same score and completely different lives. The test doesn't weight experiences — checking "have you ever jaywalked" counts the same as checking something significantly more significant. A score of 60 might reflect someone who's had 40 very minor experiences or someone who's had 40 major ones. The number is the same; the stories are not.
+              Two people can have the same score and completely different lives. The test doesn't weight experiences checking "have you ever jaywalked" counts the same as checking something significantly more significant. A score of 60 might reflect someone who's had 40 very minor experiences or someone who's had 40 major ones. The number is the same; the stories are not.
             </Text>
             <Text variant="body" className="leading-relaxed">
-              The most useful thing about the average isn't the number itself — it's the reference point it gives you for starting a conversation. Knowing most people score 62-68 means a 55 and a 75 both feel less like outliers and more like two points in the same normal range. That reframing can take a lot of the pressure off the result.
+              The most useful thing about the average isn't the number itself it's the reference point it gives you for starting a conversation. Knowing most people score 62-68 means a 55 and a 75 both feel less like outliers and more like two points in the same normal range. That reframing can take a lot of the pressure off the result.
             </Text>
           </section>
 

@@ -1,34 +1,30 @@
 import React from 'react';
-import { Text } from '../atoms/Text';
 
 interface ProgressBarProps {
-  progress: number;
   current: number;
   total: number;
-  className?: string;
 }
 
-export const ProgressBar: React.FC<ProgressBarProps> = ({
-  progress,
-  current,
-  total,
-  className = '',
-}) => {
+export const ProgressBar: React.FC<ProgressBarProps> = ({ current, total }) => {
+  const pct = Math.round((current / total) * 100);
+
   return (
-    <div className={`w-full ${className}`}>
-      <div className="flex justify-between items-center mb-2">
-        <Text variant="small" color="muted">
-          Question {current} of {total}
-        </Text>
-        <Text variant="small" color="muted">
-          {progress}% Complete
-        </Text>
-      </div>
-      <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
-        <div
-          className="h-full bg-gradient-to-r from-green-500 to-green-400 transition-all duration-500 ease-out rounded-full"
-          style={{ width: `${progress}%` } as React.CSSProperties}
-        />
+    <div className="sticky top-0 z-40 bg-surface border-b border-line py-3">
+      <div className="max-w-[1120px] mx-auto px-5">
+        <div className="flex justify-between items-center text-sm mb-2">
+          <span className="text-ink font-medium">
+            Question {current + 1} of {total}
+          </span>
+          <a href="/" className="text-slate hover:text-plum text-sm">
+            Exit
+          </a>
+        </div>
+        <div className="h-1.5 bg-line rounded-full overflow-hidden">
+          <div
+            className="h-full bg-plum transition-all duration-300 rounded-full"
+            style={{ width: `${pct}%` }}
+          />
+        </div>
       </div>
     </div>
   );

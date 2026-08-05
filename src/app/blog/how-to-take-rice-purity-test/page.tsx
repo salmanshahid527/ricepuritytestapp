@@ -35,7 +35,7 @@ export default function HowToTakeTestPage() {
         url={`${BASE_URL}/blog/how-to-take-rice-purity-test`}
         description="Expert tips for getting the most accurate Rice Purity Test results."
       />
-      <Header />
+      
       <main className="container mx-auto px-4 py-8 max-w-4xl">
         <Breadcrumbs items={[
           { label: 'Home', href: '/' },
@@ -51,7 +51,7 @@ export default function HowToTakeTestPage() {
 
         <article className="prose prose-lg max-w-none space-y-6 text-gray-700">
           <Text variant="large" className="leading-relaxed">
-            The Rice Purity Test doesn't require preparation — it's a checkbox list, not an exam. But there are a few things that genuinely affect whether your score ends up meaningful or just a number you typed out too quickly. Here's how to take it in a way that's actually worth doing.
+            The Rice Purity Test doesn't require preparation it's a checkbox list, not an exam. But there are a few things that genuinely affect whether your score ends up meaningful or just a number you typed out too quickly. Here's how to take it in a way that's actually worth doing.
           </Text>
 
           <section>
@@ -88,14 +88,14 @@ export default function HowToTakeTestPage() {
               <div className="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded">
                 <Heading as="h3" size="lg" className="mb-2 text-gray-800">Don't answer for who you want to be</Heading>
                 <Text variant="body" className="leading-relaxed">
-                  This is the subtle version of dishonesty — not outright lying, but quietly skipping things that feel inconsistent with how you see yourself. If something happened but you've moved on from it, it still counts. The test is a historical record, not a character statement. Check what actually happened, not what represents the current you.
+                  This is the subtle version of dishonesty not outright lying, but quietly skipping things that feel inconsistent with how you see yourself. If something happened but you've moved on from it, it still counts. The test is a historical record, not a character statement. Check what actually happened, not what represents the current you.
                 </Text>
               </div>
 
               <div className="bg-purple-50 border-l-4 border-purple-500 p-4 rounded">
                 <Heading as="h3" size="lg" className="mb-2 text-gray-800">Your progress saves automatically</Heading>
                 <Text variant="body" className="leading-relaxed">
-                  If you need to pause, close the tab, and come back later — that works. Your answers are preserved locally in your browser session. No account needed, nothing synced anywhere. Just reopen the page and you'll be where you left off.
+                  If you need to pause, close the tab, and come back later that works. Your answers are preserved locally in your browser session. No account needed, nothing synced anywhere. Just reopen the page and you'll be where you left off.
                 </Text>
               </div>
             </div>
@@ -141,7 +141,6 @@ export default function HowToTakeTestPage() {
           </section>
         </article>
       </main>
-      <Footer />
     </div>
   );
 }

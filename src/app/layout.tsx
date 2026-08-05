@@ -3,14 +3,36 @@ import Script from 'next/script';
 import { Manrope } from 'next/font/google';
 import { GoogleAnalyticsRouteTracker } from '@/components/GoogleAnalyticsRouteTracker';
 import './globals.css';
+import { Header } from '@/components/organisms/Header';
+import { Bricolage_Grotesque, Source_Serif_4, IBM_Plex_Mono } from 'next/font/google';
+import { Footer } from '@/components/organisms/Footer';
+
 
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
-
 const manrope = Manrope({ 
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700', '800'],
   variable: '--font-manrope',
 });
+
+const bricolage = Bricolage_Grotesque({
+  subsets: ['latin'],
+  variable: '--font-display',
+  weight: ['400', '600', '800'],
+});
+
+const sourceSerif = Source_Serif_4({
+  subsets: ['latin'],
+  variable: '--font-body',
+  weight: ['400', '600', '700'],
+});
+
+const plexMono = IBM_Plex_Mono({
+  subsets: ['latin'],
+  variable: '--font-mono',
+  weight: ['400', '500', '600'],
+});
+
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.ricepuritytestapp.com'),
@@ -67,7 +89,7 @@ export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
-  themeColor: '#10b981',
+  themeColor: '#5B3A72'
 };
 
 export default function RootLayout({
@@ -145,7 +167,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={manrope.className}>
+      <body className={`${bricolage.variable} ${sourceSerif.variable} ${plexMono.variable} font-body antialiased`}>
         {GA_MEASUREMENT_ID && (
           <>
             <Script
@@ -163,7 +185,9 @@ export default function RootLayout({
             <GoogleAnalyticsRouteTracker />
           </>
         )}
+        <Header />     
         {children}
+        <Footer/>
       </body>
     </html>
   );

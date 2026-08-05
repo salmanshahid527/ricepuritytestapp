@@ -1,60 +1,61 @@
 import React from 'react';
 import Link from 'next/link';
 import { Logo } from '../atoms/Logo';
-import { Button } from '../atoms/Button';
+import { MobileNavToggle } from '../molecules/MobileNavToggle';
 
 interface HeaderProps {
   showProgress?: boolean;
   progress?: number;
-  current?: number;
-  total?: number;
 }
+
+const NAV_LINKS = [
+  { href: '/test', label: 'The test' },
+  { href: '/rice-purity-test-questions', label: 'All 100 questions' },
+  { href: '/rice-purity-test-score', label: 'Score guide' },
+  { href: '/rice-purity-test-average-score-by-age', label: 'Averages' },
+  { href: '/about', label: 'About' },  
+];
 
 export const Header: React.FC<HeaderProps> = ({
   showProgress = false,
   progress = 0,
-  current = 0,
-  total = 100,
 }) => {
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-md animate-slide-up">
-      <div className="container mx-auto px-4 py-3">
-        <div className="flex items-center justify-between">
-          <Logo size="md" showText={true} showTagline={false} href="/" />
-          <nav className="hidden sm:flex items-center gap-6">
-            <Link href="/blog" className="text-sm font-medium text-gray-600 hover:text-green-500 transition-colors">
-              Blog
-            </Link>
-            <Link href="/rice-purity-test-score" className="text-sm font-medium text-gray-600 hover:text-green-500 transition-colors">
-              Score Guide
-            </Link>
-            <Link href="/about" className="text-sm font-medium text-gray-600 hover:text-green-500 transition-colors">
-              About
-            </Link>
-          </nav>
-          <div className="flex items-center gap-4">
-            {showProgress && (
-              <div className="flex items-center space-x-4 animate-fade-in">
-                <div className="text-right hidden sm:block">
-                  <div className="text-sm font-semibold text-gray-800 animate-pulse">{progress}%</div>
-                  <div className="text-xs text-gray-500">Complete</div>
-                </div>
-                <div className="w-48 sm:w-64 bg-gray-200 rounded-full h-3 overflow-hidden shadow-inner">
-                  <div
-                    className="h-full bg-gradient-to-r from-green-500 to-green-400 transition-all duration-500 ease-out rounded-full shadow-sm animate-pulse"
-                    style={{ width: `${progress}%` }}
-                  />
-                </div>
-              </div>
-            )}
-            {!showProgress && (
-              <Link href="/test">
-                <Button size="md" variant="primary" className="hover:scale-110 transition-transform duration-300">
-                  Start the Test
-                </Button>
+    <header className="sticky top-0 z-40 bg-surface border-b border-line">
+      <div className="max-w-[1120px] mx-auto px-5">
+        <div className="flex items-center gap-4 min-h-[70px]">
+          <Logo variant="dark" size="md" showText showTagline href="/" />
+
+          {/* Desktop nav */}
+          <nav className="hidden min-[901px]:flex items-center gap-6 ml-auto">
+            {NAV_LINKS.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-md text-slate hover:text-plum-deep transition-colors py-1.5 border-b-2 border-transparent"
+              >
+                {link.label}
               </Link>
-            )}
-          </div>
+            ))}
+            <span className="font-mono text-xs font-semibold bg-plum-tint text-plum-deep px-2.5 py-1 rounded-full">
+              18+
+            </span>
+          </nav>
+
+          {showProgress && (
+            <div className="hidden min-[901px]:flex items-center gap-3 ml-4">
+              <span className="text-sm font-semibold text-ink">{progress}%</span>
+              <div className="w-40 bg-line rounded-full h-1.5 overflow-hidden">
+                <div
+                  className="h-full bg-plum rounded-full transition-all duration-500"
+                  style={{ width: `${progress}%` }}
+                />
+              </div>
+            </div>
+          )}
+
+          {/* Mobile: badge + burger + dropdown (client component) */}
+          <MobileNavToggle links={NAV_LINKS} />
         </div>
       </div>
     </header>

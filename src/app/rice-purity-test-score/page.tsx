@@ -1,125 +1,203 @@
 import React from 'react';
-import { Header } from '@/components/organisms/Header';
-import { Footer } from '@/components/organisms/Footer';
+import Link from 'next/link';
 import { Heading } from '@/components/atoms/Heading';
 import { Text } from '@/components/atoms/Text';
 import { Breadcrumbs } from '@/components/molecules/Breadcrumbs';
-import Link from 'next/link';
-import { Button } from '@/components/atoms/Button';
 import type { Metadata } from 'next';
 
 const BASE_URL = 'https://www.ricepuritytestapp.com';
 
 export const metadata: Metadata = {
-  title: 'Rice Purity Test Score: Meaning, Ranges & Calculator',
-  description: 'Check what your Rice Purity Test score means with clear 0-100 score ranges, interpretation tips, and quick examples.',
-  keywords: 'rice purity test score, rice purity test scores, rice purity score meaning, rice purity test results',
+  title: 'What Your Rice Purity Score Means | Score Guide',
+  description: 'Every band, what it usually reflects, and the things a score genuinely cannot tell you.',
+  keywords: 'rice purity test score, rice purity score meaning, rice purity test results',
   robots: { index: true, follow: true },
   alternates: { canonical: `${BASE_URL}/rice-purity-test-score` },
-  openGraph: {
-    title: 'Rice Purity Test Score: Meaning, Ranges & Calculator',
-    description: 'Check what your Rice Purity Test score means with clear 0-100 score ranges and interpretation tips.',
-    url: `${BASE_URL}/rice-purity-test-score`,
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Rice Purity Test Score: Meaning, Ranges & Calculator',
-    description: 'Check what your Rice Purity Test score means with clear 0-100 score ranges.',
-  },
 };
 
-export default function ScorePage() {
+const BANDS = [
+  {
+    lo: 90, hi: 100, label: 'Very limited experience',
+    guide: 'Most of the list has not applied to your life yet. This band is common among people who have recently become adults, among people who have had less opportunity or inclination to do the things the list asks about, and among people whose lives are simply organised differently. It says nothing about maturity.',
+  },
+  {
+    lo: 70, hi: 89, label: 'Some experience',
+    guide: 'A very typical range. Most of the ordinary items are yes; most of the rarer ones are no. Scores here move slowly — the remaining points sit in categories where experiences accumulate over years rather than months.',
+  },
+  {
+    lo: 45, hi: 69, label: 'The common middle',
+    guide: 'The widest part of the curve. If you are here, roughly half the list applies to you and roughly half does not, and there is nothing to interpret beyond that. People often arrive here having scored in the sixties and expecting the number to mean something specific. It does not.',
+  },
+  {
+    lo: 20, hi: 44, label: 'Broad experience',
+    guide: 'Most of the list applies. In practice this usually reflects age, independence and opportunity — travel, money, nightlife and legal items fill up over time for anyone whose life takes them through them. It is not a measure of recklessness, though the framing of the test invites you to read it that way.',
+  },
+  {
+    lo: 0, hi: 19, label: 'Very broad experience',
+    guide: 'Genuinely uncommon. Scoring here means nearly every item on a hundred-item list applies to you, which is rarer than people assume, because the final category is deliberately made up of unusual experiences.',
+  },
+];
+
+const FAQS = [
+  {
+    q: 'Is a higher score better?',
+    a: 'No. It is a count of things that have not happened, and there is no version of that which is straightforwardly good or bad.',
+  },
+  {
+    q: 'What is an average score?',
+    a: 'Published averages for this test are almost entirely unsourced — see our averages by age page for why we do not repeat them.',
+  },
+  {
+    q: 'Can my score go up?',
+    a: 'No. It only counts experiences you have had, and those do not un-happen. If your score rises on a retake, you answered differently, not truthfully differently.',
+  },
+  {
+    q: 'Should I share my score?',
+    a: 'Entirely your call. It is worth remembering that a score implies specific things about your life to anyone who knows the list, and you cannot control what they infer.',
+  },
+];
+
+const FOOT_LINKS = [
+  { href: '/rice-purity-test-questions', label: 'All 100 questions' },
+  { href: '/rice-purity-test-average-score-by-age', label: 'Averages by age' },
+  { href: '/test', label: 'Take the test' },
+];
+
+export default function ScoreGuidePage() {
   return (
-    <div className="min-h-screen bg-white">
-      <Header />
+    <div className="min-h-screen bg-surface">
       <main className="container mx-auto px-4 py-8 max-w-4xl">
-        <Breadcrumbs items={[
-          { label: 'Home', href: '/' },
-          { label: 'Rice Purity Test Score' }
-        ]} />
-        <Heading as="h1" size="3xl" className="mb-6">
-          Rice Purity Test Score: What Your Score Means
+        <Breadcrumbs
+          items={[
+            { label: 'Home', href: '/' },
+            { label: 'Score guide' },
+          ]}
+        />
+
+        <Heading as="h1" size="3xl" className="mb-3 text-ink">
+          What your Rice Purity score means
         </Heading>
 
-        <article className="space-y-6 text-gray-700">
-          <Text variant="large" className="leading-relaxed">
-            Your Rice Purity Test score is a single number between 0 and 100. It tells you how many of the 100 listed experiences you haven't had. High score = fewer experiences. Low score = more. That's the whole system. What gets interesting is what the ranges actually mean in practice — and why the same number can mean very different things depending on your age and background.
-          </Text>
+        <Text variant="large" className="leading-relaxed text-slate mb-10">
+          Every band, what it usually reflects, and the things a score genuinely
+          cannot tell you.
+        </Text>
 
+        <article className="space-y-8 text-ink max-w-2xl mx-auto">
           <section>
-            <Heading size="xl" className="mb-4 text-green-500">
-              How the Score is Calculated
-            </Heading>
-            <Text variant="body" className="leading-relaxed mb-4">
-              It's straightforward: <strong>Score = 100 minus the number of boxes you checked.</strong> Check 40 boxes, your score is 60. Check 5 boxes, your score is 95. The math never changes, regardless of which specific items you checked.
-            </Text>
-            <div className="bg-blue-50 border border-blue-200 rounded-xl p-6 my-6">
-              <Text variant="body" className="font-semibold mb-2">The formula:</Text>
-              <Text variant="large" className="font-mono text-blue-700">
-                Score = 100 − Experiences Checked
-              </Text>
-            </div>
-            <Text variant="body" className="leading-relaxed">
-              One thing worth noting: the test treats all 100 questions as equal weight. Holding hands and something far more significant count the same — one point each. That's been true since the original version at Rice University, and it's part of why the test works as a casual gauge rather than a precise measurement.
+            <Text variant="body" className="leading-relaxed text-ink">
+              A Rice Purity score is a count. You start at 100 and lose a point for
+              each of a hundred listed experiences you have had. That is the entire
+              mechanism, and understanding it is most of what you need to interpret
+              your result.
             </Text>
           </section>
 
           <section>
-            <Heading size="xl" className="mb-4 text-green-500">
-              What Each Score Range Actually Means
+            <Text variant="body" className="leading-relaxed text-ink">
+              It matters because the mechanism has consequences people rarely think
+              through. The score has no idea how old you are. It cannot tell the
+              difference between one eventful year and a decade of ordinary living. It
+              treats a parking fine and an arrest as the same single point. And it
+              only counts experiences that happen to be on the list — a person could
+              have lived an extraordinary life and still score in the nineties, simply
+              because their extraordinary life was not the kind this list asks about.
+            </Text>
+          </section>
+
+          <section>
+            <Heading as="h2" size="xl" className="mb-4 text-ink">
+              The five bands
             </Heading>
-            <div className="space-y-5">
-              <div className="border-l-4 border-green-500 pl-4">
-                <Heading size="lg" className="mb-2">100-98: Extremely Pure</Heading>
-                <Text variant="body" className="leading-relaxed">You've checked almost nothing. This puts you in a small minority — most estimates suggest under 5% of test takers score here. It usually means you're either quite young (and simply haven't had the opportunity for many of these experiences yet), you've grown up in a closely sheltered environment, or you hold personal values that have kept most of this list off-limits. All of those are valid; none of them are a character judgment.</Text>
-              </div>
-              <div className="border-l-4 border-blue-500 pl-4">
-                <Heading size="lg" className="mb-2">97-94: Very Pure</Heading>
-                <Text variant="body" className="leading-relaxed">You've dipped in but kept most of the list unchecked. Scores in this range typically belong to high schoolers or early college students who've had some social experiences — maybe a few parties, some romantic firsts — but haven't ventured into the more unusual or intense items on the list. Nothing here suggests inexperience in a negative sense; it just marks where you are in life.</Text>
-              </div>
-              <div className="border-l-4 border-yellow-500 pl-4">
-                <Heading size="lg" className="mb-2">93-77: Relatively Pure</Heading>
-                <Text variant="body" className="leading-relaxed">This is a wide, meaningful range. You've had real experiences — this isn't a score for someone who's never left the house. But you've also opted out of (or simply not encountered) a significant portion of the list. People score here for very different reasons: some by choice, some by circumstance, some just because they're on the younger side. First-time test takers often expect to score lower and are surprised to land here.</Text>
-              </div>
-              <div className="border-l-4 border-orange-500 pl-4">
-                <Heading size="lg" className="mb-2">76-45: Moderate</Heading>
-                <Text variant="body" className="leading-relaxed">This is where the majority of people land — roughly 60% of scores fall in the 55-75 band, which sits squarely in this range. You've lived a varied life. You've said yes to things, experimented, navigated different social environments. A score here doesn't suggest recklessness or naivety — it's just what an active adult life tends to look like when you run it through this particular checklist.</Text>
-              </div>
-              <div className="border-l-4 border-red-500 pl-4">
-                <Heading size="lg" className="mb-2">44-9: Experienced</Heading>
-                <Text variant="body" className="leading-relaxed">You've checked a lot of boxes. People in this range often find the test less surprising and more nostalgic — a tour through a specific period of their life rather than a discovery. This frequently comes with age, a particular social scene, or an environment that exposed you to a wide range of situations. The test isn't making a statement about any of that; it's just counting what happened.</Text>
-              </div>
-              <div className="border-l-4 border-gray-600 pl-4">
-                <Heading size="lg" className="mb-2">8-0: Highly Experienced</Heading>
-                <Text variant="body" className="leading-relaxed">Scoring this low is genuinely uncommon. It means you've encountered nearly everything on a list that covers a very wide spectrum of human experience. Whether that came from a specific time in your life, a certain crowd, or simply a lot of years lived — a low score now doesn't define who you are today. It's a record of the past, not a verdict on the present.</Text>
-              </div>
+            <div className="space-y-3">
+              {BANDS.map((b) => (
+                <div
+                  key={b.label}
+                  className="flex flex-col sm:flex-row gap-2 sm:gap-5 bg-surface border border-line border-l-[6px] border-l-plum-tint rounded-lg p-5"
+                >
+                  <span className="font-mono font-semibold text-plum sm:w-24 flex-shrink-0">
+                    {b.lo} – {b.hi}
+                  </span>
+                  <div>
+                    <h3 className="font-display font-bold text-lg text-ink mb-1">
+                      {b.label}
+                    </h3>
+                    <Text variant="body" className="text-sm text-slate leading-relaxed">
+                      {b.guide}
+                    </Text>
+                  </div>
+                </div>
+              ))}
             </div>
           </section>
 
           <section>
-            <Heading size="xl" className="mb-4 text-green-500">
-              What Your Score Doesn't Tell You
+            <Heading as="h2" size="xl" className="mb-3 text-ink">
+              What the score cannot tell you
             </Heading>
-            <Text variant="body" className="leading-relaxed">
-              Your score is a count of how many items from one specific checklist apply to your life. That's all. It doesn't measure your character, your judgment, your worth as a person, or where you'll end up. The test was designed by college students in the 1980s as a social activity — it was never meant to be anything more rigorous than that. Treat your number with the same casual spirit it was created in.
-            </Text>
+            <ul className="space-y-3 list-disc list-inside">
+              <li className="text-ink leading-relaxed">
+                <strong>Your age</strong>, though age is probably the largest single
+                influence on it.
+              </li>
+              <li className="text-ink leading-relaxed">
+                <strong>Anything about how you behave now.</strong> Every item asks
+                whether something has ever happened, so a score records your past and
+                nothing else.
+              </li>
+              <li className="text-ink leading-relaxed">
+                <strong>Whether you were the person acting or the person it happened
+                to.</strong> Several items are ambiguous on this and no version of the
+                test resolves it.
+              </li>
+              <li className="text-ink leading-relaxed">
+                <strong>Anything about consent, safety or harm.</strong> A person who
+                had a bad experience and a person who had a good one lose the same
+                point.
+              </li>
+              <li className="text-ink leading-relaxed">
+                <strong>Anything comparable across countries or decades.</strong>{' '}
+                Drinking ages, drug laws and social norms differ enough that the same
+                life produces different scores in different places.
+              </li>
+            </ul>
           </section>
 
-          <section className="bg-green-50 border border-green-200 rounded-xl p-6 mt-8">
-            <Heading size="lg" className="mb-4 text-green-600">
-              Haven't taken the test yet?
+          <section>
+            <Heading as="h2" size="xl" className="mb-3 text-ink">
+              Common questions about scores
             </Heading>
-            <Text variant="body" className="mb-6 text-gray-700">
-              Get your score in about 10-15 minutes. Everything runs locally — nothing stored, nothing tracked.
-            </Text>
-            <Link href="/test">
-              <Button size="lg">Take the Test</Button>
-            </Link>
+            <div className="space-y-2.5">
+              {FAQS.map((faq) => (
+                <details key={faq.q} className="bg-surface border border-line rounded-lg group">
+                  <summary className="cursor-pointer list-none px-5 py-4 font-semibold flex justify-between items-center gap-4 text-ink">
+                    {faq.q}
+                    <span className="text-plum text-xl leading-none group-open:hidden">+</span>
+                    <span className="text-plum text-xl leading-none hidden group-open:inline">–</span>
+                  </summary>
+                  <div className="px-5 pb-4 text-sm text-ink leading-relaxed">
+                    {faq.a}
+                  </div>
+                </details>
+              ))}
+            </div>
           </section>
+
+          <p className="text-sm pt-6 border-t border-line">
+            <strong className="font-mono text-[0.78rem] tracking-widest text-ink">
+              KEEP READING&nbsp;&nbsp;
+            </strong>
+            {FOOT_LINKS.map((link, i) => (
+              <React.Fragment key={link.href}>
+                {i > 0 && <span className="text-slate">&nbsp;·&nbsp;</span>}
+                <Link href={link.href} className="text-plum hover:underline">
+                  {link.label}
+                </Link>
+              </React.Fragment>
+            ))}
+          </p>
         </article>
       </main>
-      <Footer />
     </div>
   );
 }

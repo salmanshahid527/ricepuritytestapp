@@ -1,121 +1,140 @@
 import React from 'react';
-import { Header } from '@/components/organisms/Header';
-import { Footer } from '@/components/organisms/Footer';
+import Link from 'next/link';
+import type { Metadata } from 'next';
 import { Heading } from '@/components/atoms/Heading';
 import { Text } from '@/components/atoms/Text';
 import { Breadcrumbs } from '@/components/molecules/Breadcrumbs';
-import Link from 'next/link';
-import { Button } from '@/components/atoms/Button';
-import type { Metadata } from 'next';
 
 const BASE_URL = 'https://www.ricepuritytestapp.com';
 
 export const metadata: Metadata = {
-  title: 'About RicePurityTestApp – Mission, Team & What We Do',
-  description: 'Learn about RicePurityTestApp — our mission to make the Rice Purity Test fun, informative, and easy to use. Discover why millions take the quiz!',
+  title: 'About This Site | Rice Purity Test',
+  description: 'Who runs this site, why it exists, and how the question set and data work.',
   robots: { index: true, follow: true },
   alternates: { canonical: `${BASE_URL}/about` },
-  openGraph: {
-    title: 'About RicePurityTestApp – Mission, Team & What We Do',
-    description: 'Learn about RicePurityTestApp and our mission to make the Rice Purity Test fun and easy to use.',
-    url: `${BASE_URL}/about`,
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'About RicePurityTestApp – Mission, Team & What We Do',
-    description: 'Learn about RicePurityTestApp and the Rice Purity Test.',
-  },
 };
+
+const FOOT_LINKS = [
+  { href: '/rice-purity-test-questions', label: 'All 100 questions' },
+  { href: '/contact', label: 'Contact' },
+  { href: '/privacy', label: 'Privacy policy' },
+];
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-white">
-      <Header />
+    <div className="min-h-screen bg-surface">
+
       <main className="container mx-auto px-4 py-8 max-w-4xl">
-        <Breadcrumbs items={[
-          { label: 'Home', href: '/' },
-          { label: 'About' }
-        ]} />
-        <Heading as="h1" size="3xl" className="mb-6">
-          Learn About the Rice Purity Test
+        <Breadcrumbs
+          items={[
+            { label: 'Home', href: '/' },
+            { label: 'About' },
+          ]}
+        />
+
+        <Heading as="h1" size="3xl" className="mb-8 text-ink">
+          About this site
         </Heading>
 
-        <div className="space-y-8 text-gray-700">
+        <article className="space-y-8 max-w-">
           <section>
-            <Text variant="large" className="leading-relaxed mb-4">
-              The Rice Purity Test started in the 1980s as a paper handout at Rice University — a way for incoming students to break the ice during orientation. It was never a serious survey. It was a conversation starter. Something to laugh over, compare with your roommate, and use as a way into topics that might otherwise be awkward to bring up with people you'd just met.
-            </Text>
-            <Text variant="body" className="leading-relaxed mb-4">
-              Decades later, it's still doing the same thing — just for a much bigger audience. What was once exclusive to one Houston campus now gets taken by people on every continent. The questions are largely the same ones from the original handout. The format has changed; the purpose hasn't.
-            </Text>
-          </section>
-
-          <section>
-            <Heading size="xl" className="mb-4 text-green-500">
-              What the Test Actually Is
+            <Heading as="h2" size="xl" className="mb-3 text-ink">
+              Who runs it
             </Heading>
-            <Text variant="body" className="leading-relaxed mb-4">
-              It's a checklist of 100 life experiences. You check off the ones you've had. Your score is 100 minus the number of boxes you checked. That's it. The scale runs from 0 (you've had every experience on the list) to 100 (you've had none of them). Most people land somewhere in the 55-75 range.
-            </Text>
-            <Text variant="body" className="leading-relaxed mb-4">
-              The word "purity" sounds judgmental, but it wasn't meant that way. In the original campus context, it was used loosely — almost ironically. A high score doesn't mean you're a better person. A low score doesn't mean you've gone off the rails. It's just a count. The interesting part isn't the number itself; it's what the number gets you talking about.
-            </Text>
-          </section>
-
-          <section>
-            <Heading size="xl" className="mb-4 text-green-500">
-              About This Site
-            </Heading>
-            <Text variant="body" className="leading-relaxed mb-4">
-              We built RicePurityTestApp in 2023 because most versions of the test online were cluttered, slow, or buried in ads. We wanted a clean, fast version that people could actually use — on any device, without creating an account, without giving up any personal information.
-            </Text>
-            <Text variant="body" className="leading-relaxed mb-4">
-              Your answers never leave your browser. There's no database storing what you've checked. We process everything locally on your device, which means even we don't know your score. That's not just a privacy policy checkbox — it's how the test is supposed to work. People answer more honestly when they know nobody's watching.
+            <Text variant="body" className="leading-relaxed text-ink">
+              This site is run by <strong>Salman Shahid</strong>, 
+              I'm a developer based in Lahore, Pakistan, and I run a small company called Teknoesis.
+               I built this site after going looking for the original Rice Purity Test and finding dozens of copies instead, all running the same file with a different logo on top.
+               Not one of them had a person's name on it.
+               You can email me at {' '}
+                <a 
+                href="mailto:support@ricepuritytestapp.com" 
+                className="text-ink hover:underline font-semibold  hover:text-plum"
+              >
+                contact@ricepuritytestapp.com
+              </a>  
             </Text>
           </section>
 
           <section>
-            <Heading size="xl" className="mb-4 text-green-500">
-              What We've Kept, What We've Changed
+            <Heading as="h2" size="xl" className="mb-3 text-ink">
+              Why it exists
             </Heading>
-            <Text variant="body" className="leading-relaxed mb-4">
-              The 100 questions are the widely-recognized set that has circulated since the test first went digital in the late 1990s. We haven't added questions, removed awkward ones, or modernized the language. The point is that the test has always been the same test — that consistency is what makes scores meaningful to compare across different years and friend groups.
-            </Text>
-            <Text variant="body" className="leading-relaxed mb-4">
-              What we did change: the interface. Progress saves automatically so you don't lose your place. The scoring and sharing work cleanly on mobile. The results page gives you context so a number like "67" actually means something when you see it.
+            <Text variant="body" className="leading-relaxed text-ink">
+              There are a great many versions of this test online and most of them are
+              the same page repeated: the same hundred questions, the same score, no
+              explanation and no accountability. This one tries to be different in
+              three specific ways the question set is written rather than copied,
+              every number published here comes with a sample size or is not published
+              at all, and there is a name attached to it.
             </Text>
           </section>
 
           <section>
-            <Heading size="xl" className="mb-4 text-green-500">
-              A Few Things Worth Knowing
+            <Heading as="h2" size="xl" className="mb-3 text-ink">
+              How the question set was built
             </Heading>
-            <ul className="space-y-3 list-disc list-inside text-gray-700">
-              <li>The test is free and will stay free — no premium tier, no locked results</li>
-              <li>No account needed, no email required, nothing tracked</li>
-              <li>Questions cover the full range from very tame to fairly mature — it's intended for people 13 and up</li>
-              <li>Scores are most meaningful when compared within your own age group — <a href="/rice-purity-test-average-score-by-age" className="text-green-600 underline hover:text-green-700">see averages by age</a></li>
-              <li>If you want to understand what your score actually means, the <a href="/rice-purity-test-score" className="text-green-600 underline hover:text-green-700">score guide</a> has the full breakdown</li>
-            </ul>
+            <Text variant="body" className="leading-relaxed text-ink">
+              The hundred items were written for this site. They are grouped into ten
+              categories of ten and ordered from common experiences to rare ones. Items
+              that score things we do not think should be scored anything involving
+              family members, animals, minors or self-harm  are not included. The list
+              is reviewed regularly and the review date is shown on the questions
+              page.
+            </Text>
           </section>
 
-          <section className="pt-8">
-            <div className="bg-green-50 border border-green-200 rounded-xl p-6 text-center">
-              <Heading size="lg" className="mb-4 text-green-600">
-                Ready to Find Out?
-              </Heading>
-              <Text variant="body" className="mb-6 text-gray-700">
-                It takes about 10-15 minutes. Your answers stay private. Your results are instant.
-              </Text>
-              <Link href="/test">
-                <Button size="lg">Start the Test</Button>
-              </Link>
-            </div>
+          <section>
+            <Heading as="h2" size="xl" className="mb-3 text-ink">
+              How the data works
+            </Heading>
+            <Text variant="body" className="leading-relaxed text-ink">
+              Readers can add their score anonymously after finishing. We store the
+              score, an age band and a country. We never store individual answers, and
+              we never store anything that identifies a person. Aggregate figures are
+              published with the number of responses behind them. Where we have no
+              data, we say so instead of estimating.
+            </Text>
           </section>
-        </div>
+
+          <section>
+            <Heading as="h2" size="xl" className="mb-3 text-ink">
+              What this site is not
+            </Heading>
+            <Text variant="body" className="leading-relaxed text-ink">
+              It is not affiliated with, endorsed by, or connected to Rice University.
+              It is not a psychological assessment and it does not diagnose anything.
+              It is intended for adults aged 18 and over.
+            </Text>
+          </section>
+
+          <section>
+            <Heading as="h2" size="xl" className="mb-3 text-ink">
+              Corrections
+            </Heading>
+            <Text variant="body" className="leading-relaxed text-ink">
+              If something here is wrong, tell me and I will fix it. Corrections to
+              published pages are noted at the foot of the page with the date.
+            </Text>
+          </section>
+
+          <p className="text-sm pt-6 border-t border-line">
+            <strong className="font-mono text-[0.78rem] tracking-widest text-ink">
+              KEEP READING&nbsp;&nbsp;
+            </strong>
+            {FOOT_LINKS.map((link, i) => (
+              <React.Fragment key={link.href}>
+                {i > 0 && <span className="text-slate">&nbsp;·&nbsp;</span>}
+                <Link href={link.href} className="text-plum hover:underline">
+                  {link.label}
+                </Link>
+              </React.Fragment>
+            ))}
+          </p>
+        </article>
       </main>
-      <Footer />
+
+      
     </div>
   );
 }

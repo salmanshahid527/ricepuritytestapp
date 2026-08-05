@@ -1,67 +1,8 @@
-<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background circle for better visibility at small sizes -->
-  <circle cx="60" cy="60" r="58" fill="#ffffff" />
-  
-  <!-- Head Silhouette -->
-  <path
-    d="M30 60 C30 40, 35 25, 50 20 C65 15, 80 18, 90 30 C100 42, 105 55, 100 70 C95 85, 85 95, 70 100 C55 105, 40 100, 30 85 C20 70, 20 55, 30 60 Z"
-    fill="#1e3a8a"
-  />
-  
-  <!-- Hexagon with Checkmark -->
-  <g transform="translate(65, 35)">
-    <!-- Hexagon -->
-    <path
-      d="M15 -26 L30 0 L15 26 L-15 26 L-30 0 L-15 -26 Z"
-      fill="#10b981"
-    />
-    <!-- Checkmark -->
-    <path
-      d="M-8 0 L-2 6 L8 -4"
-      stroke="white"
-      strokeWidth="3"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      fill="none"
-    />
-  </g>
-  
-  <!-- Data Points / Pins -->
-  <g>
-    <!-- Pin 1 -->
-    <line
-      x1="100"
-      y1="50"
-      x2="110"
-      y2="45"
-      stroke="#9ca3af"
-      strokeWidth="2"
-      strokeLinecap="round"
-    />
-    <circle cx="110" cy="45" r="3" fill="#9ca3af" />
-    
-    <!-- Pin 2 -->
-    <line
-      x1="100"
-      y1="70"
-      x2="110"
-      y2="70"
-      stroke="#9ca3af"
-      strokeWidth="2"
-      strokeLinecap="round"
-    />
-    <circle cx="110" cy="70" r="3" fill="#9ca3af" />
-    
-    <!-- Pin 3 -->
-    <line
-      x1="100"
-      y1="90"
-      x2="110"
-      y2="95"
-      stroke="#9ca3af"
-      strokeWidth="2"
-      strokeLinecap="round"
-    />
-    <circle cx="110" cy="95" r="3" fill="#9ca3af" />
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+<!-- Fonts: display = Bricolage Grotesque 800, mono = IBM Plex Mono 600. Convert text to outlines before shipping, or self-host the webfonts. -->
+<rect x="0" y="0" width="512" height="512" fill="#5B3A72" rx="133.12" ry="133.12"/>
+<rect x="97.28" y="256.0" width="317.44" height="58.88" fill="#FFFFFF" rx="29.44" ry="29.44" opacity="0.38"/>
+<rect x="97.28" y="256.0" width="196.8128" height="58.88" fill="#FFFFFF" rx="29.44" ry="29.44" opacity="0.85"/>
+<rect x="276.1728" y="153.6" width="35.84" height="204.8" fill="#D98E2B" rx="17.92" ry="17.92"/>
+<circle cx="294.0928" cy="135.68" r="38.4" fill="#D98E2B"/>
 </svg>

@@ -35,7 +35,6 @@ export default function ScoreMeaningPage() {
         url={`${BASE_URL}/blog/rice-purity-test-score-meaning`}
         description="Learn what your Rice Purity Test score means with clear explanations for every range from 0 to 100."
       />
-      <Header />
       <main className="container mx-auto px-4 py-8 max-w-4xl">
         <Breadcrumbs items={[
           { label: 'Home', href: '/' },
@@ -51,7 +50,7 @@ export default function ScoreMeaningPage() {
 
         <article className="prose prose-lg max-w-none space-y-6 text-gray-700">
           <Text variant="large" className="leading-relaxed">
-            You got your number. Now what? A lot of people experience a surprisingly strong reaction to their Rice Purity Test score — relief, pride, embarrassment, curiosity, or just confusion about why they feel anything at all. Here's a more honest look at what the score means, why it lands the way it does emotionally, and how to actually use it.
+            You got your number. Now what? A lot of people experience a surprisingly strong reaction to their Rice Purity Test score relief, pride, embarrassment, curiosity, or just confusion about why they feel anything at all. Here's a more honest look at what the score means, why it lands the way it does emotionally, and how to actually use it.
           </Text>
 
           <section>
@@ -62,7 +61,7 @@ export default function ScoreMeaningPage() {
               The mechanics are simple: your score equals 100 minus the number of boxes you checked. A 72 means you checked 28 items. A 48 means you checked 52. The formula never changes.
             </Text>
             <Text variant="body" className="leading-relaxed mb-4">
-              What makes the result feel more significant than that is what the questions touch. They're not asking about abstract preferences — they're asking about things that actually happened in your life. That makes the counting feel personal, even though it's just counting.
+              What makes the result feel more significant than that is what the questions touch. They're not asking about abstract preferences they're asking about things that actually happened in your life. That makes the counting feel personal, even though it's just counting.
             </Text>
             <Text variant="body" className="leading-relaxed mb-4">
               Worth knowing: all 100 questions are weighted equally. Something minor and something major each count as one point. Two people with identical scores can have dramatically different stories behind them. The number flattens context that matters a lot.
@@ -74,13 +73,13 @@ export default function ScoreMeaningPage() {
               Why Your Score Might Have Surprised You
             </Heading>
             <Text variant="body" className="leading-relaxed mb-4">
-              One of the more common reactions is discovering your score is lower than you expected — meaning you've checked more boxes than you anticipated. This usually happens for one of two reasons.
+              One of the more common reactions is discovering your score is lower than you expected meaning you've checked more boxes than you anticipated. This usually happens for one of two reasons.
             </Text>
             <Text variant="body" className="leading-relaxed mb-4">
-              First, people often answer for their recent self rather than their whole life. The test asks "have you ever" — not "in the past year" or "currently." Things you did years ago, in a different context, with a different crowd, still count. If you're answering with your present-day self in mind, you're going to undercount.
+              First, people often answer for their recent self rather than their whole life. The test asks "have you ever"  not "in the past year" or "currently." Things you did years ago, in a different context, with a different crowd, still count. If you're answering with your present-day self in mind, you're going to undercount.
             </Text>
             <Text variant="body" className="leading-relaxed mb-4">
-              Second, people have an internal sense of themselves as "not really that experienced" based on comparison to specific people they know — close friends, social media, whatever. The test cuts through that relative self-assessment and just asks about absolute history. The gap between self-perception and what actually happened is often bigger than expected.
+              Second, people have an internal sense of themselves as "not really that experienced" based on comparison to specific people they know close friends, social media, whatever. The test cuts through that relative self-assessment and just asks about absolute history. The gap between self-perception and what actually happened is often bigger than expected.
             </Text>
             <Text variant="body" className="leading-relaxed mb-4">
               The opposite happens too — some people score higher than expected, which can bring its own complicated feelings. Both reactions are worth sitting with. The surprise itself is information.
@@ -101,11 +100,11 @@ export default function ScoreMeaningPage() {
               </div>
               <div className="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded">
                 <Heading size="lg" className="mb-2 text-gray-800">93-55: Middle range</Heading>
-                <Text variant="body" className="leading-relaxed">This is most people. The emotional range here is wide — some feel relieved to be "average," some feel unexpectedly low, some feel higher than their friend group and wonder why. The middle is also where the most interesting conversations happen, because nobody's at an extreme that explains everything.</Text>
+                <Text variant="body" className="leading-relaxed">This is most people. The emotional range here is wide some feel relieved to be "average," some feel unexpectedly low, some feel higher than their friend group and wonder why. The middle is also where the most interesting conversations happen, because nobody's at an extreme that explains everything.</Text>
               </div>
               <div className="bg-orange-50 border-l-4 border-orange-500 p-4 rounded">
                 <Heading size="lg" className="mb-2 text-gray-800">54-0: Lower end</Heading>
-                <Text variant="body" className="leading-relaxed">Low scores can trigger shame responses that are worth examining. The test was designed with no moral hierarchy — a low score isn't a verdict. It usually reflects age and experience, a particular social context, or a period of life that's now over. Feeling bad about it is a reaction to a cultural assumption, not something built into the number itself.</Text>
+                <Text variant="body" className="leading-relaxed">Low scores can trigger shame responses that are worth examining. The test was designed with no moral hierarchy a low score isn't a verdict. It usually reflects age and experience, a particular social context, or a period of life that's now over. Feeling bad about it is a reaction to a cultural assumption, not something built into the number itself.</Text>
               </div>
             </div>
           </section>
@@ -115,7 +114,7 @@ export default function ScoreMeaningPage() {
               The Score and Social Comparison
             </Heading>
             <Text variant="body" className="leading-relaxed mb-4">
-              The test works best when it generates conversation — comparing your score with a friend and noticing where you're similar and where you diverge. Those divergences are usually more interesting than the scores themselves. Why did one person check something the other didn't, even though their friendship suggests similar life paths? That question is worth more than the number.
+              The test works best when it generates conversation comparing your score with a friend and noticing where you're similar and where you diverge. Those divergences are usually more interesting than the scores themselves. Why did one person check something the other didn't, even though their friendship suggests similar life paths? That question is worth more than the number.
             </Text>
             <Text variant="body" className="leading-relaxed mb-4">
               What doesn't work well: using the score as a status marker. People who treat a high score as a badge of virtue (or a low score as a badge of coolness) are both missing the point. The test was created to start conversation, not rank people. Treating it like a ranking tends to make people answer dishonestly, which makes the score less meaningful, which defeats the whole purpose.
@@ -127,7 +126,7 @@ export default function ScoreMeaningPage() {
               What To Do With It
             </Heading>
             <Text variant="body" className="leading-relaxed mb-4">
-              The most useful thing you can do with your score is compare it with someone you're close to and actually talk about the differences. Not to judge each other — but to understand each other a little better. The test is a surprisingly good tool for that because it covers ground that usually takes years of friendship to reach.
+              The most useful thing you can do with your score is compare it with someone you're close to and actually talk about the differences. Not to judge each other but to understand each other a little better. The test is a surprisingly good tool for that because it covers ground that usually takes years of friendship to reach.
             </Text>
             <Text variant="body" className="leading-relaxed">
               Beyond that, let it be what it is: a casual number from a quiz created by 1980s college students. It's a snapshot of one dimension of your history, not a summary of who you are.
@@ -147,7 +146,6 @@ export default function ScoreMeaningPage() {
           </section>
         </article>
       </main>
-      <Footer />
     </div>
   );
 }
