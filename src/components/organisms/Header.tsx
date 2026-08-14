@@ -31,6 +31,12 @@ export const Header: React.FC<HeaderProps> = ({
             <Link href="/about" className="text-sm font-medium text-gray-600 hover:text-green-500 transition-colors">
               About
             </Link>
+            <Link href="/privacy" className="text-sm font-medium text-gray-600 hover:text-green-500 transition-colors">
+              Privacy Policy
+            </Link>
+            <Link href="/terms" className="text-sm font-medium text-gray-600 hover:text-green-500 transition-colors">
+              Terms of Service
+            </Link>
           </nav>
           <div className="flex items-center gap-4">
             {showProgress && (
