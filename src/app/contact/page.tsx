@@ -4,25 +4,31 @@ import { Footer } from '@/components/organisms/Footer';
 import { Heading } from '@/components/atoms/Heading';
 import { Text } from '@/components/atoms/Text';
 import { Breadcrumbs } from '@/components/molecules/Breadcrumbs';
+import Link from 'next/link';
 import type { Metadata } from 'next';
 
 const BASE_URL = 'https://www.ricepuritytestapp.com';
 
 export const metadata: Metadata = {
-  title: 'Contact Us | RicePurityTestApp Support & Feedback',
-  description: 'Get in touch with RicePurityTestApp — contact us for support, feedback, or questions about the Rice Purity Test quiz and blog content.',
+  title: 'Contact RicePurityTestApp',
+  description:
+    'Contact RicePurityTestApp for corrections, question suggestions, privacy requests, press inquiries, or other questions.',
   robots: { index: true, follow: true },
-  alternates: { canonical: `${BASE_URL}/contact` },
+  alternates: {
+    canonical: `${BASE_URL}/contact`,
+  },
   openGraph: {
-    title: 'Contact Us | RicePurityTestApp Support & Feedback',
-    description: 'Contact RicePurityTestApp for support, feedback, or questions about the Rice Purity Test.',
+    title: 'Contact RicePurityTestApp',
+    description:
+      'Get in touch with RicePurityTestApp for corrections, suggestions, privacy requests, press inquiries, or other questions.',
     url: `${BASE_URL}/contact`,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Contact Us | RicePurityTestApp Support & Feedback',
-    description: 'Contact RicePurityTestApp for support and feedback.',
+    title: 'Contact RicePurityTestApp',
+    description:
+      'Contact RicePurityTestApp for corrections, suggestions, privacy requests, or press inquiries.',
   },
 };
 
@@ -30,96 +36,120 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      <main className="container mx-auto px-4 py-8 max-w-4xl">
-        <Breadcrumbs items={[
-          { label: 'Home', href: '/' },
-          { label: 'Contact' }
-        ]} />
+
+      <main className="container mx-auto max-w-4xl px-4 py-8">
+        <Breadcrumbs
+          items={[
+            { label: 'Home', href: '/' },
+            { label: 'Contact' },
+          ]}
+        />
+
         <Heading as="h1" size="3xl" className="mb-6">
-          Contact Us
+          Contact
         </Heading>
 
-        <div className="space-y-8 text-gray-700">
-          <section>
-            <Text variant="large" className="leading-relaxed mb-4">
-              We'd love to hear from you! Whether you have questions, feedback, or need support, we're here to help.
-            </Text>
-          </section>
-
+        <div className="space-y-10 text-gray-700">
+          {/* General Contact */}
           <section>
             <Heading size="xl" className="mb-4 text-green-500">
-              General Inquiries
+              Get in Touch
             </Heading>
-            <Text variant="body" className="leading-relaxed mb-4">
-              For general questions about the Rice Purity Test, please email us at:{' '}
-              <a 
-                href="mailto:support@ricepuritytestapp.com" 
-                className="text-green-500 hover:underline font-semibold"
+
+            <Text variant="body" className="leading-relaxed">
+              Email{' '}
+              <a
+                href="mailto:contact@ricepuritytestapp.com"
+                className="font-semibold text-green-600 hover:underline"
               >
-                support@ricepuritytestapp.com
-              </a>
+                contact@ricepuritytestapp.com
+              </a>{' '}
+              and you will get a reply, usually within a few working days.
+            </Text>
+
+            <Text variant="body" className="mt-4 leading-relaxed">
+              Use this address for corrections, question suggestions, privacy
+              requests, or anything else related to the site.
             </Text>
           </section>
 
+          {/* Press */}
           <section>
             <Heading size="xl" className="mb-4 text-green-500">
-              Privacy & Data Concerns
+              Press Inquiries
             </Heading>
-            <Text variant="body" className="leading-relaxed mb-4">
-              If you have concerns about privacy or data handling, please review our{' '}
-              <a href="/privacy" className="text-green-500 hover:underline">
-                Privacy Policy
-              </a>
-              {' '}or contact us directly.
-            </Text>
-          </section>
 
-          <section>
-            <Heading size="xl" className="mb-4 text-green-500">
-              Technical Support
-            </Heading>
-            <Text variant="body" className="leading-relaxed mb-4">
-              Experiencing technical issues? Please include details about your browser, device, and the specific problem you're encountering in your message.
-            </Text>
-          </section>
-
-          <section>
-            <Heading size="xl" className="mb-4 text-green-500">
-              Feedback & Suggestions
-            </Heading>
-            <Text variant="body" className="leading-relaxed mb-4">
-              We welcome your feedback and suggestions for improving the Rice Purity Test experience. Your input helps us make the site better for everyone.
-            </Text>
-          </section>
-
-          <section>
-            <Heading size="xl" className="mb-4 text-green-500">
-              Response Time
-            </Heading>
-            <Text variant="body" className="leading-relaxed mb-4">
-              We aim to respond to all inquiries within 48 hours. Please note that we may receive a high volume of emails, so thank you for your patience.
-            </Text>
-          </section>
-
-          <section className="bg-gray-50 border border-gray-200 rounded-xl p-6 mt-8">
-            <Heading size="lg" className="mb-3 text-gray-800">
-              Before Contacting Us
-            </Heading>
-            <Text variant="body" className="text-gray-700 mb-3">
-              You might find answers to common questions in our FAQ section on the{' '}
-              <a href="/#faq" className="text-green-500 hover:underline">
-                homepage
+            <Text variant="body" className="leading-relaxed">
+              For press inquiries, email{' '}
+              <a
+                href="mailto:press@ricepuritytestapp.com"
+                className="font-semibold text-green-600 hover:underline"
+              >
+                press@ricepuritytestapp.com
               </a>
               .
             </Text>
-            <ul className="list-disc list-inside space-y-2 text-gray-700">
-              <li>Check our <a href="/about" className="text-green-500 hover:underline">About page</a> for information about the test</li>
-              <li>Review our <a href="/privacy" className="text-green-500 hover:underline">Privacy Policy</a> for data-related questions</li>
-              <li>Read our <a href="/terms" className="text-green-500 hover:underline">Terms of Service</a> for usage guidelines</li>
-            </ul>
           </section>
+
+          {/* Privacy Requests */}
+          <section>
+            <Heading size="xl" className="mb-4 text-green-500">
+              Privacy Requests
+            </Heading>
+
+            <Text variant="body" className="mb-4 leading-relaxed">
+              For data access, correction, or deletion requests, put{' '}
+              <strong>"Privacy request"</strong> in the subject line.
+            </Text>
+
+            <Text variant="body" className="leading-relaxed">
+              See our{' '}
+              <Link
+                href="/privacy"
+                className="text-green-600 underline hover:text-green-700"
+              >
+                Privacy Policy
+              </Link>{' '}
+              for information about what we hold, which is very little.
+            </Text>
+          </section>
+
+          {/* What We Cannot Help With */}
+          <section>
+            <Heading size="xl" className="mb-4 text-green-500">
+              What We Cannot Help With
+            </Heading>
+
+            <Text variant="body" className="mb-4 leading-relaxed">
+              We cannot interpret your score for you beyond what the{' '}
+              <Link
+                href="/rice-purity-test-score"
+                className="text-green-600 underline hover:text-green-700"
+              >
+                score guide
+              </Link>{' '}
+              already says.
+            </Text>
+
+            <Text variant="body" className="mb-4 leading-relaxed">
+              We also cannot provide medical, psychological, or legal advice.
+            </Text>
+
+            <Text variant="body" className="leading-relaxed">
+              If you are struggling, our{' '}
+              <Link
+                href="/help"
+                className="text-green-600 underline hover:text-green-700"
+              >
+                help resources page
+              </Link>{' '}
+              lists better places to go for support.
+            </Text>
+          </section>
+
         </div>
       </main>
+
       <Footer />
     </div>
   );

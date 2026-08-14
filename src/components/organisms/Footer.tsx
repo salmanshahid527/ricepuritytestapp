@@ -60,6 +60,20 @@ export const Footer: React.FC = () => {
             >
               Contact
             </Link>
+              <span className="text-gray-300">|</span>
+            <Link 
+              href="/cookies" 
+              className="text-gray-600 hover:text-green-500 hover:scale-110 transition-all duration-300"
+            >
+              Cookies
+            </Link>
+            <span className="text-gray-300">|</span>
+            <Link 
+              href="/disclaimer" 
+              className="text-gray-600 hover:text-green-500 hover:scale-110 transition-all duration-300"
+            >
+              Disclaimer   
+            </Link>
           </nav>
           <div className="text-center space-y-2">
             <Text variant="small" color="muted" className="text-gray-500">
