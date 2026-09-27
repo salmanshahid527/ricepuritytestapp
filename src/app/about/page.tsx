@@ -82,10 +82,12 @@ export default function AboutPage() {
             </Text>
 
             <Text variant="body" className="leading-relaxed">
-              This site tries to be different in three specific ways. The
-              question set is written rather than copied. Every number
-              published here comes with a sample size, or it is not published
-              at all. And there is a real name attached to it.
+              This site tries to be different in three specific ways. Every
+              question is explained in plain English, and we say exactly how our
+              list differs from the original. Estimates are labelled as
+              estimates, and figures from reader data are published with the
+              number of responses behind them. And there is a named company you
+              can contact behind it.
             </Text>
           </section>
 
@@ -96,16 +98,19 @@ export default function AboutPage() {
             </Heading>
 
             <Text variant="body" className="mb-4 leading-relaxed">
-              The hundred items were written for this site. They are grouped
-              into ten categories of ten and ordered from common experiences to
-              rare ones.
+              The hundred items follow the widely shared version of the test
+              that grew out of the Rice University student tradition, ordered
+              roughly from common experiences to rare ones. We reworded items
+              that used &ldquo;MPS&rdquo; so they are gender-neutral, and replaced
+              three items.
             </Text>
 
             <Text variant="body" className="leading-relaxed">
               Items that score things we do not think should be scored, such
               as anything involving family members, animals, minors, or
-              self-harm, are not included. The list is reviewed regularly, and
-              the review date is shown on the questions page.
+              self-harm, are not included; that is why three items differ from
+              other versions. The list is reviewed regularly, and the review
+              date is shown on the questions page.
             </Text>
           </section>
 
@@ -116,8 +121,9 @@ export default function AboutPage() {
             </Heading>
 
             <Text variant="body" className="mb-4 leading-relaxed">
-              Readers can add their score anonymously after finishing the
-              test. We store the score, an age band, and a country.
+              {process.env.NEXT_PUBLIC_STATS_ENABLED === '1'
+                ? 'Readers can choose to add their score anonymously after finishing the test. We store the score, an age band, and a country.'
+                : 'We are setting up an optional way for readers to add their score anonymously after finishing the test. When it is live, we will store only the score, an age band, and a country.'}
             </Text>
 
             <Text variant="body" className="mb-4 leading-relaxed">

@@ -108,38 +108,6 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Enhanced Social Proof & Trust Signals */}
-        <section className="py-8 bg-white">
-          <div className="max-w-4xl mx-auto">
-            <Heading as="h2" size="2xl" className="mb-6 text-center animate-fade-in">
-              Why 100,000+ Students Trust Us
-            </Heading>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-              <div className="bg-green-50 border border-green-200 rounded-xl p-4 text-center hover:scale-105 transition-transform animate-fade-in">
-                <div className="text-3xl font-bold text-green-600 mb-2">500,000+</div>
-                <Text variant="small" color="muted">Tests Taken</Text>
-              </div>
-              <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 text-center hover:scale-105 transition-transform animate-fade-in-delay-1">
-                <div className="text-3xl font-bold text-blue-600 mb-2">4.8/5</div>
-                <Text variant="small" color="muted">User Rating</Text>
-              </div>
-              <div className="bg-purple-50 border border-purple-200 rounded-xl p-4 text-center hover:scale-105 transition-transform animate-fade-in-delay-2">
-                <div className="text-3xl font-bold text-purple-600 mb-2">100%</div>
-                <Text variant="small" color="muted">Anonymous</Text>
-              </div>
-              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 text-center hover:scale-105 transition-transform animate-fade-in-delay-3">
-                <div className="text-3xl font-bold text-amber-600 mb-2">Since 2023</div>
-                <Text variant="small" color="muted">Trusted Platform</Text>
-              </div>
-            </div>
-            <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 text-center">
-              <Text variant="large" className="text-gray-700 animate-bounce">
-                🔥 <strong>10,000+</strong> people took the test this week
-              </Text>
-            </div>
-          </div>
-        </section>
-
         {/* Internal Linking - Related Pages */}
         <section className="py-8 bg-gray-50">
           <div className="max-w-4xl mx-auto">
@@ -207,173 +175,57 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Complete History Section */}
-        <section id="history" className="py-8 bg-white">
-          <div className="max-w-4xl mx-auto">
-            <Heading as="h2" size="3xl" className="mb-6 text-center animate-fade-in">
-              Complete History of the Rice Purity Test
+        {/* What the test is */}
+        <section id="about-the-test" className="py-8 bg-white">
+          <div className="max-w-3xl mx-auto space-y-4">
+            <Heading as="h2" size="3xl" className="mb-2 text-center">
+              What is the Rice Purity Test?
             </Heading>
-            <div className="space-y-4 text-gray-700">
-              <Text variant="body" className="leading-relaxed animate-fade-in-delay-1">
-                Picture 1980s Houston. Rice University freshmen are arriving on campus, nervous, not knowing anyone. Upperclassmen hand out a paper questionnaire — a list of 100 experiences — and ask everyone to check the ones they've had. Then the scores come out, conversations start, and strangers suddenly have something to talk about. That was the original Rice Purity Test: a low-stakes icebreaker, not a judgment.
-              </Text>
-
-              <Text variant="body" className="leading-relaxed">
-                It stayed a campus-only thing for years. Then the internet happened. In the late 1990s, students started scanning and posting old versions online. What had been a Houston tradition suddenly reached dorm rooms across the country. The questions were the same, but now anyone could take it — and compare their score with people they'd never met.
-              </Text>
-
-              <Text variant="body" className="leading-relaxed">
-                Social media turned it into something else entirely. TikTok, Twitter, group chats — people started sharing their scores publicly, debating what different numbers meant, and daring friends to take it. The test became a cultural shorthand for talking about life experience without getting too personal about any single thing. A score is easier to share than a life story.
-              </Text>
-
-              <Text variant="body" className="leading-relaxed">
-                What's remarkable is how little the core test has changed. The questions from the 1980s are largely the same ones people answer today. The format shifted from paper to HTML forms to full web apps, but the 100-question structure and the simple subtraction formula have stayed constant. That consistency is part of why scores are still meaningful to compare across generations.
-              </Text>
-            </div>
+            <Text variant="body" className="leading-relaxed text-gray-700">
+              It&apos;s a 100-item &ldquo;have you ever&hellip;&rdquo; checklist about dating, sex, alcohol, drugs and
+              run-ins with the law. It grew out of a student tradition at Rice University in Houston: the student
+              newspaper, the <em>Thresher</em>, ran an informal purity survey as early as 1924 and revisited the idea for
+              decades. The 100-question version moved online in the 1990s and went viral on TikTok in the 2020s.
+            </Text>
+            <Text variant="body" className="leading-relaxed text-gray-700">
+              &ldquo;Purity&rdquo; was always tongue-in-cheek. A high score just means fewer boxes checked; it isn&apos;t a
+              moral grade. Read more about{' '}
+              <Link href="/rice-purity-test-meaning" className="text-green-600 underline">what the test means</Link> and{' '}
+              <Link href="/rice-purity-test-history" className="text-green-600 underline">where it came from</Link>.
+            </Text>
           </div>
         </section>
 
-        {/* Detailed Score Interpretation */}
+        {/* Score at a glance */}
         <section id="score-interpretation" className="py-8 bg-gray-50">
-          <div className="max-w-4xl mx-auto">
-            <Heading as="h2" size="3xl" className="mb-6 text-center animate-fade-in">
-              Understanding Your Rice Purity Score
+          <div className="max-w-3xl mx-auto">
+            <Heading as="h2" size="3xl" className="mb-4 text-center">
+              What your score means, at a glance
             </Heading>
-            <div className="space-y-4 text-gray-700">
-              <Text variant="body" className="leading-relaxed">
-                The formula is simple: start at 100, subtract one point for every experience you check. So if you check 38 boxes, you get a 62. The number itself is less interesting than what it gets you thinking about — and what happens when you compare it with a friend.
-              </Text>
-
-              <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm animate-slide-up">
-                <Heading size="xl" className="mb-4 text-green-500">
-                  Score Ranges Explained
-                </Heading>
-                <div className="space-y-4">
-                  <div className="border-l-4 border-green-500 pl-4">
-                    <Heading size="lg" className="mb-2 text-gray-800">
-                      100-98: Extremely Pure
-                    </Heading>
-                    <Text variant="body" className="leading-relaxed">
-                      You've checked almost nothing. This is genuinely rare — less than 5% of people score here. You've either had a very sheltered upbringing, hold strong personal values that kept you away from most of these experiences, or you're quite young and simply haven't had the opportunity yet. None of those are bad things.
-                    </Text>
-                  </div>
-
-                  <div className="border-l-4 border-green-400 pl-4">
-                    <Heading size="lg" className="mb-2 text-gray-800">
-                      97-94: Very Pure
-                    </Heading>
-                    <Text variant="body" className="leading-relaxed">
-                      You've dipped your toes in but kept most of the list unchecked. A score here usually means you've had a handful of the more common social experiences — maybe a party or two, maybe some romantic milestones — but the more unusual or intense items are still largely unticked. Pretty typical for high schoolers and early college students.
-                    </Text>
-                  </div>
-
-                  <div className="border-l-4 border-yellow-400 pl-4">
-                    <Heading size="lg" className="mb-2 text-gray-800">
-                      93-77: Relatively Pure
-                    </Heading>
-                    <Text variant="body" className="leading-relaxed">
-                      You've had real experiences — this isn't a sheltered score. But you've also maintained limits in other areas. This range covers a wide slice of people, from cautious college freshmen to adults who've lived full lives in specific directions. Most people who take the test for the first time land somewhere in here and feel surprised it's not lower.
-                    </Text>
-                  </div>
-
-                  <div className="border-l-4 border-orange-400 pl-4">
-                    <Heading size="lg" className="mb-2 text-gray-800">
-                      76-45: Moderate Experience
-                    </Heading>
-                    <Text variant="body" className="leading-relaxed">
-                      This is where the majority of test takers land — roughly 60% of scores fall in the 55-75 band. You've lived a fairly varied life. You've said yes to things, tried things, maybe regretted a few of them. There's no single story that explains a score in this range; it just means you've been out in the world.
-                    </Text>
-                  </div>
-
-                  <div className="border-l-4 border-red-400 pl-4">
-                    <Heading size="lg" className="mb-2 text-gray-800">
-                      44-9: Experienced
-                    </Heading>
-                    <Text variant="body" className="leading-relaxed">
-                      You've checked a lot of boxes. This usually comes with age, a particular social environment, or simply a life that leaned toward trying things rather than avoiding them. People here often find the test less surprising and more nostalgic — a reminder of a specific period rather than a revelation.
-                    </Text>
-                  </div>
-
-                  <div className="border-l-4 border-red-600 pl-4">
-                    <Heading size="lg" className="mb-2 text-gray-800">
-                      8-0: Highly Experienced
-                    </Heading>
-                    <Text variant="body" className="leading-relaxed">
-                      Scoring this low is actually quite uncommon. It means you've encountered nearly everything on a list that covers a very wide range of experiences. Whether that reflects a particular time in your life, a specific environment, or just decades of living — it doesn't say anything about who you are now.
-                    </Text>
-                  </div>
-                </div>
-              </div>
-
-              <Text variant="body" className="leading-relaxed mt-4">
-                For a deeper breakdown of what each range means — and why your score isn't a verdict on your character — check out the <a href="/rice-purity-test-score" className="text-green-600 underline hover:text-green-700">full score guide</a>.
-              </Text>
+            <Text variant="body" className="leading-relaxed text-gray-700 mb-4">
+              Your score is 100 minus the number of items you check, and every item counts the same.
+            </Text>
+            <div className="overflow-x-auto">
+              <table className="w-full text-left border-collapse text-sm bg-white rounded-xl">
+                <thead>
+                  <tr className="border-b border-gray-300">
+                    <th className="py-2 px-3 font-semibold text-gray-800">Score</th>
+                    <th className="py-2 px-3 font-semibold text-gray-800">In short</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-gray-100"><td className="py-2 px-3 font-medium">90–100</td><td className="py-2 px-3">Very few items checked; common for new college students.</td></tr>
+                  <tr className="border-b border-gray-100"><td className="py-2 px-3 font-medium">77–89</td><td className="py-2 px-3">Dating, kissing and some social items; typical at 18 to 21.</td></tr>
+                  <tr className="border-b border-gray-100"><td className="py-2 px-3 font-medium">55–76</td><td className="py-2 px-3">Where most adults land. The overall average is estimated in the mid-60s.</td></tr>
+                  <tr className="border-b border-gray-100"><td className="py-2 px-3 font-medium">30–54</td><td className="py-2 px-3">Well into the later sections of the list; more common with age.</td></tr>
+                  <tr><td className="py-2 px-3 font-medium">0–29</td><td className="py-2 px-3">Uncommon; most of the list checked.</td></tr>
+                </tbody>
+              </table>
             </div>
-          </div>
-        </section>
-
-        {/* Score Statistics Section */}
-        <section id="statistics" className="py-8 bg-white">
-          <div className="max-w-4xl mx-auto">
-            <Heading as="h2" size="3xl" className="mb-6 text-center animate-fade-in">
-              Rice Purity Test Statistics and Averages
-            </Heading>
-            <div className="space-y-4 text-gray-700">
-              <Text variant="body" className="leading-relaxed">
-                These numbers come from patterns observed across many test takers. They're self-reported, so treat them as rough reference points rather than hard data — but they're consistent enough to give you a sense of where most people land.
-              </Text>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
-                <div className="bg-green-50 border border-green-200 rounded-xl p-6 shadow-sm animate-fade-in">
-                  <Heading size="lg" className="mb-3 text-green-600">
-                    Average Score
-                  </Heading>
-                  <Text variant="large" className="font-bold text-green-700 mb-2">62-68</Text>
-                  <Text variant="body" className="leading-relaxed">
-                    Most people score somewhere in the low-to-mid 60s. That means checking off roughly a third of the list — which feels about right for someone who's been in the world a few years but hasn't experienced everything on it.
-                  </Text>
-                </div>
-
-                <div className="bg-blue-50 border border-blue-200 rounded-xl p-6 shadow-sm animate-fade-in-delay-1">
-                  <Heading size="lg" className="mb-3 text-blue-600">
-                    Most Common Range
-                  </Heading>
-                  <Text variant="large" className="font-bold text-blue-700 mb-2">55-75</Text>
-                  <Text variant="body" className="leading-relaxed">
-                    Around 60% of test takers land in this band. If you score here, you're squarely in the middle — which is less a comment on your character and more a reflection of what a fairly typical adult life looks like.
-                  </Text>
-                </div>
-
-                <div className="bg-purple-50 border border-purple-200 rounded-xl p-6 shadow-sm animate-fade-in-delay-2">
-                  <Heading size="lg" className="mb-3 text-purple-600">
-                    Age Matters
-                  </Heading>
-                  <Text variant="large" className="font-bold text-purple-700 mb-2">Younger = Higher</Text>
-                  <Text variant="body" className="leading-relaxed">
-                    An 18-year-old taking this test will almost always score higher than a 30-year-old — not because they're a better person, but because they've had less time to accumulate experiences. The same person, retaking it a decade later, will likely score lower.
-                  </Text>
-                </div>
-
-                <div className="bg-amber-50 border border-amber-200 rounded-xl p-6 shadow-sm animate-fade-in-delay-3">
-                  <Heading size="lg" className="mb-3 text-amber-600">
-                    A Note on Comparisons
-                  </Heading>
-                  <Text variant="large" className="font-bold text-amber-700 mb-2">Compare Fairly</Text>
-                  <Text variant="body" className="leading-relaxed">
-                    Comparing your score to someone in a different age group or life stage isn't that meaningful. The more interesting comparison is within your own peer group — same rough age, similar background. That's when scores actually tell you something.
-                  </Text>
-                </div>
-              </div>
-
-              <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 mt-6">
-                <Heading size="lg" className="mb-3 text-gray-800">
-                  Worth Knowing
-                </Heading>
-                <Text variant="body" className="leading-relaxed">
-                  These figures are based on self-reported responses, which means they're only as reliable as people's honesty. Cultural background, personal values, and how you interpret individual questions all affect your score significantly. Two people with nearly identical life histories can score quite differently depending on how literally they read the questions. The number is a starting point for reflection — not a final verdict.
-                </Text>
-              </div>
-            </div>
+            <Text variant="body" className="mt-4 text-gray-700">
+              See the full <Link href="/rice-purity-test-score" className="text-green-600 underline">score chart</Link> and{' '}
+              <Link href="/rice-purity-test-average-score-by-age" className="text-green-600 underline">typical scores by age</Link>.
+            </Text>
           </div>
         </section>
 
@@ -446,7 +298,7 @@ export default function HomePage() {
                   Is the Rice Purity Test anonymous?
                 </Heading>
                 <Text color="default" className="text-gray-700">
-                  Yes — completely. Your answers never leave your device. There's no account, no login, no tracking. Everything runs locally in your browser. We built it this way intentionally because the test only works if people feel safe being honest.
+                  Your answers are. They never leave your device and there's no account or login; the score is worked out in your browser. Like most sites we use Google Analytics to count visits and show ads through Google AdSense, but neither ever receives your answers. Details are in our privacy policy.
                 </Text>
               </div>
 
@@ -482,7 +334,7 @@ export default function HomePage() {
                   Is this the official Rice Purity Test?
                 </Heading>
                 <Text color="default" className="text-gray-700">
-                  The original test was created at Rice University in the 1980s as a paper handout. There's no single "official" digital version — it's been adapted many times over the decades. This version uses the most widely recognized set of 100 questions that have been in circulation since the test went online.
+                  No. The test grew out of a Rice University student-newspaper tradition that goes back to 1924, but Rice doesn't run any website that hosts it and there is no official online version. This site uses the widely circulated 100-question list with gender-neutral wording and three items replaced (see the questions page).
                 </Text>
               </div>
 

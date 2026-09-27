@@ -5,6 +5,7 @@ import { SharePanel } from '../organisms/SharePanel';
 import { Button } from '../atoms/Button';
 import Link from 'next/link';
 import { Footer } from '../organisms/Footer';
+import { ScoreSubmit } from '../organisms/ScoreSubmit';
 
 interface ResultsTemplateProps {
   score: number;
@@ -36,6 +37,7 @@ export const ResultsTemplate: React.FC<ResultsTemplateProps> = ({
             interpretation={interpretation}
           />
           <SharePanel score={score} />
+          <ScoreSubmit score={score} />
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" onClick={onRetakeTest}>
               Retake Test
