@@ -76,7 +76,7 @@ export default function ScorePage() {
               </div>
               <div className="border-l-4 border-blue-500 pl-4">
                 <Heading size="lg" className="mb-2">97-94: Very Pure</Heading>
-                <Text variant="body" className="leading-relaxed">You've dipped in but kept most of the list unchecked. Scores in this range typically belong to high schoolers or early college students who've had some social experiences — maybe a few parties, some romantic firsts — but haven't ventured into the more unusual or intense items on the list. Nothing here suggests inexperience in a negative sense; it just marks where you are in life.</Text>
+                <Text variant="body" className="leading-relaxed">You've dipped in but kept most of the list unchecked. Scores in this range are common among first-year college students who've had some social experiences — maybe a few parties, some romantic firsts — but haven't ventured into the more unusual or intense items on the list. Nothing here suggests inexperience in a negative sense; it just marks where you are in life.</Text>
               </div>
               <div className="border-l-4 border-yellow-500 pl-4">
                 <Heading size="lg" className="mb-2">93-77: Relatively Pure</Heading>

@@ -10,58 +10,53 @@ import type { Metadata } from 'next';
 const BASE_URL = 'https://www.ricepuritytestapp.com';
 
 export const metadata: Metadata = {
-  title: 'Rice Purity Test Guides & Articles | Tips, Meaning & Insights',
-  description: 'Explore Rice Purity Test guides and articles — learn tips, score meanings, history, and insights from millions of people who took the test.',
+  title: 'Rice Purity Test Guides: Scores, Questions, Meaning & History',
+  description: 'Guides to the Rice Purity Test: average scores by age, what each score range means, all 100 questions explained, and the history of the test.',
   robots: { index: true, follow: true },
   alternates: { canonical: `${BASE_URL}/blog` },
   openGraph: {
-    title: 'Rice Purity Test Guides & Articles | Tips, Meaning & Insights',
-    description: 'Explore Rice Purity Test guides and articles — tips, score meanings, history, and insights.',
+    title: 'Rice Purity Test Guides: Scores, Questions, Meaning & History',
+    description: 'Average scores by age, score meanings, all 100 questions explained, and the history of the test.',
     url: `${BASE_URL}/blog`,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Rice Purity Test Guides & Articles | Tips, Meaning & Insights',
-    description: 'Rice Purity Test guides and articles — tips, score meanings, history.',
+    title: 'Rice Purity Test Guides: Scores, Questions, Meaning & History',
+    description: 'Average scores by age, score meanings, questions and history.',
   },
 };
 
-const blogPosts = [
+const guides = [
   {
-    slug: 'what-is-rice-purity-test',
-    title: 'What is the Rice Purity Test? Complete Guide for 2026',
-    description: 'Everything you need to know about the Rice Purity Test - its origins, how it works, and what your score means.',
-    date: '2026-01-15',
-    readTime: '8 min read',
+    href: '/rice-purity-test-average-score-by-age',
+    title: 'Rice Purity Test Average Score by Age',
+    description: 'Typical score ranges for 18-22, 23-25, 26-30 and 31+, and how to compare your own result.',
   },
   {
-    slug: 'rice-purity-test-score-meaning',
-    title: 'Rice Purity Test Score Meaning: Understanding Your Results',
-    description: 'Learn how to interpret your Rice Purity Test score and what different score ranges mean for your life experiences.',
-    date: '2026-01-14',
-    readTime: '6 min read',
+    href: '/rice-purity-test-score',
+    title: 'Rice Purity Test Score: What Your Score Means',
+    description: 'How the score is calculated and what each range from 0 to 100 usually looks like in practice.',
   },
   {
-    slug: 'average-rice-purity-test-score',
-    title: 'Average Rice Purity Test Score: Statistics & Trends',
-    description: 'Discover average Rice Purity Test scores by age, gender, and demographics. See how your score compares.',
-    date: '2026-01-13',
-    readTime: '5 min read',
+    href: '/rice-purity-test-questions',
+    title: 'All 100 Rice Purity Test Questions, Explained',
+    description: 'Every question on the test, grouped by category, with notes on the ones people find confusing.',
   },
   {
-    slug: 'rice-purity-test-history',
-    title: 'The History of the Rice Purity Test: From Campus to Internet',
-    description: 'Explore the fascinating history of the Rice Purity Test, from its origins at Rice University to becoming a viral internet phenomenon.',
-    date: '2026-01-12',
-    readTime: '7 min read',
+    href: '/rice-purity-test-meaning',
+    title: 'What Is the Rice Purity Test?',
+    description: 'What the test is, what it is not, and how to read your result without over-reading it.',
   },
   {
-    slug: 'how-to-take-rice-purity-test',
+    href: '/rice-purity-test-history',
+    title: 'Rice Purity Test History',
+    description: 'From a Rice University orientation handout to a TikTok trend: how the test spread.',
+  },
+  {
+    href: '/blog/how-to-take-rice-purity-test',
     title: 'How to Take the Rice Purity Test: Tips for Accurate Results',
-    description: 'Get the most accurate Rice Purity Test results with these expert tips on answering questions honestly and understanding your score.',
-    date: '2026-01-11',
-    readTime: '4 min read',
+    description: 'How to handle ambiguous questions, why to answer for your whole life, and what to do with your score.',
   },
 ];
 
@@ -75,17 +70,17 @@ export default function BlogPage() {
           { label: 'Blog' }
         ]} />
         <Heading as="h1" size="3xl" className="mb-6">
-          Rice Purity Test Guides & Articles
+          Rice Purity Test Guides
         </Heading>
         <Text variant="large" className="mb-8 text-gray-700">
-          Learn everything about the Rice Purity Test - guides, tips, score meanings, history, and insights from millions of test takers.
+          Everything we've written about the Rice Purity Test in one place: what scores mean, how they vary by age, the questions themselves, and where the test came from.
         </Text>
 
         <div className="space-y-6">
-          {blogPosts.map((post, index) => (
+          {guides.map((post, index) => (
             <Link
-              key={post.slug}
-              href={`/blog/${post.slug}`}
+              key={post.href}
+              href={post.href}
               className="block bg-white border border-gray-200 rounded-xl p-6 hover:border-green-400 hover:shadow-lg hover:scale-[1.02] transition-all duration-300 animate-slide-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
@@ -95,11 +90,6 @@ export default function BlogPage() {
               <Text color="default" className="text-gray-700 mb-4">
                 {post.description}
               </Text>
-              <div className="flex items-center gap-4 text-sm text-gray-500">
-                <span>{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
-                <span>•</span>
-                <span>{post.readTime}</span>
-              </div>
             </Link>
           ))}
         </div>

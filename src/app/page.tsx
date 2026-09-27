@@ -518,7 +518,7 @@ export default function HomePage() {
                   Is there an age requirement?
                 </Heading>
                 <Text color="default" className="text-gray-700">
-                  The test covers some mature topics, so it's intended for people 13 and older. Parental guidance is reasonable for younger teens. That said, the test is most commonly taken by college students and people in their 20s.
+                  Yes. The questions cover sex, drugs and alcohol, so the test is for adults 18 and older only (see our Terms of Service). Most people who take it are college students and people in their 20s.
                 </Text>
               </div>
 
@@ -552,86 +552,6 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Related Tests and Resources */}
-        <section id="resources" className="py-8 bg-white">
-          <div className="max-w-4xl mx-auto">
-            <Heading as="h2" size="3xl" className="mb-6 text-center animate-fade-in">
-              Related Tests and Resources
-            </Heading>
-            <div className="space-y-4 text-gray-700">
-              <Text variant="body" className="leading-relaxed">
-                The Rice Purity Test is part of a larger category of self-assessment quizzes and personality tests. If you enjoyed taking this test, you might be interested in exploring other similar assessments and resources.
-              </Text>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
-                <div className="bg-blue-50 border border-blue-200 rounded-xl p-6 shadow-sm hover:border-blue-400 hover:shadow-lg transition-all duration-300 animate-fade-in">
-                  <Heading size="lg" className="mb-3 text-blue-600">
-                    Similar Purity Tests
-                  </Heading>
-                  <Text variant="body" className="leading-relaxed mb-3">
-                    There are various versions of purity tests available online, each with slightly different questions and focuses. Some focus on specific age groups, while others cover different aspects of life experiences.
-                  </Text>
-                  <ul className="space-y-1 list-disc list-inside text-gray-700 text-sm">
-                    <li>College Purity Tests</li>
-                    <li>High School Purity Tests</li>
-                    <li>Adult Life Experience Tests</li>
-                  </ul>
-                </div>
-
-                <div className="bg-purple-50 border border-purple-200 rounded-xl p-6 shadow-sm hover:border-purple-400 hover:shadow-lg transition-all duration-300 animate-fade-in-delay-1">
-                  <Heading size="lg" className="mb-3 text-purple-600">
-                    Personality Assessments
-                  </Heading>
-                  <Text variant="body" className="leading-relaxed mb-3">
-                    If you're interested in learning more about yourself, consider taking scientifically-backed personality tests like the Myers-Briggs Type Indicator or the Big Five personality test.
-                  </Text>
-                  <ul className="space-y-1 list-disc list-inside text-gray-700 text-sm">
-                    <li>Myers-Briggs Type Indicator</li>
-                    <li>Big Five Personality Test</li>
-                    <li>Enneagram Test</li>
-                  </ul>
-                </div>
-
-                <div className="bg-green-50 border border-green-200 rounded-xl p-6 shadow-sm hover:border-green-400 hover:shadow-lg transition-all duration-300 animate-fade-in-delay-2">
-                  <Heading size="lg" className="mb-3 text-green-600">
-                    Self-Reflection Tools
-                  </Heading>
-                  <Text variant="body" className="leading-relaxed mb-3">
-                    Beyond quizzes, there are many ways to engage in self-reflection and personal growth, including journaling, meditation, and therapy.
-                  </Text>
-                  <ul className="space-y-1 list-disc list-inside text-gray-700 text-sm">
-                    <li>Journaling exercises</li>
-                    <li>Meditation apps</li>
-                    <li>Personal development resources</li>
-                  </ul>
-                </div>
-
-                <div className="bg-amber-50 border border-amber-200 rounded-xl p-6 shadow-sm hover:border-amber-400 hover:shadow-lg transition-all duration-300 animate-fade-in-delay-3">
-                  <Heading size="lg" className="mb-3 text-amber-600">
-                    Educational Resources
-                  </Heading>
-                  <Text variant="body" className="leading-relaxed mb-3">
-                    Learn more about Rice University, where the test originated, or explore resources about self-assessment and personal development.
-                  </Text>
-                  <ul className="space-y-1 list-disc list-inside text-gray-700 text-sm">
-                    <li>Rice University history</li>
-                    <li>Self-assessment guides</li>
-                    <li>Personal growth resources</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 mt-6">
-                <Heading size="lg" className="mb-3 text-gray-800">
-                  Remember
-                </Heading>
-                <Text variant="body" className="leading-relaxed">
-                  While quizzes and tests can be fun and provide insights, they should never replace professional advice or therapy if you're dealing with serious personal issues. Use these tools as starting points for self-reflection and conversation, not as definitive answers about who you are or what you should do.
-                </Text>
-              </div>
-            </div>
-          </div>
-        </section>
       </main>
       <Footer />
     </div>

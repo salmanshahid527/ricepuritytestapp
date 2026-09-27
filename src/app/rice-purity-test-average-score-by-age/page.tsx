@@ -126,10 +126,10 @@ export default function AverageScoreByAgePage() {
                 — <Link href="/rice-purity-test-score" className="text-green-600 hover:text-green-700 underline">Rice Purity Test Score — full range breakdown</Link>
               </Text>
               <Text variant="body">
-                — <Link href="/blog/rice-purity-test-score-meaning" className="text-green-600 hover:text-green-700 underline">What your score means emotionally and contextually</Link>
+                — <Link href="/rice-purity-test-meaning" className="text-green-600 hover:text-green-700 underline">What the Rice Purity Test is and how to read it</Link>
               </Text>
               <Text variant="body">
-                — <Link href="/blog/average-rice-purity-test-score" className="text-green-600 hover:text-green-700 underline">Average score statistics and distribution</Link>
+                — <Link href="/rice-purity-test-questions" className="text-green-600 hover:text-green-700 underline">All 100 questions, explained</Link>
               </Text>
             </div>
             <div className="mt-6">

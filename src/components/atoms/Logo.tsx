@@ -36,7 +36,7 @@ export const Logo: React.FC<LogoProps> = ({
           role="img"
           aria-label="Rice Purity Test Logo"
         >
-          <title>Rice Purity Test - Official Innocence Test Logo</title>
+          <title>Rice Purity Test logo</title>
           <desc>Logo featuring a head silhouette with a green hexagon checkmark and data points, representing the Rice Purity Test</desc>
           {/* Head Silhouette */}
           <path

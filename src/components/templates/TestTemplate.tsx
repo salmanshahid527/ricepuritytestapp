@@ -36,7 +36,11 @@ export const TestTemplate: React.FC<TestTemplateProps> = ({
       <Header showProgress progress={progress} current={answeredCount} total={totalQuestions} />
       <main className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
-          <h1 className="sr-only">Take the Rice Purity Test Online</h1>
+          <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">Take the Rice Purity Test</h1>
+          <p className="text-sm text-gray-600 mb-6">
+            For adults 18+ only. Check each experience you&apos;ve had. Your answers are saved only in
+            this browser and are never sent to us.
+          </p>
           <div className="flex items-center justify-between mb-6">
             <ProgressBar
               progress={progress}
