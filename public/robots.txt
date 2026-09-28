@@ -1,38 +1,6 @@
-# Allow all standard search engines
+# All crawlers, including search and AI assistants, may read the site.
 User-agent: *
 Allow: /
 Disallow: /api/
 
-# AI training crawlers – block content scraping
-User-agent: GPTBot
-Disallow: /
-
-User-agent: ChatGPT-User
-Disallow: /
-
-User-agent: anthropic-ai
-Disallow: /
-
-User-agent: ClaudeBot
-Disallow: /
-
-User-agent: Claude-Web
-Disallow: /
-
-User-agent: PerplexityBot
-Disallow: /
-
-User-agent: Google-Extended
-Disallow: /
-
-User-agent: CCBot
-Disallow: /
-
-User-agent: omgili
-Disallow: /
-
-User-agent: FacebookBot
-Disallow: /
-
-# Sitemap location
 Sitemap: https://www.ricepuritytestapp.com/sitemap.xml

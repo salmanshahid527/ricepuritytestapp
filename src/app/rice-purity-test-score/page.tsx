@@ -56,7 +56,7 @@ const FAQ = [
   },
   {
     q: 'Is 77 a good Rice Purity score?',
-    a: 'A 77 means you checked 23 items. That sits just above the typical adult range, so it is very ordinary, especially for someone in their late teens or early twenties.',
+    a: 'A 77 means you checked 23 items. That sits just above the typical adult range, so it is very ordinary, especially for someone aged 18 to their early twenties.',
   },
   {
     q: 'Is 55 a bad Rice Purity score?',
