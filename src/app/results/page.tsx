@@ -1,85 +1,27 @@
-'use client';
+import { Suspense } from 'react';
+import { ResultsView } from '@/components/organisms/ResultsView';
+import { LiveStats } from '@/components/organisms/LiveStats';
 
-import React, { useEffect, useState, Suspense } from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';
-import { ResultsTemplate } from '@/components/templates/ResultsTemplate';
-import { useScore } from '@/hooks/useScore';
-import { getScoreInterpretation } from '@/lib/utils';
-import { STORAGE_KEYS } from '@/lib/constants';
-
-function ResultsContent() {
-  const router = useRouter();
-  const searchParams = useSearchParams();
-  const [score, setScore] = useState<number | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const { displayScore } = useScore(score !== null ? score : undefined);
-
-  useEffect(() => {
-    const scoreParam = searchParams.get('score');
-    if (scoreParam) {
-      const parsedScore = parseInt(scoreParam, 10);
-      if (!isNaN(parsedScore)) {
-        setScore(parsedScore);
-        localStorage.setItem(STORAGE_KEYS.SCORE, parsedScore.toString());
-        setIsLoading(false);
-      } else {
-        router.push('/test');
-      }
-    } else {
-      try {
-        const storedScore = localStorage.getItem(STORAGE_KEYS.SCORE);
-        if (storedScore) {
-          const parsedScore = parseInt(storedScore, 10);
-          if (!isNaN(parsedScore)) {
-            setScore(parsedScore);
-            setIsLoading(false);
-          } else {
-            router.push('/test');
-          }
-        } else {
-          router.push('/test');
-        }
-      } catch (error) {
-        console.error('Error reading score:', error);
-        router.push('/test');
-      }
-    }
-  }, [searchParams, router]);
-
-  const handleRetakeTest = () => {
-    localStorage.removeItem(STORAGE_KEYS.ANSWERS);
-    localStorage.removeItem(STORAGE_KEYS.SCORE);
-    router.push('/test');
-  };
-
-  if (isLoading || score === null) {
-    return (
-      <div className="min-h-screen bg-white flex items-center justify-center">
-        <div className="animate-pulse text-gray-500">Loading...</div>
-      </div>
-    );
-  }
-
-  const interpretation = getScoreInterpretation(score);
-
+function Fallback() {
   return (
-    <ResultsTemplate
-      score={score}
-      displayScore={displayScore}
-      interpretation={interpretation}
-      onRetakeTest={handleRetakeTest}
-    />
+    <div className="page pt-8 sm:pt-10">
+      <h1 className="font-display text-h1 font-semibold text-ink">Your Rice Purity score</h1>
+      <div className="card mt-6 min-h-[22rem] p-6 sm:min-h-[18rem] sm:p-10">
+        <p className="text-ink-3" role="status">
+          Loading your score…
+        </p>
+      </div>
+    </div>
   );
 }
 
+/** The score lives in the browser, so the view is a client component; real opt-in stats render on the server. */
 export default function ResultsPage() {
   return (
-    <Suspense fallback={
-      <div className="min-h-screen bg-white flex items-center justify-center">
-        <div className="animate-pulse text-gray-500">Loading...</div>
-      </div>
-    }>
-      <ResultsContent />
-    </Suspense>
+    <main id="main" className="min-h-[100svh] pb-4">
+      <Suspense fallback={<Fallback />}>
+        <ResultsView liveStats={<LiveStats />} />
+      </Suspense>
+    </main>
   );
 }

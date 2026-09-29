@@ -1,59 +1,46 @@
-import React from 'react';
-import { Heading } from '../atoms/Heading';
-import { ShareButton } from '../molecules/ShareButton';
+'use client';
+
+import { useState } from 'react';
+import { Icon } from '../atoms/Icon';
 import { shareToTwitter, shareToFacebook, shareToWhatsApp, copyToClipboard } from '@/lib/utils';
 
-interface SharePanelProps {
-  score: number;
-}
+const btn =
+  'btn btn-secondary w-full justify-start gap-3 px-4 text-[0.9375rem] sm:justify-center';
 
-export const SharePanel: React.FC<SharePanelProps> = ({
-  score,
-}) => {
-  const handleShare = async (platform: 'twitter' | 'facebook' | 'whatsapp' | 'copy') => {
-    switch (platform) {
-      case 'twitter':
-        shareToTwitter(score);
-        break;
-      case 'facebook':
-        shareToFacebook();
-        break;
-      case 'whatsapp':
-        shareToWhatsApp(score);
-        break;
-      case 'copy':
-        await copyToClipboard(score);
-        break;
-    }
+export function SharePanel({ score }: { score: number }) {
+  const [copied, setCopied] = useState<'idle' | 'ok' | 'fail'>('idle');
+
+  const copy = async () => {
+    const ok = await copyToClipboard(score);
+    setCopied(ok ? 'ok' : 'fail');
+    window.setTimeout(() => setCopied('idle'), 2500);
   };
 
   return (
-    <div className="bg-white border border-gray-200 rounded-2xl p-8 animate-fade-in shadow-lg">
-      <Heading size="2xl" className="mb-6 text-center">
+    <section aria-labelledby="share-heading" className="card p-6 sm:p-8">
+      <h2 id="share-heading" className="font-display text-h2 font-semibold text-ink">
         Share Your Score
-      </Heading>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <ShareButton
-          platform="copy"
-          score={score}
-          onShare={() => handleShare('copy')}
-        />
-        <ShareButton
-          platform="twitter"
-          score={score}
-          onShare={() => handleShare('twitter')}
-        />
-        <ShareButton
-          platform="facebook"
-          score={score}
-          onShare={() => handleShare('facebook')}
-        />
-        <ShareButton
-          platform="whatsapp"
-          score={score}
-          onShare={() => handleShare('whatsapp')}
-        />
+      </h2>
+      <p className="mt-1 text-small text-ink-3">Shares only your number, never your answers.</p>
+      <div className="mt-5 grid grid-cols-2 gap-3 lg:grid-cols-4">
+        <button type="button" onClick={copy} className={btn}>
+          <Icon name={copied === 'ok' ? 'check' : 'copy'} className="h-5 w-5 text-brand" />
+          {copied === 'ok' ? 'Copied!' : 'Copy text'}
+        </button>
+        <button type="button" onClick={() => shareToTwitter(score)} className={btn}>
+          <Icon name="x" className="h-4 w-4" /> X (Twitter)
+        </button>
+        <button type="button" onClick={() => shareToWhatsApp(score)} className={btn}>
+          <Icon name="whatsapp" className="h-5 w-5 text-[#128C4B]" /> WhatsApp
+        </button>
+        <button type="button" onClick={() => shareToFacebook()} className={btn}>
+          <Icon name="facebook" className="h-5 w-5 text-[#1877F2]" /> Facebook
+        </button>
       </div>
-    </div>
+      <p role="status" aria-live="polite" className="mt-3 min-h-[1.25rem] text-xs text-ink-3">
+        {copied === 'ok' && 'Copied to your clipboard.'}
+        {copied === 'fail' && 'Copying isn’t available in this browser. Try a screenshot instead.'}
+      </p>
+    </section>
   );
-};
+}
