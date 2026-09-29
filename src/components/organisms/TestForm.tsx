@@ -125,7 +125,7 @@ export function TestForm() {
     try {
       window.localStorage.setItem(STORAGE_KEYS.SCORE, String(score));
     } catch {
-      /* fall through to the URL parameter */
+      /* storage unavailable (e.g. private mode): /results shows its no-score state. We never pass ?score=, so GA can't record it. */
     }
     event('test_complete');
     router.push('/results');

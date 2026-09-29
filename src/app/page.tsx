@@ -164,9 +164,9 @@ export default function HomePage() {
         <div>
           <p className="eyebrow">Free · Anonymous · 100 questions</p>
           <h1 className="mt-3 font-display text-display font-semibold text-ink">Rice Purity Test</h1>
-          <p className="mt-4 font-display text-[1.375rem] font-semibold leading-snug text-brand-deep sm:text-[1.625rem]">
+          <h2 className="mt-4 font-display text-[1.375rem] font-semibold leading-snug text-brand-deep sm:text-[1.625rem]">
             How Innocent Are You? Take the Classic <span className="whitespace-nowrap">100-Question Test</span>
-          </p>
+          </h2>
           <p className="mt-4 max-w-[60ch] text-lead text-ink-2">
             Tick every experience on the list you&apos;ve had and you get a score from 0 to 100. Higher means fewer boxes
             checked. It started as a campus tradition at Rice University and is meant to be a fun, private check-in for

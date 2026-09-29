@@ -102,9 +102,6 @@ export default function AverageScoreByAgePage() {
             </dl>
             <ul className="list-disc space-y-1.5 pl-5 marker:text-brand">
               <li>
-                The most common range is <strong className="font-semibold text-ink">55 to 75</strong>.
-              </li>
-              <li>
                 A typical <strong className="font-semibold text-ink">18-year-old</strong> scores in the high 70s to high
                 80s; by the <strong className="font-semibold text-ink">late 20s</strong> most people are in the 50s or low
                 60s.

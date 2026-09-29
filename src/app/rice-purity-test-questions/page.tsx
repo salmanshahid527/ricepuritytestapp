@@ -31,9 +31,9 @@ const REPLACED = [
 ];
 
 const TOC = [
+  { id: 'short-version', label: 'The short version' },
   { id: 'full-list', label: 'The full list of 100 questions' },
   ...QUESTION_GROUPS.map((g) => ({ id: `group-${g.from}`, label: `${g.name} (${g.from}–${g.to})` })),
-  { id: 'short-version', label: 'The short version' },
   { id: 'how-grouped', label: 'How the questions are grouped' },
   { id: 'mps', label: 'What MPS means' },
   { id: 'question-mark', label: 'The question mark' },
@@ -42,8 +42,8 @@ const TOC = [
 ];
 
 /**
- * Answer-first: the question list starts in the first mobile viewport. The
- * summary, grouping table and background follow the list.
+ * Answer-first: the four-line summary (as on the live page), then the full list.
+ * The grouping table and background follow the list.
  */
 export default function QuestionsPage() {
   return (
@@ -69,6 +69,21 @@ export default function QuestionsPage() {
           plain-English notes under the ones people most often ask about. Each item starts with an unspoken &ldquo;Have you
           ever&hellip;&rdquo;, so you check it if it has happened at any point in your life.
         </p>
+
+        <section aria-labelledby="short-version" className="mt-6 rounded-lg border border-brand-tint bg-brand-soft p-5 sm:p-6">
+          <h2 id="short-version" style={{ marginTop: 0 }}>
+            The short version
+          </h2>
+          <ul className="mt-3">
+            <li>There are 100 questions and every one is worth one point.</li>
+            <li>Your score is 100 minus the number of boxes you check, so 30 checks gives a 70.</li>
+            <li>The list runs roughly from mild (holding hands) to rare (items near the end).</li>
+            <li>
+              Your answers stay in your browser. For what a given number means, see the{' '}
+              <Link href="/rice-purity-test-score">score guide</Link>.
+            </li>
+          </ul>
+        </section>
 
         <section aria-labelledby="full-list">
           <h2 id="full-list" style={{ marginTop: '1.1em' }}>
@@ -113,21 +128,6 @@ export default function QuestionsPage() {
         </section>
 
         <AdSlot name="questions-mid" />
-
-        <section aria-labelledby="short-version" className="rounded-lg border border-brand-tint bg-brand-soft p-5 sm:p-6">
-          <h2 id="short-version" style={{ marginTop: 0 }}>
-            The short version
-          </h2>
-          <ul className="mt-3">
-            <li>There are 100 questions and every one is worth one point.</li>
-            <li>Your score is 100 minus the number of boxes you check, so 30 checks gives a 70.</li>
-            <li>The list runs roughly from mild (holding hands) to rare (items near the end).</li>
-            <li>
-              Your answers stay in your browser. For what a given number means, see the{' '}
-              <Link href="/rice-purity-test-score">score guide</Link>.
-            </li>
-          </ul>
-        </section>
 
         <h2 id="how-grouped">How the 100 questions are grouped</h2>
         <p>

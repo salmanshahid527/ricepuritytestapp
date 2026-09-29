@@ -8,5 +8,5 @@ import { AD_SLOTS_ENABLED } from '@/lib/site';
  */
 export function AdSlot({ name, className = '' }: { name: string; className?: string }) {
   if (!AD_SLOTS_ENABLED) return null;
-  return <div data-ad-slot={name} aria-hidden="true" className={`ad-slot ${className}`} />;
+  return <div data-slot-name={name} aria-hidden="true" className={`ad-slot ${className}`} />;
 }
