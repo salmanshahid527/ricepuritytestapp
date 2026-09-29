@@ -140,7 +140,20 @@ const FAQ: { q: string; a: React.ReactNode }[] = [
   },
   {
     q: 'What if I\'m unsure how to answer a question?',
-    a: 'Go with your gut read after the first pass. If you immediately thought "yes, technically" — that counts. If you genuinely can\'t tell, leave it unchecked. The goal is honest self-reflection, not a technically perfect answer.',
+    a: (
+      <>
+        Go with your gut read after the first pass. If you immediately thought &ldquo;yes, technically&rdquo; — that
+        counts. If you genuinely can&apos;t tell, leave it unchecked. Confusing items, such as{' '}
+        <Link href="/rice-purity-test-questions#q10" className="link">
+          &ldquo;kissed horizontally&rdquo;
+        </Link>{' '}
+        or{' '}
+        <Link href="/rice-purity-test-questions#q14" className="link">
+          &ldquo;kissed for more than two hours consecutively&rdquo;
+        </Link>
+        , are explained on the questions page.
+      </>
+    ),
   },
   {
     q: 'Will my score change if I retake it later?',
@@ -162,7 +175,7 @@ export default function HomePage() {
       {/* Hero */}
       <section className="page grid gap-10 pb-12 pt-10 sm:pt-14 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:items-center lg:gap-16 lg:pb-16">
         <div>
-          <p className="eyebrow">Free · Anonymous · 100 questions</p>
+          <p className="eyebrow">A free, anonymous test for adults</p>
           <h1 className="mt-3 font-display text-display font-semibold text-ink">Rice Purity Test</h1>
           <h2 className="mt-4 font-display text-[1.375rem] font-semibold leading-snug text-brand-deep sm:text-[1.625rem]">
             How Innocent Are You? Take the Classic <span className="whitespace-nowrap">100-Question Test</span>

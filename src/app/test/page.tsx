@@ -21,7 +21,7 @@ export default function TestPage() {
         <p className="mt-2 max-w-2xl text-small text-ink-3">
           Your score is 100 minus the number of boxes you check. Unsure about a phrase?{' '}
           <Link href="/rice-purity-test-questions" className="link">
-            Every question is explained here
+            See the questions explained
           </Link>
           .
         </p>

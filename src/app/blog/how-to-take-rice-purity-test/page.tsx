@@ -1,11 +1,13 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { ArticleSchema } from '@/components/ArticleSchema';
+import { AboutThisGuide } from '@/components/molecules/AboutThisGuide';
 import { GuideLayout } from '@/components/templates/GuideLayout';
 import { AdSlot } from '@/components/organisms/AdSlot';
 import { CtaBox } from '@/components/organisms/CtaBox';
 import { RelatedGuides } from '@/components/organisms/RelatedGuides';
 import { GUIDES } from '@/lib/guides';
+import { PAGE_DATES } from '@/lib/dates';
 import { BASE_URL } from '@/lib/site';
 
 export const metadata: Metadata = {
@@ -38,7 +40,7 @@ const STEPS = [
   },
   {
     heading: 'Your progress saves automatically',
-    text: "If you need to pause, close the tab, and come back later — that works. Your answers are preserved locally in your browser session. No account needed, nothing synced anywhere. Just reopen the page and you'll be where you left off.",
+    text: "If you need to pause, close the tab, and come back later — that works. Your answers are saved in this browser until you reset the test or clear your browsing data. No account needed, nothing synced anywhere. Just reopen the page and you'll be where you left off.",
   },
 ];
 
@@ -55,12 +57,13 @@ export default function HowToTakeTestPage() {
       <ArticleSchema
         headline="How to Take the Rice Purity Test: Tips for Accurate Results"
         datePublished="2026-01-11"
+        dateModified={PAGE_DATES['/blog/how-to-take-rice-purity-test'].modified}
         url={`${BASE_URL}/blog/how-to-take-rice-purity-test`}
         description="Tips for getting the most accurate Rice Purity Test results."
       />
       <GuideLayout
         crumbs={[
-          { label: 'Blog', href: '/blog' },
+          { label: 'Guides', href: '/blog' },
           { label: 'How to Take the Test', href: '/blog/how-to-take-rice-purity-test' },
         ]}
         title="How to Take the Rice Purity Test: Tips for Accurate Results"
@@ -68,6 +71,7 @@ export default function HowToTakeTestPage() {
         toc={TOC}
         footer={
           <>
+            <AboutThisGuide path="/blog/how-to-take-rice-purity-test" />
             <AdSlot name="howto-end" className="mt-14" />
             <RelatedGuides guides={[GUIDES.questions, GUIDES.score, GUIDES.age, GUIDES.meaning]} />
             <CtaBox heading="Ready to go?" cta="Start the Rice Purity Test">
@@ -110,6 +114,11 @@ export default function HowToTakeTestPage() {
           ))}
         </ol>
 
+        <p>
+          Not sure what an item means? Slang and confusing wording, from &ldquo;kissed horizontally&rdquo; to MPS, is
+          explained item by item on the <Link href="/rice-purity-test-questions">questions page</Link>.
+        </p>
+
         <AdSlot name="howto-mid" />
 
         <h2 id="one-mistake">The One Mistake That Ruins Scores</h2>
@@ -133,7 +142,8 @@ export default function HowToTakeTestPage() {
         </p>
         <p>
           For context on what your score actually means in terms of ranges and averages, the{' '}
-          <Link href="/rice-purity-test-score">score guide</Link> has the breakdown. For how it compares by age group, see
+          <Link href="/rice-purity-test-score">score guide</Link> has the breakdown, including{' '}
+          <Link href="/rice-purity-test-score#how-calculated">how the score is calculated</Link>. For how it compares by age group, see
           the <Link href="/rice-purity-test-average-score-by-age">average score by age</Link> page.
         </p>
         <p>
