@@ -5,6 +5,7 @@ import { GoogleAnalyticsRouteTracker } from '@/components/GoogleAnalyticsRouteTr
 import { Header } from '@/components/organisms/Header';
 import { Footer } from '@/components/organisms/Footer';
 import { BASE_URL, SITE_NAME } from '@/lib/site';
+import { ORGANIZATION, ORGANIZATION_ID } from '@/lib/schema';
 import './globals.css';
 
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
@@ -79,19 +80,7 @@ export const viewport: Viewport = {
 const SITE_GRAPH = {
   '@context': 'https://schema.org',
   '@graph': [
-    {
-      '@type': 'Organization',
-      '@id': `${BASE_URL}/#organization`,
-      name: SITE_NAME,
-      url: BASE_URL,
-      logo: {
-        '@type': 'ImageObject',
-        url: `${BASE_URL}/logo.png`,
-        width: 512,
-        height: 512,
-      },
-      description: 'A free, anonymous online version of the classic Rice Purity Test for adults.',
-    },
+    ORGANIZATION,
     {
       // No SearchAction: the site has no search feature.
       '@type': 'WebSite',
@@ -99,7 +88,7 @@ const SITE_GRAPH = {
       name: SITE_NAME,
       url: BASE_URL,
       inLanguage: 'en-US',
-      publisher: { '@id': `${BASE_URL}/#organization` },
+      publisher: { '@id': ORGANIZATION_ID },
     },
   ],
 };

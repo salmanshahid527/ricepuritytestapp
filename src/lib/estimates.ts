@@ -32,3 +32,24 @@ export const range = (r: { low: number; high: number }) => `${r.low}–${r.high}
 export function ageGroupsFor(low: number, high: number): string[] {
   return AGE_ESTIMATES.filter((e) => e.high >= low && e.low <= high).map((e) => e.age);
 }
+
+/**
+ * The 5-point bands of the score page's lookup table (96–100 down to 0–5).
+ * Each row has an id, so the results page can link a reader to their own row.
+ */
+export interface LookupBand {
+  low: number;
+  high: number;
+  id: string;
+}
+
+export const LOOKUP_BANDS: LookupBand[] = Array.from({ length: 20 }, (_, i) => {
+  const high = 100 - i * 5;
+  const low = i === 19 ? 0 : high - 4;
+  return { low, high, id: `score-${low}` };
+});
+
+export function lookupBandFor(score: number): LookupBand {
+  const i = Math.min(19, Math.max(0, Math.floor((100 - score) / 5)));
+  return LOOKUP_BANDS[i];
+}

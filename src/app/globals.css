@@ -87,8 +87,9 @@
     @apply mx-auto w-full max-w-3xl px-4 sm:px-6;
   }
 
+  /* Small label above a block. Sentence case: it names the block, it isn't decoration. */
   .eyebrow {
-    @apply text-xs font-semibold uppercase tracking-[0.08em] text-brand;
+    @apply text-small font-semibold text-brand;
   }
 
   /* Buttons: every size clears the 44px tap target. */
@@ -214,6 +215,18 @@
   .check:focus-visible {
     outline: 3px solid rgb(var(--c-focus));
     outline-offset: 3px;
+  }
+}
+
+/* A deep link (#q14 on the questions page, #score-71 in the score lookup) lands on a
+   highlighted row, so the reader sees which item or number the link meant. */
+@layer components {
+  .deep-link:target {
+    background-color: rgb(var(--c-note));
+    box-shadow: inset 3px 0 0 rgb(var(--c-note-ink));
+  }
+  tr.deep-link:target > td {
+    background-color: rgb(var(--c-note));
   }
 }
 

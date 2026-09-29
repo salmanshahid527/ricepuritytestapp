@@ -1,13 +1,6 @@
 import { JsonLd } from './atoms/JsonLd';
-import { BASE_URL, SITE_NAME } from '@/lib/site';
-
-const ORGANIZATION_REF = {
-  '@type': 'Organization',
-  '@id': `${BASE_URL}/#organization`,
-  name: SITE_NAME,
-  url: BASE_URL,
-  logo: { '@type': 'ImageObject', url: `${BASE_URL}/logo.png`, width: 512, height: 512 },
-};
+import { BASE_URL } from '@/lib/site';
+import { ORGANIZATION_REF } from '@/lib/schema';
 
 interface ArticleSchemaProps {
   headline: string;
