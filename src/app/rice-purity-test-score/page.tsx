@@ -209,10 +209,7 @@ export default function ScorePage() {
             <Link href={GUIDES.age.href}>average score by age</Link>), not survey results.
           </p>
           <div className="table-wrap mt-4">
-            <table className="table-clean">
-              <caption className="sr-only">
-                Score lookup: items checked, and the estimated age groups each score range is typical for
-              </caption>
+            <table className="table-clean" aria-labelledby="score-lookup">
               <thead>
                 <tr>
                   <th scope="col">Score</th>

@@ -298,13 +298,13 @@ export default function HomePage() {
           <ol className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {STEPS.map((s, i) => (
               <li key={s.title} className="relative">
-                <span className="grid h-9 w-9 place-content-center rounded-full border-2 border-brand font-display font-semibold text-brand-deep">
-                  {i + 1}
-                </span>
-                <h3 className="mt-3 font-semibold text-ink">
-                  <span className="sr-only">Step {i + 1}: </span>
-                  {s.title}
-                </h3>
+                <p className="flex items-center gap-2.5 text-xs font-semibold uppercase tracking-[0.08em] text-brand-deep">
+                  <span aria-hidden="true" className="grid h-8 w-8 place-content-center rounded-full border-2 border-brand font-display text-[0.9375rem] normal-case tracking-normal">
+                    {i + 1}
+                  </span>
+                  Step {i + 1}
+                </p>
+                <h3 className="mt-3 font-semibold text-ink">{s.title}</h3>
                 <p className="mt-1 text-small text-ink-3">{s.text}</p>
               </li>
             ))}
