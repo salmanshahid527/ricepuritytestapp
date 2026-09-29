@@ -1,15 +1,13 @@
-import React from 'react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { Header } from '@/components/organisms/Header';
-import { Footer } from '@/components/organisms/Footer';
-import { Heading } from '@/components/atoms/Heading';
-import { Text } from '@/components/atoms/Text';
-import { Breadcrumbs } from '@/components/molecules/Breadcrumbs';
-import { Button } from '@/components/atoms/Button';
 import { ArticleSchema } from '@/components/ArticleSchema';
+import { GuideLayout } from '@/components/templates/GuideLayout';
+import { AdSlot } from '@/components/organisms/AdSlot';
+import { CtaBox } from '@/components/organisms/CtaBox';
+import { RelatedGuides } from '@/components/organisms/RelatedGuides';
+import { GUIDES } from '@/lib/guides';
+import { BASE_URL } from '@/lib/site';
 
-const BASE_URL = 'https://www.ricepuritytestapp.com';
 const URL = `${BASE_URL}/rice-purity-test-history`;
 const TITLE = 'Rice Purity Test History: From a 1924 Campus Survey to TikTok';
 const DESCRIPTION =
@@ -32,112 +30,109 @@ const TIMELINE = [
   { year: '2020s', text: 'A 100-question version becomes a TikTok trend; The Independent reported on the craze among Gen Z users in 2021.' },
 ];
 
+const TOC = [
+  { id: 'timeline', label: 'Timeline' },
+  { id: 'campus-era', label: 'The campus era' },
+  { id: 'going-online', label: 'Going online' },
+  { id: 'tiktok-era', label: 'The TikTok era' },
+  { id: 'why-it-lasted', label: 'Why it has lasted' },
+];
+
 export default function HistoryPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <>
       <ArticleSchema headline={TITLE} datePublished="2026-01-12" dateModified="2026-09-27" url={URL} description={DESCRIPTION} />
-      <Header />
-      <main className="container mx-auto px-4 py-8 max-w-4xl">
-        <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Rice Purity Test History' }]} />
+      <GuideLayout
+        crumbs={[{ label: 'Rice Purity Test History', href: '/rice-purity-test-history' }]}
+        title="The History of the Rice Purity Test"
+        meta="Last reviewed September 27, 2026"
+        toc={TOC}
+        footer={
+          <>
+            <AdSlot name="history-end" className="mt-14" />
+            <RelatedGuides guides={[GUIDES.meaning, GUIDES.questions, GUIDES.age, GUIDES.score]} />
+            <CtaBox heading="Add yourself to the history">
+              <p>Take the 100-question test and see where you land.</p>
+            </CtaBox>
+          </>
+        }
+      >
+        <p className="text-lead" style={{ marginTop: 0 }}>
+          The Rice Purity Test is about a century older than TikTok. It started as a student-newspaper survey at Rice
+          University in Houston, spent decades as a campus in-joke, moved onto the early internet, and then became one of
+          the most shared quizzes of the social-media era.
+        </p>
 
-        <Heading as="h1" size="3xl" className="mb-2">
-          The History of the Rice Purity Test
-        </Heading>
-        <Text variant="small" color="muted" className="mb-6">Last reviewed September 27, 2026</Text>
+        <h2 id="timeline">Timeline</h2>
+        <ol className="!list-none !pl-0">
+          {TIMELINE.map((t) => (
+            <li key={t.year} className="relative grid grid-cols-[4.5rem_minmax(0,1fr)] gap-4 border-l-2 border-brand-tint pb-5 pl-5 last:pb-0" style={{ marginTop: 0 }}>
+              <span aria-hidden="true" className="absolute -left-[7px] top-1.5 h-3 w-3 rounded-full bg-brand" />
+              <span className="font-display text-[1.25rem] font-semibold text-ink">{t.year}</span>
+              <span>{t.text}</span>
+            </li>
+          ))}
+        </ol>
 
-        <article className="space-y-8 text-gray-700">
-          <Text variant="large" className="leading-relaxed">
-            The Rice Purity Test is about a century older than TikTok. It started as a student-newspaper survey at Rice
-            University in Houston, spent decades as a campus in-joke, moved onto the early internet, and then became one
-            of the most shared quizzes of the social-media era.
-          </Text>
+        <h2 id="campus-era">The campus era</h2>
+        <p>
+          Rice is a small, residential university where new students live and eat together in close-knit colleges. A
+          questionnaire that everyone fills out and then compares is a natural icebreaker in that setting, and the student
+          paper leaned into it. The <em>Thresher</em> printed and reprinted versions over the years, usually in a joking
+          tone: &ldquo;purity&rdquo; was never meant as a moral verdict.
+        </p>
+        <p>
+          The questions changed with the times. Early versions asked about things like dancing and drinking; later lists
+          grew to cover dating, sex, drugs and trouble with the law, and became far longer than the 100 items most people
+          know today.
+        </p>
 
-          <section>
-            <Heading as="h2" size="xl" className="mb-4 text-green-600">Timeline</Heading>
-            <ol className="space-y-4 border-l-2 border-green-200 ml-2">
-              {TIMELINE.map((t) => (
-                <li key={t.year} className="pl-4">
-                  <span className="font-bold text-gray-800">{t.year}</span>
-                  <span className="block leading-relaxed">{t.text}</span>
-                </li>
-              ))}
-            </ol>
-          </section>
+        <AdSlot name="history-mid" />
 
-          <section>
-            <Heading as="h2" size="xl" className="mb-4 text-green-600">The campus era</Heading>
-            <Text variant="body" className="leading-relaxed mb-4">
-              Rice is a small, residential university where new students live and eat together in close-knit colleges. A
-              questionnaire that everyone fills out and then compares is a natural icebreaker in that setting, and the
-              student paper leaned into it. The <em>Thresher</em> printed and reprinted versions over the years, usually
-              in a joking tone: &ldquo;purity&rdquo; was never meant as a moral verdict.
-            </Text>
-            <Text variant="body" className="leading-relaxed">
-              The questions changed with the times. Early versions asked about things like dancing and drinking; later
-              lists grew to cover dating, sex, drugs and trouble with the law, and became far longer than the 100 items
-              most people know today.
-            </Text>
-          </section>
+        <h2 id="going-online">Going online</h2>
+        <p>
+          Purity tests were being passed around online well before the web, and the first web-based version appeared in
+          1994. Websites that scored your answers automatically changed how people took the test: a campus ritual done in a
+          group became something you could do alone, out of curiosity, and then choose whether to share.
+        </p>
+        <p>
+          Versions multiplied. Sites edited, added and removed items, so the &ldquo;Rice&rdquo; test became one version
+          among many. The list on this site is based on the widely circulated 100-question version with gender-neutral
+          wording and three items replaced; the <Link href="/rice-purity-test-questions">questions page</Link> explains
+          exactly what changed.
+        </p>
 
-          <section>
-            <Heading as="h2" size="xl" className="mb-4 text-green-600">Going online</Heading>
-            <Text variant="body" className="leading-relaxed mb-4">
-              Purity tests were being passed around online well before the web, and the first web-based version appeared
-              in 1994. Websites that scored your answers automatically changed how people took the test: a campus ritual
-              done in a group became something you could do alone, out of curiosity, and then choose whether to share.
-            </Text>
-            <Text variant="body" className="leading-relaxed">
-              Versions multiplied. Sites edited, added and removed items, so the &ldquo;Rice&rdquo; test became one
-              version among many. The list on this site is based on the widely circulated 100-question version with
-              gender-neutral wording and three items replaced; the{' '}
-              <Link href="/rice-purity-test-questions" className="text-green-600 underline">questions page</Link> explains
-              exactly what changed.
-            </Text>
-          </section>
+        <h2 id="tiktok-era">The TikTok era</h2>
+        <p>
+          Social media gave the test scale. In the early 2020s, videos of people revealing their scores spread on TikTok,
+          and the 100-question version reached an audience far beyond college campuses. Scores became semi-public, which
+          produced a different kind of conversation: reactions, comparisons and arguments about what a &ldquo;normal&rdquo;
+          score is.
+        </p>
+        <p>
+          That&apos;s also when the test&apos;s audience got younger. Because the questions are about sex, drugs and the
+          law, this site is for adults only.
+        </p>
 
-          <section>
-            <Heading as="h2" size="xl" className="mb-4 text-green-600">The TikTok era</Heading>
-            <Text variant="body" className="leading-relaxed mb-4">
-              Social media gave the test scale. In the early 2020s, videos of people revealing their scores spread on
-              TikTok, and the 100-question version reached an audience far beyond college campuses. Scores became
-              semi-public, which produced a different kind of conversation: reactions, comparisons and arguments about
-              what a &ldquo;normal&rdquo; score is.
-            </Text>
-            <Text variant="body" className="leading-relaxed">
-              That&apos;s also when the test&apos;s audience got younger. Because the questions are about sex, drugs and
-              the law, this site is for adults only.
-            </Text>
-          </section>
+        <h2 id="why-it-lasted">Why it has lasted</h2>
+        <p>
+          Most quizzes disappear within a few years. This one keeps coming back because of what it enables: an easy,
+          low-stakes way to talk about experiences that are usually private. A number opens the conversation without anyone
+          having to lead with the most sensitive part of their story.
+        </p>
+        <p>
+          Each new group of students rediscovers it for the same reason the first ones enjoyed it: it&apos;s a shared joke
+          with just enough truth in it to be interesting.
+        </p>
 
-          <section>
-            <Heading as="h2" size="xl" className="mb-4 text-green-600">Why it has lasted</Heading>
-            <Text variant="body" className="leading-relaxed mb-4">
-              Most quizzes disappear within a few years. This one keeps coming back because of what it enables: an easy,
-              low-stakes way to talk about experiences that are usually private. A number opens the conversation without
-              anyone having to lead with the most sensitive part of their story.
-            </Text>
-            <Text variant="body" className="leading-relaxed">
-              Each new group of students rediscovers it for the same reason the first ones enjoyed it: it&apos;s a
-              shared joke with just enough truth in it to be interesting.
-            </Text>
-          </section>
-
-          <Text variant="small" color="muted">
-            Sources:{' '}
-            <a href="https://en.wikipedia.org/wiki/Purity_test" className="underline" rel="noopener" target="_blank">
-              Wikipedia, &ldquo;Purity test&rdquo;
-            </a>{' '}
-            (which cites the <em>Rice Thresher</em> archives and The Independent, 2021).
-          </Text>
-
-          <section className="bg-green-50 border border-green-200 rounded-xl p-6">
-            <Heading as="h2" size="lg" className="mb-3 text-green-700">Add yourself to the history</Heading>
-            <Text variant="body" className="mb-5">Take the 100-question test and see where you land.</Text>
-            <Link href="/test"><Button size="lg">Take the test</Button></Link>
-          </section>
-        </article>
-      </main>
-      <Footer />
-    </div>
+        <p className="text-small text-ink-3">
+          Sources:{' '}
+          <a href="https://en.wikipedia.org/wiki/Purity_test" rel="noopener" target="_blank">
+            Wikipedia, &ldquo;Purity test&rdquo;
+          </a>{' '}
+          (which cites the <em>Rice Thresher</em> archives and The Independent, 2021).
+        </p>
+      </GuideLayout>
+    </>
   );
 }

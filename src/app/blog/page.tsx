@@ -1,13 +1,8 @@
-import React from 'react';
-import { Header } from '@/components/organisms/Header';
-import { Footer } from '@/components/organisms/Footer';
-import { Heading } from '@/components/atoms/Heading';
-import { Text } from '@/components/atoms/Text';
-import { Breadcrumbs } from '@/components/molecules/Breadcrumbs';
 import Link from 'next/link';
 import type { Metadata } from 'next';
-
-const BASE_URL = 'https://www.ricepuritytestapp.com';
+import { Breadcrumbs } from '@/components/molecules/Breadcrumbs';
+import { CtaBox } from '@/components/organisms/CtaBox';
+import { BASE_URL } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Rice Purity Test Guides: Scores, Questions, Meaning & History',
@@ -62,39 +57,35 @@ const guides = [
 
 export default function BlogPage() {
   return (
-    <div className="min-h-screen bg-white">
-      <Header />
-      <main className="container mx-auto px-4 py-8 max-w-4xl">
-        <Breadcrumbs items={[
-          { label: 'Home', href: '/' },
-          { label: 'Blog' }
-        ]} />
-        <Heading as="h1" size="3xl" className="mb-6">
-          Rice Purity Test Guides
-        </Heading>
-        <Text variant="large" className="mb-8 text-gray-700">
-          Everything we've written about the Rice Purity Test in one place: what scores mean, how they vary by age, the questions themselves, and where the test came from.
-        </Text>
+    <main id="main" className="page pb-4 pt-3 sm:pt-5">
+      <Breadcrumbs items={[{ label: 'Blog', href: '/blog' }]} />
+      <h1 className="mt-2 font-display text-h1 font-semibold text-ink">Rice Purity Test Guides</h1>
+      <p className="mt-4 max-w-measure text-lead text-ink-2">
+        Everything we&apos;ve written about the Rice Purity Test in one place: what scores mean, how they vary by age, the
+        questions themselves, and where the test came from.
+      </p>
 
-        <div className="space-y-6">
-          {guides.map((post, index) => (
+      <ul className="mt-10 grid gap-4 sm:grid-cols-2">
+        {guides.map((post) => (
+          <li key={post.href}>
             <Link
-              key={post.href}
               href={post.href}
-              className="block bg-white border border-gray-200 rounded-xl p-6 hover:border-green-400 hover:shadow-lg hover:scale-[1.02] transition-all duration-300 animate-slide-up"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="group flex h-full flex-col rounded-lg border border-line bg-surface p-6 shadow-card transition-[border-color,box-shadow] hover:border-brand hover:shadow-lift"
             >
-              <Heading size="xl" className="mb-3 text-green-600">
+              <h2 className="font-display text-[1.375rem] font-semibold leading-snug text-ink group-hover:text-brand-deep">
                 {post.title}
-              </Heading>
-              <Text color="default" className="text-gray-700 mb-4">
-                {post.description}
-              </Text>
+              </h2>
+              <p className="mt-2 text-ink-2">{post.description}</p>
             </Link>
-          ))}
-        </div>
-      </main>
-      <Footer />
-    </div>
+          </li>
+        ))}
+      </ul>
+
+      <div className="max-w-measure">
+        <CtaBox heading="Take the test first">
+          <p>Free, anonymous, about 10 minutes. Your answers stay in your browser.</p>
+        </CtaBox>
+      </div>
+    </main>
   );
 }
