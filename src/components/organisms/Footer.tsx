@@ -1,92 +1,86 @@
-import React from 'react';
-import { Text } from '../atoms/Text';
-import { Logo } from '../atoms/Logo';
 import Link from 'next/link';
+import { LogoMark } from '../atoms/Logo';
+import { AdultNotice } from '../molecules/AdultNotice';
 
-export const Footer: React.FC = () => {
+const COLUMNS = [
+  {
+    label: 'The test',
+    links: [
+      { href: '/test', label: 'Take the test' },
+      { href: '/blog/how-to-take-rice-purity-test', label: 'How to take it' },
+      { href: '/rice-purity-test-questions', label: 'All 100 questions' },
+    ],
+  },
+  {
+    label: 'Guides',
+    links: [
+      { href: '/rice-purity-test-average-score-by-age', label: 'Average score by age' },
+      { href: '/rice-purity-test-score', label: 'Score guide' },
+      { href: '/rice-purity-test-meaning', label: 'What the test is' },
+      { href: '/rice-purity-test-history', label: 'History' },
+      { href: '/blog', label: 'All guides' },
+    ],
+  },
+  {
+    label: 'Site',
+    links: [
+      { href: '/about', label: 'About' },
+      { href: '/contact', label: 'Contact' },
+      { href: '/privacy', label: 'Privacy Policy' },
+      { href: '/terms', label: 'Terms of Service' },
+      { href: '/cookies', label: 'Cookies' },
+      { href: '/disclaimer', label: 'Disclaimer' },
+    ],
+  },
+];
+
+export function Footer() {
   return (
-    <footer className="border-t border-gray-200 py-6 mt-8 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col items-center space-y-3">
-          <Link href="/" className="hover:scale-110 transition-transform duration-300">
-            <Logo size="sm" showText={true} showTagline={false} />
-          </Link>
-          <nav className="flex flex-wrap justify-center items-center gap-x-2 gap-y-2 text-sm">
-            <Link 
-              href="/test" 
-              className="text-gray-600 hover:text-green-500 hover:scale-110 transition-all duration-300"
-            >
-              Take the Test
-            </Link>
-            <span className="text-gray-300">|</span>
-            <Link 
-              href="/rice-purity-test-score" 
-              className="text-gray-600 hover:text-green-500 hover:scale-110 transition-all duration-300"
-            >
-              Score Guide
-            </Link>
-            <span className="text-gray-300">|</span>
-            <Link 
-              href="/blog" 
-              className="text-gray-600 hover:text-green-500 hover:scale-110 transition-all duration-300"
-            >
-              Blog
-            </Link>
-            <span className="text-gray-300">|</span>
-            <Link 
-              href="/about" 
-              className="text-gray-600 hover:text-green-500 hover:scale-110 transition-all duration-300"
-            >
-              About
-            </Link>
-            <span className="text-gray-300">|</span>
-            <Link 
-              href="/privacy" 
-              className="text-gray-600 hover:text-green-500 hover:scale-110 transition-all duration-300"
-            >
-              Privacy Policy
-            </Link>
-            <span className="text-gray-300">|</span>
-            <Link 
-              href="/terms" 
-              className="text-gray-600 hover:text-green-500 hover:scale-110 transition-all duration-300"
-            >
-              Terms of Service
-            </Link>
-            <span className="text-gray-300">|</span>
-            <Link 
-              href="/contact" 
-              className="text-gray-600 hover:text-green-500 hover:scale-110 transition-all duration-300"
-            >
-              Contact
-            </Link>
-              <span className="text-gray-300">|</span>
-            <Link 
-              href="/cookies" 
-              className="text-gray-600 hover:text-green-500 hover:scale-110 transition-all duration-300"
-            >
-              Cookies
-            </Link>
-            <span className="text-gray-300">|</span>
-            <Link 
-              href="/disclaimer" 
-              className="text-gray-600 hover:text-green-500 hover:scale-110 transition-all duration-300"
-            >
-              Disclaimer   
-            </Link>
-          </nav>
-          <div className="text-center space-y-2">
-            <Text variant="small" color="muted" className="text-gray-500">
-              © 2026 ricepuritytestapp.com | The Rice Purity Test originated at Rice University
-            </Text>
-            <div className="flex flex-wrap justify-center items-center gap-4 text-xs text-gray-500">
-              <span>Email: <a href="mailto:contact@ricepuritytestapp.com" className="text-green-500 hover:underline">contact@ricepuritytestapp.com</a></span>
-              <span>•</span>
-              <span>For press inquiries: <a href="mailto:press@ricepuritytestapp.com" className="text-green-500 hover:underline">press@ricepuritytestapp.com</a></span>
-            </div>
+    <footer className="mt-20 border-t border-line bg-sunken/70">
+      <div className="page py-10 sm:py-12">
+        <AdultNotice className="max-w-2xl" />
+        <div className="mt-10 grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-4">
+          <div className="col-span-2 sm:col-span-1">
+            <p className="flex items-center gap-2 font-display text-[1.125rem] font-semibold text-ink">
+              <LogoMark className="h-6 w-6" /> Rice Purity Test
+            </p>
+            <p className="mt-3 max-w-xs text-small text-ink-3">
+              A free, anonymous version of the classic 100-question test. Your answers stay in your browser.
+            </p>
           </div>
+          {COLUMNS.map((col) => (
+            <nav key={col.label} aria-label={col.label}>
+              <p className="eyebrow text-ink-3">{col.label}</p>
+              <ul className="mt-2">
+                {col.links.map((l) => (
+                  <li key={l.href}>
+                    <Link href={l.href} className="inline-flex min-h-tap items-center text-small text-ink-2 hover:text-brand-deep hover:underline">
+                      {l.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          ))}
+        </div>
+        <div className="mt-10 space-y-2 border-t border-line pt-6 text-xs text-ink-3">
+          <p>© 2026 ricepuritytestapp.com | The Rice Purity Test originated at Rice University. This site is not affiliated with Rice University.</p>
+          <p className="flex flex-wrap gap-x-4 gap-y-1">
+            <span>
+              Email:{' '}
+              <a href="mailto:contact@ricepuritytestapp.com" className="text-brand-deep underline underline-offset-2">
+                contact@ricepuritytestapp.com
+              </a>
+            </span>
+            <span>
+              For press inquiries:{' '}
+              <a href="mailto:press@ricepuritytestapp.com" className="text-brand-deep underline underline-offset-2">
+                press@ricepuritytestapp.com
+              </a>
+            </span>
+          </p>
         </div>
       </div>
     </footer>
   );
-};
+}

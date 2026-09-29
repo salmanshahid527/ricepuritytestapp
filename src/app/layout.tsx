@@ -1,17 +1,18 @@
 import type { Metadata, Viewport } from 'next';
 import Script from 'next/script';
-import { Manrope } from 'next/font/google';
+import { Fraunces } from 'next/font/google';
 import { GoogleAnalyticsRouteTracker } from '@/components/GoogleAnalyticsRouteTracker';
+import { Header } from '@/components/organisms/Header';
+import { Footer } from '@/components/organisms/Footer';
+import { BASE_URL, SITE_NAME } from '@/lib/site';
 import './globals.css';
 
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 const ADSENSE_CLIENT = 'ca-pub-2046389894156038';
 
-const manrope = Manrope({ 
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700', '800'],
-  variable: '--font-manrope',
-});
+// One display face for headings, self-hosted by next/font with a size-adjusted fallback
+// (no layout shift on swap). Body text uses the system UI font: zero bytes, instant paint.
+const fraunces = Fraunces({ subsets: ['latin'], weight: ['600'], display: 'swap', variable: '--font-display' });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.ricepuritytestapp.com'),
@@ -71,7 +72,36 @@ export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
-  themeColor: '#10b981',
+  themeColor: '#faf8f3',
+};
+
+/** Sitewide entities. WebApplication is added on the pages that host the test (/ and /test). */
+const SITE_GRAPH = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': `${BASE_URL}/#organization`,
+      name: SITE_NAME,
+      url: BASE_URL,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${BASE_URL}/logo.png`,
+        width: 512,
+        height: 512,
+      },
+      description: 'A free, anonymous online version of the classic Rice Purity Test for adults.',
+    },
+    {
+      // No SearchAction: the site has no search feature.
+      '@type': 'WebSite',
+      '@id': `${BASE_URL}/#website`,
+      name: SITE_NAME,
+      url: BASE_URL,
+      inLanguage: 'en-US',
+      publisher: { '@id': `${BASE_URL}/#organization` },
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -80,65 +110,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={fraunces.variable}>
       <head>
-        {/* Structured Data - Organization */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'Organization',
-              name: 'Rice Purity Test App',
-              url: 'https://www.ricepuritytestapp.com',
-              logo: {
-                '@type': 'ImageObject',
-                url: 'https://www.ricepuritytestapp.com/logo.png',
-                width: 512,
-                height: 512,
-              },
-              description: 'A free, anonymous online version of the classic Rice Purity Test for adults.',
-            }),
-          }}
-        />
-        {/* Structured Data - WebApplication */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'WebApplication',
-              name: 'Rice Purity Test',
-              url: 'https://www.ricepuritytestapp.com',
-              description: 'Take the classic 100-question Rice Purity Test online. Free, anonymous, and scored instantly in your browser.',
-              applicationCategory: 'Entertainment',
-              operatingSystem: 'Any',
-              browserRequirements: 'Requires JavaScript',
-              offers: {
-                '@type': 'Offer',
-                price: '0',
-                priceCurrency: 'USD',
-              },
-              featureList: [
-                '100 questions survey',
-                'Anonymous testing',
-                'Instant results',
-                'Score sharing',
-              ],
-            }),
-          }}
-        />
-        {/* Structured Data - WebSite (no SearchAction: the site has no search feature) */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'WebSite',
-              name: 'Rice Purity Test App',
-              url: 'https://www.ricepuritytestapp.com',
-            }),
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(SITE_GRAPH) }}
         />
         {/* Google AdSense (Auto ads). Plain async tag in <head>, as AdSense's site review expects. */}
         <script
@@ -147,7 +123,13 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
       </head>
-      <body className={manrope.className}>
+      <body>
+        <a
+          href="#main"
+          className="sr-only rounded-md bg-ink px-4 py-3 font-semibold text-white focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-50"
+        >
+          Skip to content
+        </a>
         {GA_MEASUREMENT_ID && (
           <>
             <Script
@@ -165,7 +147,9 @@ export default function RootLayout({
             <GoogleAnalyticsRouteTracker />
           </>
         )}
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
