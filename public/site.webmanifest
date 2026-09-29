@@ -1,7 +1,7 @@
 {
   "name": "Rice Purity Test",
   "short_name": "Rice Test",
-  "description": "Take the official Rice Purity Test",
+  "description": "Take the classic 100-question Rice Purity Test. Free, anonymous, for adults 18+.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",

@@ -15,10 +15,10 @@ export const Hero: React.FC = () => {
         Rice Purity Test
       </Heading>
       <Heading as="h2" size="xl" className="mb-3 text-green-500 animate-slide-up-delay-1">
-        How Innocent Are You? Take the Official 100-Question Test
+        How Innocent Are You? Take the Classic 100-Question Test
       </Heading>
       <Text variant="large" color="muted" className="max-w-3xl mx-auto mb-6 animate-fade-in-delay-2">
-        The Rice Purity Test is a self-graded survey that assesses participants' supposed degree of innocence in worldly matters, generally on a percentage scale with 100% being the most innocent. It includes 100 questions about life experiences.
+        Tick every experience on the list you've had and you get a score from 0 to 100. Higher means fewer boxes checked. It started as a campus tradition at Rice University and is meant to be a fun, private check-in for adults. Your answers never leave your browser.
       </Text>
       <Link href="/test">
         <Button size="lg" className="animate-pulse hover:animate-none hover:scale-110 transition-transform duration-300">

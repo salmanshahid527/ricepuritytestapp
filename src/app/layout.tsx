@@ -5,6 +5,7 @@ import { GoogleAnalyticsRouteTracker } from '@/components/GoogleAnalyticsRouteTr
 import './globals.css';
 
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+const ADSENSE_CLIENT = 'ca-pub-2046389894156038';
 
 const manrope = Manrope({ 
   subsets: ['latin'],
@@ -61,6 +62,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.ricepuritytestapp.com/',
   },
+  other: {
+    'google-adsense-account': ADSENSE_CLIENT,
+  },
 };
 
 export const viewport: Viewport = {
@@ -89,11 +93,11 @@ export default function RootLayout({
               url: 'https://www.ricepuritytestapp.com',
               logo: {
                 '@type': 'ImageObject',
-                url: 'https://www.ricepuritytestapp.com/og-image.jpg',
-                width: 1200,
-                height: 630,
+                url: 'https://www.ricepuritytestapp.com/logo.png',
+                width: 512,
+                height: 512,
               },
-              description: 'Official Rice Purity Test - Free, anonymous, instant results',
+              description: 'A free, anonymous online version of the classic Rice Purity Test for adults.',
             }),
           }}
         />
@@ -106,7 +110,7 @@ export default function RootLayout({
               '@type': 'WebApplication',
               name: 'Rice Purity Test',
               url: 'https://www.ricepuritytestapp.com',
-              description: 'Take the official Rice Purity Test - 100 questions to measure innocence',
+              description: 'Take the classic 100-question Rice Purity Test online. Free, anonymous, and scored instantly in your browser.',
               applicationCategory: 'Entertainment',
               operatingSystem: 'Any',
               browserRequirements: 'Requires JavaScript',
@@ -124,7 +128,7 @@ export default function RootLayout({
             }),
           }}
         />
-        {/* Structured Data - WebSite with SearchAction */}
+        {/* Structured Data - WebSite (no SearchAction: the site has no search feature) */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -133,16 +137,14 @@ export default function RootLayout({
               '@type': 'WebSite',
               name: 'Rice Purity Test App',
               url: 'https://www.ricepuritytestapp.com',
-              potentialAction: {
-                '@type': 'SearchAction',
-                target: {
-                  '@type': 'EntryPoint',
-                  urlTemplate: 'https://www.ricepuritytestapp.com/blog?q={search_term_string}',
-                },
-                'query-input': 'required name=search_term_string',
-              },
             }),
           }}
+        />
+        {/* Google AdSense (Auto ads). Plain async tag in <head>, as AdSense's site review expects. */}
+        <script
+          async
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
+          crossOrigin="anonymous"
         />
       </head>
       <body className={manrope.className}>

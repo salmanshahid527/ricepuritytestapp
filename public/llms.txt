@@ -1,2 +1,23 @@
-User-agent: *
-Allow: /
+# Rice Purity Test App
+
+> A free online version of the 100-question Rice Purity Test, for adults 18+, with guides to what scores mean, typical scores by age, every question explained, and the test's history.
+
+The test is a light-hearted self-assessment, not a medical, psychological or moral measure. It is intended for adults only.
+
+## Test
+
+- [Take the Rice Purity Test](https://www.ricepuritytestapp.com/test): the 100-question test with an instant score.
+- [How to take the Rice Purity Test](https://www.ricepuritytestapp.com/blog/how-to-take-rice-purity-test): reading ambiguous questions and answering for your whole life.
+
+## Guides
+
+- [Average Rice Purity score by age (18 to 31+)](https://www.ricepuritytestapp.com/rice-purity-test-average-score-by-age): typical score ranges for adult age brackets and how to read yours.
+- [Rice Purity Test questions, all 100 explained](https://www.ricepuritytestapp.com/rice-purity-test-questions): the full list grouped by theme, with plain-English meanings for confusing items such as "kissed horizontally" and MPS.
+- [Rice Purity Test score meaning](https://www.ricepuritytestapp.com/rice-purity-test-score): how the score is calculated, a score chart, and what each range means.
+- [What is the Rice Purity Test?](https://www.ricepuritytestapp.com/rice-purity-test-meaning): meaning, origin, what "purity" means here, and what the result can and cannot tell you.
+- [Rice Purity Test history](https://www.ricepuritytestapp.com/rice-purity-test-history): from a 1924 Rice Thresher campus survey to TikTok.
+
+## About
+
+- [About](https://www.ricepuritytestapp.com/about)
+- [Privacy policy](https://www.ricepuritytestapp.com/privacy)

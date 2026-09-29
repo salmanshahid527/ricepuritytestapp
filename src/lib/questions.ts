@@ -87,9 +87,9 @@ export const questions: Question[] = [
   { id: 84, text: "Impregnated someone or been impregnated?" },
   { id: 85, text: "Paid or been paid for a sexual act?" },
   { id: 86, text: "Committed an act of voyeurism?" },
-  { id: 87, text: "Committed an act of incest?" },
-  { id: 88, text: "Engaged in bestiality?" },
-  { id: 89, text: "Attempted suicide?" },
+  { id: 87, text: "Snuck out of the house at night?" },
+  { id: 88, text: "Kissed someone you met that same night?" },
+  { id: 89, text: "Stayed out all night without telling anyone where you were?" },
   { id: 90, text: "Had a sexually transmitted infection?" },
   { id: 91, text: "Had sexual intercourse with more than one person in a 24 hour period?" },
   { id: 92, text: "Been in a threesome?" },
@@ -101,4 +101,17 @@ export const questions: Question[] = [
   { id: 98, text: "Had anal sex?" },
   { id: 99, text: "Had a STI test due to reasonable suspicion?" },
   { id: 100, text: "Been involved in BDSM?" }
+];
+
+/**
+ * How the list is organised. Ranges are inclusive question ids.
+ * Used by the questions guide so the grouping always matches the real list.
+ */
+export const QUESTION_GROUPS: { name: string; from: number; to: number; summary: string }[] = [
+  { name: 'Dating and kissing', from: 1, to: 14, summary: 'Holding hands, first dates, relationships and the different kinds of kissing.' },
+  { name: 'Solo and private experiences', from: 15, to: 24, summary: 'Strip games, masturbation, adult material and non-intercourse intimacy.' },
+  { name: 'Physical intimacy with a partner', from: 25, to: 43, summary: 'Undressing, touching, sexting, oral sex, contraception and being walked in on.' },
+  { name: 'Alcohol, tobacco and drugs', from: 44, to: 52, summary: 'From a first drink to hard drugs.' },
+  { name: 'Trouble with school or the law', from: 53, to: 62, summary: 'Being disciplined at school, police contact, arrests and convictions.' },
+  { name: 'Sex, partners and risk', from: 63, to: 100, summary: 'Intercourse, locations, partners, protection, testing and a few nights out.' },
 ];

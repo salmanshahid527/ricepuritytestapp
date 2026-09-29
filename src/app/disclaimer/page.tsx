@@ -116,8 +116,9 @@ export default function DisclaimerPage() {
             </Heading>
 
             <Text variant="body" className="mb-4 leading-relaxed">
-              We try to be accurate, and we publish sample sizes alongside any
-              figure we report.
+              We try to be accurate. Figures based on reader data are published
+              with the number of responses behind them; everything else is
+              clearly labelled as an estimate.
             </Text>
 
             <Text variant="body" className="leading-relaxed">

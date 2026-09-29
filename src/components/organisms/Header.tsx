@@ -21,21 +21,21 @@ export const Header: React.FC<HeaderProps> = ({
       <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
           <Logo size="md" showText={true} showTagline={false} href="/" />
-          <nav className="hidden sm:flex items-center gap-6">
-            <Link href="/blog" className="text-sm font-medium text-gray-600 hover:text-green-500 transition-colors">
-              Blog
+          <nav className="hidden sm:flex items-center gap-6" aria-label="Main">
+            <Link href="/rice-purity-test-questions" className="text-sm font-medium text-gray-600 hover:text-green-500 transition-colors">
+              Questions
             </Link>
             <Link href="/rice-purity-test-score" className="text-sm font-medium text-gray-600 hover:text-green-500 transition-colors">
               Score Guide
             </Link>
+            <Link href="/rice-purity-test-average-score-by-age" className="text-sm font-medium text-gray-600 hover:text-green-500 transition-colors">
+              Averages by Age
+            </Link>
+            <Link href="/blog" className="text-sm font-medium text-gray-600 hover:text-green-500 transition-colors">
+              Guides
+            </Link>
             <Link href="/about" className="text-sm font-medium text-gray-600 hover:text-green-500 transition-colors">
               About
-            </Link>
-            <Link href="/privacy" className="text-sm font-medium text-gray-600 hover:text-green-500 transition-colors">
-              Privacy Policy
-            </Link>
-            <Link href="/terms" className="text-sm font-medium text-gray-600 hover:text-green-500 transition-colors">
-              Terms of Service
             </Link>
           </nav>
           <div className="flex items-center gap-4">

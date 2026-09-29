@@ -24,8 +24,8 @@ export function ArticleSchema({
     datePublished,
     dateModified: dateModified ?? datePublished,
     author: {
-      '@type': 'Person',
-      name: 'Rice Purity Test App Editorial Team',
+      '@type': 'Organization',
+      name: 'Rice Purity Test App',
       url: `${BASE_URL}/about`,
     },
     publisher: {
