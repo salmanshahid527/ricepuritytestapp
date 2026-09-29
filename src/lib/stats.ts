@@ -74,12 +74,13 @@ function summarise(band: AgeBand, flat: string[]): BandStats {
 export async function getBandStats(revalidateSeconds = 3600): Promise<BandStats[] | null> {
   if (!statsConfigured) return null;
   try {
-    const out: BandStats[] = [];
-    for (const band of AGE_BANDS) {
-      const flat = (await redis(['HGETALL', `rpt:scores:${band}`], revalidateSeconds)) as string[] | null;
-      out.push(summarise(band, flat ?? []));
-    }
-    return out;
+    // The eight bands are independent reads, so fetch them in parallel.
+    return await Promise.all(
+      AGE_BANDS.map(async (band) => {
+        const flat = (await redis(['HGETALL', `rpt:scores:${band}`], revalidateSeconds)) as string[] | null;
+        return summarise(band, flat ?? []);
+      }),
+    );
   } catch {
     return null;
   }

@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { STORAGE_KEYS, TOTAL_QUESTIONS } from '@/lib/constants';
 import { getScoreInterpretation } from '@/lib/utils';
-import { AGE_ESTIMATES, OVERALL_AVERAGE, TYPICAL_ADULT, range } from '@/lib/estimates';
+import { AGE_ESTIMATES, OVERALL_AVERAGE, TYPICAL_ADULT, lookupBandFor, range } from '@/lib/estimates';
 import { GUIDES } from '@/lib/guides';
 import { STATS_ENABLED } from '@/lib/site';
 import { ButtonLink } from '../atoms/Button';
@@ -119,6 +119,7 @@ export function ResultsView({ liveStats }: { liveStats?: ReactNode }) {
   }
 
   const band = getScoreInterpretation(score);
+  const lookup = lookupBandFor(score);
   const checked = TOTAL_QUESTIONS - score;
   const overall = relation(score, OVERALL_AVERAGE.low, OVERALL_AVERAGE.high);
 
@@ -234,10 +235,26 @@ export function ResultsView({ liveStats }: { liveStats?: ReactNode }) {
       <RelatedGuides
         heading="Next steps"
         guides={[
-          { ...GUIDES.score, href: `${GUIDES.score.href}#score-lookup`, blurb: 'Look up your number and see which ranges it falls in.' },
-          GUIDES.age,
-          GUIDES.questions,
-          GUIDES.howTo,
+          {
+            href: `${GUIDES.score.href}#${lookup.id}`,
+            label: `What a ${score} means`,
+            blurb: `Your row in the score lookup (${lookup.low}–${lookup.high}): items checked and the age groups it is typical for.`,
+          },
+          {
+            href: `${GUIDES.age.href}#at-a-glance`,
+            label: 'Compare with your age group',
+            blurb: 'The estimated typical range at 18, 19–22, 23–25, 26–30 and 31+, and how those estimates are made.',
+          },
+          {
+            href: GUIDES.questions.href,
+            label: 'Check what an item meant',
+            blurb: 'Plain-English notes on the confusing items, from “kissed horizontally” to MPS.',
+          },
+          {
+            href: GUIDES.meaning.href,
+            label: 'What the score can’t tell you',
+            blurb: 'What “purity” means on this test, and why a number is a count, not a verdict.',
+          },
         ]}
       />
 
