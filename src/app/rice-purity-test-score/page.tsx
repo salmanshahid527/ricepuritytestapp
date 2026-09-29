@@ -1,16 +1,21 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { ArticleSchema } from '@/components/ArticleSchema';
+import type { ReactNode } from 'react';
 import { KeyAnswer } from '@/components/molecules/KeyAnswer';
+import { AboutThisGuide } from '@/components/molecules/AboutThisGuide';
 import { GuideLayout } from '@/components/templates/GuideLayout';
 import { AdSlot } from '@/components/organisms/AdSlot';
 import { CtaBox } from '@/components/organisms/CtaBox';
 import { RelatedGuides } from '@/components/organisms/RelatedGuides';
-import { TYPICAL_ADULT, OVERALL_AVERAGE, ageGroupsFor, range } from '@/lib/estimates';
+import { TYPICAL_ADULT, OVERALL_AVERAGE, LOOKUP_BANDS, ageGroupsFor, range } from '@/lib/estimates';
 import { GUIDES } from '@/lib/guides';
+import { PAGE_DATES, reviewedOn } from '@/lib/dates';
 import { BASE_URL } from '@/lib/site';
 
-const URL = `${BASE_URL}/rice-purity-test-score`;
+const PATH = '/rice-purity-test-score';
+const URL = `${BASE_URL}${PATH}`;
+const DATES = PAGE_DATES[PATH];
 const TITLE = 'Rice Purity Test Score Meaning: Every Range Explained';
 const DESCRIPTION =
   'What your Rice Purity score means, from 100 down to 0: how it is calculated, a score chart, a lookup for any number, what counts as normal, and whether a high or low score is better.';
@@ -47,11 +52,10 @@ const CHART = [
 
 /**
  * One lookup table answers every "is N a good score?" question (never one page
- * per score). Rows are derived from the same estimated ranges as the age page.
+ * per score). Rows are derived from the same estimated ranges as the age page,
+ * and each row has an id (#score-71) so the results page can link to it.
  */
-const LOOKUP = Array.from({ length: 20 }, (_, i) => {
-  const high = 100 - i * 5;
-  const low = i === 19 ? 0 : high - 4;
+const LOOKUP = LOOKUP_BANDS.map(({ low, high, id }) => {
   const groups = ageGroupsFor(low, high);
   let adult: string;
   if (low > TYPICAL_ADULT.high) adult = 'Above the typical adult range';
@@ -59,6 +63,7 @@ const LOOKUP = Array.from({ length: 20 }, (_, i) => {
   else adult = 'Within the typical adult range';
   const nearAverage = high >= OVERALL_AVERAGE.low && low <= OVERALL_AVERAGE.high;
   return {
+    id,
     scores: `${low}–${high}`,
     items: `${100 - high}–${100 - low}`,
     groups: groups.length ? groups.join(', ') : low > 90 ? 'Above every age range' : 'Below every age range',
@@ -66,33 +71,52 @@ const LOOKUP = Array.from({ length: 20 }, (_, i) => {
   };
 });
 
+/**
+ * The specific numbers people search for most, answered in one place. Nearby
+ * numbers are folded into each answer instead of getting their own heading.
+ * Every age range quoted here comes from AGE_ESTIMATES via ageGroupsFor().
+ */
 const SPECIFIC = [
   {
+    id: 'is-85-good',
+    q: 'Is 85 a good Rice Purity score?',
+    a: 'An 85 means you checked 15 items. It sits above the typical adult range and inside the estimated ranges for 18-year-olds (75 to 90) and for 19 to 22 (65 to 85), so it is a very ordinary score early in college. The rest of the 80s read much the same way.',
+  },
+  {
+    id: 'is-77-good',
     q: 'Is 77 a good Rice Purity score?',
-    a: 'A 77 means you checked 23 items. That sits just above the typical adult range, so it is very ordinary, especially for someone aged 18 to their early twenties.',
+    a: 'A 77 means you checked 23 items. That sits just above the typical adult range, so it is very ordinary, especially for someone aged 18 to their early twenties. A 76 or a 78 reads the same way.',
   },
   {
+    id: 'is-68-normal',
+    q: 'Is 68 or 65 a normal score?',
+    a: 'Yes. A 68 (32 items) and a 65 (35 items) both fall inside the estimated overall average of 62 to 68, in the middle of the most common band for adults. Scores in the 60s are typical for most people in their twenties.',
+  },
+  {
+    id: 'is-55-bad',
     q: 'Is 55 a bad Rice Purity score?',
-    a: 'No. A 55 means 45 items checked, which is within the normal range for adults and common in the mid-to-late twenties. There are no bad scores, only different histories.',
-  },
-  {
-    q: 'What does a score of 76 or 68 mean?',
-    a: 'A 76 (24 items) and a 68 (32 items) both fall in the most common band for adults. The difference is eight experiences out of 100, which is less than it sounds.',
+    a: 'No. A 55 means 45 items checked, which is within the normal range for adults and common from the late twenties onward. Scores in the 40s and 50s, such as 48 or 53, are not bad either. There are no bad scores, only different histories.',
   },
 ];
 
-const FAQ = [
+const FAQ: { q: string; a: ReactNode }[] = [
   {
     q: 'Is a higher or lower Rice Purity score better?',
-    a: 'Neither. A higher score means you have checked fewer items, a lower score means more. The test counts experiences; it does not judge them. A 90 and a 45 are both just numbers on a checklist.',
+    a: 'Neither. A high score means you have checked few of the listed items; a low score means you have checked many. The test counts experiences and does not judge them, so there is no good or bad score: a 90 and a 45 are both just numbers on a checklist.',
   },
   {
     q: 'What is a normal Rice Purity score?',
-    a: 'For adults, anything from about 55 to 75 is squarely typical, and the overall average is estimated in the mid-60s. For an 18-year-old, the high 70s to high 80s is normal. See the averages by age for more.',
+    a: (
+      <>
+        For adults, anything from about 55 to 75 is squarely typical, and the overall average is estimated in the
+        mid-60s. For an 18-year-old, the high 70s to high 80s is normal. See{' '}
+        <Link href={`${GUIDES.age.href}#normal-score`}>what counts as normal at each age</Link>.
+      </>
+    ),
   },
   {
     q: 'What is the highest and lowest possible score?',
-    a: 'The highest is 100 (nothing checked) and the lowest is 0 (everything checked). Both extremes are rare.',
+    a: 'The test is scored out of 100. The highest possible score is 100 (nothing checked) and the lowest is 0 (everything checked). Both extremes are rare.',
   },
 ];
 
@@ -121,7 +145,7 @@ const BANDS = [
 
 const TOC = [
   { id: 'how-calculated', label: 'How the score is calculated' },
-  { id: 'score-chart', label: 'Score chart' },
+  { id: 'score-chart', label: 'Score chart, 100 to 0' },
   { id: 'score-lookup', label: 'Is my score good? Lookup' },
   { id: 'ranges', label: 'What each range means' },
   { id: 'common-questions', label: 'Common questions' },
@@ -131,29 +155,34 @@ const TOC = [
 export default function ScorePage() {
   return (
     <>
-      <ArticleSchema headline={TITLE} datePublished="2026-01-15" dateModified="2026-09-27" url={URL} description={DESCRIPTION} />
+      <ArticleSchema headline={TITLE} datePublished={DATES.published} dateModified={DATES.modified} url={URL} description={DESCRIPTION} />
       <GuideLayout
-        crumbs={[{ label: 'Rice Purity Test Score', href: '/rice-purity-test-score' }]}
+        crumbs={[{ label: 'Rice Purity Test Score', href: PATH }]}
         title="Rice Purity Test Score Meaning"
-        meta="Last reviewed September 27, 2026 · For adults 18+"
+        meta={`Last reviewed ${reviewedOn(PATH)} · For adults 18+`}
         toc={TOC}
         answer={
-          <KeyAnswer>
+          <KeyAnswer question="What does your Rice Purity score mean?">
+            <p className="text-ink">
+              Your score is the number of the test&apos;s 100 items you <em>haven&apos;t</em> done:{' '}
+              <strong className="font-semibold">100 minus the number of boxes you check</strong>. A high score means few of
+              the listed experiences, a low score means many. It&apos;s a count, not a grade, so there is no good or bad
+              score.
+            </p>
             <ul className="list-disc space-y-1.5 pl-5 marker:text-brand">
               <li>
-                Your score is <strong className="font-semibold text-ink">100 minus the number of items you checked</strong>.
-              </li>
-              <li>Higher means fewer of the listed experiences; lower means more.</li>
-              <li>
                 For adults, <strong className="font-semibold text-ink">55 to 75 is typical</strong>; the overall average is
-                estimated in the mid-60s.
+                estimated at {range(OVERALL_AVERAGE)}.
               </li>
-              <li>There is no good or bad score. It&apos;s a count, not a grade.</li>
+              <li>
+                Have a specific number? <a href="#score-lookup" className="link">Look it up below</a>.
+              </li>
             </ul>
           </KeyAnswer>
         }
         footer={
           <>
+            <AboutThisGuide path={PATH} />
             <AdSlot name="score-end" className="mt-14" />
             <RelatedGuides guides={[GUIDES.age, GUIDES.questions, GUIDES.meaning, GUIDES.history]} />
             <CtaBox heading="Haven't taken it yet?" secondary={{ href: GUIDES.questions.href, label: 'Read the 100 questions' }}>
@@ -163,20 +192,28 @@ export default function ScorePage() {
         }
       >
         <h2 id="how-calculated" style={{ marginTop: 0 }}>
-          How the score is calculated
+          How is the Rice Purity score calculated?
         </h2>
         <p>
           Start at 100 and subtract one point for every item you check. Check 40 items and you score 60; check 5 and you
-          score 95. Every question carries the same weight, so holding hands and the rarest item near the end of the list
-          each cost exactly one point. That flat weighting is the main reason two people with the same score can have very
-          different stories.
+          score 95. The test is scored out of 100 with no weighting: every one of the{' '}
+          <Link href={GUIDES.questions.href}>100 questions</Link> carries the same weight, so holding hands and the rarest
+          item near the end of the list each cost exactly one point. That flat weighting is the main reason two people
+          with the same score can have very different stories.
         </p>
         <p className="rounded-md border border-line bg-surface px-5 py-4 font-display text-[1.25rem] font-semibold text-ink">
           Score = 100 − (number of items checked)
         </p>
+        <p>
+          New to the test itself? Start with <Link href={GUIDES.meaning.href}>what the Rice Purity Test is</Link> and
+          where it comes from.
+        </p>
 
-        <h2 id="score-chart">Rice Purity score chart</h2>
-        <p>Find your number below. The labels are the same ones you see on the results page after taking the test.</p>
+        <h2 id="score-chart">Rice Purity score chart, from 100 to 0</h2>
+        <p>
+          The scale runs from 100 (nothing checked) to 0 (everything checked). Find your number below. The labels are the
+          same ones you see on the results page after taking the test.
+        </p>
         <div className="table-wrap">
           <table className="table-clean">
             <thead>
@@ -190,7 +227,7 @@ export default function ScorePage() {
               {CHART.map((row) => (
                 <tr key={row.range}>
                   <td className="whitespace-nowrap font-semibold text-ink">{row.range}</td>
-                  <td className="whitespace-nowrap">{row.label}</td>
+                  <td className="min-w-[7.5rem] sm:whitespace-nowrap">{row.label}</td>
                   <td>{row.note}</td>
                 </tr>
               ))}
@@ -206,7 +243,7 @@ export default function ScorePage() {
             No score is good or bad: the test counts experiences, it doesn&apos;t grade them. What people usually want to
             know is whether a number is typical. Find yours below to see how many items it means and which age groups it is
             typical for. The age ranges are our estimates (see{' '}
-            <Link href={GUIDES.age.href}>average score by age</Link>), not survey results.
+            <Link href={`${GUIDES.age.href}#where-numbers-come-from`}>how we estimate them</Link>), not survey results.
           </p>
           <div className="table-wrap mt-4">
             <table className="table-clean" aria-labelledby="score-lookup">
@@ -220,7 +257,7 @@ export default function ScorePage() {
               </thead>
               <tbody>
                 {LOOKUP.map((r) => (
-                  <tr key={r.scores}>
+                  <tr key={r.scores} id={r.id} className="deep-link">
                     <td className="whitespace-nowrap font-semibold text-ink">{r.scores}</td>
                     <td className="whitespace-nowrap">{r.items}</td>
                     <td>{r.groups}</td>
@@ -230,10 +267,11 @@ export default function ScorePage() {
               </tbody>
             </table>
           </div>
-          <div className="mt-6 space-y-5">
+          <h3 className="mt-8">The numbers people ask about most</h3>
+          <div className="mt-4 space-y-5">
             {SPECIFIC.map((f) => (
-              <div key={f.q}>
-                <h3 style={{ marginTop: 0 }}>{f.q}</h3>
+              <div key={f.id} id={f.id}>
+                <h4 className="font-semibold text-ink">{f.q}</h4>
                 <p className="mt-1">{f.a}</p>
               </div>
             ))}

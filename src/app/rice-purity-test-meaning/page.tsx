@@ -2,15 +2,20 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { ArticleSchema } from '@/components/ArticleSchema';
 import { KeyAnswer } from '@/components/molecules/KeyAnswer';
+import { AboutThisGuide } from '@/components/molecules/AboutThisGuide';
 import { GuideLayout } from '@/components/templates/GuideLayout';
 import { AdSlot } from '@/components/organisms/AdSlot';
 import { CtaBox } from '@/components/organisms/CtaBox';
 import { RelatedGuides } from '@/components/organisms/RelatedGuides';
 import { MPS_NOTE } from '@/lib/questionNotes';
 import { GUIDES } from '@/lib/guides';
+import { PAGE_DATES, reviewedOn } from '@/lib/dates';
+import { SOURCES } from '@/lib/sources';
 import { BASE_URL, STATS_ENABLED } from '@/lib/site';
 
-const URL = `${BASE_URL}/rice-purity-test-meaning`;
+const PATH = '/rice-purity-test-meaning';
+const URL = `${BASE_URL}${PATH}`;
+const DATES = PAGE_DATES[PATH];
 const TITLE = 'What Is the Rice Purity Test? Meaning, Origin and How It Works';
 const DESCRIPTION =
   'What the Rice Purity Test is, what "purity" actually means here, where it came from, what MPS stands for, and what your result can and cannot tell you.';
@@ -37,24 +42,32 @@ const TOC = [
 export default function MeaningPage() {
   return (
     <>
-      <ArticleSchema headline={TITLE} datePublished="2026-01-12" dateModified="2026-09-27" url={URL} description={DESCRIPTION} />
+      <ArticleSchema headline={TITLE} datePublished={DATES.published} dateModified={DATES.modified} url={URL} description={DESCRIPTION} />
       <GuideLayout
-        crumbs={[{ label: 'What Is the Rice Purity Test?', href: '/rice-purity-test-meaning' }]}
+        crumbs={[{ label: 'What Is the Rice Purity Test?', href: PATH }]}
         title="What Is the Rice Purity Test?"
-        meta="Last reviewed September 27, 2026 · For adults 18+"
+        meta={`Last reviewed ${reviewedOn(PATH)} · For adults 18+`}
         toc={TOC}
         answer={
-          <KeyAnswer>
+          <KeyAnswer question="What the Rice Purity Test means">
             <p>
               The Rice Purity Test is a 100-item &ldquo;have you ever&hellip;&rdquo; checklist about dating, sex, alcohol,
               drugs and run-ins with the law. You check everything that applies, and your score is 100 minus the number of
               checks. It comes from a long-running student tradition at Rice University in Houston, and it&apos;s meant as a
               light-hearted way to compare notes with friends, not as a measure of anyone&apos;s worth.
             </p>
+            <p className="text-small">
+              Looking for what your number means? See{' '}
+              <Link href={GUIDES.score.href} className="link">
+                Rice Purity score meaning, range by range
+              </Link>
+              .
+            </p>
           </KeyAnswer>
         }
         footer={
           <>
+            <AboutThisGuide path={PATH} sources={[SOURCES.thresher1924, SOURCES.thresher2017, SOURCES.wikipedia]} />
             <AdSlot name="meaning-end" className="mt-14" />
             <RelatedGuides guides={[GUIDES.score, GUIDES.questions, GUIDES.history, GUIDES.age]} />
             <CtaBox heading="Try it yourself">
@@ -85,6 +98,7 @@ export default function MeaningPage() {
           century, but the Rice version is the one that stuck, moved online, and became the 100-question list people know
           today.
         </p>
+
         <p>
           Rice University does not run or endorse any website that hosts the test, including this one. The full story is on
           our <Link href="/rice-purity-test-history">history page</Link>.
@@ -98,12 +112,13 @@ export default function MeaningPage() {
           <li>You check every item that has ever applied to you. Recent or not doesn&apos;t matter.</li>
           <li>Each check subtracts one point from 100. All items weigh the same.</li>
           <li>
-            You can read every item first on the <Link href="/rice-purity-test-questions">questions page</Link>, and see
-            what your number means on the <Link href="/rice-purity-test-score">score guide</Link>.
+            You can read every item first on the <Link href="/rice-purity-test-questions">questions page</Link>, see
+            what your number means on the <Link href="/rice-purity-test-score">score guide</Link>, and compare it with{' '}
+            <Link href={GUIDES.age.href}>typical scores by age</Link>.
           </li>
         </ul>
 
-        <h2 id="mps">What does MPS mean?</h2>
+        <h2 id="mps">What does MPS mean on the Rice Purity Test?</h2>
         <p>{MPS_NOTE}</p>
 
         <h2 id="why-people-take-it">Why people take it</h2>
@@ -141,8 +156,12 @@ export default function MeaningPage() {
         </p>
 
         <p className="text-small text-ink-3">
-          Source for historical dates:{' '}
-          <a href="https://en.wikipedia.org/wiki/Purity_test" rel="noopener" target="_blank">
+          Sources for historical dates: the{' '}
+          <a href={SOURCES.thresher1924.href} rel="noopener" target="_blank">
+            1924 <em>Thresher</em> issue
+          </a>{' '}
+          in Rice University&apos;s digital collections, and{' '}
+          <a href={SOURCES.wikipedia.href} rel="noopener" target="_blank">
             Wikipedia, &ldquo;Purity test&rdquo;
           </a>
           .
