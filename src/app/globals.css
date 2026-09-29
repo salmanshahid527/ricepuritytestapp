@@ -1,3 +1,223 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/*
+ * Design tokens. Colours are RGB channels so Tailwind opacity modifiers work.
+ * Every text/background pair used on the site meets WCAG AA (4.5:1) or better:
+ *   ink on paper 15.6, ink-2 on paper 8.6, ink-3 on paper 5.2, ink-3 on sunken 4.9,
+ *   brand on paper 5.9, white on brand 6.2, brand-deep on brand-soft 9.6,
+ *   note-ink on note 6.0. Control borders (checkboxes) are 3.8:1 (WCAG 1.4.11).
+ */
+@layer base {
+  :root {
+    color-scheme: light;
+    --c-paper: 250 248 243;       /* page background: warm off-white */
+    --c-surface: 255 255 255;     /* cards, tables */
+    --c-sunken: 243 241 234;      /* quiet panels */
+    --c-line: 228 224 213;        /* hairlines */
+    --c-line-strong: 207 201 186;
+    --c-control: 122 132 126;     /* checkbox and input borders */
+    --c-ink: 22 33 28;            /* headings, body */
+    --c-ink-2: 63 75 69;          /* secondary text */
+    --c-ink-3: 95 107 101;        /* captions, meta */
+    --c-brand: 11 110 83;         /* primary actions and links */
+    --c-brand-strong: 8 90 68;    /* hover */
+    --c-brand-deep: 6 71 58;      /* text on tints */
+    --c-brand-soft: 234 245 240;  /* answer boxes, checked rows */
+    --c-brand-tint: 211 235 224;
+    --c-note: 253 244 227;        /* "estimate" and caution notes */
+    --c-note-ink: 138 79 8;
+    --c-note-line: 240 214 170;
+    --c-focus: 29 78 216;         /* focus ring (6.3:1 on paper) */
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    scroll-padding-top: 1rem;
+    -webkit-tap-highlight-color: rgb(var(--c-brand) / 0.12);
+  }
+
+  body {
+    @apply bg-paper font-sans text-body text-ink antialiased;
+    touch-action: manipulation;
+  }
+
+  h1, h2, h3, h4 {
+    text-wrap: balance;
+  }
+
+  p, li, dd {
+    text-wrap: pretty;
+  }
+
+  /* One visible, consistent focus style for every interactive element. */
+  :focus-visible {
+    outline: 3px solid rgb(var(--c-focus));
+    outline-offset: 2px;
+  }
+
+  [id] {
+    scroll-margin-top: 1.25rem;
+  }
+
+  table {
+    font-variant-numeric: tabular-nums;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .page {
+    @apply mx-auto w-full max-w-page px-4 sm:px-6;
+  }
+  /* Focused single-column layout (the test). */
+  .page-narrow {
+    @apply mx-auto w-full max-w-3xl px-4 sm:px-6;
+  }
+
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.08em] text-brand;
+  }
+
+  /* Buttons: every size clears the 44px tap target. */
+  .btn {
+    @apply inline-flex min-h-tap select-none items-center justify-center gap-2 rounded-md px-5 text-[1rem] font-semibold leading-tight;
+    transition-property: background-color, border-color, color, box-shadow;
+    transition-duration: 150ms;
+  }
+  .btn-lg {
+    @apply min-h-[3.25rem] px-7 text-[1.0625rem];
+  }
+  .btn-primary {
+    @apply bg-brand text-white shadow-card hover:bg-brand-strong active:bg-brand-deep;
+  }
+  .btn-secondary {
+    @apply border border-line-strong bg-surface text-ink hover:border-brand hover:text-brand-deep;
+  }
+  .btn-quiet {
+    @apply text-brand-deep hover:bg-brand-soft;
+  }
+  .btn[disabled],
+  .btn[aria-disabled='true'] {
+    @apply cursor-not-allowed opacity-50;
+  }
+
+  .link {
+    @apply font-medium text-brand underline decoration-brand/40 decoration-1 underline-offset-[3px] hover:text-brand-strong hover:decoration-2;
+  }
+
+  .card {
+    @apply rounded-lg border border-line bg-surface shadow-card;
+  }
+
+  /* Long-form guide content: readable measure, calm rhythm. Selectors use :where()
+     so any utility class on a nested component still wins. */
+  .prose-guide {
+    @apply max-w-measure text-body text-ink-2;
+  }
+  .prose-guide > :where(* + *) {
+    margin-top: 1.15em;
+  }
+  .prose-guide :where(h2) {
+    @apply font-display text-h2 font-semibold text-ink;
+    margin-top: 2.4em;
+  }
+  .prose-guide :where(h3) {
+    @apply text-h3 font-semibold text-ink;
+    margin-top: 1.8em;
+  }
+  .prose-guide > :where(h2 + *, h3 + *) {
+    margin-top: 0.6em;
+  }
+  .prose-guide > :where(:first-child) {
+    margin-top: 0;
+  }
+  .prose-guide :where(strong) {
+    @apply font-semibold text-ink;
+  }
+  .prose-guide :where(a:not(.btn)) {
+    @apply font-medium text-brand underline decoration-brand/40 decoration-1 underline-offset-[3px] hover:text-brand-strong hover:decoration-2;
+  }
+  .prose-guide :where(ul) {
+    @apply list-disc pl-5 marker:text-brand;
+  }
+  .prose-guide :where(ol) {
+    @apply list-decimal pl-6 marker:font-semibold marker:text-ink-3;
+  }
+  .prose-guide :where(li + li) {
+    margin-top: 0.45em;
+  }
+
+  /* Tables scroll inside their own box on small screens, never the page. */
+  .table-wrap {
+    @apply -mx-4 overflow-x-auto px-4 sm:mx-0 sm:px-0;
+  }
+  .table-clean {
+    @apply w-full border-collapse text-left text-small;
+  }
+  .table-clean th {
+    @apply border-b-2 border-line-strong px-3 py-2.5 align-bottom text-xs font-semibold uppercase tracking-[0.06em] text-ink-3;
+  }
+  .table-clean td {
+    @apply border-b border-line px-3 py-3 align-top text-ink-2;
+  }
+  .table-clean th:first-child,
+  .table-clean td:first-child {
+    @apply pl-0;
+  }
+  .table-clean tbody tr:last-child td {
+    @apply border-b-0;
+  }
+
+  /* Reserved advertising space: fixed height so nothing shifts when an ad fills it. */
+  .ad-slot {
+    @apply mx-auto w-full rounded-md border border-dashed border-line-strong bg-sunken/60;
+    min-height: 280px;
+    contain: layout paint;
+  }
+  @media (min-width: 768px) {
+    .ad-slot {
+      min-height: 250px;
+    }
+  }
+
+  /* Test checkboxes: native inputs, restyled, large. */
+  .check {
+    @apply relative grid h-7 w-7 shrink-0 cursor-pointer appearance-none place-content-center rounded-[7px] border-2 border-control bg-surface;
+    transition-property: background-color, border-color;
+    transition-duration: 120ms;
+  }
+  .check::before {
+    content: '';
+    @apply h-3.5 w-3.5 scale-0 bg-white;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    transition: transform 120ms;
+  }
+  .check:checked {
+    @apply border-brand bg-brand;
+  }
+  .check:checked::before {
+    @apply scale-100;
+  }
+  .check:focus-visible {
+    outline: 3px solid rgb(var(--c-focus));
+    outline-offset: 3px;
+  }
+}
+
+/* On the test page, keep focused checkboxes clear of the sticky progress bar (WCAG 2.4.11). */
+html:has(#test-form) {
+  scroll-padding-top: 6rem;
+}
