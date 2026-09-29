@@ -39,7 +39,11 @@ export default function DisclaimerPage() {
       <p>Nothing here is medical, psychological, or legal advice.</p>
       <p>
         If you are worried about your health, your wellbeing, or your safety, speak to a qualified professional. In the
-        US you can call or text 988; outside the US, findahelpline.com lists free services by country.
+        US you can call or text 988; outside the US,{' '}
+        <a href="https://findahelpline.com" rel="noopener" target="_blank">
+          findahelpline.com
+        </a>{' '}
+        lists free services by country.
       </p>
       <h2>No Affiliation</h2>
       <p>This site is not affiliated with, endorsed by, or connected to Rice University.</p>

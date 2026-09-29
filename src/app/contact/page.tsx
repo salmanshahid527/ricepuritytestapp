@@ -1,7 +1,19 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { JsonLd } from '@/components/atoms/JsonLd';
 import { LegalLayout } from '@/components/templates/LegalLayout';
+import { ORGANIZATION_ID } from '@/lib/schema';
 import { BASE_URL } from '@/lib/site';
+
+const CONTACT_PAGE = {
+  '@context': 'https://schema.org',
+  '@type': 'ContactPage',
+  '@id': `${BASE_URL}/contact#page`,
+  url: `${BASE_URL}/contact`,
+  name: 'Contact',
+  isPartOf: { '@id': `${BASE_URL}/#website` },
+  about: { '@id': ORGANIZATION_ID },
+};
 
 export const metadata: Metadata = {
   title: 'Contact RicePurityTestApp',
@@ -28,6 +40,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <LegalLayout crumb="Contact" href="/contact" title="Contact">
+      <JsonLd data={CONTACT_PAGE} />
       <h2 style={{ marginTop: 0 }}>Get in Touch</h2>
       <p>
         Email <a href="mailto:contact@ricepuritytestapp.com">contact@ricepuritytestapp.com</a> and you will get a reply,
@@ -57,7 +70,11 @@ export default function ContactPage() {
       <p>We also cannot provide medical, psychological, or legal advice.</p>
       <p>
         If you are struggling, there are better places to go for support. In the US you can call or text 988; outside the
-        US, findahelpline.com lists free services by country.
+        US,{' '}
+        <a href="https://findahelpline.com" rel="noopener" target="_blank">
+          findahelpline.com
+        </a>{' '}
+        lists free services by country.
       </p>
     </LegalLayout>
   );
