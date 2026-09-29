@@ -1,14 +1,19 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { ArticleSchema } from '@/components/ArticleSchema';
+import { AboutThisGuide } from '@/components/molecules/AboutThisGuide';
 import { GuideLayout } from '@/components/templates/GuideLayout';
 import { AdSlot } from '@/components/organisms/AdSlot';
 import { CtaBox } from '@/components/organisms/CtaBox';
 import { RelatedGuides } from '@/components/organisms/RelatedGuides';
 import { GUIDES } from '@/lib/guides';
+import { PAGE_DATES, reviewedOn } from '@/lib/dates';
+import { SOURCES } from '@/lib/sources';
 import { BASE_URL } from '@/lib/site';
 
-const URL = `${BASE_URL}/rice-purity-test-history`;
+const PATH = '/rice-purity-test-history';
+const URL = `${BASE_URL}${PATH}`;
+const DATES = PAGE_DATES[PATH];
 const TITLE = 'Rice Purity Test History: From a 1924 Campus Survey to TikTok';
 const DESCRIPTION =
   'How the Rice Purity Test began as a Rice Thresher survey in 1924, spread across campuses, moved online in the 1990s and went viral on TikTok in the 2020s.';
@@ -23,11 +28,12 @@ export const metadata: Metadata = {
 };
 
 const TIMELINE = [
-  { year: '1924', text: 'The Rice Thresher, Rice University’s student newspaper, prints the results of an informal ten-question survey of 119 undergraduate women.' },
+  { year: '1924', text: 'The Thresher, Rice University’s student newspaper, prints the results of an informal ten-question survey of 119 undergraduate women. Their average score was 62.' },
   { year: '1930s', text: 'Similar "purity" and "virtue" tests appear at other colleges, including Barnard, the University of Toronto and Indiana University.' },
   { year: '1980s', text: 'The Thresher keeps revisiting the idea, often on its satirical back page, and the lists grow much longer; one 1988 version runs to 150 questions.' },
   { year: '1990s', text: 'Text versions circulate online, and the first web-based purity test appears in 1994.' },
-  { year: '2020s', text: 'A 100-question version becomes a TikTok trend; The Independent reported on the craze among Gen Z users in 2021.' },
+  { year: '2017', text: 'The Thresher reports that its own online version had been visited more than 1.5 million times in a year, with test takers far beyond Houston.' },
+  { year: '2020s', text: 'A 100-question version becomes a TikTok trend; in July 2022 The Independent explained the craze among Gen Z users.' },
 ];
 
 const TOC = [
@@ -41,14 +47,18 @@ const TOC = [
 export default function HistoryPage() {
   return (
     <>
-      <ArticleSchema headline={TITLE} datePublished="2026-01-12" dateModified="2026-09-27" url={URL} description={DESCRIPTION} />
+      <ArticleSchema headline={TITLE} datePublished={DATES.published} dateModified={DATES.modified} url={URL} description={DESCRIPTION} />
       <GuideLayout
-        crumbs={[{ label: 'Rice Purity Test History', href: '/rice-purity-test-history' }]}
+        crumbs={[{ label: 'Rice Purity Test History', href: PATH }]}
         title="The History of the Rice Purity Test"
-        meta="Last reviewed September 27, 2026"
+        meta={`Last reviewed ${reviewedOn(PATH)} · For adults 18+`}
         toc={TOC}
         footer={
           <>
+            <AboutThisGuide
+              path={PATH}
+              sources={[SOURCES.thresher1924, SOURCES.thresher2017, SOURCES.independent2022, SOURCES.wikipedia]}
+            />
             <AdSlot name="history-end" className="mt-14" />
             <RelatedGuides guides={[GUIDES.meaning, GUIDES.questions, GUIDES.age, GUIDES.score]} />
             <CtaBox heading="Add yourself to the history">
@@ -84,7 +94,9 @@ export default function HistoryPage() {
         <p>
           The questions changed with the times. Early versions asked about things like dancing and drinking; later lists
           grew to cover dating, sex, drugs and trouble with the law, and became far longer than the 100 items most people
-          know today.
+          know today. According to the <em>Thresher</em>, two questions from 1924 have survived: whether you have ever
+          cheated and whether you have ever been drunk. In 1924, 58 of the 119 women said they had cheated, and only four
+          said they had ever been drunk.
         </p>
 
         <AdSlot name="history-mid" />
@@ -126,11 +138,23 @@ export default function HistoryPage() {
         </p>
 
         <p className="text-small text-ink-3">
-          Sources:{' '}
-          <a href="https://en.wikipedia.org/wiki/Purity_test" rel="noopener" target="_blank">
+          Sources: the March 7, 1924 issue of the <em>Thresher</em> (
+          <a href={SOURCES.thresher1924.href} rel="noopener" target="_blank">
+            Rice University Digital Collections
+          </a>
+          ); the <em>Rice Thresher</em>&apos;s 2017 article{' '}
+          <a href={SOURCES.thresher2017.href} rel="noopener" target="_blank">
+            &ldquo;Purity Test evolves, spreads beyond Rice&rdquo;
+          </a>
+          , for the 1924 average and the 2017 visit count; <em>The Independent</em>,{' '}
+          <a href={SOURCES.independent2022.href} rel="noopener" target="_blank">
+            July 11, 2022
+          </a>
+          ; and{' '}
+          <a href={SOURCES.wikipedia.href} rel="noopener" target="_blank">
             Wikipedia, &ldquo;Purity test&rdquo;
           </a>{' '}
-          (which cites the <em>Rice Thresher</em> archives and The Independent, 2021).
+          for the 1930s, 1988 and 1994 dates.
         </p>
       </GuideLayout>
     </>
