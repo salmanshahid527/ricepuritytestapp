@@ -1,16 +1,21 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { ArticleSchema } from '@/components/ArticleSchema';
+import { AboutThisGuide } from '@/components/molecules/AboutThisGuide';
 import { GuideLayout } from '@/components/templates/GuideLayout';
 import { AdSlot } from '@/components/organisms/AdSlot';
 import { CtaBox } from '@/components/organisms/CtaBox';
 import { RelatedGuides } from '@/components/organisms/RelatedGuides';
 import { questions, QUESTION_GROUPS } from '@/lib/questions';
-import { QUESTION_NOTES, MPS_NOTE } from '@/lib/questionNotes';
+import { QUESTION_NOTES, MPS_NOTE, MOST_ASKED } from '@/lib/questionNotes';
 import { GUIDES } from '@/lib/guides';
+import { PAGE_DATES, reviewedOn } from '@/lib/dates';
 import { BASE_URL } from '@/lib/site';
 
-const URL = `${BASE_URL}/rice-purity-test-questions`;
+const PATH = '/rice-purity-test-questions';
+const URL = `${BASE_URL}${PATH}`;
+const DATES = PAGE_DATES[PATH];
+const NOTE_COUNT = Object.keys(QUESTION_NOTES).length;
 const TITLE = 'Rice Purity Test Questions: All 100, Explained';
 const DESCRIPTION =
   'The full list of 100 Rice Purity Test questions, grouped by theme, with plain-English meanings for the confusing ones (kissed horizontally, MPS, sensual context and more).';
@@ -33,6 +38,7 @@ const REPLACED = [
 const TOC = [
   { id: 'short-version', label: 'The short version' },
   { id: 'full-list', label: 'The full list of 100 questions' },
+  { id: 'most-asked', label: 'Items people often ask about' },
   ...QUESTION_GROUPS.map((g) => ({ id: `group-${g.from}`, label: `${g.name} (${g.from}–${g.to})` })),
   { id: 'how-grouped', label: 'How the questions are grouped' },
   { id: 'mps', label: 'What MPS means' },
@@ -42,20 +48,22 @@ const TOC = [
 ];
 
 /**
- * Answer-first: the four-line summary (as on the live page), then the full list.
- * The grouping table and background follow the list.
+ * Answer-first: the four-line summary (as on the live page), then the full list,
+ * with a jump list to the most-asked items. Every item has an id (#q14), so the
+ * home page, the test and search results can link straight to one question.
  */
 export default function QuestionsPage() {
   return (
     <>
-      <ArticleSchema headline={TITLE} datePublished="2026-01-10" dateModified="2026-09-27" url={URL} description={DESCRIPTION} />
+      <ArticleSchema headline={TITLE} datePublished={DATES.published} dateModified={DATES.modified} url={URL} description={DESCRIPTION} />
       <GuideLayout
-        crumbs={[{ label: 'Rice Purity Test Questions', href: '/rice-purity-test-questions' }]}
+        crumbs={[{ label: 'Rice Purity Test Questions', href: PATH }]}
         title="Rice Purity Test Questions: All 100, Explained"
-        meta="Last reviewed September 27, 2026 · For adults 18+"
+        meta={`Last reviewed ${reviewedOn(PATH)} · For adults 18+`}
         toc={TOC}
         footer={
           <>
+            <AboutThisGuide path={PATH} />
             <AdSlot name="questions-end" className="mt-14" />
             <RelatedGuides guides={[GUIDES.score, GUIDES.age, GUIDES.meaning, GUIDES.howTo]} />
             <CtaBox heading="Ready to count yours?" secondary={{ href: GUIDES.age.href, label: 'See averages by age' }}>
@@ -65,22 +73,26 @@ export default function QuestionsPage() {
         }
       >
         <p className="sm:text-lead" style={{ marginTop: 0 }}>
-          Below is every question on this site&apos;s version of the Rice Purity Test, grouped by theme, with short
-          plain-English notes under the ones people most often ask about. Each item starts with an unspoken &ldquo;Have you
-          ever&hellip;&rdquo;, so you check it if it has happened at any point in your life.
+          Every question on this site&apos;s version of the Rice Purity Test, grouped by theme, with short notes on the{' '}
+          {NOTE_COUNT} items whose wording trips people up.
         </p>
 
-        <section aria-labelledby="short-version" className="mt-6 rounded-lg border border-brand-tint bg-brand-soft p-5 sm:p-6">
-          <h2 id="short-version" style={{ marginTop: 0 }}>
+        <section aria-labelledby="short-version" className="mt-5 rounded-lg border border-brand-tint bg-brand-soft px-4 py-4 sm:px-5">
+          <h2 id="short-version" className="text-small font-semibold text-brand-deep" style={{ marginTop: 0 }}>
             The short version
           </h2>
-          <ul className="mt-3">
-            <li>There are 100 questions and every one is worth one point.</li>
-            <li>Your score is 100 minus the number of boxes you check, so 30 checks gives a 70.</li>
-            <li>The list runs roughly from mild (holding hands) to rare (items near the end).</li>
-            <li>
-              Your answers stay in your browser. For what a given number means, see the{' '}
-              <Link href="/rice-purity-test-score">score guide</Link>.
+          <ul className="mt-2 grid list-none grid-cols-2 gap-x-5 gap-y-2 !pl-0 text-small text-ink-2">
+            <li style={{ marginTop: 0 }}>
+              <strong>100 questions</strong>, one point each
+            </li>
+            <li style={{ marginTop: 0 }}>
+              <strong>Score = 100 − checks</strong>, so 30 checks gives a 70
+            </li>
+            <li style={{ marginTop: 0 }}>
+              Each item means <strong>&ldquo;Have you ever&hellip;?&rdquo;</strong>, at any point in your life
+            </li>
+            <li style={{ marginTop: 0 }}>
+              Mild items first, rarest last. <Link href={GUIDES.score.href}>What scores mean</Link>
             </li>
           </ul>
         </section>
@@ -89,11 +101,42 @@ export default function QuestionsPage() {
           <h2 id="full-list" style={{ marginTop: '1.1em' }}>
             The full list of 100 questions
           </h2>
-          <p className="mt-1 text-small text-ink-3">
-            Notes in grey explain wording that trips people up. They describe what a phrase means, not whether you should
-            have done it.
-          </p>
-          <div className="mt-5 space-y-10">
+          <nav aria-labelledby="most-asked" className="mt-3">
+            <p id="most-asked" className="text-small font-semibold text-ink">
+              Items people often ask about
+            </p>
+            <ul className="-mx-4 mt-2 flex w-auto list-none gap-2 overflow-x-auto px-4 pb-1 sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0">
+              {MOST_ASKED.map(({ id, label }) => (
+                <li key={id} className="shrink-0" style={{ marginTop: 0 }}>
+                  <a
+                    href={`#q${id}`}
+                    className="inline-flex min-h-tap items-center whitespace-nowrap rounded-full border border-line bg-surface px-3.5 text-xs font-medium text-ink-2 no-underline hover:border-brand hover:text-brand-deep"
+                  >
+                    <span className="mr-1 tabular-nums text-ink-3">{id}.</span>
+                    {label}
+                  </a>
+                </li>
+              ))}
+              <li className="shrink-0" style={{ marginTop: 0 }}>
+                <a
+                  href="#mps"
+                  className="inline-flex min-h-tap items-center whitespace-nowrap rounded-full border border-line bg-surface px-3.5 text-xs font-medium text-ink-2 no-underline hover:border-brand hover:text-brand-deep"
+                >
+                  What MPS means
+                </a>
+              </li>
+              <li className="shrink-0" style={{ marginTop: 0 }}>
+                <a
+                  href="#question-mark"
+                  className="inline-flex min-h-tap items-center whitespace-nowrap rounded-full border border-line bg-surface px-3.5 text-xs font-medium text-ink-2 no-underline hover:border-brand hover:text-brand-deep"
+                >
+                  The question mark
+                </a>
+              </li>
+            </ul>
+          </nav>
+
+          <div className="mt-6 space-y-10">
             {QUESTION_GROUPS.map((g) => (
               <section key={g.name} id={`group-${g.from}`} aria-labelledby={`group-${g.from}-h`}>
                 <h3 id={`group-${g.from}-h`} className="flex flex-wrap items-baseline gap-x-2" style={{ marginTop: 0 }}>
@@ -102,19 +145,22 @@ export default function QuestionsPage() {
                     (questions {g.from}–{g.to})
                   </span>
                 </h3>
-                <ol start={g.from} className="card mt-3 divide-y divide-line !pl-0" style={{ listStyle: 'none' }}>
+                <ol start={g.from} className="card mt-3 divide-y divide-line overflow-hidden !pl-0" style={{ listStyle: 'none' }}>
                   {questions
                     .filter((q) => q.id >= g.from && q.id <= g.to)
                     .map((q) => {
                       const note = QUESTION_NOTES[q.id];
+                      // Name the phrase only when the note is about part of the question.
+                      const showTerm = note && !q.text.toLowerCase().startsWith(note.term.toLowerCase());
                       return (
-                        <li key={q.id} className="flex gap-3 px-4 py-3 sm:px-5" style={{ marginTop: 0 }}>
+                        <li key={q.id} id={`q${q.id}`} className="deep-link flex gap-3 px-4 py-3 sm:px-5" style={{ marginTop: 0 }}>
                           <span className="w-7 shrink-0 text-right font-semibold tabular-nums text-ink-3">{q.id}.</span>
                           <span className="min-w-0 flex-1">
                             <span className="text-ink">{q.text}</span>
                             {note && (
-                              <span className="mt-1.5 block rounded-md bg-sunken px-3 py-2 text-small text-ink-2">
-                                <strong>{note.term}:</strong> {note.note}
+                              <span className="mt-1.5 block border-l-2 border-line-strong pl-3 text-small text-ink-2">
+                                {showTerm && <strong className="font-semibold text-ink">{note.term}: </strong>}
+                                {note.note}
                               </span>
                             )}
                           </span>
@@ -125,15 +171,21 @@ export default function QuestionsPage() {
               </section>
             ))}
           </div>
+          <p className="mt-5 text-small text-ink-3">
+            The notes under an item explain what a phrase means or what counts. They describe the wording, not whether you should
+            have done it.
+          </p>
         </section>
 
         <AdSlot name="questions-mid" />
 
         <h2 id="how-grouped">How the 100 questions are grouped</h2>
         <p>
-          The list isn&apos;t split into official sections, but it clusters into six themes. Knowing where each theme sits
-          helps explain why two people with the same score can have very different histories: one may have checked mostly
-          alcohol and school items, the other mostly dating ones.
+          The list isn&apos;t split into official categories, but it clusters into six themes. Knowing where each theme
+          sits helps explain why two people with the same score can have very different histories: one may have checked
+          mostly alcohol and school items, the other mostly dating ones. It is also why age matters so much, since the
+          later themes take years to add up (see the{' '}
+          <Link href={GUIDES.age.href}>average score by age</Link>).
         </p>
         <div className="table-wrap">
           <table className="table-clean">
@@ -193,10 +245,16 @@ export default function QuestionsPage() {
           <li>If an item is ambiguous and your first reaction is &ldquo;technically, yes&rdquo;, check it.</li>
           <li>Nobody sees your answers, so there&apos;s no reason to round up or down.</li>
         </ul>
+        <p>
+          More on answering honestly is in <Link href={GUIDES.howTo.href}>how to take the test</Link>.
+        </p>
         <p className="text-small text-ink-3">
           Some items touch on sex, substances and the law. If answering brings up something difficult, you don&apos;t have
-          to finish, and it can help to talk to someone. In the US you can call or text 988; outside the US,
-          findahelpline.com lists free services by country.
+          to finish, and it can help to talk to someone. In the US you can call or text 988; outside the US,{' '}
+          <a href="https://findahelpline.com" rel="noopener" target="_blank">
+            findahelpline.com
+          </a>{' '}
+          lists free services by country.
         </p>
       </GuideLayout>
     </>
