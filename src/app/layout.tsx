@@ -36,9 +36,15 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  // favicon.ico (16/32/48 inside) for Google Search and older browsers, the SVG for modern ones
+  // (sizes 32x32, not 'any', so Chrome still prefers the SVG),
+  // and a solid 180px PNG for iOS, which ignores SVG touch icons.
   icons: {
-    icon: '/icon.svg',
-    apple: '/icon.svg',
+    icon: [
+      { url: '/favicon.ico', sizes: '32x32' },
+      { url: '/icon.svg', type: 'image/svg+xml' },
+    ],
+    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
   },
   manifest: '/site.webmanifest',
   openGraph: {
@@ -75,7 +81,7 @@ export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
-  themeColor: '#faf8f3',
+  themeColor: '#ffffff',
 };
 
 /** Sitewide entities. WebApplication is added on the pages that host the test (/ and /test). */
