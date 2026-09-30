@@ -11,9 +11,11 @@ import './globals.css';
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 const ADSENSE_CLIENT = 'ca-pub-2046389894156038';
 
-// One display face for headings, self-hosted by next/font with a size-adjusted fallback
-// (no layout shift on swap). Body text uses the system UI font: zero bytes, instant paint.
-const fraunces = Fraunces({ subsets: ['latin'], weight: ['600'], display: 'swap', variable: '--font-display' });
+// One display face for headings, self-hosted by next/font with a size-adjusted fallback.
+// display: 'optional' — on slow mobile connections a late font swap reflowed the whole page
+// (production CLS 1.0 on PageSpeed); the fallback is used for that view instead.
+// Body text uses the system UI font: zero bytes, instant paint.
+const fraunces = Fraunces({ subsets: ['latin'], weight: ['600'], display: 'optional', variable: '--font-display' });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.ricepuritytestapp.com'),
