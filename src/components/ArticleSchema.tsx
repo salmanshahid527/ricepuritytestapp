@@ -1,6 +1,6 @@
-import React from 'react';
-
-const BASE_URL = 'https://www.ricepuritytestapp.com';
+import { JsonLd } from './atoms/JsonLd';
+import { BASE_URL } from '@/lib/site';
+import { ORGANIZATION_REF } from '@/lib/schema';
 
 interface ArticleSchemaProps {
   headline: string;
@@ -10,41 +10,28 @@ interface ArticleSchemaProps {
   description: string;
 }
 
-export function ArticleSchema({
-  headline,
-  datePublished,
-  dateModified,
-  url,
-  description,
-}: ArticleSchemaProps) {
-  const schema = {
-    '@context': 'https://schema.org',
-    '@type': 'BlogPosting',
-    headline,
-    datePublished,
-    dateModified: dateModified ?? datePublished,
-    author: {
-      '@type': 'Organization',
-      name: 'Rice Purity Test App',
-      url: `${BASE_URL}/about`,
-    },
-    publisher: {
-      '@type': 'Organization',
-      name: 'Rice Purity Test App',
-      logo: {
-        '@type': 'ImageObject',
-        url: `${BASE_URL}/og-image.jpg`,
-        width: 1200,
-        height: 630,
-      },
-    },
-    mainEntityOfPage: { '@type': 'WebPage', '@id': url },
-    description,
-  };
+/**
+ * BlogPosting markup for guide pages. The author is the site itself (an
+ * Organization), never an invented person. Dates are the real content dates;
+ * don't change them for cosmetic edits.
+ */
+export function ArticleSchema({ headline, datePublished, dateModified, url, description }: ArticleSchemaProps) {
   return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    <JsonLd
+      data={{
+        '@context': 'https://schema.org',
+        '@type': 'BlogPosting',
+        headline,
+        description,
+        datePublished,
+        dateModified: dateModified ?? datePublished,
+        inLanguage: 'en-US',
+        image: `${BASE_URL}/og-image.jpg`,
+        author: ORGANIZATION_REF,
+        publisher: ORGANIZATION_REF,
+        isPartOf: { '@id': `${BASE_URL}/#website` },
+        mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+      }}
     />
   );
 }

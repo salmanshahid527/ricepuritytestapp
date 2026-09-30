@@ -1,38 +1,28 @@
-import React from 'react';
+import Link from 'next/link';
+import type { ComponentProps } from 'react';
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary' | 'outline';
-  size?: 'sm' | 'md' | 'lg';
-  children: React.ReactNode;
+type Variant = 'primary' | 'secondary' | 'quiet';
+type Size = 'md' | 'lg';
+
+const classes = (variant: Variant, size: Size, extra = '') =>
+  ['btn', `btn-${variant}`, size === 'lg' ? 'btn-lg' : '', extra].filter(Boolean).join(' ');
+
+interface ButtonProps extends ComponentProps<'button'> {
+  variant?: Variant;
+  size?: Size;
 }
 
-export const Button: React.FC<ButtonProps> = ({
-  variant = 'primary',
-  size = 'md',
-  children,
-  className = '',
-  ...props
-}) => {
-  const baseClasses = 'font-medium rounded-lg transition-all duration-300 focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:outline-none active:scale-95';
-  
-  const variantClasses = {
-    primary: 'bg-green-500 hover:bg-green-600 text-white shadow-lg shadow-green-500/30',
-    secondary: 'bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-green-400 shadow-sm',
-    outline: 'border-2 border-green-500 text-green-500 hover:bg-green-50',
-  };
+/** An action. For navigation use ButtonLink so it stays a real link. */
+export function Button({ variant = 'primary', size = 'md', className, type = 'button', ...props }: ButtonProps) {
+  return <button type={type} className={classes(variant, size, className)} {...props} />;
+}
 
-  const sizeClasses = {
-    sm: 'px-4 py-2 text-sm',
-    md: 'px-6 py-3 text-base',
-    lg: 'px-8 py-4 text-lg',
-  };
+interface ButtonLinkProps extends ComponentProps<typeof Link> {
+  variant?: Variant;
+  size?: Size;
+}
 
-  return (
-    <button
-      className={`${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`}
-      {...props}
-    >
-      {children}
-    </button>
-  );
-};
+/** A link styled as a button (never a <button> nested inside an <a>). */
+export function ButtonLink({ variant = 'primary', size = 'md', className, ...props }: ButtonLinkProps) {
+  return <Link className={classes(variant, size, className)} {...props} />;
+}

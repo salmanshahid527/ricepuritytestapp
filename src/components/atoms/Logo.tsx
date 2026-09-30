@@ -1,132 +1,25 @@
-import React from 'react';
 import Link from 'next/link';
 
-interface LogoProps {
-  size?: 'sm' | 'md' | 'lg';
-  showText?: boolean;
-  showTagline?: boolean;
-  className?: string;
-  href?: string;
+/** The hexagon-and-check mark from the original logo, simplified for small sizes. */
+export function LogoMark({ className = 'h-6 w-6 sm:h-7 sm:w-7' }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 64 64" className={className} aria-hidden="true" focusable="false">
+      <path d="M17 6h30l15 26-15 26H17L2 32z" fill="rgb(var(--c-brand))" />
+      <path d="M21 33l7.5 7.5L44 25" fill="none" stroke="#fff" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
 }
 
-export const Logo: React.FC<LogoProps> = ({
-  size = 'md',
-  showText = true,
-  showTagline = false,
-  className = '',
-  href,
-}) => {
-  const sizeClasses = {
-    sm: { icon: 'w-8 h-8', text: 'text-lg', tagline: 'text-xs' },
-    md: { icon: 'w-12 h-12', text: 'text-xl', tagline: 'text-sm' },
-    lg: { icon: 'w-16 h-16', text: 'text-2xl', tagline: 'text-base' },
-  };
-
-  const currentSize = sizeClasses[size];
-
-  const logoContent = (
-    <div className={`flex items-center space-x-3 ${className}`}>
-      {/* SVG Logo */}
-      <div className={`${currentSize.icon} flex-shrink-0`}>
-        <svg
-          viewBox="0 0 120 120"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-full h-full"
-          role="img"
-          aria-label="Rice Purity Test Logo"
-        >
-          <title>Rice Purity Test logo</title>
-          <desc>Logo featuring a head silhouette with a green hexagon checkmark and data points, representing the Rice Purity Test</desc>
-          {/* Head Silhouette */}
-          <path
-            d="M30 60 C30 40, 35 25, 50 20 C65 15, 80 18, 90 30 C100 42, 105 55, 100 70 C95 85, 85 95, 70 100 C55 105, 40 100, 30 85 C20 70, 20 55, 30 60 Z"
-            fill="#1e3a8a"
-            className="transition-colors"
-          />
-          
-          {/* Hexagon with Checkmark */}
-          <g transform="translate(65, 35)">
-            {/* Hexagon */}
-            <path
-              d="M15 -26 L30 0 L15 26 L-15 26 L-30 0 L-15 -26 Z"
-              fill="#10b981"
-            />
-            {/* Checkmark */}
-            <path
-              d="M-8 0 L-2 6 L8 -4"
-              stroke="white"
-              strokeWidth="3"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              fill="none"
-            />
-          </g>
-          
-          {/* Data Points / Pins */}
-          <g>
-            {/* Pin 1 */}
-            <line
-              x1="100"
-              y1="50"
-              x2="110"
-              y2="45"
-              stroke="#9ca3af"
-              strokeWidth="2"
-              strokeLinecap="round"
-            />
-            <circle cx="110" cy="45" r="3" fill="#9ca3af" />
-            
-            {/* Pin 2 */}
-            <line
-              x1="100"
-              y1="70"
-              x2="110"
-              y2="70"
-              stroke="#9ca3af"
-              strokeWidth="2"
-              strokeLinecap="round"
-            />
-            <circle cx="110" cy="70" r="3" fill="#9ca3af" />
-            
-            {/* Pin 3 */}
-            <line
-              x1="100"
-              y1="90"
-              x2="110"
-              y2="95"
-              stroke="#9ca3af"
-              strokeWidth="2"
-              strokeLinecap="round"
-            />
-            <circle cx="110" cy="95" r="3" fill="#9ca3af" />
-          </g>
-        </svg>
-      </div>
-
-      {/* Text */}
-      {showText && (
-        <div className="flex flex-col">
-          <span className={`font-bold text-blue-900 ${currentSize.text}`}>
-            Rice Purity Test
-          </span>
-          {showTagline && (
-            <span className={`text-gray-500 ${currentSize.tagline} -mt-1`}>
-              Mind. Unfiltered. Data.
-            </span>
-          )}
-        </div>
-      )}
-    </div>
+export function Logo() {
+  return (
+    <Link
+      href="/"
+      className="-ml-1 inline-flex min-h-tap shrink-0 items-center gap-1.5 rounded-md px-1 text-ink hover:text-brand-deep sm:gap-2"
+    >
+      <LogoMark />
+      <span className="whitespace-nowrap font-display text-[1rem] font-semibold leading-none tracking-[-0.01em] min-[400px]:text-[1.0625rem] sm:text-[1.1875rem]">
+        Rice Purity Test
+      </span>
+    </Link>
   );
-
-  if (href) {
-    return (
-      <Link href={href} className="hover:opacity-80 transition-opacity">
-        {logoContent}
-      </Link>
-    );
-  }
-
-  return logoContent;
-};
+}

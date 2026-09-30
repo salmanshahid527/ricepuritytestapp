@@ -1,36 +1,73 @@
 import type { Config } from "tailwindcss";
 
+/**
+ * Design system. Every colour is a CSS variable (RGB channels) defined in
+ * src/app/globals.css, so opacity modifiers like `bg-brand/10` still work and
+ * the palette lives in one place.
+ */
+const token = (name: string) => `rgb(var(--c-${name}) / <alpha-value>)`;
+
 const config: Config = {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/lib/**/*.{js,ts}",
   ],
   theme: {
     extend: {
-      animation: {
-        'fade-in': 'fadeIn 0.5s ease-out',
-        'fade-in-delay-1': 'fadeIn 0.5s ease-out 0.1s',
-        'fade-in-delay-2': 'fadeIn 0.5s ease-out 0.2s',
-        'slide-up': 'slideUp 0.5s ease-out',
-        'slide-up-delay-1': 'slideUp 0.5s ease-out 0.1s',
-        'slide-up-delay-2': 'slideUp 0.5s ease-out 0.2s',
-        'slide-up-delay-3': 'slideUp 0.5s ease-out 0.3s',
-        'scale-in': 'scaleIn 0.3s ease-out',
+      colors: {
+        paper: token("paper"),
+        surface: token("surface"),
+        sunken: token("sunken"),
+        line: { DEFAULT: token("line"), strong: token("line-strong") },
+        control: token("control"),
+        ink: { DEFAULT: token("ink"), 2: token("ink-2"), 3: token("ink-3") },
+        brand: {
+          DEFAULT: token("brand"),
+          strong: token("brand-strong"),
+          deep: token("brand-deep"),
+          soft: token("brand-soft"),
+          tint: token("brand-tint"),
+        },
+        note: { DEFAULT: token("note"), ink: token("note-ink"), line: token("note-line") },
+        focus: token("focus"),
       },
-      keyframes: {
-        fadeIn: {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '1' },
-        },
-        slideUp: {
-          '0%': { transform: 'translateY(20px)', opacity: '0' },
-          '100%': { transform: 'translateY(0)', opacity: '1' },
-        },
-        scaleIn: {
-          '0%': { transform: 'scale(0.95)', opacity: '0' },
-          '100%': { transform: 'scale(1)', opacity: '1' },
-        },
+      fontFamily: {
+        sans: [
+          "ui-sans-serif", "system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto",
+          "Helvetica Neue", "Arial", "sans-serif",
+        ],
+        display: ["var(--font-display)", "ui-serif", "Georgia", "serif"],
+      },
+      fontSize: {
+        // Fluid type scale: [mobile → desktop]
+        display: ["clamp(2.5rem, 1.9rem + 3vw, 4rem)", { lineHeight: "1.04", letterSpacing: "-0.02em" }],
+        h1: ["clamp(2rem, 1.6rem + 1.9vw, 3rem)", { lineHeight: "1.1", letterSpacing: "-0.015em" }],
+        h2: ["clamp(1.4rem, 1.25rem + 0.7vw, 1.8rem)", { lineHeight: "1.2", letterSpacing: "-0.01em" }],
+        h3: ["1.1875rem", { lineHeight: "1.35" }],
+        lead: ["clamp(1.0625rem, 1rem + 0.3vw, 1.1875rem)", { lineHeight: "1.65" }],
+        body: ["1.0625rem", { lineHeight: "1.7" }],
+        small: ["0.9375rem", { lineHeight: "1.55" }],
+        xs: ["0.8125rem", { lineHeight: "1.5" }],
+      },
+      maxWidth: {
+        measure: "68ch",
+        page: "72rem",
+      },
+      borderRadius: {
+        sm: "6px",
+        DEFAULT: "10px",
+        md: "10px",
+        lg: "16px",
+        xl: "22px",
+      },
+      boxShadow: {
+        card: "0 1px 2px rgb(22 33 28 / 0.05), 0 2px 8px rgb(22 33 28 / 0.04)",
+        lift: "0 2px 4px rgb(22 33 28 / 0.06), 0 12px 32px rgb(22 33 28 / 0.08)",
+      },
+      spacing: {
+        // Minimum tap target (WCAG 2.5.5 / Apple HIG)
+        tap: "2.75rem",
       },
     },
   },

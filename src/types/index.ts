@@ -11,6 +11,4 @@ export interface ScoreInterpretation {
   range: string;
   title: string;
   description: string;
-  colorClass: string;
-  bgClass: string;
 }

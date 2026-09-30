@@ -17,7 +17,7 @@ A modern, animated Rice Purity Test single-page application built with Next.js 1
 
 - **Next.js 16** (App Router)
 - **TypeScript** (Strict mode)
-- **Tailwind CSS 4** (Utility-first styling)
+- **Tailwind CSS 3** (Utility-first styling, design tokens in `tailwind.config.ts` and `src/app/globals.css`)
 - **Atomic Design** (Component architecture)
 
 ## Project Structure
@@ -102,7 +102,9 @@ Score = 100 - (number of checked boxes)
 
 | Variable | Description |
 |----------|-------------|
-| `NEXT_PUBLIC_GA_MEASUREMENT_ID` | Google Analytics 4 Measurement ID (e.g. `G-XXXXXXXXXX`). Optional; when set, page views and client-side route changes are tracked. |
+| `NEXT_PUBLIC_GA_MEASUREMENT_ID` | Google Analytics 4 Measurement ID (e.g. `G-XXXXXXXXXX`). Optional; when set, page views, client-side route changes and a `test_complete` event (no score or answers) are tracked. |
+| `NEXT_PUBLIC_ADSENSE_SLOTS` | Optional. When set, renders neutral fixed-height placeholders (`AdSlot`) at the reserved ad positions so a future ad unit can't shift content. Contains no ad code. |
+| `NEXT_PUBLIC_STATS_ENABLED` | `1` shows the opt-in "add my score" form. Needs `UPSTASH_REDIS_REST_URL` and `UPSTASH_REDIS_REST_TOKEN` on the server. Real averages appear only once an age band has 50+ responses. |
 
 ## License
 
