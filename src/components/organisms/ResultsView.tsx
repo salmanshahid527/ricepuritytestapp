@@ -59,10 +59,21 @@ const STATUS_LABEL = {
   below: 'Below the range',
 } as const;
 
+/**
+ * Score colours say where a score sits against a range, never whether it is good:
+ * sky = fewer items checked than the range, green = within it, marigold = more.
+ * The same wording is always shown in text next to the colour.
+ */
+const TONE = {
+  above: { bar: 'border-t-sky', panel: 'bg-sky-soft', ink: 'text-sky-ink' },
+  within: { bar: 'border-t-brand-bright', panel: 'bg-brand-soft', ink: 'text-brand-deep' },
+  below: { bar: 'border-t-accent', panel: 'bg-note', ink: 'text-note-ink' },
+} as const;
+
 /** Reserved-size placeholder used before the score is read from storage (no layout shift). */
-function ScoreCardShell({ children }: { children?: ReactNode }) {
+function ScoreCardShell({ children, tone = '' }: { children?: ReactNode; tone?: string }) {
   return (
-    <div className="card grid min-h-[22rem] gap-6 p-6 sm:min-h-[18rem] sm:grid-cols-[auto_minmax(0,1fr)] sm:items-center sm:gap-10 sm:p-10">
+    <div className={`card grid min-h-[22rem] gap-6 border-t-[6px] p-6 sm:min-h-[18rem] sm:grid-cols-[auto_minmax(0,1fr)] sm:items-center sm:gap-10 sm:p-10 ${tone}`}>
       {children}
     </div>
   );
@@ -122,6 +133,7 @@ export function ResultsView({ liveStats }: { liveStats?: ReactNode }) {
   const lookup = lookupBandFor(score);
   const checked = TOTAL_QUESTIONS - score;
   const overall = relation(score, OVERALL_AVERAGE.low, OVERALL_AVERAGE.high);
+  const tone = TONE[relation(score, TYPICAL_ADULT.low, TYPICAL_ADULT.high)];
 
   return (
     <div className="page pt-8 sm:pt-10">
@@ -129,18 +141,18 @@ export function ResultsView({ liveStats }: { liveStats?: ReactNode }) {
 
       {/* The answer: score, band, and what it means */}
       <div className="mt-6">
-        <ScoreCardShell>
-          <div className="text-center sm:text-left">
+        <ScoreCardShell tone={tone.bar}>
+          <div className={`rounded-lg px-6 py-5 text-center sm:px-8 sm:py-6 sm:text-left ${tone.panel}`}>
             <p className="sr-only">
               Your score is {score} out of {TOTAL_QUESTIONS}.
             </p>
-            <p aria-hidden="true" className="font-display text-[6.5rem] font-semibold leading-none tracking-[-0.03em] text-brand-deep tabular-nums sm:text-[8rem]">
+            <p aria-hidden="true" className={`font-display text-[6.5rem] font-semibold leading-none tracking-[-0.03em] tabular-nums sm:text-[8rem] ${tone.ink}`}>
               <span className="inline-block min-w-[3ch] text-center sm:text-left">{shown ?? score}</span>
             </p>
             <p className="mt-1 text-small font-medium text-ink-3">out of {TOTAL_QUESTIONS}</p>
           </div>
-          <div>
-            <p className="eyebrow">Score range {band.range.replace('-', '–')}</p>
+          <div className="max-w-measure">
+            <p className={`eyebrow ${tone.ink}`}>Score range {band.range.replace('-', '–')}</p>
             <h2 className="mt-2 font-display text-h2 font-semibold text-ink">{band.title}</h2>
             <p className="mt-2 text-ink-2">{band.description}</p>
             <p className="mt-3 text-small text-ink-3">
@@ -208,9 +220,7 @@ export function ResultsView({ liveStats }: { liveStats?: ReactNode }) {
                     <td className="whitespace-nowrap">{range(e)}</td>
                     <td>
                       <span
-                        className={`inline-flex items-center gap-1.5 whitespace-nowrap font-medium ${
-                          r === 'within' ? 'text-brand-deep' : 'text-ink-2'
-                        }`}
+                        className={`inline-flex items-center gap-1.5 whitespace-nowrap font-medium ${TONE[r].ink}`}
                       >
                         {r === 'within' && <Icon name="check" className="h-4 w-4" />}
                         {STATUS_LABEL[r]}

@@ -6,7 +6,7 @@ function Fallback() {
   return (
     <div className="page pt-8 sm:pt-10">
       <h1 className="font-display text-h1 font-semibold text-ink">Your Rice Purity score</h1>
-      <div className="card mt-6 min-h-[22rem] p-6 sm:min-h-[18rem] sm:p-10">
+      <div className="card mt-6 min-h-[22rem] border-t-[6px] p-6 sm:min-h-[18rem] sm:p-10">
         <p className="text-ink-3" role="status">
           Loading your score…
         </p>

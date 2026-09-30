@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import Script from 'next/script';
-import { Fraunces } from 'next/font/google';
+import { Archivo } from 'next/font/google';
 import { GoogleAnalyticsRouteTracker } from '@/components/GoogleAnalyticsRouteTracker';
 import { Header } from '@/components/organisms/Header';
 import { Footer } from '@/components/organisms/Footer';
@@ -11,9 +11,12 @@ import './globals.css';
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 const ADSENSE_CLIENT = 'ca-pub-2046389894156038';
 
-// One display face for headings, self-hosted by next/font with a size-adjusted fallback
-// (no layout shift on swap). Body text uses the system UI font: zero bytes, instant paint.
-const fraunces = Fraunces({ subsets: ['latin'], weight: ['600'], display: 'swap', variable: '--font-display' });
+// One display face for headings: Archivo Bold, a sturdy grotesque with scoreboard numerals,
+// self-hosted by next/font (one weight, latin, ~17 KB) with a size-adjusted Arial fallback.
+// display: 'optional' — on slow mobile connections a late font swap reflowed the whole page
+// (production CLS 1.0 on PageSpeed); the fallback is used for that view instead.
+// Body text uses the system UI font: zero bytes, instant paint.
+const display = Archivo({ subsets: ['latin'], weight: ['700'], display: 'optional', variable: '--font-display' });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.ricepuritytestapp.com'),
@@ -34,9 +37,15 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  // favicon.ico (16/32/48 inside) for Google Search and older browsers, the SVG for modern ones
+  // (sizes 32x32, not 'any', so Chrome still prefers the SVG),
+  // and a solid 180px PNG for iOS, which ignores SVG touch icons.
   icons: {
-    icon: '/icon.svg',
-    apple: '/icon.svg',
+    icon: [
+      { url: '/favicon.ico', sizes: '32x32' },
+      { url: '/icon.svg', type: 'image/svg+xml' },
+    ],
+    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
   },
   manifest: '/site.webmanifest',
   openGraph: {
@@ -73,7 +82,7 @@ export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
-  themeColor: '#faf8f3',
+  themeColor: '#ffffff',
 };
 
 /** Sitewide entities. WebApplication is added on the pages that host the test (/ and /test). */
@@ -99,7 +108,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={fraunces.variable}>
+    <html lang="en" className={display.variable}>
       <head>
         <script
           type="application/ld+json"

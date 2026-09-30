@@ -4,7 +4,7 @@ import Link from 'next/link';
 export function LogoMark({ className = 'h-6 w-6 sm:h-7 sm:w-7' }: { className?: string }) {
   return (
     <svg viewBox="0 0 64 64" className={className} aria-hidden="true" focusable="false">
-      <path d="M17 6h30l15 26-15 26H17L2 32z" fill="rgb(var(--c-brand))" />
+      <path d="M17 6h30l15 26-15 26H17L2 32z" fill="rgb(var(--c-brand-bright))" />
       <path d="M21 33l7.5 7.5L44 25" fill="none" stroke="#fff" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );

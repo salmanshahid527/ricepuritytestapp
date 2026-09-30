@@ -14,12 +14,12 @@ export function ScoreScale({ score, className = '' }: { score?: number; classNam
         <div className="absolute inset-x-0 top-5 h-2.5 rounded-full bg-line" />
         {/* typical adult band */}
         <div
-          className="absolute top-5 h-2.5 rounded-full bg-brand/35"
+          className="absolute top-5 h-2.5 rounded-full bg-brand-bright"
           style={{ left: pct(TYPICAL_ADULT.low), width: pct(TYPICAL_ADULT.high - TYPICAL_ADULT.low) }}
         />
         {/* estimated average */}
         <div
-          className="absolute top-[0.9rem] h-[1.4rem] rounded-sm bg-brand"
+          className="absolute top-[0.9rem] h-[1.4rem] rounded-sm bg-accent ring-2 ring-surface"
           style={{ left: pct(OVERALL_AVERAGE.low), width: pct(OVERALL_AVERAGE.high - OVERALL_AVERAGE.low) }}
         />
         {typeof score === 'number' && (
@@ -41,10 +41,10 @@ export function ScoreScale({ score, className = '' }: { score?: number; classNam
       </div>
       <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs text-ink-3">
         <span className="inline-flex items-center gap-1.5">
-          <span className="h-2.5 w-4 rounded-sm bg-brand/35" /> Typical adult range {range(TYPICAL_ADULT)}
+          <span className="h-2.5 w-4 rounded-sm bg-brand-bright" /> Typical adult range {range(TYPICAL_ADULT)}
         </span>
         <span className="inline-flex items-center gap-1.5">
-          <span className="h-2.5 w-4 rounded-sm bg-brand" /> Estimated average {range(OVERALL_AVERAGE)}
+          <span className="h-2.5 w-4 rounded-sm bg-accent" /> Estimated average {range(OVERALL_AVERAGE)}
         </span>
         {typeof score === 'number' && (
           <span className="inline-flex items-center gap-1.5">

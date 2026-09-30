@@ -173,7 +173,7 @@ export default function HomePage() {
       <JsonLd data={WEB_APPLICATION} />
 
       {/* Hero */}
-      <section className="page grid gap-10 pb-12 pt-10 sm:pt-14 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:items-center lg:gap-16 lg:pb-16">
+      <section className="page band-mint grid gap-10 pb-12 pt-10 sm:pt-14 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:items-center lg:gap-16 lg:pb-16">
         <div>
           <p className="eyebrow">A free, anonymous test for adults</p>
           <h1 className="mt-3 font-display text-display font-semibold text-ink">Rice Purity Test</h1>
@@ -204,8 +204,8 @@ export default function HomePage() {
           <AdultNotice className="mt-6 max-w-[60ch]" />
         </div>
 
-        <div className="card p-6 sm:p-8">
-          <p className="eyebrow text-ink-3">How the score works</p>
+        <div className="card rounded-xl p-6 sm:p-8">
+          <p className="eyebrow text-brand-deep">How the score works</p>
           <p className="mt-3 font-display text-[1.75rem] font-semibold leading-tight text-ink sm:text-[2rem]">
             100 − items checked
           </p>
@@ -224,7 +224,7 @@ export default function HomePage() {
       </section>
 
       {/* Facts */}
-      <section aria-label="About the test" className="border-y border-line bg-surface">
+      <section aria-label="About the test" className="border-b border-line bg-surface">
         <ul className="page grid gap-6 py-8 sm:grid-cols-3">
           {FACTS.map((f) => (
             <li key={f.title} className="flex gap-4">
@@ -303,7 +303,7 @@ export default function HomePage() {
       </section>
 
       {/* How it works */}
-      <section className="bg-surface py-14 sm:py-16" aria-labelledby="how-it-works">
+      <section className="bg-sunken py-14 sm:py-16" aria-labelledby="how-it-works">
         <div className="page">
           <h2 id="how-it-works" className={H2}>
             How It Works
@@ -311,8 +311,8 @@ export default function HomePage() {
           <ol className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {STEPS.map((s, i) => (
               <li key={s.title} className="relative">
-                <p className="flex items-center gap-2.5 text-xs font-semibold uppercase tracking-[0.08em] text-brand-deep">
-                  <span aria-hidden="true" className="grid h-8 w-8 place-content-center rounded-full border-2 border-brand font-display text-[0.9375rem] normal-case tracking-normal">
+                <p className="flex items-center gap-2.5 text-small font-semibold text-brand-deep">
+                  <span aria-hidden="true" className="grid h-9 w-10 place-content-center bg-brand font-display text-[1rem] text-white [clip-path:polygon(25%_0,75%_0,100%_50%,75%_100%,25%_100%,0_50%)]">
                     {i + 1}
                   </span>
                   Step {i + 1}

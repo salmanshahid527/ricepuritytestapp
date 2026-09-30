@@ -3,33 +3,54 @@
 @tailwind utilities;
 
 /*
- * Design tokens. Colours are RGB channels so Tailwind opacity modifiers work.
- * Every text/background pair used on the site meets WCAG AA (4.5:1) or better:
- *   ink on paper 15.6, ink-2 on paper 8.6, ink-3 on paper 5.2, ink-3 on sunken 4.9,
- *   brand on paper 5.9, white on brand 6.2, brand-deep on brand-soft 9.6,
- *   note-ink on note 6.0. Control borders (checkboxes) are 3.8:1 (WCAG 1.4.11).
+ * Design tokens: "green and gold scorecard". Campus colours for a campus tradition,
+ * on a crisp white page. Three hues, each with a job:
+ *   Pennant green  #047857  actions, links, checked boxes. Leaf #10B981 is the logo mark.
+ *   Pine           #064E3B  the bold bands (key answers, closing CTA) and text on tints.
+ *   Marigold       #FFB627  the one warm accent: CTA button, averages, "more checked" scores.
+ *   Navy ink       #14213D  text, from the navy of the original logo; sky is its light tint.
+ * Section rhythm: white page, mint bands (sunken), pine bands for answers and CTAs.
+ * Colours are RGB channels so Tailwind opacity modifiers work.
+ *
+ * Contrast (WCAG 2.x, computed), every text/background pair used on the site:
+ *   ink on white 16.0, on sunken 14.6, on brand-soft 14.2, on marigold 9.1
+ *   ink-2 on white 9.0, on sunken 8.2, on brand-soft 8.0, on note 60% 8.5
+ *   ink-3 on white 5.9, on sunken 5.4, on footer sunken/70 5.5, on brand-soft 5.3, on note 5.4
+ *   brand on white 5.5, on sunken 5.0, on brand-soft 4.9; white on brand 5.5, on brand-strong 7.0
+ *   white on brand-deep 9.7, white/85 on brand-deep 7.5; brand-deep on white 9.7,
+ *     on brand-soft 8.6, on sunken 8.9, on brand-tint 7.2
+ *   note-ink on note 6.3, on note 60% 6.5, on white 6.9; sky-ink on sky-soft 7.2, on white 8.3
+ *   error #A33A2B on brand-soft 5.8. Focus ring 6.7 on white, 6.1 on sunken, 6.0 on brand-soft.
+ * Non-text (WCAG 1.4.11, 3:1): control borders 4.3 on white, 3.9 on sunken, 3.8 on brand-soft.
+ * Leaf, sky and marigold are fills only (never text on white): 2.5, 3.3 and 1.8 on white.
  */
 @layer base {
   :root {
     color-scheme: light;
-    --c-paper: 250 248 243;       /* page background: warm off-white */
+    --c-paper: 255 255 255;       /* page background */
     --c-surface: 255 255 255;     /* cards, tables */
-    --c-sunken: 243 241 234;      /* quiet panels */
-    --c-line: 228 224 213;        /* hairlines */
-    --c-line-strong: 207 201 186;
-    --c-control: 122 132 126;     /* checkbox and input borders */
-    --c-ink: 22 33 28;            /* headings, body */
-    --c-ink-2: 63 75 69;          /* secondary text */
-    --c-ink-3: 95 107 101;        /* captions, meta */
-    --c-brand: 11 110 83;         /* primary actions and links */
-    --c-brand-strong: 8 90 68;    /* hover */
-    --c-brand-deep: 6 71 58;      /* text on tints */
-    --c-brand-soft: 234 245 240;  /* answer boxes, checked rows */
-    --c-brand-tint: 211 235 224;
-    --c-note: 253 244 227;        /* "estimate" and caution notes */
-    --c-note-ink: 138 79 8;
-    --c-note-line: 240 214 170;
-    --c-focus: 29 78 216;         /* focus ring (6.3:1 on paper) */
+    --c-sunken: 238 247 242;      /* mint bands, quiet panels, row hover */
+    --c-line: 217 229 223;        /* hairlines */
+    --c-line-strong: 183 201 192;
+    --c-control: 107 127 119;     /* checkbox and input borders */
+    --c-ink: 20 33 61;            /* headings, body: navy ink */
+    --c-ink-2: 58 74 99;          /* secondary text */
+    --c-ink-3: 86 101 125;        /* captions, meta */
+    --c-brand: 4 120 87;          /* pennant green: primary actions and links */
+    --c-brand-strong: 3 102 74;   /* hover */
+    --c-brand-deep: 6 78 59;      /* pine: bold bands, text on tints */
+    --c-brand-soft: 227 246 236;  /* answer boxes, checked rows */
+    --c-brand-tint: 189 232 210;
+    --c-brand-bright: 16 185 129; /* leaf: logo mark and decorative fills only */
+    --c-accent: 255 182 39;       /* marigold: CTA button, averages, highlights */
+    --c-accent-strong: 245 163 15;
+    --c-sky: 74 144 217;          /* "fewer checked than typical" fills */
+    --c-sky-soft: 230 241 251;
+    --c-sky-ink: 27 79 138;
+    --c-note: 255 244 219;        /* marigold tint: 18+ notice, "estimate" notes, "more checked" */
+    --c-note-ink: 138 74 0;
+    --c-note-line: 243 209 133;
+    --c-focus: 29 78 216;         /* focus ring */
   }
 
   html {
@@ -79,12 +100,14 @@
 }
 
 @layer components {
+  /* 1280px frame on large screens. Running text keeps its own ≤68ch measure
+     (max-w-measure / .prose-guide), so wider pages never mean longer lines. */
   .page {
-    @apply mx-auto w-full max-w-page px-4 sm:px-6;
+    @apply mx-auto w-full max-w-page px-4 sm:px-6 lg:px-8;
   }
-  /* Focused single-column layout (the test). */
+  /* The test: same frame, questions set in two columns from lg (see TestForm). */
   .page-narrow {
-    @apply mx-auto w-full max-w-3xl px-4 sm:px-6;
+    @apply mx-auto w-full max-w-page px-4 sm:px-6 lg:px-8;
   }
 
   /* Small label above a block. Sentence case: it names the block, it isn't decoration. */
@@ -110,6 +133,10 @@
   .btn-quiet {
     @apply text-brand-deep hover:bg-brand-soft;
   }
+  /* Marigold, for the one call to action on a pine band. */
+  .btn-accent {
+    @apply bg-accent text-ink hover:bg-accent-strong;
+  }
   .btn[disabled],
   .btn[aria-disabled='true'] {
     @apply cursor-not-allowed opacity-50;
@@ -123,10 +150,24 @@
     @apply rounded-lg border border-line bg-surface shadow-card;
   }
 
+  /* Full-bleed mint band behind a centred .page section, without an extra wrapper:
+     the shadow paints the band sideways, clip-path trims it to the section's height. */
+  .band-mint {
+    background-color: rgb(var(--c-sunken));
+    box-shadow: 0 0 0 100vmax rgb(var(--c-sunken));
+    clip-path: inset(0 -100vmax);
+  }
+
   /* Long-form guide content: readable measure, calm rhythm. Selectors use :where()
      so any utility class on a nested component still wins. */
+  /* Text blocks keep the measure; tables may use the full article column. --measure is
+     resolved once at body size (see @property below), so a lead paragraph is no wider. */
   .prose-guide {
-    @apply max-w-measure text-body text-ink-2;
+    @apply text-body text-ink-2;
+    --measure: theme(maxWidth.measure);
+  }
+  .prose-guide > :where(:not(.table-wrap)) {
+    max-width: var(--measure);
   }
   .prose-guide > :where(* + *) {
     margin-top: 1.15em;
@@ -168,8 +209,9 @@
   .table-clean {
     @apply w-full border-collapse text-left text-small;
   }
-  .table-clean th {
-    @apply border-b-2 border-line-strong px-3 py-2.5 align-bottom text-xs font-semibold uppercase tracking-[0.06em] text-ink-3;
+  /* Column headers only (thead), so a row header's own utilities apply. Sentence case, as written. */
+  .table-clean thead th {
+    @apply border-b-2 border-brand-tint px-3 py-2.5 align-bottom text-xs font-semibold text-brand-deep;
   }
   .table-clean td {
     @apply border-b border-line px-3 py-3 align-top text-ink-2;
@@ -178,7 +220,7 @@
   .table-clean td:first-child {
     @apply pl-0;
   }
-  .table-clean tbody tr:last-child td {
+  .table-clean tbody tr:last-child > * {
     @apply border-b-0;
   }
 
@@ -216,6 +258,14 @@
     outline: 3px solid rgb(var(--c-focus));
     outline-offset: 3px;
   }
+}
+
+/* Registered so `68ch` computes to a length on .prose-guide and children inherit that length.
+   (initial-value must be font-independent; it is never used, .prose-guide always sets it.) */
+@property --measure {
+  syntax: '<length>';
+  inherits: true;
+  initial-value: 0px;
 }
 
 /* A deep link (#q14 on the questions page, #score-71 in the score lookup) lands on a

@@ -1,11 +1,19 @@
 import Link from 'next/link';
 import type { ComponentProps } from 'react';
 
-type Variant = 'primary' | 'secondary' | 'quiet';
+type Variant = 'primary' | 'secondary' | 'quiet' | 'accent';
 type Size = 'md' | 'lg';
 
+// Literal class names, so Tailwind keeps every variant's component class in the build.
+const VARIANT: Record<Variant, string> = {
+  primary: 'btn-primary',
+  secondary: 'btn-secondary',
+  quiet: 'btn-quiet',
+  accent: 'btn-accent',
+};
+
 const classes = (variant: Variant, size: Size, extra = '') =>
-  ['btn', `btn-${variant}`, size === 'lg' ? 'btn-lg' : '', extra].filter(Boolean).join(' ');
+  ['btn', VARIANT[variant], size === 'lg' ? 'btn-lg' : '', extra].filter(Boolean).join(' ');
 
 interface ButtonProps extends ComponentProps<'button'> {
   variant?: Variant;

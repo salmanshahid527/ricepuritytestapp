@@ -24,7 +24,7 @@ export function GuideLayout({ crumbs, title, meta, answer, toc, children, footer
   return (
     <main id="main" className="page pb-4 pt-3 sm:pt-5">
       <Breadcrumbs items={crumbs} />
-      <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_15rem] lg:gap-16">
+      <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_16rem] lg:gap-20">
         <article className="min-w-0">
           <header className="max-w-measure">
             <h1 className="mt-2 font-display text-h1 font-semibold text-ink">{title}</h1>

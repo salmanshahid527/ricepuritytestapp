@@ -6,11 +6,11 @@ import type { ReactNode } from 'react';
  */
 export function KeyAnswer({ question, children, id = 'short-answer' }: { question: string; children: ReactNode; id?: string }) {
   return (
-    <section aria-labelledby={id} className="rounded-lg border border-brand-tint bg-brand-soft p-5 text-ink-2 sm:p-6">
-      <h2 id={id} className="font-display text-[1.25rem] font-semibold leading-snug text-brand-deep sm:text-[1.375rem]">
+    <section aria-labelledby={id} className="overflow-hidden rounded-lg border border-brand-tint bg-brand-soft text-ink-2">
+      <h2 id={id} className="bg-brand-deep px-5 py-3.5 font-display text-[1.25rem] font-semibold leading-snug text-white sm:px-6 sm:text-[1.375rem]">
         {question}
       </h2>
-      <div className="mt-3 space-y-3">{children}</div>
+      <div className="space-y-3 px-5 pb-5 pt-4 sm:px-6 sm:pb-6">{children}</div>
     </section>
   );
 }
