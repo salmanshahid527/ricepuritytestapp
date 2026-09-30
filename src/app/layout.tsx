@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import Script from 'next/script';
-import { Fraunces } from 'next/font/google';
+import { Archivo } from 'next/font/google';
 import { GoogleAnalyticsRouteTracker } from '@/components/GoogleAnalyticsRouteTracker';
 import { Header } from '@/components/organisms/Header';
 import { Footer } from '@/components/organisms/Footer';
@@ -11,11 +11,12 @@ import './globals.css';
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 const ADSENSE_CLIENT = 'ca-pub-2046389894156038';
 
-// One display face for headings, self-hosted by next/font with a size-adjusted fallback.
+// One display face for headings: Archivo Bold, a sturdy grotesque with scoreboard numerals,
+// self-hosted by next/font (one weight, latin, ~17 KB) with a size-adjusted Arial fallback.
 // display: 'optional' — on slow mobile connections a late font swap reflowed the whole page
 // (production CLS 1.0 on PageSpeed); the fallback is used for that view instead.
 // Body text uses the system UI font: zero bytes, instant paint.
-const fraunces = Fraunces({ subsets: ['latin'], weight: ['600'], display: 'optional', variable: '--font-display' });
+const display = Archivo({ subsets: ['latin'], weight: ['700'], display: 'optional', variable: '--font-display' });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.ricepuritytestapp.com'),
@@ -107,7 +108,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={fraunces.variable}>
+    <html lang="en" className={display.variable}>
       <head>
         <script
           type="application/ld+json"

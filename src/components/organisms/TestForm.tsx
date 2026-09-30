@@ -45,7 +45,7 @@ interface RowProps {
 /** One question. The whole row is the label, so the tap target is the full width. */
 const QuestionRow = memo(function QuestionRow({ id, text, checked, onToggle }: RowProps) {
   return (
-    <li>
+    <li className="break-inside-avoid border-t border-line">
       <label
         htmlFor={`q${id}`}
         className="flex min-h-[3.5rem] cursor-pointer items-start gap-3.5 px-4 py-3.5 hover:bg-sunken/70 has-[:checked]:bg-brand-soft sm:px-5"
@@ -168,7 +168,7 @@ export function TestForm() {
       </div>
 
       {/* Sticky progress + primary action. Fixed height: never shifts content. */}
-      <div className="sticky top-0 z-20 mt-6 border-y border-line bg-paper shadow-[0_6px_16px_-12px_rgb(22_33_28/0.35)]">
+      <div className="sticky top-0 z-20 mt-6 border-y border-line bg-paper shadow-[0_6px_16px_-12px_rgb(20_33_61/0.35)]">
         <div className="page-narrow flex h-[4.5rem] items-center gap-3">
           <div className="min-w-0 flex-1">
             <p className="text-small font-semibold text-ink">
@@ -207,7 +207,10 @@ export function TestForm() {
                 <span className="tabular-nums">{perGroup[i]}</span> of {g.items.length} checked
               </p>
             </div>
-            <ol className="card mt-4 divide-y divide-line overflow-hidden" start={g.from}>
+            <ol
+              className="card mt-4 overflow-hidden border-t-0 lg:columns-2 lg:gap-0 lg:[column-rule:1px_solid_rgb(var(--c-line))]"
+              start={g.from}
+            >
               {g.items.map((q) => (
                 <QuestionRow key={q.id} id={q.id} text={q.text} checked={!!answers[q.id]} onToggle={onToggle} />
               ))}

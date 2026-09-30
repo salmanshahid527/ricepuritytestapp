@@ -15,7 +15,7 @@ export function CtaBox({ heading, children, cta = 'Take the test', secondary }: 
       <h2 className="mt-0 font-display text-h2 font-semibold text-white">{heading}</h2>
       {children && <div className="mt-2 max-w-xl text-white/85">{children}</div>}
       <div className="mt-6 flex flex-wrap gap-3">
-        <ButtonLink href="/test" size="lg" className="bg-white text-brand-deep shadow-none hover:bg-brand-soft">
+        <ButtonLink href="/test" size="lg" variant="accent">
           {cta}
         </ButtonLink>
         {secondary && (

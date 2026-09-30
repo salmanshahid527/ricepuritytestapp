@@ -36,7 +36,7 @@ const COLUMNS = [
 
 export function Footer() {
   return (
-    <footer className="mt-20 border-t border-line bg-sunken/70">
+    <footer className="mt-20 bg-sunken">
       <div className="page py-10 sm:py-12">
         <AdultNotice className="max-w-2xl" />
         <div className="mt-10 grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-4">
