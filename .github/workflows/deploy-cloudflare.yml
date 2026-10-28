@@ -1,0 +1,49 @@
+# Deploys the site to Cloudflare Workers when main changes, then smoke-tests the live domain.
+# Needs two repository secrets: CLOUDFLARE_API_TOKEN (Account: Workers Scripts: Edit and
+# Zone: Workers Routes: Edit on ricepuritytestapp.com) and nothing else. The account ID is not a secret.
+name: Deploy to Cloudflare
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-cloudflare
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: 1661eed0a03a567c3ee850189e77a08a
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - name: Build for Cloudflare
+        run: npx opennextjs-cloudflare build
+      - name: Deploy
+        run: npx wrangler deploy
+      - name: Smoke test the live domain
+        run: |
+          set -e
+          check() { code=$(curl -s -o /dev/null -m 30 -w "%{http_code}" "$1"); [ "$code" = "$2" ] || { echo "FAIL $1 expected $2 got $code"; exit 1; }; echo "ok $1 $code"; }
+          sleep 10
+          check https://www.ricepuritytestapp.com/ 200
+          check https://www.ricepuritytestapp.com/test 200
+          check https://www.ricepuritytestapp.com/ads.txt 200
+          check https://www.ricepuritytestapp.com/robots.txt 200
+          check https://www.ricepuritytestapp.com/sitemap.xml 200
+          check https://www.ricepuritytestapp.com/does-not-exist-404 404
+          check https://ricepuritytestapp.com/test 301
+          curl -s -m 30 https://www.ricepuritytestapp.com/ | grep -q "<title>" || { echo "FAIL home page has no title"; exit 1; }
+          curl -s -m 30 https://www.ricepuritytestapp.com/ | grep -q "G-56QQ6NHLK2" || { echo "FAIL Google Analytics ID missing from home page"; exit 1; }
