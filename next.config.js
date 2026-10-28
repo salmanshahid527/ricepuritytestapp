@@ -32,12 +32,17 @@ const nextConfig = {
           },
         ],
         destination: 'https://www.ricepuritytestapp.com/:path*',
-        permanent: true,
+        statusCode: 301,
       },
     ];
   },
   async headers() {
     return [
+      {
+        // Match the live behavior: pages revalidate on every request (Next would send s-maxage=1y).
+        source: '/((?!_next/static|_next/image).*)',
+        headers: [{ key: 'Cache-Control', value: 'public, max-age=0, must-revalidate' }],
+      },
       {
         source: '/:path*',
         headers: [
