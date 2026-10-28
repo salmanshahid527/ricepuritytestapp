@@ -18,6 +18,9 @@ export const metadata: Metadata = {
       'Important information about the purpose, limitations, accuracy, and intended use of the RicePurityTestApp.',
     url: `${BASE_URL}/disclaimer`,
     type: 'website',
+    images: [
+      { url: 'https://www.ricepuritytestapp.com/og-image.jpg', width: 1200, height: 630, alt: 'Disclaimer | RicePurityTestApp' },
+    ],
   },
   twitter: {
     card: 'summary_large_image',

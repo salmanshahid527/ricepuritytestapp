@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   description: DESCRIPTION,
   robots: { index: true, follow: true },
   alternates: { canonical: URL },
-  openGraph: { title: TITLE, description: DESCRIPTION, url: URL, type: 'article' },
+  openGraph: { title: TITLE, description: DESCRIPTION, url: URL, type: 'article', images: [{ url: 'https://www.ricepuritytestapp.com/og-image.jpg', width: 1200, height: 630, alt: TITLE }] },
   twitter: { card: 'summary_large_image', title: TITLE, description: DESCRIPTION },
 };
 

@@ -28,6 +28,7 @@ export const PAGE_DATES = {
   '/privacy': { modified: '2026-09-30' },
   '/terms': { modified: '2026-08-14' },
   '/cookies': { modified: '2026-09-30' },
+  '/disclaimer': { modified: '2026-09-30' },
 } satisfies Record<string, ContentDates>;
 
 export type DatedPath = keyof typeof PAGE_DATES;

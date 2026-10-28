@@ -18,6 +18,9 @@ export const metadata: Metadata = {
       'Terms governing the use of RicePurityTestApp, including content ownership, anonymous score submissions, and site liability.',
     url: `${BASE_URL}/terms`,
     type: 'website',
+    images: [
+      { url: 'https://www.ricepuritytestapp.com/og-image.jpg', width: 1200, height: 630, alt: 'Terms of Service | RicePurityTestApp' },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
