@@ -18,14 +18,14 @@ const URL = `${BASE_URL}${PATH}`;
 const DATES = PAGE_DATES[PATH];
 const TITLE = 'Rice Purity Test Score Meaning: Every Range Explained';
 const DESCRIPTION =
-  'What your Rice Purity score means, from 100 down to 0: how it is calculated, a score chart, a lookup for any number, what counts as normal, and whether a high or low score is better.';
+  'What your Rice Purity score means, from 100 to 0: how it is calculated, a score chart, a lookup for any number, what counts as normal, and if high is better.';
 
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
   robots: { index: true, follow: true },
   alternates: { canonical: URL },
-  openGraph: { title: TITLE, description: DESCRIPTION, url: URL, type: 'article' },
+  openGraph: { title: TITLE, description: DESCRIPTION, url: URL, type: 'article', images: [{ url: 'https://www.ricepuritytestapp.com/og-image.jpg', width: 1200, height: 630, alt: TITLE }] },
   twitter: { card: 'summary_large_image', title: TITLE, description: DESCRIPTION },
 };
 

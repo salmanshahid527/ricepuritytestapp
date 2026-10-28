@@ -20,6 +20,8 @@ const paths: DatedPath[] = [
   "/contact",
   "/privacy",
   "/terms",
+  "/disclaimer",
+  "/cookies",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

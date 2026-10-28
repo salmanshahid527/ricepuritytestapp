@@ -19,6 +19,9 @@ export const metadata: Metadata = {
       'Learn what is stored on your device, why it is stored, and how to manage cookie choices on RicePurityTestApp.',
     url: `${BASE_URL}/cookies`,
     type: 'website',
+    images: [
+      { url: 'https://www.ricepuritytestapp.com/og-image.jpg', width: 1200, height: 630, alt: 'Cookie Policy | RicePurityTestApp' },
+    ],
   },
   twitter: {
     card: 'summary_large_image',

@@ -11,6 +11,9 @@ export const metadata: Metadata = {
     title: 'Take the Rice Purity Test Online – Check Your Score Now',
     description: 'Complete the 100-question Rice Purity Test. Free, anonymous, instant results.',
     url: `${BASE_URL}/test`,
+    images: [
+      { url: 'https://www.ricepuritytestapp.com/og-image.jpg', width: 1200, height: 630, alt: 'Take the Rice Purity Test Online – Check Your Score Now' },
+    ],
   },
   twitter: { card: 'summary_large_image' },
 };

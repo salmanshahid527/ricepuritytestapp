@@ -22,6 +22,9 @@ export const metadata: Metadata = {
       'Learn who runs RicePurityTestApp, how the question set was built, how anonymous data works, and what the test is not.',
     url: `${BASE_URL}/about`,
     type: 'website',
+    images: [
+      { url: 'https://www.ricepuritytestapp.com/og-image.jpg', width: 1200, height: 630, alt: 'About RicePurityTestApp – Who We Are & How It Works' },
+    ],
   },
   twitter: {
     card: 'summary_large_image',

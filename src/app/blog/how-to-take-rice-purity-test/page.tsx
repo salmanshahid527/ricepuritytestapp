@@ -20,6 +20,9 @@ export const metadata: Metadata = {
     description: 'Tips for getting the most accurate Rice Purity Test results. Step-by-step guide.',
     url: `${BASE_URL}/blog/how-to-take-rice-purity-test`,
     type: 'article',
+    images: [
+      { url: 'https://www.ricepuritytestapp.com/og-image.jpg', width: 1200, height: 630, alt: 'How to Take the Rice Purity Test: Tips for Accurate Results' },
+    ],
   },
   twitter: { card: 'summary_large_image', title: 'How to Take the Rice Purity Test', description: 'Tips for accurate results.' },
   robots: { index: true, follow: true },

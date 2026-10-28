@@ -20,6 +20,9 @@ export const metadata: Metadata = {
     description: 'Average scores by age, score meanings, all 100 questions explained, and the history of the test.',
     url: `${BASE_URL}/blog`,
     type: 'website',
+    images: [
+      { url: 'https://www.ricepuritytestapp.com/og-image.jpg', width: 1200, height: 630, alt: 'Rice Purity Test Guides: Scores, Questions, Meaning & History' },
+    ],
   },
   twitter: {
     card: 'summary_large_image',

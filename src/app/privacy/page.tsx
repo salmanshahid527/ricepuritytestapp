@@ -8,7 +8,7 @@ import { BASE_URL, CONTACT_EMAIL, PUBLISHER, STATS_ENABLED } from '@/lib/site';
 export const metadata: Metadata = {
   title: 'Privacy Policy | RicePurityTestApp',
   description:
-    'Read the RicePurityTestApp privacy policy to learn what information we collect, how test answers are stored, how optional scores are used, and how advertising cookies work.',
+    'Read the RicePurityTestApp privacy policy: what we collect, how test answers are stored, how optional scores are used, and how advertising cookies work.',
   robots: { index: true, follow: true },
   alternates: {
     canonical: `${BASE_URL}/privacy`,
@@ -19,6 +19,9 @@ export const metadata: Metadata = {
       'Learn how RicePurityTestApp handles test answers, optional score submissions, browser storage, server logs, and advertising cookies.',
     url: `${BASE_URL}/privacy`,
     type: 'website',
+    images: [
+      { url: 'https://www.ricepuritytestapp.com/og-image.jpg', width: 1200, height: 630, alt: 'Privacy Policy | RicePurityTestApp' },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
