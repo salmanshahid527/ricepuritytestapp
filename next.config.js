@@ -45,6 +45,12 @@ const nextConfig = {
             key: 'Strict-Transport-Security',
             value: 'max-age=31536000; includeSubDomains',
           },
+          // Carried over from vercel.json, which Cloudflare does not read.
+          { key: 'X-Content-Type-Options', value: 'nosniff' },
+          { key: 'X-Frame-Options', value: 'DENY' },
+          { key: 'X-XSS-Protection', value: '1; mode=block' },
+          { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
+          { key: 'Permissions-Policy', value: 'geolocation=(), microphone=(), camera=()' },
           {
             // AdSense / Funding Choices load scripts, frames and beacons from dozens of
             // rotating Google domains; an allow-list CSP silently breaks ad rendering and
