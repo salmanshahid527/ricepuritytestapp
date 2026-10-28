@@ -22,8 +22,8 @@ export async function POST(req: Request) {
   if (body.adult !== true || !Number.isInteger(score) || score < 0 || score > 100 || !AGE_BANDS.includes(band)) {
     return NextResponse.json({ ok: false, reason: 'invalid' }, { status: 400 });
   }
-  const ip = (req.headers.get('x-forwarded-for') || '').split(',')[0].trim() || 'unknown';
-  const country = req.headers.get('x-vercel-ip-country');
+  const ip = req.headers.get('cf-connecting-ip') || (req.headers.get('x-forwarded-for') || '').split(',')[0].trim() || 'unknown';
+  const country = req.headers.get('x-vercel-ip-country') || req.headers.get('cf-ipcountry');
   try {
     const result = await recordScore(score, band, country, await hashIp(ip));
     return NextResponse.json(result, { status: result.ok ? 200 : 429 });
