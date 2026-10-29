@@ -18,7 +18,7 @@ import { BASE_URL, STATS_ENABLED } from '@/lib/site';
 // earns impressions at position ~10 with no clicks); it stays labelled as an estimate.
 const TITLE = 'Average Rice Purity Score by Age (Estimated 62–68 Overall)';
 const DESCRIPTION =
-  'The average Rice Purity score is an estimated 62 to 68, and most adults land between 55 and 75. Typical ranges for ages 18, 19-22, 23-25, 26-30 and 31+, and how to read yours.';
+  'Average Rice Purity score: an estimated 62 to 68, with most adults at 55 to 75. Typical ranges for ages 18, 19-22, 23-25, 26-30 and 31+, and how to read yours.';
 const PATH = '/rice-purity-test-average-score-by-age';
 const URL = `${BASE_URL}${PATH}`;
 const DATES = PAGE_DATES[PATH];
