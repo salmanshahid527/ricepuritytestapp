@@ -18,7 +18,7 @@ const DATES = PAGE_DATES[PATH];
 const NOTE_COUNT = Object.keys(QUESTION_NOTES).length;
 const TITLE = 'Rice Purity Test Questions: All 100, Explained';
 const DESCRIPTION =
-  'The full list of 100 Rice Purity Test questions, grouped by theme, with plain-English meanings for the confusing ones (kissed horizontally, MPS, sensual context and more).';
+  'All 100 Rice Purity Test questions, grouped by theme, with plain-English meanings for the confusing ones (kissed horizontally, MPS, sensual context and more).';
 
 export const metadata: Metadata = {
   title: TITLE,
