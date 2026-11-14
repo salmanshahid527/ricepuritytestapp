@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { AGE_BANDS, recordScore, statsConfigured, type AgeBand } from '@/lib/stats';
+import { AGE_BANDS, getBandStats, MIN_SAMPLE, recordScore, statsConfigured, type AgeBand } from '@/lib/stats';
 
 export const dynamic = 'force-dynamic';
 
@@ -9,8 +9,18 @@ async function hashIp(ip: string): Promise<string> {
   return Array.from(new Uint8Array(digest)).slice(0, 12).map((b) => b.toString(16).padStart(2, '0')).join('');
 }
 
+/** The live figures for the stats section. Small, cached for five minutes, 503 while the store is off. */
+export async function GET() {
+  const bands = await getBandStats();
+  if (!bands) return NextResponse.json({ ok: false }, { status: 503 });
+  return NextResponse.json(
+    { ok: true, minSample: MIN_SAMPLE, bands },
+    { headers: { 'Cache-Control': 'public, max-age=300, s-maxage=300' } },
+  );
+}
+
 export async function POST(req: Request) {
-  if (!statsConfigured) return NextResponse.json({ ok: false, reason: 'disabled' }, { status: 503 });
+  if (!statsConfigured()) return NextResponse.json({ ok: false, reason: 'disabled' }, { status: 503 });
   let body: { score?: unknown; ageBand?: unknown; adult?: unknown };
   try {
     body = await req.json();

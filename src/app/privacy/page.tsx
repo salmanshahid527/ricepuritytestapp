@@ -228,7 +228,7 @@ export default function PrivacyPage() {
           your IP address for 12 hours. It is deleted automatically after that.
         </li>
         <li>
-          <strong>Where:</strong> the counts are held in a database run for us by Upstash, a cloud database provider.
+          <strong>Where:</strong> the counts are held in a database run for us by Neon, a cloud database provider.
         </li>
         <li>
           <strong>What is published:</strong> an age group&apos;s figures appear on the site only once it has at least 50
