@@ -145,7 +145,7 @@ Every in-page anchor and internal link on the 16 routes was crawled on the local
 - **Dates:** one module (`src/lib/dates.ts`) feeds the visible "Last reviewed", BlogPosting `dateModified` and sitemap `lastmod`. Moved to 2026-09-30 only where the main content changed: age, score, questions, history, `/blog`, `/about`, `/privacy`, `/cookies`. Unchanged: home, test, meaning, how-to, contact, terms. The how-to's BlogPosting now carries its real `dateModified` (2026-09-27, as in the sitemap) instead of defaulting to its publish date.
 - **Structured data:** Organization gains `email`, two `contactPoint`s (support, press), `parentOrganization` Teknoesis and `publishingPrinciples` → `/about#how-we-write`, all visible on the site. New: AboutPage, ContactPage, CollectionPage + ItemList on `/blog`. Still no FAQPage, HowTo or ratings.
 
-### Opt-in score submission (off unless `NEXT_PUBLIC_STATS_ENABLED=1` and the Upstash env are set)
+### Opt-in score submission (off unless `NEXT_PUBLIC_STATS_ENABLED=1` and `STATS_DATABASE_URL` is set)
 
 - **One tap:** eight age-band buttons; tapping one sends the score and that band. No pre-selection, and nothing is sent until a band is tapped.
 - **Consent first:** the text above the buttons says exactly what is sent (score, band, 18+ confirmation), what isn't (answers), and that the country is counted separately, with a link to `/privacy#score-submission`. The old text said "only the number and the age band", but the API also counts the country, so it was fixed.
@@ -162,7 +162,7 @@ Every in-page anchor and internal link on the 16 routes was crawled on the local
 | `_ga`, `_ga_<ID>` (2 years) | GA4 tag in `layout.tsx` (live ID present in production) | GA section with Google's cookie page and opt-out add-on; the `test_complete` event carries no score |
 | `__gads`, `__gpi` (13 months), `__eoi` (6 months), `id` on doubleclick.net (13 months EEA/UK, 24 elsewhere), `test_cookie` (15 min) | AdSense tag in `layout.tsx`; lifetimes from Google's "Cookies used by Google advertising products" | AdSense section with the required disclosures, Ads Settings, aboutads.info, youronlinechoices.eu, and "How Google uses information from sites or apps that use our services" |
 | `FCCDCF` (13 months), `FCNEC` (365 days) | Google's consent message, once the owner turns it on | "Consent in the EEA, the UK and Switzerland": shown to visitors there; to change a choice, clear the site's cookies and reload |
-| Score submission | `api/scores/route.ts`, `lib/stats.ts` | Counters per score and band, a separate country counter, a 12-hour one-way IP hash for rate limiting, Upstash, 50-response publishing rule; says so when the feature is off |
+| Score submission | `api/scores/route.ts`, `lib/stats.ts` | Counters per score and band, a separate country counter, a 12-hour one-way IP hash for rate limiting, Neon Postgres over HTTP, 50-response publishing rule; says so when the feature is off |
 | Request logs | Vercel hosting | Standard log data, Vercel's privacy notice |
 | Removed | — | `rpt_progress`, `rpt_age_ok`, `rpt_consent`, the age gate, the "manage choices" footer link, "legal basis is your consent" for everything |
 

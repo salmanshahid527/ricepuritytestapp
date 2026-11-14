@@ -1,14 +1,50 @@
-import { getBandStats, MIN_SAMPLE, statsConfigured } from '@/lib/stats';
+'use client';
+
+import { useEffect, useState } from 'react';
+
+import { STATS_ENABLED } from '@/lib/site';
 
 /**
- * Server component. Shows real, opt-in averages once a band has enough
- * responses; otherwise says how many have been collected. Renders nothing
- * until the statistics store is configured.
+ * Shows real, opt-in averages once a band has enough responses; otherwise says how many have
+ * been collected. Loaded in the browser from /api/scores, because the pages are built ahead of
+ * time without the database secret and would otherwise show nothing. Renders nothing until the
+ * statistics store is switched on and reachable.
  */
-export async function LiveStats() {
-  if (!statsConfigured) return null;
-  const stats = await getBandStats();
-  if (!stats) return null;
+interface Band {
+  band: string;
+  n: number;
+  mean: number | null;
+  median: number | null;
+  p25: number | null;
+  p75: number | null;
+}
+
+type State = { status: 'loading' } | { status: 'off' } | { status: 'ready'; minSample: number; bands: Band[] };
+
+export function LiveStats() {
+  const [state, setState] = useState<State>({ status: 'loading' });
+
+  useEffect(() => {
+    if (!STATS_ENABLED) return;
+    let alive = true;
+    fetch('/api/scores')
+      .then((r) => (r.ok ? r.json() : null))
+      .then((d) => {
+        if (!alive) return;
+        setState(d?.ok ? { status: 'ready', minSample: d.minSample, bands: d.bands } : { status: 'off' });
+      })
+      .catch(() => alive && setState({ status: 'off' }));
+    return () => {
+      alive = false;
+    };
+  }, []);
+
+  if (!STATS_ENABLED || state.status === 'off') return null;
+  // Reserve the space while loading so the page below does not jump.
+  if (state.status === 'loading') return <div aria-hidden className="min-h-[9rem]" />;
+
+  const MIN_SAMPLE = state.minSample;
+  const stats = state.bands;
   const total = stats.reduce((s, b) => s + b.n, 0);
   const ready = stats.filter((b) => b.n >= MIN_SAMPLE);
 
@@ -25,7 +61,7 @@ export async function LiveStats() {
       ) : (
         <>
           <p className="mt-2 text-small text-ink-2">
-            Opt-in scores from readers who finished the test, updated hourly. Only age groups with at least {MIN_SAMPLE}{' '}
+            Opt-in scores from readers who finished the test, updated every few minutes. Only age groups with at least {MIN_SAMPLE}{' '}
             responses are shown. Self-selected samples lean toward people who chose to share, so read these as
             indicative.
           </p>
